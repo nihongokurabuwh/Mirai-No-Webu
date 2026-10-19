@@ -324,9 +324,9 @@ Buka browser dan kunjungi: `http://localhost:8000`
 * **Institusi Induk**: SMA Wachid Hasyim 2 (SMASYIMDUTA) Taman, Sidoarjo
 * **Akun Instagram Resmi**: [@mirainohana_smawh2](https://www.instagram.com/mirainohana_smawh2?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==)
 * **Akun TikTok Resmi**: [@nihongo.kurabu.wh2](https://www.tiktok.com/@nihongo.kurabu.wh2?is_from_webapp=1&sender_device=pc)
-* **Repositori & Akun GitHub Resmi**: [Hans46824/Mirai-No-Webu](https://github.com/Hans46824/Mirai-No-Webu)
+* **Repositori & Akun GitHub Resmi**: [nihongokurabuwh/Mirai-No-Webu](https://github.com/nihongokurabuwh/Mirai-No-Webu)
 * **Tahun Operasional**: 2026 (Kabinet Sora)
-* **Status Hosting**: GitHub Pages (`https://mirainohana.github.io` / Repositori Mirai-No-Webu)
+* **Status Hosting**: GitHub Pages (`https://nihongokurabuwh.github.io/Mirai-No-Webu` / Repositori Mirai-No-Webu)
 
 ---
 *Dokumen ini diperbarui secara berkala demi menjamin transparansi, integritas informasi, dan kepatuhan hukum hak cipta.*

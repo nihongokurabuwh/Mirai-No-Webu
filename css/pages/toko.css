@@ -51,9 +51,9 @@ body.page-toko, .page-toko {
   position: relative !important;
   z-index: 12 !important;
   width: 100% !important;
-  background-color: #0e0b12 !important;
-  background: #0e0b12 !important;
-  color: #e2e8f0 !important;
+  background-color: #ffffff !important;
+  background: #ffffff !important;
+  color: #242126 !important;
   box-shadow: 0 -35px 85px rgba(0, 0, 0, 0.98) !important;
   padding: 70px 7vw 90px !important;
   opacity: 1 !important;
@@ -89,19 +89,20 @@ body.page-toko, .page-toko {
 .toko-cat-btn {
   padding: 12px 20px !important;
   border-radius: 12px !important;
-  background: #191322 !important;
-  border: 1px solid rgba(255, 79, 145, 0.22) !important;
-  color: #cbd5e1 !important;
+  background: #ffffff !important;
+  border: 1.5px solid var(--pink-border, #f4bfd3) !important;
+  color: #18151b !important;
   font-size: 13.5px !important;
   font-weight: 700 !important;
   cursor: pointer !important;
   transition: all 0.25s ease !important;
+  box-shadow: 0 2px 8px rgba(233, 30, 99, 0.04) !important;
 }
 
 .toko-cat-btn:hover {
-  background: #231b30 !important;
-  border-color: rgba(255, 79, 145, 0.5) !important;
-  color: #ffffff !important;
+  background: #fff5f8 !important;
+  border-color: var(--pink, #e91e63) !important;
+  color: var(--pink, #e91e63) !important;
   transform: translateY(-2px) !important;
 }
 
@@ -219,13 +220,13 @@ body.page-toko, .page-toko {
 .toko-card {
   display: flex !important;
   flex-direction: column !important;
-  background: linear-gradient(160deg, #1a1424 0%, #120e19 100%) !important;
-  border: 1px solid rgba(255, 79, 145, 0.22) !important;
+  background: #ffffff !important;
+  border: 1.5px solid var(--pink-border, #f4bfd3) !important;
   border-radius: 14px !important;
   overflow: hidden !important;
   position: relative !important;
   transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35) !important;
+  box-shadow: 0 8px 24px rgba(233, 30, 99, 0.06) !important;
 }
 
 .toko-card::before {
@@ -256,10 +257,10 @@ body.page-toko, .page-toko {
   content: "" !important;
   position: absolute !important;
   inset: 0 !important;
-  background-image: url("../../images/mirai/background/c1b.jpeg") !important;
+  background-image: url("../../images/mirai/background/c1w.jpeg") !important;
   background-size: 200px auto !important;
-  opacity: var(--opacity-c1b)!important;
-  mix-blend-mode: screen !important;
+  opacity: var(--opacity-c1w)!important;
+  mix-blend-mode: multiply !important;
   pointer-events: none !important;
   transition: opacity 0.3s ease !important;
   z-index: 1 !important;
@@ -546,14 +547,14 @@ body.page-toko, .page-toko {
   font-size: 17px !important;
   font-weight: 800 !important;
   line-height: 1.35 !important;
-  color: #ffffff !important;
+  color: #18151b !important;
   margin: 0 0 10px !important;
 }
 
 .toko-card-desc {
   font-size: 13px !important;
   line-height: 1.6 !important;
-  color: #94a3b8 !important;
+  color: #554e57 !important;
   margin: 0 0 16px !important;
   display: -webkit-box !important;
   line-clamp: 3 !important;
@@ -568,21 +569,21 @@ body.page-toko, .page-toko {
   flex-direction: column !important;
   gap: 4px !important;
   padding: 10px 12px !important;
-  background: rgba(255, 255, 255, 0.03) !important;
+  background: #fff5f8 !important;
   border-radius: 8px !important;
-  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid #ffd2e3 !important;
   margin-bottom: 16px !important;
 }
 
 .toko-card-specs span {
   font-size: 11.5px !important;
-  color: #cbd5e1 !important;
+  color: #554e57 !important;
 }
 
 .toko-card-footer {
   padding: 16px 20px !important;
-  background: rgba(12, 8, 16, 0.5) !important;
-  border-top: 1px solid rgba(255, 255, 255, 0.06) !important;
+  background: #fffbfe !important;
+  border-top: 1px solid rgba(233, 30, 99, 0.1) !important;
   display: flex !important;
   flex-direction: column !important;
   gap: 12px !important;
@@ -679,14 +680,14 @@ body.page-toko, .page-toko {
   position: relative !important;
   z-index: 12 !important;
   width: 100% !important;
-  background-color: #ffffff !important;
-  background: #ffffff !important;
-  color: #18151b !important;
+  background-color: #0e0b12 !important;
+  background: #0e0b12 !important;
+  color: #f5edf4 !important;
   padding: 85px 7vw !important;
 }
 
 .toko-guide-white-section .heading {
-  color: #18151b !important;
+  color: #ffffff !important;
 }
 
 .toko-guide-white-section .heading span {
@@ -694,7 +695,7 @@ body.page-toko, .page-toko {
 }
 
 .toko-guide-white-section .section-desc {
-  color: #554857 !important;
+  color: #d5ccd3 !important;
 }
 
 .toko-steps-grid {
@@ -707,14 +708,14 @@ body.page-toko, .page-toko {
 }
 
 .toko-step-card-white {
-  background: #ffffff !important;
-  border: 1.5px solid #ffccd9 !important;
+  background: #19141f !important;
+  border: 1px solid #3d3040 !important;
   border-radius: 18px !important;
   padding: 30px 24px !important;
   position: relative !important;
   overflow: hidden !important;
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease !important;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4) !important;
   display: flex !important;
   flex-direction: column !important;
   height: 100% !important;
@@ -725,10 +726,10 @@ body.page-toko, .page-toko {
   content: "" !important;
   position: absolute !important;
   inset: 0 !important;
-  background-image: url("../../images/mirai/background/c1w.jpeg") !important;
+  background-image: url("../../images/mirai/background/c1b.jpeg") !important;
   background-size: 200px auto !important;
-  opacity: var(--opacity-c1w)!important;
-  mix-blend-mode: multiply !important;
+  opacity: var(--opacity-c1b)!important;
+  mix-blend-mode: screen !important;
   pointer-events: none !important;
   transition: opacity 0.25s ease !important;
 }
@@ -736,11 +737,11 @@ body.page-toko, .page-toko {
 .toko-step-card-white:hover {
   transform: translateY(-4px) !important;
   border-color: #ff4f91 !important;
-  box-shadow: 0 12px 28px rgba(255, 79, 145, 0.15) !important;
+  box-shadow: 0 12px 28px rgba(255, 79, 145, 0.25) !important;
 }
 
 .toko-step-card-white:hover::after {
-  opacity: var(--opacity-c1w-hover)!important;
+  opacity: var(--opacity-c1b-hover)!important;
 }
 
 .toko-step-card-white > * {
@@ -755,9 +756,9 @@ body.page-toko, .page-toko {
   width: 28px !important;
   height: 28px !important;
   border-radius: 50% !important;
-  background: rgba(255, 79, 145, 0.12) !important;
-  border: 1px solid rgba(255, 79, 145, 0.3) !important;
-  color: #e91e63 !important;
+  background: rgba(255, 79, 145, 0.2) !important;
+  border: 1px solid var(--pink, #e91e63) !important;
+  color: #ff659b !important;
   font-size: 13px !important;
   font-weight: 800 !important;
   display: flex !important;
@@ -773,14 +774,14 @@ body.page-toko, .page-toko {
 .toko-step-card-white h4 {
   font-size: 17.5px !important;
   font-weight: 800 !important;
-  color: #18151b !important;
+  color: #ffffff !important;
   margin: 0 0 8px !important;
 }
 
 .toko-step-card-white p {
   font-size: 13.5px !important;
   line-height: 1.65 !important;
-  color: #554857 !important;
+  color: #d5ccd3 !important;
   margin: 0 !important;
 }
 /* 5. Seksi 3 (GELAP): Mirai no Konbini & Kemandirian Kas (Pola Kumo Gelap c1b.jpeg) */
@@ -788,32 +789,32 @@ body.page-toko, .page-toko {
   position: relative !important;
   z-index: 12 !important;
   width: 100% !important;
-  background-color: #0e0b12 !important;
-  background: #0e0b12 !important;
-  color: #ffffff !important;
+  background-color: #ffffff !important;
+  background: #ffffff !important;
+  color: #242126 !important;
   padding: 85px 7vw !important;
 }
 
 .toko-kwu-card {
   max-width: 1240px !important;
   margin: 0 auto !important;
-  background: linear-gradient(135deg, #1f172b 0%, #140f1c 100%) !important;
-  border: 1px solid rgba(255, 79, 145, 0.28) !important;
+  background: #ffffff !important;
+  border: 1.5px solid var(--pink-border, #f4bfd3) !important;
   border-radius: 20px !important;
   padding: 40px 44px !important;
   position: relative !important;
   overflow: hidden !important;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4) !important;
+  box-shadow: 0 8px 24px rgba(233, 30, 99, 0.06) !important;
 }
 
 .toko-kwu-card::after {
   content: "" !important;
   position: absolute !important;
   inset: 0 !important;
-  background-image: url("../../images/mirai/background/c1b.jpeg") !important;
+  background-image: url("../../images/mirai/background/c1w.jpeg") !important;
   background-size: 200px auto !important;
-  opacity: var(--opacity-c1b)!important;
-  mix-blend-mode: screen !important;
+  opacity: var(--opacity-c1w)!important;
+  mix-blend-mode: multiply !important;
   pointer-events: none !important;
 }
 
@@ -837,7 +838,7 @@ body.page-toko, .page-toko {
 .kwu-description {
   font-size: 15px !important;
   line-height: 1.8 !important;
-  color: #cbd5e1 !important;
+  color: #554e57 !important;
   max-width: 900px !important;
   margin: 0 0 28px !important;
 }
@@ -874,14 +875,14 @@ body.page-toko, .page-toko {
   position: relative !important;
   z-index: 12 !important;
   width: 100% !important;
-  background-color: #ffffff !important;
-  background: #ffffff !important;
-  color: #18151b !important;
+  background-color: #0e0b12 !important;
+  background: #0e0b12 !important;
+  color: #f5edf4 !important;
   padding: 85px 7vw 110px !important;
 }
 
 .toko-faq-white-section .heading {
-  color: #18151b !important;
+  color: #ffffff !important;
 }
 
 .toko-faq-white-section .heading span {
@@ -889,7 +890,7 @@ body.page-toko, .page-toko {
 }
 
 .toko-faq-white-section .section-desc {
-  color: #554857 !important;
+  color: #d5ccd3 !important;
 }
 
 .toko-faq-grid {
@@ -901,30 +902,30 @@ body.page-toko, .page-toko {
 }
 
 .toko-faq-item-white {
-  background: #ffffff !important;
-  border: 1.5px solid #ffccd9 !important;
+  background: #19141f !important;
+  border: 1px solid #3d3040 !important;
   border-radius: 14px !important;
   padding: 20px 24px !important;
   position: relative !important;
   overflow: hidden !important;
   transition: border-color 0.25s ease, box-shadow 0.25s ease !important;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4) !important;
 }
 
 .toko-faq-item-white::after {
   content: "" !important;
   position: absolute !important;
   inset: 0 !important;
-  background-image: url("../../images/mirai/background/c1w.jpeg") !important;
+  background-image: url("../../images/mirai/background/c1b.jpeg") !important;
   background-size: 200px auto !important;
-  opacity: var(--opacity-c1w)!important;
-  mix-blend-mode: multiply !important;
+  opacity: var(--opacity-c1b)!important;
+  mix-blend-mode: screen !important;
   pointer-events: none !important;
 }
 
 .toko-faq-item-white:hover {
   border-color: #ff4f91 !important;
-  box-shadow: 0 8px 24px rgba(255, 79, 145, 0.12) !important;
+  box-shadow: 0 12px 28px rgba(255, 79, 145, 0.22) !important;
 }
 
 .toko-faq-item-white[open] {
@@ -935,7 +936,7 @@ body.page-toko, .page-toko {
   position: relative !important;
   z-index: 2 !important;
   font-size: 15.5px !important;
-  color: #18151b !important;
+  color: #ffffff !important;
   cursor: pointer !important;
   outline: none !important;
   user-select: none !important;
@@ -966,9 +967,9 @@ body.page-toko, .page-toko {
   z-index: 2 !important;
   font-size: 14px !important;
   line-height: 1.7 !important;
-  color: #554857 !important;
+  color: #d5ccd3 !important;
   margin: 14px 0 0 !important;
-  border-top: 1px solid #ffe1e8 !important;
+  border-top: 1px solid #2e2535 !important;
   padding-top: 14px !important;
 }
 /* 7. Tombol Keranjang Melayang */

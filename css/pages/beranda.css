@@ -9,9 +9,10 @@ HOME PAGE – KEGIATAN & ORGANISASI (2 BIG CARDS)
 .home-activities-dark-section {
   padding: 90px 6vw;
   position: relative;
-  background-color: #0c0810 !important;
-  background: #0c0810 !important;
-  z-index: 10 !important;
+  background-color: #ffffff;
+  background: #ffffff;
+  color: #18151b;
+  z-index: 10;
 }
 
 .home-activities-dark-section .kicker {
@@ -27,6 +28,7 @@ HOME PAGE – KEGIATAN & ORGANISASI (2 BIG CARDS)
   font-size: clamp(32px, 4.5vw, 54px);
   line-height: 1.1;
   margin: 0 0 32px !important;
+  color: #18151b;
 }
 
 .home-activities-dark-section .heading span {
@@ -38,11 +40,26 @@ HOME PAGE – KEGIATAN & ORGANISASI (2 BIG CARDS)
   font-size: 16px;
   line-height: 1.7;
   margin: 0 0 36px;
+  color: #554e57;
 }
 
 .home-activities-dark-section .activity-start-card {
   border: 1px solid var(--pink-border);
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+}
+
+.home-activities-dark-section[data-theme="dark"] {
+  background-color: #0c0810 !important;
+  background: #0c0810 !important;
+  color: #f5edf4 !important;
+}
+
+.home-activities-dark-section[data-theme="dark"] .heading {
+  color: #ffffff !important;
+}
+
+.home-activities-dark-section[data-theme="dark"] .copy {
+  color: #d7ccd2 !important;
 }
 
 .activities-two-grid {
@@ -1283,8 +1300,8 @@ KARTU MASUKAN & SARAN (FEEDBACK) — UNIVERSAL TEMA SELANG-SELING
 - .feedback-theme-white: Latar putih bersih, teks gelap kontras tinggi, aksen pink
 - .feedback-theme-dark: Latar obsidian gelap, teks terang kontras tinggi, aksen pink
 ========================================================================== */
-/* 1. VERSI PUTIH / CERAH (.feedback-theme-white) */
-section.feedback-preview.feedback-theme-white, body.page-beranda section.feedback-preview.feedback-theme-white, body.page-beranda .feedback-preview {
+/* 1. VERSI PUTIH / CERAH (.feedback-theme-white / [data-theme="light"]) */
+section.feedback-preview.feedback-theme-white, section.feedback-preview[data-theme="light"], body.page-beranda section.feedback-preview.feedback-theme-white {
   background-color: #ffffff !important;
   background: #ffffff !important;
   position: relative !important;
@@ -1292,22 +1309,22 @@ section.feedback-preview.feedback-theme-white, body.page-beranda section.feedbac
   color: #374151 !important;
 }
 
-.feedback-theme-white .feedback-feature-card, body.page-beranda .feedback-feature-card {
+.feedback-theme-white .feedback-feature-card, section.feedback-preview[data-theme="light"] .feedback-feature-card, body.page-beranda section.feedback-preview.feedback-theme-white .feedback-feature-card {
   background: #ffffff !important;
   border: 1.5px solid #f4bfd3 !important;
   box-shadow: 0 16px 45px rgba(233, 30, 99, 0.08), 0 4px 18px rgba(0, 0, 0, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
 }
 
-.feedback-theme-white .feedback-feature-card:hover, body.page-beranda .feedback-feature-card:hover {
+.feedback-theme-white .feedback-feature-card:hover, section.feedback-preview[data-theme="light"] .feedback-feature-card:hover, body.page-beranda section.feedback-preview.feedback-theme-white .feedback-feature-card:hover {
   border-color: var(--pink, #e91e63) !important;
   box-shadow: 0 24px 50px rgba(233, 30, 99, 0.18), 0 8px 22px rgba(0, 0, 0, 0.06) !important;
 }
 
-.feedback-theme-white .feedback-feature-card::before, body.page-beranda .feedback-feature-card::before {
+.feedback-theme-white .feedback-feature-card::before, section.feedback-preview[data-theme="light"] .feedback-feature-card::before, body.page-beranda section.feedback-preview.feedback-theme-white .feedback-feature-card::before {
   background: linear-gradient(90deg, #ff4f91, #e91e63) !important;
 }
 
-.feedback-theme-white .feedback-feature-card::after, body.page-beranda .feedback-feature-card::after {
+.feedback-theme-white .feedback-feature-card::after, section.feedback-preview[data-theme="light"] .feedback-feature-card::after, body.page-beranda section.feedback-preview.feedback-theme-white .feedback-feature-card::after {
   background-image: var(--page-pattern-white, url("../../images/mirai/background/c1w.jpeg")) !important;
   background-size: 200px auto !important;
   background-repeat: repeat !important;
@@ -1316,11 +1333,11 @@ section.feedback-preview.feedback-theme-white, body.page-beranda section.feedbac
   mix-blend-mode: multiply !important;
 }
 
-.feedback-theme-white .feedback-feature-card:hover::after, body.page-beranda .feedback-feature-card:hover::after {
+.feedback-theme-white .feedback-feature-card:hover::after, section.feedback-preview[data-theme="light"] .feedback-feature-card:hover::after, body.page-beranda section.feedback-preview.feedback-theme-white .feedback-feature-card:hover::after {
   opacity: var(--page-pattern-opacity-white-hover, var(--opacity-c1w-hover)) !important;
 }
 
-.feedback-theme-white .feedback-feature-badge, .feedback-theme-white .feedback-feature-tag, body.page-beranda .feedback-feature-badge, body.page-beranda .feedback-feature-tag {
+.feedback-theme-white .feedback-feature-badge, .feedback-theme-white .feedback-feature-tag, section.feedback-preview[data-theme="light"] .feedback-feature-badge, section.feedback-preview[data-theme="light"] .feedback-feature-tag, body.page-beranda section.feedback-preview.feedback-theme-white .feedback-feature-badge, body.page-beranda section.feedback-preview.feedback-theme-white .feedback-feature-tag {
   background: rgba(233, 30, 99, 0.08) !important;
   border: 1.5px solid rgba(233, 30, 99, 0.28) !important;
   color: #d81b60 !important;
@@ -1392,29 +1409,29 @@ section.feedback-preview.feedback-theme-white, body.page-beranda section.feedbac
 .feedback-theme-white .feedback-feature-card > .card-corner-chibi, body.page-beranda .feedback-feature-card > .card-corner-chibi {
   filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.12)) !important;
 }
-/* 2. VERSI HITAM GELAP (.feedback-theme-dark) */
-section.feedback-preview.feedback-theme-dark, body.page-tentang main > section.feedback-preview {
+/* 2. VERSI HITAM GELAP (.feedback-theme-dark / [data-theme="dark"]) */
+section.feedback-preview.feedback-theme-dark, section.feedback-preview[data-theme="dark"], body.page-tentang main > section.feedback-preview {
   background-color: #0e0b12 !important;
   background: #0e0b12 !important;
   color: #f5edf4 !important;
 }
 
-.feedback-theme-dark .feedback-feature-card, body.page-tentang .feedback-feature-card {
+.feedback-theme-dark .feedback-feature-card, section.feedback-preview[data-theme="dark"] .feedback-feature-card, body.page-tentang .feedback-feature-card {
   background: linear-gradient(165deg, #1c1523 0%, #130f18 100%) !important;
   border: 1.5px solid rgba(255, 101, 155, 0.28) !important;
   box-shadow: 0 16px 44px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
 }
 
-.feedback-theme-dark .feedback-feature-card:hover, body.page-tentang .feedback-feature-card:hover {
+.feedback-theme-dark .feedback-feature-card:hover, section.feedback-preview[data-theme="dark"] .feedback-feature-card:hover, body.page-tentang .feedback-feature-card:hover {
   border-color: var(--pink, #e91e63) !important;
   box-shadow: 0 24px 50px rgba(233, 30, 99, 0.22), 0 6px 18px rgba(0, 0, 0, 0.6) !important;
 }
 
-.feedback-theme-dark .feedback-feature-card::before, body.page-tentang .feedback-feature-card::before {
+.feedback-theme-dark .feedback-feature-card::before, section.feedback-preview[data-theme="dark"] .feedback-feature-card::before, body.page-tentang .feedback-feature-card::before {
   background: linear-gradient(90deg, #ff659b, #e91e63) !important;
 }
 
-.feedback-theme-dark .feedback-feature-card::after, body.page-tentang .feedback-feature-card::after {
+.feedback-theme-dark .feedback-feature-card::after, section.feedback-preview[data-theme="dark"] .feedback-feature-card::after, body.page-tentang .feedback-feature-card::after {
   background-image: var(--page-pattern-dark, url("../../images/mirai/background/c1b.jpeg")) !important;
   background-size: 200px auto !important;
   background-repeat: repeat !important;
@@ -1423,11 +1440,11 @@ section.feedback-preview.feedback-theme-dark, body.page-tentang main > section.f
   mix-blend-mode: screen !important;
 }
 
-.feedback-theme-dark .feedback-feature-card:hover::after, body.page-tentang .feedback-feature-card:hover::after {
+.feedback-theme-dark .feedback-feature-card:hover::after, section.feedback-preview[data-theme="dark"] .feedback-feature-card:hover::after, body.page-tentang .feedback-feature-card:hover::after {
   opacity: var(--page-pattern-opacity-dark-hover, var(--opacity-c1b-hover)) !important;
 }
 
-.feedback-theme-dark .feedback-feature-badge, .feedback-theme-dark .feedback-feature-tag, body.page-tentang .feedback-feature-badge, body.page-tentang .feedback-feature-tag {
+.feedback-theme-dark .feedback-feature-badge, .feedback-theme-dark .feedback-feature-tag, section.feedback-preview[data-theme="dark"] .feedback-feature-badge, section.feedback-preview[data-theme="dark"] .feedback-feature-tag, body.page-tentang .feedback-feature-badge, body.page-tentang .feedback-feature-tag {
   background: rgba(233, 30, 99, 0.16) !important;
   border: 1.5px solid rgba(233, 30, 99, 0.4) !important;
   color: #ff659b !important;

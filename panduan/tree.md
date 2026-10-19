@@ -8,6 +8,8 @@ Mirai-No-Webu/
 ├── index.html                      # Gerbang utama website (Beranda)
 ├── 404.html                        # Halaman penanganan tautan salah / tidak ditemukan bertema Sora
 ├── offline.html                    # Halaman fallback ramah pengunjung saat perangkat offline (PWA)
+├── favicon.ico                     # Ikon favicon tab peramban web resmi klub (Logo lingkaran NK)
+├── favicon.png                     # Favicon PNG resolusi tinggi logo lingkaran NK
 ├── manifest.webmanifest            # Konfigurasi PWA Web App Manifest (standalone, theme_color #e91e63, icons)
 ├── service-worker.js               # Service Worker PWA (precache app shell, cache-first data, stale-while-revalidate)
 ├── robots.txt                      # Konfigurasi perayapan mesin pencari (SEO)

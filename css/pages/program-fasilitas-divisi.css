@@ -1297,16 +1297,25 @@ RESPACING MINIMAL UNTUK HALAMAN KEGIATAN (.page-kegiatan)
 /* Seksi Fasilitas Mirai no Hana */
 /* ==========================================================================
 SEKSI FASILITAS MIRAI NO HANA (KEGIATAN.HTML)
-- Latar Belakang: Hitam Pekat Elegan (#111111) mengikuti ritme selang-seling
-- Pola Pattern: Ombak Wagara Gelap (w1b.jpeg) mix-blend-mode: screen
-- Desain Kartu: Formal, visual, informatif, dan minim space kosong
+/* ==========================================================================
+SEKSI FASILITAS KLUB (.facility-section) — SISTEM UNIVERSAL ZEBRA THEME
+- Versi Light: Latar Putih Bersih (#ffffff), Teks Gelap Kontras, Pola w1w.jpeg
+- Versi Dark: Latar Obsidian Gelap (#111111), Teks Terang Kontras, Pola w1b.jpeg
 ========================================================================== */
 .facility-section {
+  background-color: #ffffff !important;
+  background: #ffffff !important;
+  padding: 56px 7vw 64px !important;
+  color: #18151b !important;
+  position: relative !important;
+}
+
+.facility-section[data-theme="dark"],
+body.dark-mode .facility-section,
+body.theme-dark .facility-section {
   background-color: #111111 !important;
   background: #111111 !important;
-  padding: 56px 7vw 64px !important;
   color: #f5edf4 !important;
-  position: relative !important;
 }
 
 .facility-section .section-intro {
@@ -1329,9 +1338,15 @@ SEKSI FASILITAS MIRAI NO HANA (KEGIATAN.HTML)
   font-size: clamp(30px, 4vw, 44px) !important;
   line-height: 1.15 !important;
   margin: 0 0 12px 0 !important;
-  color: #ffffff !important;
+  color: #18151b !important;
   font-weight: 900 !important;
   letter-spacing: -0.5px !important;
+}
+
+.facility-section[data-theme="dark"] .heading,
+body.dark-mode .facility-section .heading,
+body.theme-dark .facility-section .heading {
+  color: #ffffff !important;
 }
 
 .facility-section .heading span {
@@ -1339,11 +1354,17 @@ SEKSI FASILITAS MIRAI NO HANA (KEGIATAN.HTML)
 }
 
 .facility-section-desc {
-  color: #d5ccd3 !important;
+  color: #554e57 !important;
   font-size: 14.5px !important;
   line-height: 1.7 !important;
   max-width: 820px !important;
   margin: 0 !important;
+}
+
+.facility-section[data-theme="dark"] .facility-section-desc,
+body.dark-mode .facility-section-desc,
+body.theme-dark .facility-section-desc {
+  color: #d5ccd3 !important;
 }
 
 .facility-grid {
@@ -1364,11 +1385,11 @@ SEKSI FASILITAS MIRAI NO HANA (KEGIATAN.HTML)
   box-sizing: border-box !important;
   display: flex !important;
   flex-direction: column !important;
-  background: linear-gradient(165deg, #1c1523 0%, #130f18 100%) !important;
-  border: 1.5px solid rgba(255, 101, 155, 0.22) !important;
+  background: #ffffff !important;
+  border: 1.5px solid var(--pink-border, #f4bfd3) !important;
   border-radius: 24px !important;
   padding: 34px 38px 28px !important;
-  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.45) !important;
+  box-shadow: 0 8px 24px rgba(233, 30, 99, 0.06) !important;
   transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease !important;
   width: 100% !important;
 }
@@ -1376,7 +1397,7 @@ SEKSI FASILITAS MIRAI NO HANA (KEGIATAN.HTML)
 .facility-card:hover {
   transform: translateY(-4px) !important;
   border-color: var(--pink, #e91e63) !important;
-  box-shadow: 0 20px 44px rgba(233, 30, 99, 0.22), 0 6px 16px rgba(0, 0, 0, 0.6) !important;
+  box-shadow: 0 16px 36px rgba(233, 30, 99, 0.16) !important;
 }
 /* Garis Aksen Atas Slide */
 .facility-card::before {
@@ -1396,12 +1417,57 @@ SEKSI FASILITAS MIRAI NO HANA (KEGIATAN.HTML)
 .facility-card:hover::before {
   transform: scaleX(1) !important;
 }
-/* Pattern Wagara Gelap w1b (Menu Genap 4) */
+/* Pattern Wagara Terang w1w (Default Light) */
 .facility-card::after {
   content: "" !important;
   position: absolute !important;
   inset: 0 !important;
+  background-image: url("../../images/mirai/background/w1w.jpeg") !important;
+  background-size: 200px auto !important;
+  background-repeat: repeat !important;
+  background-position: center top !important;
+  opacity: var(--opacity-w1w)!important;
+  mix-blend-mode: multiply !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+  display: block !important;
+  transition: opacity 0.3s ease, transform 0.3s ease !important;
+}
+
+.facility-card:hover::after {
+  opacity: var(--opacity-w1w-hover)!important;
+  transform: scale(1.02) !important;
+}
+
+/* Versi Dark Theme untuk Facility Card */
+.facility-section[data-theme="dark"] .facility-card,
+body.dark-mode .facility-card,
+body.theme-dark .facility-card {
+  background: linear-gradient(165deg, #1c1523 0%, #130f18 100%) !important;
+  border: 1.5px solid rgba(255, 101, 155, 0.22) !important;
+  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.45) !important;
+}
+
+.facility-section[data-theme="dark"] .facility-card:hover,
+body.dark-mode .facility-card:hover,
+body.theme-dark .facility-card:hover {
+  border-color: var(--pink, #e91e63) !important;
+  box-shadow: 0 20px 44px rgba(233, 30, 99, 0.22), 0 6px 16px rgba(0, 0, 0, 0.6) !important;
+}
+
+.facility-section[data-theme="dark"] .facility-card::after,
+body.dark-mode .facility-card::after,
+body.theme-dark .facility-card::after {
   background-image: url("../../images/mirai/background/w1b.jpeg") !important;
+  opacity: var(--opacity-w1b)!important;
+  mix-blend-mode: screen !important;
+}
+
+.facility-section[data-theme="dark"] .facility-card:hover::after,
+body.dark-mode .facility-card:hover::after,
+body.theme-dark .facility-card:hover::after {
+  opacity: var(--opacity-w1b-hover)!important;
+}
   background-size: 200px auto !important;
   background-repeat: repeat !important;
   background-position: center top !important;
@@ -1459,12 +1525,20 @@ SEKSI FASILITAS MIRAI NO HANA (KEGIATAN.HTML)
 .facility-room-tag {
   font-size: 11px !important;
   font-weight: 700 !important;
-  color: #c9bed0 !important;
-  background: rgba(255, 255, 255, 0.06) !important;
-  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  color: #d81b60 !important;
+  background: rgba(233, 30, 99, 0.08) !important;
+  border: 1px solid rgba(233, 30, 99, 0.25) !important;
   padding: 4px 12px !important;
   border-radius: 12px !important;
   white-space: nowrap !important;
+}
+
+.facility-section[data-theme="dark"] .facility-room-tag,
+body.dark-mode .facility-room-tag,
+body.theme-dark .facility-room-tag {
+  color: #c9bed0 !important;
+  background: rgba(255, 255, 255, 0.06) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
 }
 /* Judul & Deskripsi */
 .facility-card-body .card-sub-jp {
@@ -1482,10 +1556,16 @@ SEKSI FASILITAS MIRAI NO HANA (KEGIATAN.HTML)
 .facility-card-body h3 {
   margin: 0 0 10px 0 !important;
   font-size: clamp(22px, 2.4vw, 28px) !important;
-  color: #ffffff !important;
+  color: #18151b !important;
   font-weight: 900 !important;
   line-height: 1.25 !important;
   letter-spacing: -0.3px !important;
+}
+
+.facility-section[data-theme="dark"] .facility-card-body h3,
+body.dark-mode .facility-card-body h3,
+body.theme-dark .facility-card-body h3 {
+  color: #ffffff !important;
 }
 
 .facility-card-body h3 span {
@@ -1495,9 +1575,15 @@ SEKSI FASILITAS MIRAI NO HANA (KEGIATAN.HTML)
 .facility-card-desc {
   font-size: 15px !important;
   line-height: 1.75 !important;
-  color: #ece4ec !important;
+  color: #554e57 !important;
   margin: 0 0 20px 0 !important;
   max-width: 860px !important;
+}
+
+.facility-section[data-theme="dark"] .facility-card-desc,
+body.dark-mode .facility-card-desc,
+body.theme-dark .facility-card-desc {
+  color: #ece4ec !important;
 }
 /* Chips Spesifikasi Fasilitas Mini */
 .facility-feature-chips {
@@ -1514,9 +1600,9 @@ SEKSI FASILITAS MIRAI NO HANA (KEGIATAN.HTML)
   gap: 7px !important;
   padding: 7px 14px !important;
   border-radius: 12px !important;
-  background: rgba(255, 255, 255, 0.04) !important;
-  border: 1px solid rgba(255, 255, 255, 0.09) !important;
-  color: #e2e8f0 !important;
+  background: #fdf0f4 !important;
+  border: 1px solid #ffd0df !important;
+  color: #333333 !important;
   font-size: 12.5px !important;
   font-weight: 600 !important;
   transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease !important;
@@ -1526,6 +1612,20 @@ SEKSI FASILITAS MIRAI NO HANA (KEGIATAN.HTML)
   background: rgba(233, 30, 99, 0.14) !important;
   border-color: rgba(255, 101, 155, 0.35) !important;
   transform: translateY(-1px) !important;
+  color: var(--pink, #e91e63) !important;
+}
+
+.facility-section[data-theme="dark"] .facility-chip,
+body.dark-mode .facility-chip,
+body.theme-dark .facility-chip {
+  background: rgba(255, 255, 255, 0.04) !important;
+  border: 1px solid rgba(255, 255, 255, 0.09) !important;
+  color: #e2e8f0 !important;
+}
+
+.facility-section[data-theme="dark"] .facility-chip:hover,
+body.dark-mode .facility-chip:hover,
+body.theme-dark .facility-chip:hover {
   color: #ffffff !important;
 }
 

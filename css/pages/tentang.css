@@ -3629,227 +3629,415 @@ body.theme-dark .ketentuan-card:hover::after {
 }
 /* Penetapan Tema Warna Per Seksi Tentang */
 /* =====================================================
-HALAMAN TENTANG: PENETAPAN TEMA WARNA PER-SEKSI EKSPLISIT
-Memastikan Urutan Selang-Seling Hitam & Putih Sempurna
+HALAMAN TENTANG: SISTEM UNIVERSAL ZEBRA THEME
+Urutan Konten: PUTIH -> HITAM -> PUTIH -> HITAM Konsisten
+1. Intro (Putih) -> 2. Bendera (Hitam) -> 3. Filosofi (Putih)
+4. Logo (Hitam) -> 5. Slogan (Putih) -> 6. Visi-Misi (Hitam)
+7. Timeline (Putih) -> 8. Sora (Hitam) -> 9. Wall of Fame (Putih)
+10. Haori (Hitam) -> 11. Aksesoris (Putih) -> 12. Pengurus (Hitam)
+13. Masukan/Feedback (Putih)
 ===================================================== */
-body.page-tentang main > section.about-intro-section {
-  background-color: #111111 !important;
+/* 1. SEKSI 1: INTRO TENTANG KLUB (PUTIH) */
+body.page-tentang main > section.about-intro-section,
+section.about-intro-section[data-theme="light"] {
+  background-color: #ffffff !important;
+  color: #18151b !important;
+}
+
+body.page-tentang main > section.about-intro-section .heading,
+section.about-intro-section[data-theme="light"] .heading {
+  color: #18151b !important;
+}
+
+body.page-tentang main > section.about-intro-section .heading span,
+section.about-intro-section[data-theme="light"] .heading span {
+  color: var(--pink, #e91e63) !important;
+}
+
+body.page-tentang main > section.about-intro-section p,
+section.about-intro-section[data-theme="light"] p {
+  color: #554e57 !important;
+}
+
+/* 2. SEKSI 2: BENDERA & LAMBANG KLUB (HITAM) */
+body.page-tentang main > section.about-flag-section,
+section.about-flag-section[data-theme="dark"] {
+  background-color: #0e0b12 !important;
   color: #f5edf4 !important;
 }
 
-body.page-tentang main > section.about-intro-section .heading {
+body.page-tentang main > section.about-flag-section .heading,
+section.about-flag-section[data-theme="dark"] .heading {
   color: #ffffff !important;
 }
 
-body.page-tentang main > section.about-intro-section .heading span {
+body.page-tentang main > section.about-flag-section .heading span,
+section.about-flag-section[data-theme="dark"] .heading span {
   color: var(--pink, #e91e63) !important;
 }
 
-body.page-tentang main > section.about-flag-section {
+body.page-tentang main > section.about-flag-section .section-desc,
+section.about-flag-section[data-theme="dark"] .section-desc {
+  color: #d5ccd3 !important;
+}
+
+body.page-tentang main > section.about-flag-section .flag-feature-card,
+section.about-flag-section[data-theme="dark"] .flag-feature-card {
+  background: #19141f !important;
+  border-color: #3d3040 !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4) !important;
+}
+
+body.page-tentang main > section.about-flag-section .flag-feature-card h3,
+body.page-tentang main > section.about-flag-section .flag-title,
+section.about-flag-section[data-theme="dark"] .flag-title {
+  color: #ffffff !important;
+}
+
+body.page-tentang main > section.about-flag-section .flag-feature-card p,
+body.page-tentang main > section.about-flag-section .flag-desc,
+section.about-flag-section[data-theme="dark"] .flag-desc {
+  color: #d5ccd3 !important;
+}
+
+body.page-tentang main > section.about-flag-section .flag-feature-card strong,
+body.page-tentang main > section.about-flag-section .flag-badge-val,
+section.about-flag-section[data-theme="dark"] .flag-badge-val {
+  color: #ffffff !important;
+}
+
+body.page-tentang main > section.about-flag-section .flag-badge-tag,
+section.about-flag-section[data-theme="dark"] .flag-badge-tag {
+  color: #ff659b !important;
+}
+
+/* 3. SEKSI 3: FILOSOFI NAMA (PUTIH) */
+body.page-tentang main > section.about-filosofi-section,
+section.about-filosofi-section[data-theme="light"] {
   background-color: #ffffff !important;
   color: #18151b !important;
 }
 
-body.page-tentang main > section.about-flag-section .heading {
+body.page-tentang main > section.about-filosofi-section .heading,
+section.about-filosofi-section[data-theme="light"] .heading {
   color: #18151b !important;
 }
 
-body.page-tentang main > section.about-flag-section .heading span {
-  color: var(--pink, #e91e63) !important;
-}
-/* Proteksi Spesifisitas Tinggi Kartu & Teks Bendera (Bebas Tabrakan Warna) */
-body.page-tentang main > section.about-flag-section .flag-feature-card {
-  background: #ffffff !important;
-  border-color: #ffccd9 !important;
-}
-
-body.page-tentang main > section.about-flag-section .flag-feature-card h3, body.page-tentang main > section.about-flag-section .flag-title {
-  color: #18151b !important;
-}
-
-body.page-tentang main > section.about-flag-section .flag-feature-card p, body.page-tentang main > section.about-flag-section .flag-desc {
-  color: #554857 !important;
-}
-
-body.page-tentang main > section.about-flag-section .flag-feature-card strong, body.page-tentang main > section.about-flag-section .flag-badge-val {
-  color: #18151b !important;
-}
-
-body.page-tentang main > section.about-flag-section .flag-badge-tag {
+body.page-tentang main > section.about-filosofi-section .heading span,
+section.about-filosofi-section[data-theme="light"] .heading span {
   color: var(--pink, #e91e63) !important;
 }
 
-body.page-tentang main > section.about-filosofi-section {
-  background-color: #ffffff !important;
-  color: #18151b !important;
+body.page-tentang main > section.about-filosofi-section p,
+section.about-filosofi-section[data-theme="light"] p {
+  color: #554e57 !important;
 }
 
-body.page-tentang main > section.about-filosofi-section .heading {
-  color: #18151b !important;
-}
-
-body.page-tentang main > section.about-filosofi-section .heading span {
-  color: var(--pink, #e91e63) !important;
-}
-
-body.page-tentang main > section.logo-meaning-section {
-  background-color: #ffffff !important;
-  color: #18151b !important;
-}
-
-body.page-tentang main > section.logo-meaning-section .heading {
-  color: #18151b !important;
-}
-
-body.page-tentang main > section.logo-meaning-section .heading span {
-  color: var(--pink, #e91e63) !important;
-}
-
-body.page-tentang main > section.slogan-section {
-  background-color: #111111 !important;
+/* 4. SEKSI 4: MAKNA LOGO (HITAM) */
+body.page-tentang main > section.logo-meaning-section,
+section.logo-meaning-section[data-theme="dark"] {
+  background-color: #0e0b12 !important;
   color: #f5edf4 !important;
 }
 
-body.page-tentang main > section.slogan-section .heading {
+body.page-tentang main > section.logo-meaning-section .heading,
+section.logo-meaning-section[data-theme="dark"] .heading {
   color: #ffffff !important;
 }
 
-body.page-tentang main > section.slogan-section .heading span {
+body.page-tentang main > section.logo-meaning-section .heading span,
+section.logo-meaning-section[data-theme="dark"] .heading span {
   color: var(--pink, #e91e63) !important;
 }
 
-body.page-tentang main > section.vision-mission-section {
+body.page-tentang main > section.logo-meaning-section .section-desc,
+section.logo-meaning-section[data-theme="dark"] .section-desc {
+  color: #d5ccd3 !important;
+}
+
+body.page-tentang main > section.logo-meaning-section .logo-meaning-card,
+section.logo-meaning-section[data-theme="dark"] .logo-meaning-card {
+  background: #19141f !important;
+  border-color: #3d3040 !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4) !important;
+}
+
+body.page-tentang main > section.logo-meaning-section .logo-meaning-card h3,
+section.logo-meaning-section[data-theme="dark"] .logo-meaning-card h3 {
+  color: #ffffff !important;
+}
+
+body.page-tentang main > section.logo-meaning-section .logo-meaning-card p,
+section.logo-meaning-section[data-theme="dark"] .logo-meaning-card p {
+  color: #d5ccd3 !important;
+}
+
+/* 5. SEKSI 5: SLOGAN KLUB (PUTIH) */
+body.page-tentang main > section.slogan-section,
+section.slogan-section[data-theme="light"] {
   background-color: #ffffff !important;
   color: #18151b !important;
 }
 
-body.page-tentang main > section.vision-mission-section .heading {
+body.page-tentang main > section.slogan-section .heading,
+section.slogan-section[data-theme="light"] .heading {
   color: #18151b !important;
 }
 
-body.page-tentang main > section.vision-mission-section .heading span {
+body.page-tentang main > section.slogan-section .heading span,
+section.slogan-section[data-theme="light"] .heading span {
   color: var(--pink, #e91e63) !important;
 }
 
-body.page-tentang main > section.vision-mission-section .section-desc {
-  color: #475569 !important;
+body.page-tentang main > section.slogan-section p,
+body.page-tentang main > section.slogan-section .copy,
+section.slogan-section[data-theme="light"] p {
+  color: #554e57 !important;
+}
+
+/* 6. SEKSI 6: VISI & MISI (HITAM) */
+body.page-tentang main > section.vision-mission-section,
+section.vision-mission-section[data-theme="dark"] {
+  background-color: #0e0b12 !important;
+  color: #f5edf4 !important;
+}
+
+body.page-tentang main > section.vision-mission-section .heading,
+section.vision-mission-section[data-theme="dark"] .heading {
+  color: #ffffff !important;
+}
+
+body.page-tentang main > section.vision-mission-section .heading span,
+section.vision-mission-section[data-theme="dark"] .heading span {
+  color: var(--pink, #e91e63) !important;
+}
+
+body.page-tentang main > section.vision-mission-section .section-desc,
+section.vision-mission-section[data-theme="dark"] .section-desc {
+  color: #d5ccd3 !important;
   text-shadow: none !important;
 }
 
-body.page-tentang main > section.vision-mission-section .section-eyebrow {
-  color: #e91e63 !important;
+body.page-tentang main > section.vision-mission-section .section-eyebrow,
+section.vision-mission-section[data-theme="dark"] .section-eyebrow {
+  color: #ff659b !important;
 }
 
-body.page-tentang main > section.vision-mission-section .section-eyebrow .jp-kanji {
-  color: #e91e63 !important;
-  background: rgba(233, 30, 99, 0.08) !important;
-  border: 1.5px solid rgba(233, 30, 99, 0.28) !important;
+body.page-tentang main > section.vision-mission-section .section-eyebrow .jp-kanji,
+section.vision-mission-section[data-theme="dark"] .section-eyebrow .jp-kanji {
+  color: #ff659b !important;
+  background: rgba(233, 30, 99, 0.16) !important;
+  border: 1.5px solid rgba(233, 30, 99, 0.4) !important;
   box-shadow: none !important;
   text-shadow: none !important;
 }
 
-body.page-tentang main > section.timeline-section {
-  background-color: #111111 !important;
+/* 7. SEKSI 7: ASAL USUL & TIMELINE SEJARAH (PUTIH) */
+body.page-tentang main > section.timeline-section,
+section.timeline-section[data-theme="light"] {
+  background-color: #ffffff !important;
+  color: #18151b !important;
+}
+
+body.page-tentang main > section.timeline-section .heading,
+section.timeline-section[data-theme="light"] .heading {
+  color: #18151b !important;
+}
+
+body.page-tentang main > section.timeline-section .heading span,
+section.timeline-section[data-theme="light"] .heading span {
+  color: var(--pink, #e91e63) !important;
+}
+
+body.page-tentang main > section.timeline-section .history-origin-card,
+section.timeline-section[data-theme="light"] .history-origin-card {
+  background: #ffffff !important;
+  border-color: var(--pink-border, #f4bfd3) !important;
+  box-shadow: 0 8px 24px rgba(233, 30, 99, 0.06) !important;
+}
+
+body.page-tentang main > section.timeline-section .history-origin-card h3,
+body.page-tentang main > section.timeline-section .history-origin-card .origin-title,
+body.page-tentang main > section.timeline-section .history-origin-card .origin-phase-title,
+section.timeline-section[data-theme="light"] .history-origin-card h3 {
+  color: #18151b !important;
+}
+
+body.page-tentang main > section.timeline-section .history-origin-card p,
+body.page-tentang main > section.timeline-section .history-origin-card .origin-desc,
+section.timeline-section[data-theme="light"] .history-origin-card p {
+  color: #554e57 !important;
+}
+
+body.page-tentang main > section.timeline-section .history-origin-card .origin-highlight-text,
+section.timeline-section[data-theme="light"] .history-origin-card .origin-highlight-text {
+  color: #18151b !important;
+}
+
+body.page-tentang main > section.timeline-section .history-origin-card .origin-phase-desc,
+section.timeline-section[data-theme="light"] .history-origin-card .origin-phase-desc {
+  color: #6b626e !important;
+}
+
+/* 8. SEKSI 8: PROFIL MASKOT SORA (HITAM) */
+body.page-tentang main > section.sora-profile-section,
+section.sora-profile-section[data-theme="dark"] {
+  background-color: #0e0b12 !important;
   color: #f5edf4 !important;
 }
 
-body.page-tentang main > section.timeline-section .heading {
+body.page-tentang main > section.sora-profile-section .heading,
+section.sora-profile-section[data-theme="dark"] .heading {
   color: #ffffff !important;
 }
 
-body.page-tentang main > section.timeline-section .heading span {
+body.page-tentang main > section.sora-profile-section .heading span,
+section.sora-profile-section[data-theme="dark"] .heading span {
   color: var(--pink, #e91e63) !important;
 }
-/* Proteksi Spesifisitas Tinggi Kartu Asal Usul Sejarah */
-body.page-tentang main > section.timeline-section .history-origin-card {
-  background: linear-gradient(165deg, #1c1523 0%, #130f18 100%) !important;
-  border-color: rgba(255, 101, 155, 0.25) !important;
-}
 
-body.page-tentang main > section.timeline-section .history-origin-card h3, body.page-tentang main > section.timeline-section .history-origin-card .origin-title, body.page-tentang main > section.timeline-section .history-origin-card .origin-phase-title {
-  color: #ffffff !important;
-}
-
-body.page-tentang main > section.timeline-section .history-origin-card p, body.page-tentang main > section.timeline-section .history-origin-card .origin-desc {
+body.page-tentang main > section.sora-profile-section p,
+section.sora-profile-section[data-theme="dark"] p {
   color: #d5ccd3 !important;
 }
 
-body.page-tentang main > section.timeline-section .history-origin-card .origin-highlight-text {
-  color: #f3e9f2 !important;
-}
-
-body.page-tentang main > section.timeline-section .history-origin-card .origin-phase-desc {
-  color: #baaebb !important;
-}
-
-body.page-tentang main > section.sora-profile-section {
+/* 9. SEKSI 9: WALL OF FAME & PRESTASI (PUTIH) */
+body.page-tentang main > section.wall-of-fame-section,
+section.wall-of-fame-section[data-theme="light"] {
   background-color: #ffffff !important;
   color: #18151b !important;
 }
 
-body.page-tentang main > section.sora-profile-section .heading {
+body.page-tentang main > section.wall-of-fame-section .heading,
+section.wall-of-fame-section[data-theme="light"] .heading {
   color: #18151b !important;
 }
 
-body.page-tentang main > section.sora-profile-section .heading span {
+body.page-tentang main > section.wall-of-fame-section .heading span,
+section.wall-of-fame-section[data-theme="light"] .heading span {
   color: var(--pink, #e91e63) !important;
 }
 
-body.page-tentang main > section.wall-of-fame-section {
-  background-color: #111111 !important;
+body.page-tentang main > section.wall-of-fame-section p,
+section.wall-of-fame-section[data-theme="light"] p {
+  color: #554e57 !important;
+}
+
+body.page-tentang main > section.wall-of-fame-section .achievement-card,
+section.wall-of-fame-section[data-theme="light"] .achievement-card {
+  background: #ffffff !important;
+  border-color: var(--pink-border, #f4bfd3) !important;
+  color: #18151b !important;
+  box-shadow: 0 8px 24px rgba(233, 30, 99, 0.06) !important;
+}
+
+/* 10. SEKSI 10: HAORI & SERAGAM KLUB (HITAM) */
+body.page-tentang main > section.haori-section,
+section.haori-section[data-theme="dark"] {
+  background-color: #0e0b12 !important;
   color: #f5edf4 !important;
 }
 
-body.page-tentang main > section.wall-of-fame-section .heading {
+body.page-tentang main > section.haori-section .heading,
+section.haori-section[data-theme="dark"] .heading {
   color: #ffffff !important;
 }
 
-body.page-tentang main > section.wall-of-fame-section .heading span {
+body.page-tentang main > section.haori-section .heading span,
+section.haori-section[data-theme="dark"] .heading span {
   color: var(--pink, #e91e63) !important;
 }
 
-body.page-tentang main > section.haori-section {
-  background-color: #ffffff !important;
-  color: #18151b !important;
+body.page-tentang main > section.haori-section .haori-card,
+section.haori-section[data-theme="dark"] .haori-card {
+  background: #19141f !important;
+  border-color: #3d3040 !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4) !important;
 }
 
-body.page-tentang main > section.haori-section .heading {
-  color: #18151b !important;
-}
-
-body.page-tentang main > section.haori-section .heading span {
-  color: var(--pink, #e91e63) !important;
-}
-
-body.page-tentang main > section.accessories-section {
-  background-color: #111111 !important;
-  color: #f5edf4 !important;
-}
-
-body.page-tentang main > section.accessories-section .heading {
+body.page-tentang main > section.haori-section .haori-card h3,
+section.haori-section[data-theme="dark"] .haori-card h3 {
   color: #ffffff !important;
 }
 
-body.page-tentang main > section.accessories-section .heading span {
-  color: var(--pink, #e91e63) !important;
+body.page-tentang main > section.haori-section .haori-card p,
+section.haori-section[data-theme="dark"] .haori-card p {
+  color: #d5ccd3 !important;
 }
 
-body.page-tentang main > section.management-section {
+/* 11. SEKSI 11: AKSESORIS KLUB (PUTIH) */
+body.page-tentang main > section.accessories-section,
+section.accessories-section[data-theme="light"] {
   background-color: #ffffff !important;
   color: #18151b !important;
 }
 
-body.page-tentang main > section.management-section .heading {
+body.page-tentang main > section.accessories-section .heading,
+section.accessories-section[data-theme="light"] .heading {
   color: #18151b !important;
 }
 
-body.page-tentang main > section.management-section .heading span {
+body.page-tentang main > section.accessories-section .heading span,
+section.accessories-section[data-theme="light"] .heading span {
   color: var(--pink, #e91e63) !important;
 }
 
-body.page-tentang main > section.feedback-preview {
-  background-color: #111111 !important;
+body.page-tentang main > section.accessories-section .accessory-card,
+section.accessories-section[data-theme="light"] .accessory-card {
+  background: #ffffff !important;
+  border-color: var(--pink-border, #f4bfd3) !important;
+  box-shadow: 0 8px 24px rgba(233, 30, 99, 0.06) !important;
+}
+
+body.page-tentang main > section.accessories-section .accessory-card h3,
+section.accessories-section[data-theme="light"] .accessory-card h3 {
+  color: #18151b !important;
+}
+
+body.page-tentang main > section.accessories-section .accessory-card p,
+section.accessories-section[data-theme="light"] .accessory-card p {
+  color: #554e57 !important;
+}
+
+/* 12. SEKSI 12: STRUKTUR PENGURUS KLUB (HITAM) */
+body.page-tentang main > section.management-section,
+section.management-section[data-theme="dark"] {
+  background-color: #0e0b12 !important;
   color: #f5edf4 !important;
+}
+
+body.page-tentang main > section.management-section .heading,
+section.management-section[data-theme="dark"] .heading {
+  color: #ffffff !important;
+}
+
+body.page-tentang main > section.management-section .heading span,
+section.management-section[data-theme="dark"] .heading span {
+  color: var(--pink, #e91e63) !important;
+}
+
+body.page-tentang main > section.management-section .management-card,
+section.management-section[data-theme="dark"] .management-card {
+  background: #19141f !important;
+  border-color: #3d3040 !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4) !important;
+}
+
+body.page-tentang main > section.management-section .management-card h3,
+section.management-section[data-theme="dark"] .management-card h3 {
+  color: #ffffff !important;
+}
+
+body.page-tentang main > section.management-section .management-card p,
+section.management-section[data-theme="dark"] .management-card p {
+  color: #d5ccd3 !important;
+}
+
+/* 13. SEKSI 13: SUARA & MASUKAN ANGGOTA (PUTIH) */
+body.page-tentang main > section.feedback-preview,
+section.feedback-preview[data-theme="light"] {
+  background-color: #ffffff !important;
+  color: #18151b !important;
 }
 
 body.page-tentang .feedback-theme-dark .feedback-feature-card::after {
