@@ -443,7 +443,6 @@ Fullscreen Hero Section (Tengoku Style)
 body.page-beranda main > section:not(.hero) {
   position: relative;
   z-index: 10;
-  background: #0c0810;
 }
 
 main > section:not(.hero):not(.page-hero):not(.proker-hero):not(.quest-hero) {
@@ -463,16 +462,21 @@ body.page-beranda .about-preview, .hero + section, .page-hero + section, .proker
   visibility: visible !important;
 }
 
-body.page-beranda .about-preview, body.page-beranda .home-activities-dark-section {
-  background-color: #0c0810 !important;
-  background: #0c0810 !important;
+/* Universal Zebra Theme Beranda: Putih (Seksi 1 & 3) -> Hitam (Seksi 2 & 4) */
+body.page-beranda .about-preview,
+body.page-beranda .home-activities-dark-section {
+  background-color: #ffffff !important;
+  background: #ffffff !important;
+  color: #18151b !important;
   position: relative !important;
   z-index: 10 !important;
 }
 
+body.page-beranda .journey-section,
 body.page-beranda .feedback-preview {
-  background-color: #ffffff !important;
-  background: #ffffff !important;
+  background-color: #0c0810 !important;
+  background: #0c0810 !important;
+  color: #f5edf4 !important;
   position: relative !important;
   z-index: 10 !important;
 }

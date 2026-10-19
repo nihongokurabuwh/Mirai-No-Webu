@@ -2571,10 +2571,39 @@ dan target sentuh minimal 44x44px.
   }
 }
 
-.card-corner-chibi, .page-hero-chibi {
+.card-corner-chibi {
+  position: absolute !important;
+  right: 14px !important;
+  bottom: 12px !important;
+  width: 84px !important;
+  height: 84px !important;
+  max-width: 84px !important;
+  max-height: 84px !important;
+  object-fit: contain !important;
+  pointer-events: none !important;
+  z-index: 2 !important;
+  display: block !important;
   animation: chibiIdleFloat 3.6s ease-in-out infinite;
   will-change: transform;
   transform-origin: center bottom;
+  transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+
+.page-hero-chibi {
+  animation: chibiIdleFloat 3.6s ease-in-out infinite;
+  will-change: transform;
+  transform-origin: center bottom;
+}
+
+@media (max-width: 600px) {
+  .card-corner-chibi {
+    width: 62px !important;
+    height: 62px !important;
+    max-width: 62px !important;
+    max-height: 62px !important;
+    right: 10px !important;
+    bottom: 8px !important;
+  }
 }
 
 :hover > .card-corner-chibi, :hover > .page-hero-chibi, .course-card:hover .card-corner-chibi, .start-card:hover .card-corner-chibi, .activity-start-card:hover .card-corner-chibi, .page-hero:hover .page-hero-chibi, .hero:hover .page-hero-chibi {
