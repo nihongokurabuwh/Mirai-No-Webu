@@ -1632,113 +1632,90 @@ UNIVERSAL SECTIONS: KRITIK & SARAN & FOOTER QUOTE SLIDER
 ========================================================================== */
 
 function detectIfPrecedingSectionIsDark(masukanEl) {
-const path = (window.location.pathname || "").toLowerCase();
+  // 1. Temukan elemen seksi tepat sebelum #masukan di dalam DOM
+  let prev = masukanEl ? masukanEl.previousElementSibling : null;
+  while (prev && (prev.tagName === "SCRIPT" || prev.tagName === "STYLE" || prev.getAttribute?.("aria-hidden") === "true")) {
+    prev = prev.previousElementSibling;
+  }
 
-// 1. Halaman yang seksi konten terakhirnya sudah pasti berlatar HITAM
-if (document.body.classList.contains("page-peringkat") ||
-  document.body.classList.contains("page-motivasi") ||
-  document.body.classList.contains("page-404") ||
-  path.includes("/peringkat/") ||
-  path.includes("404")) {
-  return true;
-}
-
-// 2. Halaman yang seksi konten terakhirnya sudah pasti berlatar PUTIH
-if (document.body.classList.contains("page-tentang") ||
-  document.body.classList.contains("page-toko") ||
-  document.body.classList.contains("page-kamus") ||
-  document.body.classList.contains("page-lomba") ||
-  document.body.classList.contains("page-latihan") ||
-  document.body.classList.contains("page-kelas") ||
-  document.body.classList.contains("page-kegiatan") ||
-  path.includes("/tentang/") ||
-  path.includes("/toko/") ||
-  path.includes("/kamus/") ||
-  path.includes("/lomba/") ||
-  path.includes("/kegiatan/") ||
-  path.includes("/divisi/")) {
-  return false;
-}
-
-// 3. Inspeksi elemen sebelum #masukan di dalam DOM
-let prev = masukanEl ? masukanEl.previousElementSibling : null;
-while (prev && (prev.tagName === "SCRIPT" || prev.tagName === "STYLE" || prev.getAttribute?.("aria-hidden") === "true")) {
-  prev = prev.previousElementSibling;
-}
-
-// Jika elemen sebelumnya adalah <main> atau tidak ada (misal #masukan disisipkan langsung di <body>)
-if (!prev || prev.tagName === "MAIN") {
-  const main = (prev && prev.tagName === "MAIN") ? prev : document.querySelector("main");
-  if (main && main.lastElementChild && main.lastElementChild !== masukanEl) {
-    let innerPrev = main.lastElementChild;
-    while (innerPrev && (innerPrev.tagName === "SCRIPT" || innerPrev.tagName === "STYLE" || innerPrev.getAttribute?.("aria-hidden") === "true" || innerPrev === masukanEl)) {
-    innerPrev = innerPrev.previousElementSibling;
-    }
-    if (innerPrev) {
-    prev = innerPrev;
+  // Jika elemen sebelumnya adalah <main> atau tidak ada (misal #masukan disisipkan langsung sebelum <footer>)
+  if (!prev || prev.tagName === "MAIN") {
+    const main = (prev && prev.tagName === "MAIN") ? prev : document.querySelector("main");
+    if (main && main.lastElementChild && main.lastElementChild !== masukanEl) {
+      let innerPrev = main.lastElementChild;
+      while (innerPrev && (innerPrev.tagName === "SCRIPT" || innerPrev.tagName === "STYLE" || innerPrev.getAttribute?.("aria-hidden") === "true" || innerPrev === masukanEl)) {
+        innerPrev = innerPrev.previousElementSibling;
+      }
+      if (innerPrev) {
+        prev = innerPrev;
+      }
     }
   }
-}
 
-if (prev) {
-  // Selektor seksi Gelap (Hitam / Obsidian)
-  if (prev.matches(".home-activities-dark-section, .material-library, .media-rekomendasi-page, .peringkat-section, .motivasi-section, .error-404-container, .error-404-card")) {
+  // 2. Evaluasi atribut data-theme seksi sebelumnya secara langsung (Universal Zebra: Data-Theme First)
+  if (prev) {
+    const dt = prev.getAttribute("data-theme") || (prev.dataset ? prev.dataset.theme : null);
+    if (dt === "dark") return true;
+    if (dt === "light") return false;
+
+    // Selektor seksi Gelap (Hitam / Obsidian)
+    if (prev.matches(".material-library, .media-rekomendasi-page, .peringkat-section, .motivasi-section, .error-404-container, .error-404-card")) {
+      return true;
+    }
+    // Selektor seksi Terang (Putih Bersih)
+    if (prev.matches(".home-activities-dark-section, .management-section, .toko-faq-white-section, .translator-studio-section, .dictionary-section, .lomba-catalog-section, .buuku-lesson, .lesson-article, .documentation-section, #minigames, .quest-section, #kurikulum, .division-section, .proker-section")) {
+      return false;
+    }
+  }
+
+  // 3. Halaman khusus yang seksi konten terakhirnya sudah pasti berlatar HITAM
+  const path = (window.location.pathname || "").toLowerCase();
+  if (document.body.classList.contains("page-peringkat") ||
+    document.body.classList.contains("page-motivasi") ||
+    document.body.classList.contains("page-404") ||
+    path.includes("/peringkat/") ||
+    path.includes("404")) {
     return true;
   }
-  // Selektor seksi Terang (Putih Bersih)
-  if (prev.matches(".management-section, .toko-faq-white-section, .translator-studio-section, .dictionary-section, .lomba-catalog-section, .buuku-lesson, .lesson-article, .documentation-section, #minigames, .quest-section, #kurikulum, .division-section, .proker-section")) {
-    return false;
+
+  // 4. Deteksi dinamis fallback via getComputedStyle & luminansi
+  if (prev) {
+    let el = prev;
+    while (el && el !== document.body && el !== document.documentElement) {
+      const style = window.getComputedStyle(el);
+      const bg = style.backgroundColor;
+      if (bg && bg !== "transparent" && !bg.startsWith("rgba(0, 0, 0, 0)")) {
+        const rgb = bg.match(/\d+/g);
+        if (rgb && rgb.length >= 3) {
+          const r = parseInt(rgb[0], 10);
+          const g = parseInt(rgb[1], 10);
+          const b = parseInt(rgb[2], 10);
+          const luminance = 0.299 * r + 0.587 * g + 0.114 * b;
+          return luminance < 128;
+        }
+      }
+      el = el.parentElement;
+    }
   }
-}
 
-// Beranda memiliki aktivitas gelap tepat di atas masukan
-if (document.querySelector(".home-activities-dark-section")) {
-  return true;
-}
-
-// Seksi dokumentasi proker & buuku lesson selalu putih bersih
-if (document.querySelector(".documentation-section, .buuku-lesson, .lesson-article, #minigames")) {
   return false;
-}
-
-// 4. Deteksi dinamis fallback via getComputedStyle & luminansi
-if (prev) {
-  let el = prev;
-  while (el && el !== document.body && el !== document.documentElement) {
-    const style = window.getComputedStyle(el);
-    const bg = style.backgroundColor;
-    if (bg && bg !== "transparent" && !bg.startsWith("rgba(0, 0, 0, 0)")) {
-    const rgb = bg.match(/\d+/g);
-    if (rgb && rgb.length >= 3) {
-    const r = parseInt(rgb[0], 10);
-    const g = parseInt(rgb[1], 10);
-    const b = parseInt(rgb[2], 10);
-    const luminance = 0.299 * r + 0.587 * g + 0.114 * b;
-    return luminance < 128;
-    }
-    }
-    el = el.parentElement;
-  }
-}
-
-return false;
 }
 
 function setupUniversalFeedbackAndQuote() {
-const footer = document.querySelector(".global-footer");
-if (!footer) return;
+  const footer = document.querySelector(".global-footer");
+  if (!footer) return;
 
-const basePath = getAppBasePath();
+  const basePath = getAppBasePath();
 
-// 1. Dapatkan atau buat elemen #masukan (Kritik & Saran)
-let masukanEl = document.getElementById("masukan");
+  // 1. Dapatkan atau buat elemen #masukan (Kritik & Saran)
+  let masukanEl = document.getElementById("masukan");
 
-if (!masukanEl) {
-  masukanEl = document.createElement("section");
-  masukanEl.className = "section feedback-preview";
-  masukanEl.id = "masukan";
-  masukanEl.setAttribute("aria-label", "Kritik dan Saran Klub Mirai no Hana");
-  masukanEl.innerHTML = `
+  if (!masukanEl) {
+    masukanEl = document.createElement("section");
+    masukanEl.className = "section feedback-preview";
+    masukanEl.id = "masukan";
+    masukanEl.setAttribute("aria-label", "Kritik dan Saran Klub Mirai no Hana");
+    masukanEl.innerHTML = `
             <div class="feedback-feature-card" data-expand-card>
                 <div class="feedback-feature-header">
                     <span class="feedback-feature-tag">
@@ -1765,72 +1742,76 @@ if (!masukanEl) {
                 <img class="card-corner-chibi" src="${basePath}images/mirai/icon/Fa.png" alt="Mascot Feedback Mirai No Hana" aria-hidden="true">
             </div>
         `;
-  footer.parentNode.insertBefore(masukanEl, footer);
-}
-
-masukanEl.classList.add("is-visible");
-
-// 1.5. Deteksi dan sinkronisasi keluarga pattern halaman (w1 vs c1)
-const isW1Page = document.body.classList.contains("page-kelas") ||
-  document.body.classList.contains("page-latihan") ||
-  document.body.classList.contains("page-materi") ||
-  document.body.classList.contains("page-kegiatan") ||
-  document.body.classList.contains("page-divisi") ||
-  document.body.classList.contains("page-divisi-hub") ||
-  document.body.classList.contains("page-ktn") ||
-  document.body.classList.contains("page-konbini") ||
-  document.body.classList.contains("page-njr") ||
-  document.body.classList.contains("page-ramadhan") ||
-  document.body.classList.contains("page-tomodachi") ||
-  document.body.classList.contains("page-peringkat") ||
-  document.body.classList.contains("page-tentang");
-
-const patternFamily = isW1Page ? "w1" : "c1";
-if (!document.body.dataset.patternFamily) {
-  document.body.dataset.patternFamily = patternFamily;
-}
-masukanEl.dataset.patternFamily = patternFamily;
-if (footer) {
-  footer.dataset.patternFamily = patternFamily;
-}
-
-// 2. Deteksi warna seksi sebelumnya (Preceding Section)
-const isPrecedingDark = detectIfPrecedingSectionIsDark(masukanEl);
-
-// 3. Terapkan kelas tema selang-seling pada #masukan:
-// Jika preceding gelap -> masukan PUTIH
-// Jika preceding terang -> masukan HITAM
-if (isPrecedingDark) {
-  masukanEl.classList.remove("feedback-theme-dark");
-  masukanEl.classList.add("feedback-theme-white");
-  masukanEl.dataset.patternColor = "white";
-} else {
-  masukanEl.classList.remove("feedback-theme-white");
-  masukanEl.classList.add("feedback-theme-dark");
-  masukanEl.dataset.patternColor = "dark";
-}
-
-// 4. Setup Kutipan Motivasi Slider (Kecuali halaman arsip motivasi itu sendiri)
-if (!document.body.classList.contains("page-motivasi")) {
-  let quoteSection = document.getElementById("footerQuoteSliderSection");
-  if (!quoteSection) {
-    quoteSection = initFooterQuoteSlider(footer, basePath);
+    footer.parentNode.insertBefore(masukanEl, footer);
   }
-  quoteSection.dataset.patternFamily = patternFamily;
 
-  // Terapkan tema selang-seling pada slider kutipan:
-  // Jika preceding gelap -> masukan putih -> quote slider HITAM
-  // Jika preceding terang -> masukan hitam -> quote slider PUTIH
+  masukanEl.classList.add("is-visible");
+
+  // 1.5. Deteksi dan sinkronisasi keluarga pattern halaman (w1 vs c1)
+  const isW1Page = document.body.classList.contains("page-kelas") ||
+    document.body.classList.contains("page-latihan") ||
+    document.body.classList.contains("page-materi") ||
+    document.body.classList.contains("page-kegiatan") ||
+    document.body.classList.contains("page-divisi") ||
+    document.body.classList.contains("page-divisi-hub") ||
+    document.body.classList.contains("page-ktn") ||
+    document.body.classList.contains("page-konbini") ||
+    document.body.classList.contains("page-njr") ||
+    document.body.classList.contains("page-ramadhan") ||
+    document.body.classList.contains("page-tomodachi") ||
+    document.body.classList.contains("page-peringkat") ||
+    document.body.classList.contains("page-tentang");
+
+  const patternFamily = isW1Page ? "w1" : "c1";
+  if (!document.body.dataset.patternFamily) {
+    document.body.dataset.patternFamily = patternFamily;
+  }
+  masukanEl.dataset.patternFamily = patternFamily;
+  if (footer) {
+    footer.dataset.patternFamily = patternFamily;
+  }
+
+  // 2. Deteksi warna seksi sebelumnya (Preceding Section)
+  const isPrecedingDark = detectIfPrecedingSectionIsDark(masukanEl);
+
+  // 3. Terapkan kelas tema selang-seling pada #masukan:
+  // Jika preceding gelap -> masukan PUTIH
+  // Jika preceding terang -> masukan HITAM
   if (isPrecedingDark) {
-    quoteSection.classList.remove("quote-theme-white");
-    quoteSection.classList.add("quote-theme-dark");
-    quoteSection.dataset.patternColor = "dark";
+    masukanEl.classList.remove("feedback-theme-dark");
+    masukanEl.classList.add("feedback-theme-white");
+    masukanEl.dataset.patternColor = "white";
+    masukanEl.setAttribute("data-theme", "light");
   } else {
-    quoteSection.classList.remove("quote-theme-dark");
-    quoteSection.classList.add("quote-theme-white");
-    quoteSection.dataset.patternColor = "white";
+    masukanEl.classList.remove("feedback-theme-white");
+    masukanEl.classList.add("feedback-theme-dark");
+    masukanEl.dataset.patternColor = "dark";
+    masukanEl.setAttribute("data-theme", "dark");
   }
-}
+
+  // 4. Setup Kutipan Motivasi Slider (Kecuali halaman arsip motivasi itu sendiri)
+  if (!document.body.classList.contains("page-motivasi")) {
+    let quoteSection = document.getElementById("footerQuoteSliderSection");
+    if (!quoteSection) {
+      quoteSection = initFooterQuoteSlider(footer, basePath);
+    }
+    quoteSection.dataset.patternFamily = patternFamily;
+
+    // Terapkan tema selang-seling pada slider kutipan:
+    // Jika preceding gelap -> masukan putih -> quote slider HITAM
+    // Jika preceding terang -> masukan hitam -> quote slider PUTIH
+    if (isPrecedingDark) {
+      quoteSection.classList.remove("quote-theme-white");
+      quoteSection.classList.add("quote-theme-dark");
+      quoteSection.dataset.patternColor = "dark";
+      quoteSection.setAttribute("data-theme", "dark");
+    } else {
+      quoteSection.classList.remove("quote-theme-dark");
+      quoteSection.classList.add("quote-theme-white");
+      quoteSection.dataset.patternColor = "white";
+      quoteSection.setAttribute("data-theme", "light");
+    }
+  }
 
 // 5. Inisialisasi kartu expandable jika belum terpasang
 setupExpandableCards();

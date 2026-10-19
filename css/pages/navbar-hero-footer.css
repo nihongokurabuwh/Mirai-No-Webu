@@ -674,21 +674,30 @@ body[data-pattern-family="c1"] .global-footer::before,
 
 .global-footer-disclaimer {
   position: relative;
-  margin: 10px 0 0 0;
-  padding: 0;
-  max-width: 600px;
-  background: transparent !important;
-  border: none !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-  color: #ffffff !important;
+  margin: 16px 0 0 0;
+  padding: 14px 18px !important;
+  max-width: 620px;
+  background: rgba(255, 255, 255, 0.035) !important;
+  border: 1px solid rgba(255, 101, 155, 0.22) !important;
+  border-left: 4px solid var(--pink, #ff659b) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  color: #d5ccd3 !important;
   font-size: 0.86rem;
   line-height: 1.7;
   letter-spacing: 0.2px;
   box-sizing: border-box;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.95);
+  text-shadow: none !important;
+  transition: border-color 0.3s ease, background 0.3s ease, transform 0.3s ease;
+}
+
+.global-footer-disclaimer:hover {
+  background: rgba(255, 255, 255, 0.055) !important;
+  border-color: rgba(255, 101, 155, 0.4) !important;
+  border-left-color: var(--pink, #ff659b) !important;
+  transform: translateY(-2px);
 }
 
 .global-footer-disclaimer strong {
@@ -705,7 +714,7 @@ body[data-pattern-family="c1"] .global-footer::before,
   border-radius: 0 !important;
   background: transparent !important;
   box-shadow: none !important;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.95);
+  text-shadow: none !important;
   vertical-align: baseline;
 }
 
@@ -785,23 +794,29 @@ body[data-pattern-family="c1"] .global-footer::before,
   }
 
   .global-footer-disclaimer {
-    padding: 0 !important;
-    font-size: 0.78rem;
+    padding: 12px 14px !important;
+    font-size: 0.8rem;
     line-height: 1.6;
-    margin-top: 8px;
+    margin-top: 12px;
     max-width: 100%;
-    background: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
+    background: rgba(255, 255, 255, 0.035) !important;
+    border: 1px solid rgba(255, 101, 155, 0.22) !important;
+    border-left: 3.5px solid var(--pink, #ff659b) !important;
+    border-radius: 10px !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3) !important;
+    color: #d5ccd3 !important;
+    text-shadow: none !important;
   }
 
   .global-footer-disclaimer strong {
-    font-size: 0.76rem;
+    font-size: 0.78rem;
     padding: 0 !important;
     margin-right: 4px;
     background: transparent !important;
     border: none !important;
     box-shadow: none !important;
+    color: var(--pink, #ff659b) !important;
+    text-shadow: none !important;
   }
 
   .global-footer-col.right {
