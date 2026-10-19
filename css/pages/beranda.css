@@ -1672,7 +1672,7 @@ ABOUT PREVIEW — BERTUMPUK ATAS-BAWAH & DRAWER LOGO NK
 .about-drawer-card:hover {
   transform: translateY(-5px) !important;
   border-color: var(--pink, #e91e63) !important;
-  box-shadow: 0 24px 50px rgba(233, 30, 99, 0.26), 0 6px 18px rgba(0, 0, 0, 0.6) !important;
+  box-shadow: 0 18px 40px rgba(233, 30, 99, 0.16) !important;
 }
 /* Tombol Tentang Mirai no Hana Berbentuk Agak Lingkaran / Rounded Pill */
 .about-drawer-action {
@@ -1694,15 +1694,15 @@ ABOUT PREVIEW — BERTUMPUK ATAS-BAWAH & DRAWER LOGO NK
   box-shadow: 0 12px 30px rgba(233, 30, 99, 0.55) !important;
 }
 /* Kompartemen Laci Geser Logo NK (Melahap Sisi Kanan Tanpa Menggeser Teks) */
-.drawer-tray {
+.drawer-tray, .about-feature-card > .drawer-tray, .about-drawer-card > .drawer-tray {
   position: absolute !important;
   top: 0 !important;
   right: 0 !important;
   bottom: 0 !important;
   width: clamp(220px, 30vw, 340px) !important;
-  background: linear-gradient(135deg, rgba(32, 22, 42, 0.98), rgba(15, 11, 20, 0.99)) !important;
-  border-left: 2px solid rgba(255, 79, 145, 0.6) !important;
-  box-shadow: -20px 0 50px rgba(0, 0, 0, 0.85), inset 1px 0 0 rgba(255, 255, 255, 0.1) !important;
+  background: linear-gradient(135deg, #ffffff 0%, #fff7fb 100%) !important;
+  border-left: 2px solid rgba(233, 30, 99, 0.25) !important;
+  box-shadow: -15px 0 35px rgba(233, 30, 99, 0.08), inset 1px 0 0 rgba(255, 255, 255, 0.9) !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
@@ -1712,17 +1712,35 @@ ABOUT PREVIEW — BERTUMPUK ATAS-BAWAH & DRAWER LOGO NK
   transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
   z-index: 10 !important;
   pointer-events: none !important;
+  overflow: hidden !important;
+}
+
+.drawer-tray::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  background-image: url("../../images/mirai/background/c1w.jpeg") !important;
+  background-size: 200px auto !important;
+  background-repeat: repeat !important;
+  background-position: center top !important;
+  opacity: var(--opacity-c1w, 0.14) !important;
+  mix-blend-mode: multiply !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
 }
 
 .about-drawer-card.is-pulled .drawer-tray {
   transform: translateX(0) !important;
 }
-/* Logo NK Besar dengan Efek Animasi Rotasi */
+
+/* Logo NK Besar dengan Efek Animasi Rotasi Halus Spring/Elastic */
 .drawer-nk-logo {
+  position: relative !important;
+  z-index: 2 !important;
   width: clamp(120px, 16vw, 165px) !important;
   height: auto !important;
   object-fit: contain !important;
-  filter: drop-shadow(0 10px 28px rgba(233, 30, 99, 0.65)) !important;
+  filter: drop-shadow(0 10px 24px rgba(233, 30, 99, 0.35)) !important;
   transform: rotate(-180deg) scale(0.4) !important;
   opacity: 0 !important;
   transition: transform 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) 0.08s, opacity 0.35s ease 0.05s !important;
@@ -1963,8 +1981,8 @@ section[data-theme="dark"] .start-card .card-collapsible-content > .card-collaps
   width: 36px !important;
   height: 36px !important;
   border-radius: 50% !important;
-  background: rgba(255, 79, 145, 0.12) !important;
-  border: 1px solid rgba(255, 101, 155, 0.28) !important;
+  background: rgba(233, 30, 99, 0.08) !important;
+  border: 1.5px solid rgba(233, 30, 99, 0.28) !important;
   cursor: pointer !important;
   display: flex !important;
   align-items: center !important;
@@ -1972,7 +1990,7 @@ section[data-theme="dark"] .start-card .card-collapsible-content > .card-collaps
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease !important;
   z-index: 15 !important;
   padding: 0 !important;
-  color: var(--pink, #ff659b) !important;
+  color: #e91e63 !important;
 }
 
 .card-toggle::after {
@@ -2011,9 +2029,9 @@ section[data-theme="dark"] .start-card .card-collapsible-content > .card-collaps
   right: 0 !important;
   bottom: 0 !important;
   width: clamp(220px, 30vw, 340px) !important;
-  background: linear-gradient(135deg, rgba(32, 22, 42, 0.98), rgba(15, 11, 20, 0.99)) !important;
-  border-left: 2px solid rgba(255, 79, 145, 0.6) !important;
-  box-shadow: -20px 0 50px rgba(0, 0, 0, 0.85), inset 1px 0 0 rgba(255, 255, 255, 0.1) !important;
+  background: linear-gradient(135deg, #ffffff 0%, #fff7fb 100%) !important;
+  border-left: 2px solid rgba(233, 30, 99, 0.25) !important;
+  box-shadow: -15px 0 35px rgba(233, 30, 99, 0.08), inset 1px 0 0 rgba(255, 255, 255, 0.9) !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
@@ -2023,6 +2041,7 @@ section[data-theme="dark"] .start-card .card-collapsible-content > .card-collaps
   transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
   z-index: 10 !important;
   pointer-events: none !important;
+  overflow: hidden !important;
 }
 
 .about-drawer-card.is-pulled .drawer-tray {
@@ -2030,10 +2049,12 @@ section[data-theme="dark"] .start-card .card-collapsible-content > .card-collaps
 }
 /* Logo NK Besar dengan Efek Animasi Rotasi Halus Spring/Elastic */
 .drawer-nk-logo {
+  position: relative !important;
+  z-index: 2 !important;
   width: clamp(120px, 16vw, 165px) !important;
   height: auto !important;
   object-fit: contain !important;
-  filter: drop-shadow(0 10px 28px rgba(233, 30, 99, 0.65)) !important;
+  filter: drop-shadow(0 10px 24px rgba(233, 30, 99, 0.35)) !important;
   transform: rotate(-180deg) scale(0.4) !important;
   opacity: 0 !important;
   transition: transform 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) 0.08s, opacity 0.35s ease 0.05s !important;
@@ -2055,9 +2076,10 @@ section[data-theme="dark"] .start-card .card-collapsible-content > .card-collaps
 }
 
 .about-drawer-card.is-expanded .card-toggle {
-  background: rgba(30, 20, 40, 0.75) !important;
-  border-color: rgba(255, 101, 155, 0.5) !important;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5) !important;
+  background: rgba(233, 30, 99, 0.08) !important;
+  border-color: rgba(233, 30, 99, 0.35) !important;
+  box-shadow: 0 2px 8px rgba(233, 30, 99, 0.12) !important;
+  color: var(--pink, #e91e63) !important;
 }
 /* Responsif Layar Tablet (769px - 991px) untuk Laci Logo NK */
 @media (min-width: 769px) and (max-width: 991px) {
