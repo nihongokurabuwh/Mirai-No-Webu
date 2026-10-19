@@ -134,24 +134,30 @@ body.page-toko, .page-toko {
   transform: translateY(-50%) !important;
   font-size: 16px !important;
   pointer-events: none !important;
-  opacity: 0.7 !important;
+  color: #d81b60 !important;
+  opacity: 0.85 !important;
 }
 
 .toko-search-box input {
   width: 100% !important;
   padding: 12px 42px 12px 44px !important;
   border-radius: 10px !important;
-  background: #191322 !important;
-  border: 1px solid rgba(255, 79, 145, 0.22) !important;
-  color: #ffffff !important;
+  background: #ffffff !important;
+  border: 1.5px solid var(--pink-border, #f4bfd3) !important;
+  color: #18151b !important;
   font-size: 14px !important;
   outline: none !important;
-  transition: border-color 0.25s ease !important;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease !important;
+  box-shadow: 0 2px 8px rgba(233, 30, 99, 0.04) !important;
+}
+
+.toko-search-box input::placeholder {
+  color: #8a7e8e !important;
 }
 
 .toko-search-box input:focus {
   border-color: #ff4f91 !important;
-  box-shadow: 0 0 0 3px rgba(255, 79, 145, 0.15) !important;
+  box-shadow: 0 0 0 3px rgba(255, 79, 145, 0.18) !important;
 }
 
 .search-clear-btn {
@@ -161,14 +167,14 @@ body.page-toko, .page-toko {
   transform: translateY(-50%) !important;
   background: none !important;
   border: none !important;
-  color: #94a3b8 !important;
+  color: #8a7e8e !important;
   font-size: 16px !important;
   cursor: pointer !important;
   padding: 4px !important;
 }
 
 .search-clear-btn:hover {
-  color: #ffffff !important;
+  color: #d81b60 !important;
 }
 
 .toko-sort-box {
@@ -179,21 +185,22 @@ body.page-toko, .page-toko {
 
 .sort-label {
   font-size: 13.5px !important;
-  color: #94a3b8 !important;
-  font-weight: 600 !important;
+  color: #4b4150 !important;
+  font-weight: 700 !important;
   white-space: nowrap !important;
 }
 
 .toko-sort-select {
   padding: 11px 16px !important;
   border-radius: 10px !important;
-  background: #191322 !important;
-  border: 1px solid rgba(255, 79, 145, 0.22) !important;
-  color: #ffffff !important;
+  background: #ffffff !important;
+  border: 1.5px solid var(--pink-border, #f4bfd3) !important;
+  color: #18151b !important;
   font-size: 13.5px !important;
   font-weight: 600 !important;
   outline: none !important;
   cursor: pointer !important;
+  box-shadow: 0 2px 8px rgba(233, 30, 99, 0.04) !important;
 }
 
 .toko-result-meta {
@@ -203,12 +210,14 @@ body.page-toko, .page-toko {
   align-items: center !important;
   gap: 12px !important;
   margin-bottom: 24px !important;
-  font-size: 13px !important;
-  color: #94a3b8 !important;
+  font-size: 13.5px !important;
+  color: #554a5c !important;
+  font-weight: 600 !important;
 }
 
 .toko-cart-hint {
-  color: #cbd5e1 !important;
+  color: #554a5c !important;
+  font-weight: 600 !important;
 }
 /* 3. Grid & Kartu Produk (Shopee Compact Style & Poster Carousel) */
 .toko-product-grid {
@@ -532,14 +541,15 @@ body.page-toko, .page-toko {
 
 .toko-jp-name {
   font-family: 'Noto Serif JP', serif !important;
-  font-size: 11.5px !important;
-  color: #ff8db7 !important;
-  font-weight: 700 !important;
+  font-size: 12px !important;
+  color: #d81b60 !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.2px !important;
 }
 
 .toko-rating {
   font-size: 11.5px !important;
-  color: #facc15 !important;
+  color: #d97706 !important;
   font-weight: 700 !important;
 }
 
@@ -547,14 +557,15 @@ body.page-toko, .page-toko {
   font-size: 17px !important;
   font-weight: 800 !important;
   line-height: 1.35 !important;
-  color: #18151b !important;
+  color: #16121b !important;
   margin: 0 0 10px !important;
 }
 
 .toko-card-desc {
   font-size: 13px !important;
   line-height: 1.6 !important;
-  color: #554e57 !important;
+  color: #332938 !important;
+  font-weight: 500 !important;
   margin: 0 0 16px !important;
   display: -webkit-box !important;
   line-clamp: 3 !important;
@@ -569,15 +580,17 @@ body.page-toko, .page-toko {
   flex-direction: column !important;
   gap: 4px !important;
   padding: 10px 12px !important;
-  background: #fff5f8 !important;
+  background: #fff0f5 !important;
   border-radius: 8px !important;
-  border: 1px solid #ffd2e3 !important;
+  border: 1px solid #ffd0e0 !important;
   margin-bottom: 16px !important;
 }
 
 .toko-card-specs span {
   font-size: 11.5px !important;
-  color: #554e57 !important;
+  color: #1f1924 !important;
+  font-weight: 600 !important;
+  line-height: 1.45 !important;
 }
 
 .toko-card-footer {
@@ -597,13 +610,14 @@ body.page-toko, .page-toko {
 
 .toko-price-box .price-label {
   font-size: 12px !important;
-  color: #94a3b8 !important;
+  color: #554a5c !important;
+  font-weight: 700 !important;
 }
 
 .toko-price {
   font-size: 20px !important;
   font-weight: 900 !important;
-  color: #ff659b !important;
+  color: #d81b60 !important;
   letter-spacing: -0.02em !important;
 }
 
@@ -616,20 +630,20 @@ body.page-toko, .page-toko {
 .btn-toko-cart {
   padding: 10px 12px !important;
   border-radius: 8px !important;
-  background: rgba(255, 79, 145, 0.12) !important;
-  border: 1px solid rgba(255, 79, 145, 0.35) !important;
-  color: #ff659b !important;
+  background: rgba(233, 30, 99, 0.08) !important;
+  border: 1.5px solid rgba(233, 30, 99, 0.35) !important;
+  color: #c2185b !important;
   font-size: 12.5px !important;
-  font-weight: 700 !important;
+  font-weight: 800 !important;
   cursor: pointer !important;
   transition: all 0.2s ease !important;
   text-align: center !important;
 }
 
 .btn-toko-cart:hover {
-  background: #ff4f91 !important;
+  background: #e91e63 !important;
   color: #ffffff !important;
-  border-color: #ff4f91 !important;
+  border-color: #e91e63 !important;
   transform: translateY(-2px) !important;
 }
 
@@ -640,7 +654,7 @@ body.page-toko, .page-toko {
   border: 1px solid #ff4f91 !important;
   color: #ffffff !important;
   font-size: 12.5px !important;
-  font-weight: 700 !important;
+  font-weight: 800 !important;
   text-decoration: none !important;
   text-align: center !important;
   transition: all 0.2s ease !important;
@@ -825,20 +839,22 @@ body.page-toko, .page-toko {
 
 .toko-kwu-badge {
   display: inline-block !important;
-  padding: 5px 14px !important;
+  padding: 6px 16px !important;
   border-radius: 999px !important;
-  font-size: 12px !important;
-  font-weight: 700 !important;
-  background: rgba(255, 79, 145, 0.15) !important;
-  border: 1px solid rgba(255, 79, 145, 0.35) !important;
-  color: #ff659b !important;
-  margin-bottom: 16px !important;
+  font-size: 12.5px !important;
+  font-weight: 800 !important;
+  background: #fff0f5 !important;
+  border: 1.5px solid #fbcfe8 !important;
+  color: #c2185b !important;
+  margin-bottom: 18px !important;
+  box-shadow: 0 2px 8px rgba(233, 30, 99, 0.06) !important;
 }
 
 .kwu-description {
-  font-size: 15px !important;
+  font-size: 15.5px !important;
   line-height: 1.8 !important;
-  color: #554e57 !important;
+  color: #2d2433 !important;
+  font-weight: 500 !important;
   max-width: 900px !important;
   margin: 0 0 28px !important;
 }
@@ -850,25 +866,36 @@ body.page-toko, .page-toko {
 }
 
 .kwu-stat-box {
-  background: rgba(10, 7, 14, 0.55) !important;
-  border: 1px solid rgba(255, 255, 255, 0.08) !important;
-  border-radius: 12px !important;
-  padding: 20px 18px !important;
+  background: linear-gradient(135deg, #ffffff 0%, #fff5f8 100%) !important;
+  border: 1.5px solid rgba(233, 30, 99, 0.2) !important;
+  border-radius: 14px !important;
+  padding: 22px 20px !important;
   text-align: center !important;
+  box-shadow: 0 4px 16px rgba(233, 30, 99, 0.06), 0 1px 3px rgba(0, 0, 0, 0.03) !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease !important;
+}
+
+.kwu-stat-box:hover {
+  transform: translateY(-3px) !important;
+  border-color: rgba(233, 30, 99, 0.45) !important;
+  box-shadow: 0 8px 24px rgba(233, 30, 99, 0.14) !important;
 }
 
 .kwu-stat-box strong {
   display: block !important;
-  font-size: 28px !important;
+  font-size: 30px !important;
   font-weight: 900 !important;
-  color: #ff659b !important;
-  margin-bottom: 4px !important;
+  color: #d81b60 !important;
+  letter-spacing: -0.5px !important;
+  margin-bottom: 6px !important;
 }
 
 .kwu-stat-box small {
-  font-size: 12.5px !important;
-  color: #94a3b8 !important;
-  font-weight: 600 !important;
+  display: block !important;
+  font-size: 13.5px !important;
+  color: #261f2c !important;
+  font-weight: 700 !important;
+  line-height: 1.4 !important;
 }
 /* 6. Seksi 4 (PUTIH): Pertanyaan yang Sering Diajukan / FAQ (Pola Kumo Terang c1w.jpeg) */
 .toko-faq-white-section {
