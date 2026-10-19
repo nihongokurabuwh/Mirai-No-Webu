@@ -1002,13 +1002,23 @@ Lapisan 3: Deskripsi Singkat Elegan di bawah judul (.page-hero-desc / .section-d
   font-weight: 500;
   text-shadow: none !important;
 }
-/* 3. SUB JUDUL & TEKS SEKSI PADA LATAR BELAKANG GELAP / HITAM (#0e0b12 / #111115 / .soft-section dll) */
-.section.bg-dark .section-eyebrow, .soft-section .section-eyebrow, #lanjutan .section-eyebrow, .page-kelas #lanjutan .section-eyebrow, .slogan-section .section-eyebrow, .about-intro-section .section-eyebrow, .home-activities-dark-section .section-eyebrow, .toko-catalog-section .section-eyebrow, .timeline-section .section-eyebrow, .wall-of-fame-section .section-eyebrow, body.theme-dark .section-eyebrow {
+/* 3. SUB JUDUL & TEKS SEKSI PADA LATAR BELAKANG GELAP / HITAM (#0e0b12 / #111115 / [data-theme="dark"]) */
+section[data-theme="dark"] .section-eyebrow,
+section.theme-dark .section-eyebrow,
+.section.bg-dark .section-eyebrow,
+#lanjutan .section-eyebrow,
+.page-kelas #lanjutan .section-eyebrow,
+body.theme-dark .section-eyebrow {
   color: #ff85b3 !important;
-  /* Pink cerah bersinar di atas latar gelap */
+  text-shadow: none !important;
 }
 
-.section.bg-dark .section-eyebrow .jp-kanji, .soft-section .section-eyebrow .jp-kanji, #lanjutan .section-eyebrow .jp-kanji, .page-kelas #lanjutan .section-eyebrow .jp-kanji, .slogan-section .section-eyebrow .jp-kanji, .about-intro-section .section-eyebrow .jp-kanji, .home-activities-dark-section .section-eyebrow .jp-kanji, .toko-catalog-section .section-eyebrow .jp-kanji, .timeline-section .section-eyebrow .jp-kanji, .wall-of-fame-section .section-eyebrow .jp-kanji, body.theme-dark .section-eyebrow .jp-kanji {
+section[data-theme="dark"] .section-eyebrow .jp-kanji,
+section.theme-dark .section-eyebrow .jp-kanji,
+.section.bg-dark .section-eyebrow .jp-kanji,
+#lanjutan .section-eyebrow .jp-kanji,
+.page-kelas #lanjutan .section-eyebrow .jp-kanji,
+body.theme-dark .section-eyebrow .jp-kanji {
   font-family: 'Noto Serif JP', serif !important;
   font-weight: 700 !important;
   font-size: clamp(17px, 1.8vw, 21px) !important;
@@ -1020,14 +1030,40 @@ Lapisan 3: Deskripsi Singkat Elegan di bawah judul (.page-hero-desc / .section-d
   padding: 5px 16px !important;
   border-radius: 99px !important;
   box-shadow: 0 2px 12px rgba(233, 30, 99, 0.28) !important;
-  text-shadow: 0 0 10px rgba(255, 101, 155, 0.4) !important;
+  text-shadow: none !important;
   display: inline-block !important;
 }
 
-.section.bg-dark .section-desc, .soft-section .section-desc, #lanjutan .section-desc, .page-kelas #lanjutan .section-desc, .slogan-section .section-desc, .about-intro-section .section-desc, .home-activities-dark-section .section-desc, .toko-catalog-section .section-desc, .timeline-section .section-desc, .wall-of-fame-section .section-desc, body.theme-dark .section-desc {
+section[data-theme="dark"] .section-desc,
+section.theme-dark .section-desc,
+.section.bg-dark .section-desc,
+#lanjutan .section-desc,
+.page-kelas #lanjutan .section-desc,
+body.theme-dark .section-desc {
   color: #cbd5e1 !important;
-  /* Abu-abu terang nyaman di mata */
-  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5) !important;
+  text-shadow: none !important;
+}
+
+/* 4. SUB JUDUL & TEKS SEKSI PADA LATAR BELAKANG TERANG / PUTIH ([data-theme="light"]) */
+section[data-theme="light"] .section-eyebrow,
+section.theme-light .section-eyebrow {
+  color: #e91e63 !important;
+  text-shadow: none !important;
+}
+
+section[data-theme="light"] .section-eyebrow .jp-kanji,
+section.theme-light .section-eyebrow .jp-kanji {
+  color: #e91e63 !important;
+  background: rgba(233, 30, 99, 0.08) !important;
+  border: 1.5px solid rgba(233, 30, 99, 0.28) !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+
+section[data-theme="light"] .section-desc,
+section.theme-light .section-desc {
+  color: #475569 !important;
+  text-shadow: none !important;
 }
 
 .buttons {
@@ -1572,10 +1608,23 @@ Halaman Pembelajaran MIRAI (Layout Kartu & Stage Kana)
   transition: .25s ease;
 }
 
+section[data-theme="dark"] .start-card,
+.journey-section .start-card {
+  background: linear-gradient(165deg, #1d1624 0%, #130f18 100%) !important;
+  border-color: rgba(255, 101, 155, 0.22) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45) !important;
+}
+
 .start-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 18px 36px rgba(233,30,99,.13);
   border-color: var(--pink);
+}
+
+section[data-theme="dark"] .start-card:hover,
+.journey-section .start-card:hover {
+  border-color: #ff659b !important;
+  box-shadow: 0 20px 44px rgba(233, 30, 99, 0.3), 0 4px 14px rgba(0, 0, 0, 0.6) !important;
 }
 
 .start-card span, .start-card b {
@@ -1589,10 +1638,22 @@ Halaman Pembelajaran MIRAI (Layout Kartu & Stage Kana)
   font-size: 25px;
 }
 
+section[data-theme="dark"] .start-card h3,
+.journey-section .start-card h3 {
+  color: #ffffff !important;
+  text-shadow: none !important;
+}
+
 .start-card p {
   margin: 0;
   color: var(--muted);
   line-height: 1.55;
+}
+
+section[data-theme="dark"] .start-card p,
+.journey-section .start-card p {
+  color: #d5ccd3 !important;
+  text-shadow: none !important;
 }
 
 .start-card b {

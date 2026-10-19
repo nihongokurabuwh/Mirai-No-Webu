@@ -457,20 +457,21 @@ SECTION: MAKNA SLOGAN (.slogan-section)
 .slogan-japanese {
   font-size: clamp(34px, 5.5vw, 56px);
   font-weight: 900;
-  color: #ffffff !important;
+  color: #18151b !important;
   margin: 18px 0 8px;
   letter-spacing: 2px;
   font-family: 'Hiragino Sans', 'Yu Gothic', 'Noto Sans JP', sans-serif;
-  text-shadow: 0 4px 20px rgba(233, 30, 99, 0.3);
+  text-shadow: none !important;
 }
 
 .slogan-romaji {
   font-size: 18px;
-  color: #ff659b !important;
+  color: #d81b60 !important;
   font-weight: 700;
   margin: 0 0 16px;
   font-style: italic;
   letter-spacing: 0.5px;
+  text-shadow: none !important;
 }
 
 .slogan-divider {
@@ -483,10 +484,11 @@ SECTION: MAKNA SLOGAN (.slogan-section)
 
 .slogan-meaning-quote {
   font-size: clamp(17px, 2.2vw, 22px);
-  color: #ffffff !important;
+  color: #18151b !important;
   font-weight: 700;
   margin: 0;
   letter-spacing: 0.3px;
+  text-shadow: none !important;
 }
 
 .slogan-cards-grid {
@@ -496,11 +498,11 @@ SECTION: MAKNA SLOGAN (.slogan-section)
 }
 
 .slogan-card {
-  background: #18131c;
-  border: 1px solid #3d2c40;
+  background: #ffffff !important;
+  border: 1.5px solid var(--pink-border, #f4bfd3) !important;
   border-radius: 14px;
   padding: 28px 30px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 8px 24px rgba(233, 30, 99, 0.06) !important;
   transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
   display: flex;
   flex-direction: column;
@@ -508,18 +510,18 @@ SECTION: MAKNA SLOGAN (.slogan-section)
 
 .slogan-card:hover {
   transform: translateY(-4px);
-  border-color: #e91e63;
-  box-shadow: 0 12px 28px rgba(233, 30, 99, 0.2);
+  border-color: #e91e63 !important;
+  box-shadow: 0 16px 36px rgba(233, 30, 99, 0.16) !important;
 }
 
 .slogan-card.span-full {
   grid-column: 1 / -1;
-  background: #1b1420;
-  border-color: #48314c;
+  background: #ffffff !important;
+  border-color: var(--pink-border, #f4bfd3) !important;
 }
 
 .slogan-card-badge {
-  color: #ff659b !important;
+  color: #d81b60 !important;
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 1.3px;
@@ -528,18 +530,20 @@ SECTION: MAKNA SLOGAN (.slogan-section)
 }
 
 .slogan-card h3 {
-  color: #ffffff !important;
+  color: #18151b !important;
   font-size: 20px;
   font-weight: 700;
   margin: 0 0 12px;
   line-height: 1.35;
+  text-shadow: none !important;
 }
 
 .slogan-card p {
-  color: #cfc1d1 !important;
+  color: #554e57 !important;
   font-size: 14.5px;
   line-height: 1.75;
   margin: 0;
+  text-shadow: none !important;
 }
 
 @media (max-width: 768px) {
@@ -563,19 +567,23 @@ SECTION: VISI & MISI (.vision-mission-section)
   gap: 28px;
 }
 
-.vision-card {
-  background: #ffffff;
-  border: 1.5px solid var(--pink-border, #f4bfd3);
-  border-left: 6px solid var(--pink, #e91e63);
+.vision-card,
+.vision-mission-section .vision-card,
+section[data-theme="dark"] .vision-card {
+  background: linear-gradient(165deg, #1d1624 0%, #130f18 100%) !important;
+  border: 1.5px solid rgba(255, 101, 155, 0.22) !important;
+  border-left: 6px solid var(--pink, #e91e63) !important;
   border-radius: 16px;
   padding: 34px 38px;
-  box-shadow: 0 8px 26px rgba(72, 32, 52, 0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45) !important;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
+  color: #f5edf4 !important;
 }
 
 .vision-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 14px 32px rgba(233, 30, 99, 0.1);
+  border-color: #ff659b !important;
+  box-shadow: 0 18px 40px rgba(233, 30, 99, 0.25) !important;
 }
 
 .vision-badge {
@@ -583,9 +591,9 @@ SECTION: VISI & MISI (.vision-mission-section)
   align-items: center;
   gap: 6px;
   padding: 4px 14px;
-  background: rgba(233, 30, 99, 0.08);
-  border: 1px solid rgba(233, 30, 99, 0.25);
-  color: var(--pink, #e91e63) !important;
+  background: rgba(233, 30, 99, 0.15) !important;
+  border: 1px solid rgba(255, 101, 155, 0.35) !important;
+  color: #ff659b !important;
   border-radius: 20px;
   font-size: 11px;
   font-weight: 800;
@@ -596,19 +604,21 @@ SECTION: VISI & MISI (.vision-mission-section)
 
 .vision-card h3 {
   font-size: clamp(20px, 2.5vw, 25px);
-  color: var(--ink, #18151b) !important;
+  color: #ffffff !important;
   font-weight: 800;
   margin: 0 0 14px;
   line-height: 1.35;
+  text-shadow: none !important;
 }
 
 .vision-quote {
   font-size: 16px;
   line-height: 1.8;
-  color: #382f3c !important;
+  color: #d5ccd3 !important;
   font-style: italic;
   margin: 0;
   font-weight: 500;
+  text-shadow: none !important;
 }
 
 .mission-grid-four {
@@ -617,54 +627,59 @@ SECTION: VISI & MISI (.vision-mission-section)
   gap: 22px;
 }
 
-.mission-box {
-  background: var(--white, #ffffff);
-  border: 1px solid var(--pink-border, #f0d5e1);
+.mission-box,
+.vision-mission-section .mission-box,
+section[data-theme="dark"] .mission-box {
+  background: linear-gradient(165deg, #1d1624 0%, #130f18 100%) !important;
+  border: 1.5px solid rgba(255, 101, 155, 0.22) !important;
   border-radius: 14px;
   padding: 26px 28px;
   display: flex;
   gap: 20px;
   align-items: flex-start;
-  box-shadow: 0 4px 18px rgba(72, 32, 52, 0.04);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4) !important;
   transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  color: #f5edf4 !important;
 }
 
 .mission-box:hover {
   transform: translateY(-4px);
-  border-color: var(--pink, #e91e63);
-  box-shadow: 0 12px 28px rgba(233, 30, 99, 0.12);
+  border-color: #ff659b !important;
+  box-shadow: 0 16px 36px rgba(233, 30, 99, 0.25) !important;
 }
 
 .mission-number {
   font-size: 24px;
   font-weight: 900;
-  color: var(--pink, #e91e63) !important;
+  color: #ff659b !important;
   font-family: Georgia, serif;
   line-height: 1;
   flex-shrink: 0;
-  background: rgba(233, 30, 99, 0.08);
+  background: rgba(233, 30, 99, 0.2) !important;
   width: 48px;
   height: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 12px;
-  border: 1px solid rgba(233, 30, 99, 0.22);
+  border: 1px solid rgba(255, 101, 155, 0.4) !important;
 }
 
 .mission-content h3 {
   font-size: 17px;
   font-weight: 750;
-  color: var(--ink, #18151b) !important;
+  color: #ffffff !important;
   margin: 0 0 8px;
   line-height: 1.4;
+  text-shadow: none !important;
 }
 
 .mission-content p {
   font-size: 14px;
   line-height: 1.7;
-  color: #554a59 !important;
+  color: #d5ccd3 !important;
   margin: 0;
+  text-shadow: none !important;
 }
 
 @media (max-width: 768px) {
@@ -674,42 +689,6 @@ SECTION: VISI & MISI (.vision-mission-section)
 
   .mission-box {
     padding: 22px 20px;
-  }
-}
-/* Penyesuaian Mode Gelap untuk Visi & Misi */
-body.dark-mode .vision-card, body.theme-dark .vision-card {
-  background: linear-gradient(135deg, #1c1522 0%, #16111a 100%) !important;
-  border-color: #3b2a3d !important;
-  border-left-color: #ff659b !important;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4) !important;
-}
-
-body.dark-mode .vision-card h3, body.theme-dark .vision-card h3 {
-  color: #ffffff !important;
-}
-
-body.dark-mode .vision-quote, body.theme-dark .vision-quote {
-  color: #dfd2e0 !important;
-}
-
-body.dark-mode .mission-box, body.theme-dark .mission-box {
-  background: #17121b !important;
-  border-color: #382839 !important;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35) !important;
-}
-
-body.dark-mode .mission-number, body.theme-dark .mission-number {
-  background: rgba(255, 101, 155, 0.15) !important;
-  color: #ff659b !important;
-  border-color: rgba(255, 101, 155, 0.3) !important;
-}
-
-body.dark-mode .mission-content h3, body.theme-dark .mission-content h3 {
-  color: #ffffff !important;
-}
-
-body.dark-mode .mission-content p, body.theme-dark .mission-content p {
-  color: #cfc1d1 !important;
 }
 /* BAGIAN 3: ETALASE HAORI & 6 MAKNA */
 .haori-section {
@@ -1651,22 +1630,23 @@ SEJARAH KLUB (Horizontal Timeline - Angkatan 1 s/d 8)
   overflow: hidden !important;
   box-sizing: border-box !important;
   border-radius: 20px !important;
-  background: linear-gradient(165deg, #1c1523 0%, #130f18 100%) !important;
-  border: 1.5px solid rgba(255, 101, 155, 0.25) !important;
+  background: #ffffff !important;
+  border: 1.5px solid var(--pink-border, #f4bfd3) !important;
   border-left: 6px solid var(--pink, #e91e63) !important;
   padding: 28px 32px !important;
-  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.45) !important;
+  box-shadow: 0 8px 24px rgba(233, 30, 99, 0.06) !important;
   display: grid !important;
   grid-template-columns: 1.18fr 0.82fr !important;
   gap: 30px !important;
   align-items: center !important;
   transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease !important;
+  color: #18151b !important;
 }
 
 .history-origin-card:hover {
   transform: translateY(-3px) !important;
   border-color: var(--pink, #e91e63) !important;
-  box-shadow: 0 16px 40px rgba(233, 30, 99, 0.2) !important;
+  box-shadow: 0 16px 40px rgba(233, 30, 99, 0.16) !important;
 }
 
 .history-origin-card > * {
@@ -1684,9 +1664,9 @@ SEJARAH KLUB (Horizontal Timeline - Angkatan 1 s/d 8)
   display: inline-flex !important;
   align-items: center !important;
   gap: 6px !important;
-  background: rgba(233, 30, 99, 0.15) !important;
-  border: 1px solid rgba(255, 101, 155, 0.35) !important;
-  color: #ff659b !important;
+  background: rgba(233, 30, 99, 0.08) !important;
+  border: 1.5px solid rgba(233, 30, 99, 0.28) !important;
+  color: #d81b60 !important;
   border-radius: 999px !important;
   padding: 4px 12px !important;
   font-size: 10.5px !important;
@@ -1700,31 +1680,35 @@ SEJARAH KLUB (Horizontal Timeline - Angkatan 1 s/d 8)
 .origin-title {
   margin: 0 0 10px 0 !important;
   font-size: clamp(18px, 1.9vw, 22px) !important;
-  color: #ffffff !important;
+  color: #18151b !important;
   font-weight: 800 !important;
   line-height: 1.35 !important;
+  text-shadow: none !important;
 }
 
 .origin-desc {
-  color: #d5ccd3 !important;
+  color: #554e57 !important;
   font-size: 13.5px !important;
   line-height: 1.7 !important;
   margin: 0 0 12px 0 !important;
+  text-shadow: none !important;
 }
 
 .origin-desc em {
-  color: #ff8ab6;
-  font-style: normal;
-  font-weight: 700;
+  color: #18151b !important;
+  font-style: normal !important;
+  font-weight: 700 !important;
+  background: transparent !important;
+  text-shadow: none !important;
 }
 
 .origin-highlight-box {
   display: flex;
   align-items: flex-start;
   gap: 10px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 101, 155, 0.15);
-  border-left: 3.5px solid var(--pink, #e91e63);
+  background: #fff5f8 !important;
+  border: 1px solid #ffd0df !important;
+  border-left: 3.5px solid var(--pink, #e91e63) !important;
   border-radius: 0 10px 10px 0;
   padding: 10px 14px;
 }
@@ -1741,18 +1725,19 @@ SEJARAH KLUB (Horizontal Timeline - Angkatan 1 s/d 8)
 }
 
 .origin-highlight-text {
-  color: #f3e9f2 !important;
+  color: #554e57 !important;
   font-size: 12.5px !important;
   line-height: 1.6 !important;
   margin: 0 !important;
+  text-shadow: none !important;
 }
 
 .origin-status-col {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: rgba(0, 0, 0, 0.24);
-  border: 1px solid rgba(255, 101, 155, 0.2);
+  background: #faf7f9 !important;
+  border: 1px solid #f2d8e4 !important;
   border-radius: 16px;
   padding: 18px 20px;
 }
@@ -1772,7 +1757,7 @@ SEJARAH KLUB (Horizontal Timeline - Angkatan 1 s/d 8)
 .origin-status-header {
   font-size: 11px;
   font-weight: 850;
-  color: #ff659b !important;
+  color: #d81b60 !important;
   letter-spacing: 1.5px;
   text-transform: uppercase;
 }
@@ -1787,8 +1772,8 @@ SEJARAH KLUB (Horizontal Timeline - Angkatan 1 s/d 8)
   display: flex;
   align-items: flex-start;
   gap: 12px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 101, 155, 0.16);
+  background: #ffffff !important;
+  border: 1px solid #eed6e1 !important;
   border-radius: 10px;
   padding: 9px 13px;
   transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
@@ -1796,16 +1781,16 @@ SEJARAH KLUB (Horizontal Timeline - Angkatan 1 s/d 8)
 
 .origin-phase-item:hover {
   transform: translateX(3px);
-  border-color: var(--pink, #e91e63);
-  background: rgba(233, 30, 99, 0.08);
+  border-color: var(--pink, #e91e63) !important;
+  background: #fff5f8 !important;
 }
 
 .origin-phase-badge {
   font-size: 10px;
   font-weight: 850;
-  color: #ff8ab6 !important;
-  background: rgba(233, 30, 99, 0.22);
-  border: 1px solid rgba(255, 101, 155, 0.35);
+  color: #d81b60 !important;
+  background: rgba(233, 30, 99, 0.08) !important;
+  border: 1px solid rgba(233, 30, 99, 0.25) !important;
   padding: 3px 8px;
   border-radius: 6px;
   white-space: nowrap;
@@ -1824,24 +1809,26 @@ SEJARAH KLUB (Horizontal Timeline - Angkatan 1 s/d 8)
 .origin-phase-title {
   font-size: 12.5px;
   font-weight: 750;
-  color: #ffffff !important;
+  color: #18151b !important;
   line-height: 1.25;
+  text-shadow: none !important;
 }
 
 .origin-phase-desc {
   font-size: 11px;
-  color: #baaebb !important;
+  color: #6b626e !important;
   line-height: 1.25;
+  text-shadow: none !important;
 }
 
 .origin-cycle-hint {
   margin-top: 11px;
   font-size: 11px;
-  color: #ded1dc !important;
+  color: #6b626e !important;
   line-height: 1.45;
   padding: 8px 12px;
-  background: rgba(233, 30, 99, 0.08);
-  border: 1px dashed rgba(255, 101, 155, 0.28);
+  background: #fff5f8 !important;
+  border: 1px dashed #ffd0df !important;
   border-radius: 8px;
   display: flex;
   align-items: flex-start;
@@ -1983,16 +1970,17 @@ TIMELINE SEJARAH KLUB (Horizontal Sequential Stream - Redesign Modern)
   box-sizing: border-box !important;
   padding: 22px 18px 20px !important;
   text-align: center !important;
-  background: linear-gradient(165deg, #1c1523 0%, #130f18 100%) !important;
-  border: 1.5px solid rgba(255, 101, 155, 0.22) !important;
+  background: #ffffff !important;
+  border: 1.5px solid var(--pink-border, #f4bfd3) !important;
   border-radius: 18px !important;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45) !important;
+  box-shadow: 0 8px 24px rgba(233, 30, 99, 0.06) !important;
   display: flex !important;
   flex-direction: column !important;
   align-items: center !important;
   justify-content: flex-start !important;
   transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease !important;
   overflow: hidden !important;
+  color: #18151b !important;
 }
 /* Reset mutlak posisi zig-zag dan segitiga lama */
 .timeline-node:nth-child(odd) .timeline-content, .timeline-node:nth-child(even) .timeline-content {
@@ -2007,17 +1995,17 @@ TIMELINE SEJARAH KLUB (Horizontal Sequential Stream - Redesign Modern)
   display: none !important;
   content: none !important;
 }
-/* Pattern Wagara Halus w1b pada Kartu Angkatan Timeline */
+/* Pattern Wagara Halus w1w pada Kartu Angkatan Timeline */
 .timeline-content::after, .timeline-node:nth-child(odd) .timeline-content::after, .timeline-node:nth-child(even) .timeline-content::after {
   content: "" !important;
   position: absolute !important;
   inset: 0 !important;
-  background-image: url("../../images/mirai/background/w1b.jpeg") !important;
+  background-image: url("../../images/mirai/background/w1w.jpeg") !important;
   background-size: 200px auto !important;
   background-repeat: repeat !important;
   background-position: center top !important;
-  opacity: var(--opacity-w1b)!important;
-  mix-blend-mode: screen !important;
+  opacity: var(--opacity-w1w) !important;
+  mix-blend-mode: multiply !important;
   pointer-events: none !important;
   z-index: 1 !important;
   display: block !important;
@@ -2025,7 +2013,7 @@ TIMELINE SEJARAH KLUB (Horizontal Sequential Stream - Redesign Modern)
 }
 
 .timeline-node:hover .timeline-content::after, .timeline-content:hover::after {
-  opacity: var(--opacity-w1b-hover)!important;
+  opacity: var(--opacity-w1w-hover) !important;
   transform: scale(1.02) !important;
 }
 
@@ -2037,7 +2025,7 @@ TIMELINE SEJARAH KLUB (Horizontal Sequential Stream - Redesign Modern)
 .timeline-node:hover .timeline-content {
   transform: translateY(-6px) !important;
   border-color: var(--pink, #e91e63) !important;
-  box-shadow: 0 18px 44px rgba(233, 30, 99, 0.25), 0 4px 14px rgba(0, 0, 0, 0.6) !important;
+  box-shadow: 0 16px 36px rgba(233, 30, 99, 0.16) !important;
 }
 /* Badge Tahun Angkatan */
 .timeline-year {
@@ -2047,9 +2035,9 @@ TIMELINE SEJARAH KLUB (Horizontal Sequential Stream - Redesign Modern)
   font-size: 12px !important;
   font-weight: 850 !important;
   letter-spacing: 1px !important;
-  color: #ff8ab6 !important;
-  background: rgba(233, 30, 99, 0.16) !important;
-  border: 1px solid rgba(255, 101, 155, 0.35) !important;
+  color: #d81b60 !important;
+  background: rgba(233, 30, 99, 0.08) !important;
+  border: 1px solid rgba(233, 30, 99, 0.28) !important;
   padding: 4px 14px !important;
   border-radius: 20px !important;
   margin-bottom: 14px !important;
@@ -2061,9 +2049,9 @@ TIMELINE SEJARAH KLUB (Horizontal Sequential Stream - Redesign Modern)
   margin: 0 auto 16px auto !important;
   border-radius: 16px !important;
   overflow: hidden !important;
-  border: 2px solid rgba(255, 101, 155, 0.3) !important;
-  background: rgba(255, 255, 255, 0.04) !important;
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.45) !important;
+  border: 2px solid var(--pink-border, #f4bfd3) !important;
+  background: #faf7f9 !important;
+  box-shadow: 0 4px 14px rgba(233, 30, 99, 0.08) !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
@@ -2079,43 +2067,46 @@ TIMELINE SEJARAH KLUB (Horizontal Sequential Stream - Redesign Modern)
 }
 
 .timeline-node:hover .timeline-photo-wrap {
-  border-color: #ff659b !important;
+  border-color: var(--pink, #e91e63) !important;
   transform: scale(1.05) !important;
-  box-shadow: 0 10px 26px rgba(233, 30, 99, 0.4) !important;
+  box-shadow: 0 8px 20px rgba(233, 30, 99, 0.25) !important;
 }
 /* Judul Angkatan & Info Ketua */
 .timeline-title {
   font-size: 16px !important;
   font-weight: 800 !important;
   margin: 0 0 5px 0 !important;
-  color: #ffffff !important;
+  color: #18151b !important;
   line-height: 1.3 !important;
   letter-spacing: -0.2px !important;
+  text-shadow: none !important;
 }
 
 .timeline-ketua {
   font-size: 12.5px !important;
-  color: #c9bcc8 !important;
+  color: #554e57 !important;
   margin: 0 !important;
   line-height: 1.4 !important;
+  text-shadow: none !important;
 }
 
 .timeline-ketua strong {
-  color: #ff659b !important;
+  color: var(--pink, #e91e63) !important;
   font-weight: 750 !important;
 }
 
 .timeline-ketua em {
-  color: #ded1dc !important;
+  color: #6b626e !important;
   font-style: normal !important;
 }
 
 .timeline-hint {
   text-align: center !important;
   font-size: 12.5px !important;
-  color: #bfaec0 !important;
+  color: #6b626e !important;
   margin-top: 18px !important;
   letter-spacing: 0.5px !important;
+  text-shadow: none !important;
 }
 /* ==========================================================================
 PROFIL MASKOT (Sora Character Card - RPG Style)
@@ -3313,7 +3304,69 @@ RESPACING MINIMAL UNTUK HALAMAN TENTANG (.page-tentang)
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease !important;
 }
 
-.about-intro-card::after, .about-name-card::after, .history-origin-card::after, .slogan-hero-card::after, .slogan-card::after, .achievement-card::after, .accessory-card::after, .accessory-banner-card::after, .timeline-content::after, .prestasi-stat-box::after, .podium-card::after, .lb-category-desc-card::after, .lb-table-card::after, .lb-system-info-card::after, body.page-tentang .quote-card:not(.quote-theme-white)::after {
+/* (A) KARTU SEKSI PUTIH (LIGHT THEME): PATTERN w1w.jpeg (mix-blend-mode: multiply) */
+.about-intro-card, .about-name-card, .history-origin-card, .slogan-hero-card, .slogan-card, .achievement-card, .accessory-card, .accessory-banner-card, .timeline-content, .prestasi-stat-box, .podium-card, .lb-table-card {
+  position: relative !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+  border-radius: 18px !important;
+  background: #ffffff !important;
+  border: 1.5px solid var(--pink-border, #f4bfd3) !important;
+  box-shadow: 0 8px 24px rgba(233, 30, 99, 0.06) !important;
+  color: #18151b !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease !important;
+}
+
+.about-intro-card::after, .about-name-card::after, .history-origin-card::after, .slogan-hero-card::after, .slogan-card::after, .achievement-card::after, .accessory-card::after, .accessory-banner-card::after, .timeline-content::after, .prestasi-stat-box::after, .podium-card::after, .lb-table-card::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  background-image: url("../../images/mirai/background/w1w.jpeg") !important;
+  background-size: 200px auto !important;
+  background-repeat: repeat !important;
+  background-position: center top !important;
+  opacity: var(--opacity-w1w) !important;
+  mix-blend-mode: multiply !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+  display: block !important;
+  transition: opacity 0.3s ease, transform 0.3s ease !important;
+}
+
+.about-intro-card:hover::after, .about-name-card:hover::after, .history-origin-card:hover::after, .slogan-hero-card:hover::after, .slogan-card:hover::after, .achievement-card:hover::after, .accessory-card:hover::after, .accessory-banner-card:hover::after, .timeline-node:hover .timeline-content::after, .prestasi-stat-box:hover::after, .podium-card:hover::after, .lb-table-card:hover::after {
+  opacity: var(--opacity-w1w-hover) !important;
+  transform: scale(1.02) !important;
+}
+
+.about-intro-card > *, .about-name-card > *, .history-origin-card > *, .slogan-hero-card > *, .slogan-card > *, .achievement-card > *, .accessory-card > *, .accessory-banner-card > *, .timeline-content > *, .prestasi-stat-box > *, .podium-card > *, .lb-table-card > * {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+.about-intro-card h3, .about-name-card h3, .slogan-card h3, .achievement-card h3, .accessory-card h3, .accessory-banner-card h3, .timeline-content h3 {
+  color: #18151b !important;
+  text-shadow: none !important;
+}
+
+.about-intro-card p, .about-name-card p, .slogan-card p, .achievement-card p, .accessory-card p, .accessory-banner-card p, .timeline-content p {
+  color: #554e57 !important;
+  text-shadow: none !important;
+}
+
+/* (B) KARTU SEKSI HITAM (DARK THEME): PATTERN w1b.jpeg (mix-blend-mode: screen) */
+.flag-feature-card, .logo-meaning-badge-col, .logo-meaning-card, .haori-card, .haori-photo-card, .pembina-card, .management-card, .vision-card, .mission-box, .sora-rpg-card, .lb-category-desc-card, .lb-system-info-card, body.page-tentang .quote-card:not(.quote-theme-white) {
+  position: relative !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+  border-radius: 18px !important;
+  background: linear-gradient(165deg, #1d1624 0%, #130f18 100%) !important;
+  border: 1.5px solid rgba(255, 101, 155, 0.22) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45) !important;
+  color: #f5edf4 !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease !important;
+}
+
+.flag-feature-card::after, .logo-meaning-badge-col::after, .logo-meaning-card::after, .haori-card::after, .haori-photo-card::after, .pembina-card::after, .management-card::after, .vision-card::after, .mission-box::after, .sora-rpg-card::after, .lb-category-desc-card::after, .lb-system-info-card::after, body.page-tentang .quote-card:not(.quote-theme-white)::after {
   content: "" !important;
   position: absolute !important;
   inset: 0 !important;
@@ -3321,7 +3374,7 @@ RESPACING MINIMAL UNTUK HALAMAN TENTANG (.page-tentang)
   background-size: 200px auto !important;
   background-repeat: repeat !important;
   background-position: center top !important;
-  opacity: var(--opacity-w1b)!important;
+  opacity: var(--opacity-w1b) !important;
   mix-blend-mode: screen !important;
   pointer-events: none !important;
   z-index: 1 !important;
@@ -3329,49 +3382,26 @@ RESPACING MINIMAL UNTUK HALAMAN TENTANG (.page-tentang)
   transition: opacity 0.3s ease, transform 0.3s ease !important;
 }
 
-.about-intro-card:hover::after, .about-name-card:hover::after, .history-origin-card:hover::after, .slogan-hero-card:hover::after, .slogan-card:hover::after, .achievement-card:hover::after, .accessory-card:hover::after, .accessory-banner-card:hover::after, .timeline-node:hover .timeline-content::after, .prestasi-stat-box:hover::after, .podium-card:hover::after, .lb-category-desc-card:hover::after, .lb-table-card:hover::after, .lb-system-info-card:hover::after, body.page-tentang .quote-card:not(.quote-theme-white):hover::after {
-  opacity: var(--opacity-w1b-hover)!important;
+.flag-feature-card:hover::after, .logo-meaning-badge-col:hover::after, .logo-meaning-card:hover::after, .haori-card:hover::after, .haori-photo-card:hover::after, .pembina-card:hover::after, .management-card:hover::after, .vision-card:hover::after, .mission-box:hover::after, .sora-rpg-card:hover::after, .lb-category-desc-card:hover::after, .lb-system-info-card:hover::after, body.page-tentang .quote-card:not(.quote-theme-white):hover::after {
+  opacity: var(--opacity-w1b-hover) !important;
   transform: scale(1.02) !important;
 }
 
-.about-intro-card > *, .about-name-card > *, .history-origin-card > *, .slogan-hero-card > *, .slogan-card > *, .achievement-card > *, .accessory-card > *, .accessory-banner-card > *, .timeline-content > *, .prestasi-stat-box > *, .podium-card > *, .lb-category-desc-card > *, .lb-table-card > *, .lb-system-info-card > *, body.page-tentang .quote-card > * {
+.flag-feature-card > *, .logo-meaning-badge-col > *, .logo-meaning-card > *, .haori-card > *, .haori-photo-card > *, .pembina-card > *, .management-card > *, .vision-card > *, .mission-box > *, .sora-rpg-card > *, .lb-category-desc-card > *, .lb-system-info-card > *, body.page-tentang .quote-card > * {
   position: relative !important;
   z-index: 2 !important;
 }
-/* (A-2) KARTU GELAP HALAMAN GANJIL (REKOMENDASI & LOMBA): PATTERN c1b.jpeg */
-.event-card, .rek-cat-explain-card, .media-tips-card, .media-col-card {
-  position: relative !important;
-  overflow: hidden !important;
-  box-sizing: border-box !important;
-  border-radius: 18px !important;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease !important;
+
+.flag-feature-card h3, .logo-meaning-card h3, .haori-card h3, .pembina-card h3, .management-card h3, .vision-card h3, .mission-box h4, .sora-rpg-card h3 {
+  color: #ffffff !important;
+  text-shadow: none !important;
 }
 
-.event-card::after, .rek-cat-explain-card::after, .media-tips-card::after, .media-col-card::after {
-  content: "" !important;
-  position: absolute !important;
-  inset: 0 !important;
-  background-image: url("../../images/mirai/background/c1b.jpeg") !important;
-  background-size: 200px auto !important;
-  background-repeat: repeat !important;
-  background-position: center top !important;
-  opacity: var(--opacity-c1b)!important;
-  mix-blend-mode: screen !important;
-  pointer-events: none !important;
-  z-index: 1 !important;
-  display: block !important;
-  transition: opacity 0.3s ease, transform 0.3s ease !important;
+.flag-feature-card p, .logo-meaning-card p, .haori-card p, .pembina-card p, .management-card p, .vision-card p, .mission-box p, .sora-rpg-card p {
+  color: #d5ccd3 !important;
+  text-shadow: none !important;
 }
 
-.event-card:hover::after, .rek-cat-explain-card:hover::after, .media-tips-card:hover::after, .media-col-card:hover::after {
-  opacity: var(--opacity-c1b-hover)!important;
-  transform: scale(1.02) !important;
-}
-
-.event-card > *, .rek-cat-explain-card > *, .media-tips-card > *, .media-col-card > * {
-  position: relative !important;
-  z-index: 2 !important;
-}
 /* ANTI-OVERLAP: HANYA 1 PATTERN PADA SATU KARTU (TIDAK BOLEH ADA PATTERN GANDA BERTUMPUK) */
 .origin-phase-item::after, .origin-highlight-box::after, .quote-meaning-card::after, .quote-box::after, .badge-card-item::after, .lb-row-item::after, .lb-rule-box::after, .history-origin-card .origin-phase-item::after, .quote-card .quote-meaning-card::after, .lomba-detail-card .badge-card-item::after, .lb-table-card .lb-table-row::after, .lb-system-info-card .lb-rule-box::after {
   content: none !important;
@@ -3380,21 +3410,22 @@ RESPACING MINIMAL UNTUK HALAMAN TENTANG (.page-tentang)
 }
 
 .about-intro-card {
-  background: linear-gradient(165deg, #1c1523 0%, #130f18 100%) !important;
-  border: 1.5px solid rgba(255, 101, 155, 0.22) !important;
+  background: #ffffff !important;
+  border: 1.5px solid var(--pink-border, #f4bfd3) !important;
   border-radius: 18px !important;
   padding: 34px 28px !important;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important;
+  box-shadow: 0 8px 24px rgba(233, 30, 99, 0.06) !important;
+  color: #18151b !important;
 }
 
 .about-intro-card:hover {
   transform: translateY(-5px) !important;
   border-color: var(--pink, #e91e63) !important;
-  box-shadow: 0 18px 40px rgba(233, 30, 99, 0.22) !important;
+  box-shadow: 0 16px 36px rgba(233, 30, 99, 0.16) !important;
 }
 
 .about-intro-badge {
-  color: #ff659b !important;
+  color: #d81b60 !important;
   font-size: 11px !important;
   font-weight: 800 !important;
   letter-spacing: 1.6px !important;
@@ -3407,95 +3438,17 @@ RESPACING MINIMAL UNTUK HALAMAN TENTANG (.page-tentang)
   margin: 0 0 14px !important;
   font-size: 20px !important;
   line-height: 1.38 !important;
-  color: #ffffff !important;
+  color: #18151b !important;
   font-weight: 800 !important;
+  text-shadow: none !important;
 }
 
 .about-intro-card p {
-  color: #d5ccd3 !important;
+  color: #554e57 !important;
   font-size: 14px !important;
   line-height: 1.75 !important;
   margin: 0 0 14px 0 !important;
-}
-/* Pattern Wagara Lembut Mockup Bendera */
-.flag-mockup-frame {
-  position: relative !important;
-  overflow: hidden !important;
-}
-
-.flag-mockup-frame::after {
-  content: "" !important;
-  position: absolute !important;
-  inset: 0 !important;
-  background-image: url("../../images/mirai/background/w1w.jpeg") !important;
-  background-size: 200px auto !important;
-  background-repeat: repeat !important;
-  background-position: center top !important;
-  opacity: var(--opacity-w1w)!important;
-  mix-blend-mode: multiply !important;
-  pointer-events: none !important;
-  z-index: 1 !important;
-  border-radius: inherit !important;
-  display: block !important;
-  transition: opacity 0.3s ease, transform 0.3s ease !important;
-}
-
-.flag-feature-card:hover .flag-mockup-frame::after,
-.flag-mockup-frame:hover::after {
-  opacity: var(--opacity-w1w-hover)!important;
-  transform: scale(1.02) !important;
-}
-
-.flag-mockup-frame > * {
-  position: relative !important;
-  z-index: 2 !important;
-}
-
-body.theme-dark .flag-mockup-frame::after,
-body.dark-mode .flag-mockup-frame::after {
-  background-image: url("../../images/mirai/background/w1b.jpeg") !important;
-  opacity: var(--opacity-w1b)!important;
-  mix-blend-mode: screen !important;
-}
-
-body.theme-dark .flag-mockup-frame:hover::after,
-body.dark-mode .flag-mockup-frame:hover::after {
-  opacity: var(--opacity-w1b-hover)!important;
-}
-
-/* (B) BAGIAN PUTIH: .flag-feature-card, .logo-meaning-badge-col, .logo-meaning-card, .haori-card, .haori-photo-card, .pembina-card, .management-card, .vision-card, .mission-box, .proker-benefit-card, .proker-detail-card, .ketentuan-card */
-.flag-feature-card, .logo-meaning-badge-col, .logo-meaning-card, .haori-card, .haori-photo-card, .pembina-card, .management-card, .vision-card, .mission-box, .proker-benefit-card, .proker-detail-card, .ketentuan-card {
-  position: relative !important;
-  overflow: hidden !important;
-  box-sizing: border-box !important;
-  border-radius: 18px !important;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease !important;
-}
-
-.flag-feature-card::after, .logo-meaning-badge-col::after, .logo-meaning-card::after, .haori-card::after, .haori-photo-card::after, .pembina-card::after, .management-card::after, .vision-card::after, .mission-box::after, .proker-benefit-card::after, .proker-detail-card::after, .ketentuan-card::after {
-  content: "" !important;
-  position: absolute !important;
-  inset: 0 !important;
-  background-image: url("../../images/mirai/background/w1w.jpeg") !important;
-  background-size: 200px auto !important;
-  background-repeat: repeat !important;
-  background-position: center top !important;
-  opacity: var(--opacity-w1w)!important;
-  mix-blend-mode: multiply !important;
-  pointer-events: none !important;
-  z-index: 1 !important;
-  display: block !important;
-  transition: opacity 0.3s ease, transform 0.3s ease !important;
-}
-
-.flag-feature-card:hover::after, .logo-meaning-badge-col:hover::after, .logo-meaning-card:hover::after, .haori-card:hover::after, .haori-photo-card:hover::after, .pembina-card:hover::after, .management-card:hover::after, .vision-card:hover::after, .mission-box:hover::after, .proker-benefit-card:hover::after, .proker-detail-card:hover::after, .ketentuan-card:hover::after {
-  opacity: var(--opacity-w1w-hover)!important;
-  transform: scale(1.02) !important;
-}
-
-.flag-feature-card > *, .logo-meaning-badge-col > *, .logo-meaning-card > *, .haori-card > *, .haori-photo-card > *, .pembina-card > *, .management-card > *, .vision-card > *, .mission-box > *, .proker-benefit-card > *, .proker-detail-card > *, .ketentuan-card > * {
-  position: relative !important;
-  z-index: 2 !important;
+  text-shadow: none !important;
 }
 
 body.theme-dark .ketentuan-card::after {

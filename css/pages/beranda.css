@@ -211,14 +211,14 @@ Wagara Patterns pada Seluruh Tombol Besar (Tanpa Kotak Informatif Tentang)
 - Tombol Besar Putih: Pattern Kumo Awan Halus (c1w.jpeg)
 - Tombol Besar Hitam: Pattern Kumo Awan Gelap (c1b.jpeg)
 ========================================================================== */
-/* 1. Tombol Besar pada Halaman/Section Putih Beranda (c1w.jpeg) */
-.start-card, .curriculum-cards a {
+/* 1. Tombol Besar pada Halaman/Section Putih Beranda & Kelas (c1w.jpeg) */
+.curriculum-cards a {
   position: relative;
   overflow: hidden;
   background-color: #ffffff;
 }
 
-.start-card > *:not(.card-coming-soon-overlay), .curriculum-cards a > *:not(.card-coming-soon-overlay) {
+.curriculum-cards a > *:not(.card-coming-soon-overlay) {
   position: relative;
   z-index: 2;
 }
@@ -241,7 +241,7 @@ Wagara Patterns pada Seluruh Tombol Besar (Tanpa Kotak Informatif Tentang)
   transform: scaleX(1);
 }
 
-.start-card::after, .curriculum-cards a::after {
+.curriculum-cards a::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -249,34 +249,99 @@ Wagara Patterns pada Seluruh Tombol Besar (Tanpa Kotak Informatif Tentang)
   background-size: 200px auto !important;
   background-repeat: repeat !important;
   background-position: center top !important;
-  opacity: var(--opacity-c1w)!important;
+  opacity: var(--opacity-c1w) !important;
   mix-blend-mode: multiply;
   pointer-events: none;
   z-index: 1;
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-.start-card:hover::after, .curriculum-cards a:hover::after {
-  opacity: var(--opacity-c1w-hover)!important;
+.curriculum-cards a:hover::after {
+  opacity: var(--opacity-c1w-hover) !important;
   transform: scale(1.02);
 }
-/* Dukungan Dark Mode / Section Genap untuk Tombol Besar Halaman Putih Beranda */
-body.dark-mode .start-card::after, body.theme-dark .start-card::after, main > section:nth-of-type(even) .start-card::after, body.dark-mode .curriculum-cards a::after, body.theme-dark .curriculum-cards a::after {
-  background-image: url("../../images/mirai/background/c1b.jpeg");
+
+/* 1b. Kartu Navigasi Langkah Belajar di Journey Section (Seksi 2 Hitam: c1b.jpeg) */
+.journey-section .start-card,
+section[data-theme="dark"] .start-card {
+  position: relative !important;
+  overflow: hidden !important;
+  background: linear-gradient(165deg, #1d1624 0%, #130f18 100%) !important;
+  border: 1.5px solid rgba(255, 101, 155, 0.22) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45) !important;
+  color: #f5edf4 !important;
+}
+
+.journey-section .start-card:hover,
+section[data-theme="dark"] .start-card:hover {
+  transform: translateY(-5px) !important;
+  border-color: #ff659b !important;
+  box-shadow: 0 20px 44px rgba(233, 30, 99, 0.3), 0 4px 14px rgba(0, 0, 0, 0.6) !important;
+}
+
+.journey-section .start-card::after,
+section[data-theme="dark"] .start-card::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  background-image: url("../../images/mirai/background/c1b.jpeg") !important;
   background-size: 200px auto !important;
   background-repeat: repeat !important;
   background-position: center top !important;
-  opacity: var(--opacity-c1b)!important;
-  mix-blend-mode: screen;
+  opacity: var(--opacity-c1b) !important;
+  mix-blend-mode: screen !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+  display: block !important;
+  transition: opacity 0.3s ease, transform 0.3s ease !important;
 }
 
-body.dark-mode .start-card:hover::after, body.theme-dark .start-card:hover::after, main > section:nth-of-type(even) .start-card:hover::after, body.dark-mode .curriculum-cards a:hover::after, body.theme-dark .curriculum-cards a:hover::after {
-  opacity: 0.07 !important;
+.journey-section .start-card:hover::after,
+section[data-theme="dark"] .start-card:hover::after {
+  opacity: var(--opacity-c1b-hover) !important;
+  transform: scale(1.02) !important;
 }
-/* 2. Tombol Besar pada Halaman/Section Hitam Beranda (c1b.jpeg) */
+
+.journey-section .start-card h3,
+section[data-theme="dark"] .start-card h3 {
+  color: #ffffff !important;
+  text-shadow: none !important;
+}
+
+.journey-section .start-card p,
+.journey-section .start-card .card-collapsible-inner p,
+section[data-theme="dark"] .start-card p,
+section[data-theme="dark"] .start-card .card-collapsible-inner p {
+  color: #d5ccd3 !important;
+  text-shadow: none !important;
+}
+
+.journey-section .start-card .card-step-num,
+section[data-theme="dark"] .start-card .card-step-num {
+  background: rgba(233, 30, 99, 0.2) !important;
+  border: 1.5px solid rgba(255, 101, 155, 0.45) !important;
+  color: #ff659b !important;
+}
+
+.journey-section .start-card .card-sub-jp,
+section[data-theme="dark"] .start-card .card-sub-jp {
+  color: #ff659b !important;
+}
+
+.journey-section .start-card .card-toggle,
+section[data-theme="dark"] .start-card .card-toggle {
+  background: rgba(255, 101, 155, 0.15) !important;
+  border-color: rgba(255, 101, 155, 0.35) !important;
+  color: #ff659b !important;
+}
+/* 2. Tombol Besar pada Halaman/Section Putih Beranda (.home-activities-dark-section[data-theme="light"]: c1w.jpeg) */
 .activity-start-card {
   position: relative;
   overflow: hidden;
+  background-color: #ffffff !important;
+  border: 1.5px solid var(--pink-border, #f4bfd3) !important;
+  box-shadow: 0 8px 24px rgba(233, 30, 99, 0.06) !important;
+  color: #18151b !important;
 }
 
 .activity-start-card > *:not(.card-coming-soon-overlay) {
@@ -306,20 +371,48 @@ body.dark-mode .start-card:hover::after, body.theme-dark .start-card:hover::afte
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url("../../images/mirai/background/c1b.jpeg");
+  background-image: url("../../images/mirai/background/c1w.jpeg");
   background-size: 200px auto !important;
   background-repeat: repeat !important;
   background-position: center top !important;
-  opacity: var(--opacity-c1b)!important;
-  mix-blend-mode: screen;
+  opacity: var(--opacity-c1w) !important;
+  mix-blend-mode: multiply;
   pointer-events: none;
   z-index: 1;
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .activity-card-active:hover::after, .activity-start-card:hover::after {
-  opacity: 0.07 !important;
+  opacity: var(--opacity-c1w-hover) !important;
   transform: scale(1.02);
+}
+
+.activity-start-card h3 {
+  color: #18151b !important;
+  text-shadow: none !important;
+}
+
+.activity-start-card p,
+.activity-start-card .card-collapsible-inner p {
+  color: #554e57 !important;
+  text-shadow: none !important;
+}
+
+.activity-start-card > span:first-of-type,
+.activity-start-card > .card-step-num {
+  background: rgba(233, 30, 99, 0.08) !important;
+  border: 1.5px solid rgba(233, 30, 99, 0.28) !important;
+  color: #d81b60 !important;
+}
+
+.activity-start-card .card-sub-jp {
+  color: #d81b60 !important;
+}
+
+.activity-start-card .card-toggle {
+  background: rgba(233, 30, 99, 0.08) !important;
+  border: 1.5px solid rgba(233, 30, 99, 0.28) !important;
+  color: #d81b60 !important;
 }
 /* 3. Kartu Kelas (Menu Genap 2: Pola Ombak w1b & w1w) */
 .class-card {
@@ -517,7 +610,7 @@ body:not(.dark-mode):not(.theme-dark) main > section:nth-of-type(odd):not(.home-
   font-weight: 700 !important;
   line-height: 1 !important;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+  text-shadow: none !important;
   transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
   z-index: 3 !important;
 }
@@ -528,7 +621,7 @@ body:not(.dark-mode):not(.theme-dark) main > section:nth-of-type(odd):not(.home-
   color: #ffffff !important;
   transform: scale(1.12) translateX(3px);
   box-shadow: 0 0 24px rgba(255, 46, 131, 0.85), 0 4px 14px rgba(0, 0, 0, 0.5) !important;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8) !important;
+  text-shadow: none !important;
 }
 
 .activity-start-card > span:first-of-type, .activity-start-card > .card-step-num {
@@ -598,7 +691,9 @@ body:not(.dark-mode):not(.theme-dark) main > section:nth-of-type(odd):not(.home-
   padding: 56px 4.5vw 64px !important;
   position: relative !important;
   z-index: 5 !important;
-  box-shadow: 0 -24px 50px rgba(0, 0, 0, 0.55) !important;
+  background-color: #ffffff !important;
+  color: #18151b !important;
+  box-shadow: none !important;
 }
 
 .about-preview .section-intro {
@@ -622,9 +717,10 @@ body:not(.dark-mode):not(.theme-dark) main > section:nth-of-type(odd):not(.home-
   font-size: clamp(30px, 4vw, 48px) !important;
   line-height: 1.15 !important;
   margin: 0 !important;
-  color: #ffffff !important;
+  color: #18151b !important;
   font-weight: 900 !important;
   letter-spacing: -0.5px !important;
+  text-shadow: none !important;
 }
 
 .about-preview .section-intro .heading span {
@@ -639,17 +735,17 @@ body:not(.dark-mode):not(.theme-dark) main > section:nth-of-type(odd):not(.home-
   width: 100% !important;
   margin: 0 auto !important;
   padding: 38px 46px 36px !important;
-  background: linear-gradient(165deg, #1c1523 0%, #130f18 100%) !important;
-  border: 1.5px solid rgba(255, 101, 155, 0.25) !important;
+  background: #ffffff !important;
+  border: 1.5px solid var(--pink-border, #f4bfd3) !important;
   border-radius: 24px !important;
-  box-shadow: 0 16px 44px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 8px 24px rgba(233, 30, 99, 0.06) !important;
   transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease !important;
 }
 
 .about-feature-card:hover {
   transform: translateY(-5px) !important;
   border-color: var(--pink, #e91e63) !important;
-  box-shadow: 0 24px 50px rgba(233, 30, 99, 0.22), 0 6px 18px rgba(0, 0, 0, 0.6) !important;
+  box-shadow: 0 18px 40px rgba(233, 30, 99, 0.16) !important;
 }
 
 .about-feature-card::before {
@@ -674,12 +770,12 @@ body:not(.dark-mode):not(.theme-dark) main > section:nth-of-type(odd):not(.home-
   content: "" !important;
   position: absolute !important;
   inset: 0 !important;
-  background-image: url("../../images/mirai/background/c1b.jpeg") !important;
+  background-image: url("../../images/mirai/background/c1w.jpeg") !important;
   background-size: 200px auto !important;
   background-repeat: repeat !important;
   background-position: center top !important;
-  opacity: 0.045 !important;
-  mix-blend-mode: screen !important;
+  opacity: var(--opacity-c1w) !important;
+  mix-blend-mode: multiply !important;
   pointer-events: none !important;
   z-index: 0 !important;
   display: block !important;
@@ -687,7 +783,7 @@ body:not(.dark-mode):not(.theme-dark) main > section:nth-of-type(odd):not(.home-
 }
 
 .about-feature-card:hover::after {
-  opacity: 0.07 !important;
+  opacity: var(--opacity-c1w-hover) !important;
   transform: scale(1.02) !important;
 }
 
@@ -728,13 +824,14 @@ body:not(.dark-mode):not(.theme-dark) main > section:nth-of-type(odd):not(.home-
   gap: 8px !important;
   padding: 6px 16px !important;
   border-radius: 20px !important;
-  background: rgba(233, 30, 99, 0.16) !important;
-  border: 1.5px solid rgba(233, 30, 99, 0.4) !important;
-  color: var(--pink, #e91e63) !important;
+  background: rgba(233, 30, 99, 0.08) !important;
+  border: 1.5px solid rgba(233, 30, 99, 0.28) !important;
+  color: #d81b60 !important;
   font-size: 11.5px !important;
   font-weight: 800 !important;
   letter-spacing: 1.5px !important;
   text-transform: uppercase !important;
+  box-shadow: none !important;
 }
 
 .about-feature-badge .badge-dot {
@@ -752,14 +849,14 @@ body:not(.dark-mode):not(.theme-dark) main > section:nth-of-type(odd):not(.home-
   gap: 8px !important;
   padding: 6px 16px !important;
   border-radius: 20px !important;
-  background: rgba(233, 30, 99, 0.16) !important;
-  border: 1.5px solid rgba(233, 30, 99, 0.4) !important;
-  color: var(--pink, #e91e63) !important;
+  background: rgba(233, 30, 99, 0.08) !important;
+  border: 1.5px solid rgba(233, 30, 99, 0.28) !important;
+  color: #d81b60 !important;
   font-size: 11.5px !important;
   font-weight: 800 !important;
   letter-spacing: 1.5px !important;
   text-transform: uppercase !important;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25) !important;
+  box-shadow: none !important;
 }
 
 .about-feature-tag .badge-dot {
@@ -792,8 +889,9 @@ body:not(.dark-mode):not(.theme-dark) main > section:nth-of-type(odd):not(.home-
   font-size: clamp(26px, 3.4vw, 38px) !important;
   font-weight: 900 !important;
   line-height: 1.25 !important;
-  color: #ffffff !important;
+  color: #18151b !important;
   letter-spacing: -0.5px !important;
+  text-shadow: none !important;
 }
 
 .about-feature-body.stacked-layout .about-card-title span.highlight {
@@ -805,7 +903,8 @@ body:not(.dark-mode):not(.theme-dark) main > section:nth-of-type(odd):not(.home-
   line-height: 1.8 !important;
   margin: 0 !important;
   max-width: 100% !important;
-  color: #ece4ec !important;
+  color: #554e57 !important;
+  text-shadow: none !important;
 }
 
 .about-feature-body.stacked-layout .about-feature-action {
@@ -817,8 +916,9 @@ main .about-feature-card h2, main .about-feature-card .heading, .about-feature-c
   font-size: clamp(26px, 3.2vw, 38px) !important;
   font-weight: 900 !important;
   line-height: 1.25 !important;
-  color: #ffffff !important;
+  color: #18151b !important;
   letter-spacing: -0.5px !important;
+  text-shadow: none !important;
 }
 
 .about-card-title span, .about-card-title span.highlight, main .about-feature-card .heading span, main .about-feature-card .heading span.highlight, .about-feature-card .heading span.highlight, .about-feature-card .heading span, .about-feature-left .heading span.highlight, .about-feature-left .heading span {
@@ -827,7 +927,7 @@ main .about-feature-card h2, main .about-feature-card .heading, .about-feature-c
 
 .about-card-lead {
   margin: 12px 0 0 0 !important;
-  color: #f3a8c5 !important;
+  color: #d81b60 !important;
   font-size: 13px !important;
   font-weight: 700 !important;
   letter-spacing: 0.8px !important;
@@ -836,11 +936,12 @@ main .about-feature-card h2, main .about-feature-card .heading, .about-feature-c
 }
 
 .about-card-desc, main .about-feature-card .copy, main .about-feature-card p, .about-feature-right .copy, .about-feature-card p.copy {
-  color: #ece4ec !important;
+  color: #554e57 !important;
   font-size: 15px !important;
   line-height: 1.65 !important;
   margin: 0 0 20px 0 !important;
   max-width: calc(100% - 130px) !important;
+  text-shadow: none !important;
 }
 
 .about-feature-action {
@@ -1718,10 +1819,21 @@ Animasi buka-tutup modern berbasis CSS grid-template-rows (0fr -> 1fr).
   box-sizing: border-box !important;
   border-radius: 18px !important;
   padding: 24px 22px !important;
-  background: #ffffff !important;
-  border: 1.5px solid rgba(255, 101, 155, 0.28) !important;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04) !important;
   transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease, box-shadow 0.25s ease !important;
+}
+
+.home-activities-dark-section .activity-start-card,
+section[data-theme="light"] .activity-start-card {
+  background: #ffffff !important;
+  border: 1.5px solid var(--pink-border, #f4bfd3) !important;
+  box-shadow: 0 8px 24px rgba(233, 30, 99, 0.06) !important;
+}
+
+.journey-section .start-card,
+section[data-theme="dark"] .start-card {
+  background: linear-gradient(160deg, #1d1624, #130f18) !important;
+  border: 1.5px solid rgba(255, 101, 155, 0.22) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45) !important;
 }
 
 body.theme-dark .start-card, body.theme-dark .activity-start-card {
@@ -1751,17 +1863,21 @@ body.theme-dark .start-card, body.theme-dark .activity-start-card {
   min-height: 0 !important;
 }
 
-.card-collapsible-content > .card-collapsible-inner p, .about-card-desc, .feedback-card-desc {
+.card-collapsible-content > .card-collapsible-inner p {
   margin: 0 !important;
   padding-top: 4px !important;
   padding-bottom: 4px !important;
   font-size: 13.5px !important;
   line-height: 1.55 !important;
-  color: #475569 !important;
+  color: #554e57 !important;
+  text-shadow: none !important;
 }
 
-body.theme-dark .card-collapsible-content > .card-collapsible-inner p, body.theme-dark .about-card-desc, body.theme-dark .feedback-card-desc {
-  color: #cbd5e1 !important;
+.journey-section .start-card .card-collapsible-content > .card-collapsible-inner p,
+section[data-theme="dark"] .start-card .card-collapsible-content > .card-collapsible-inner p,
+.feedback-card-desc {
+  color: #d5ccd3 !important;
+  text-shadow: none !important;
 }
 
 [data-expand-card].is-expanded .card-collapsible-content, .about-feature-card.is-expanded .card-collapsible-content, .feedback-feature-card.is-expanded .card-collapsible-content {

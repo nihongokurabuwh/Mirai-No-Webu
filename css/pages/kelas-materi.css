@@ -4567,7 +4567,7 @@ GUARDRAIL KONTRAS KELAS & KURIKULUM (ANTI-NABRAK WCAG AAA)
 
 .page-kelas #lanjutan .section-desc, .page-kelas #lanjutan p.section-desc, #lanjutan .section-desc, #lanjutan p.section-desc {
   color: #cbd5e1 !important;
-  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5) !important;
+  text-shadow: none !important;
 }
 
 .page-kelas #kurikulum .section-desc, .page-kelas #kurikulum p.section-desc, #kurikulum .section-desc, #kurikulum p.section-desc {
@@ -5091,7 +5091,7 @@ REVAMP KELAS.HTML: SECTION BERSIH, CARD & TOMBOL SEPERTI GAMBAR 1 + CHIBI
 
 #lanjutan .copy, #lanjutan .section-desc, #lanjutan p.section-desc, .page-kelas #lanjutan .copy, .page-kelas #lanjutan .section-desc, .page-kelas #lanjutan p.section-desc {
   color: #cbd5e1 !important;
-  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5) !important;
+  text-shadow: none !important;
 }
 
 #lanjutan .kicker {

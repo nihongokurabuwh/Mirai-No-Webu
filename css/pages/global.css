@@ -1927,7 +1927,7 @@ img:not(.img-lightbox-img) {
   text-align: center;
   max-width: 80vw;
   line-height: 1.45;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+  text-shadow: none;
 }
 
 .img-lightbox-caption:empty {
@@ -3479,7 +3479,7 @@ html.is-page-locked-early main, body.is-page-locked main {
   letter-spacing: 0.04em !important;
   box-shadow: 0 6px 20px rgba(233, 30, 99, 0.5), 0 0 12px rgba(168, 85, 247, 0.35) !important;
   border: 1.5px solid rgba(255, 255, 255, 0.45) !important;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35) !important;
+  text-shadow: none !important;
   animation: pulseLockBadge 2.4s infinite ease-in-out !important;
 }
 
@@ -3489,7 +3489,7 @@ html.is-page-locked-early main, body.is-page-locked main {
   font-weight: 600 !important;
   color: rgba(255, 255, 255, 0.9) !important;
   letter-spacing: 0.02em !important;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8) !important;
+  text-shadow: none !important;
 }
 /* 3.2. Efek Tombol Terkunci & Blur dengan Timpa Teks Segera Hadir di Tengah */
 .btn-coming-soon-locked {
@@ -3522,7 +3522,7 @@ html.is-page-locked-early main, body.is-page-locked main {
   font-weight: 800 !important;
   letter-spacing: 0.03em !important;
   color: #ffffff !important;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7) !important;
+  text-shadow: none !important;
   background: linear-gradient(135deg, rgba(233, 30, 99, 0.82), rgba(168, 85, 247, 0.82)) !important;
   border-radius: inherit !important;
   border: 1px solid rgba(255, 255, 255, 0.35) !important;
@@ -4078,7 +4078,7 @@ body.dark-mode .program-card, body.theme-dark .program-card,
 body.dark-mode .start-card, body.theme-dark .start-card,
 body.dark-mode .lomba-detail-card, body.theme-dark .lomba-detail-card,
 body.dark-mode .dictionary-practice-link, body.theme-dark .dictionary-practice-link {
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.65);
+  text-shadow: none !important;
 }
 
 .section-quote-slider,

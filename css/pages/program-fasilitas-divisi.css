@@ -207,7 +207,7 @@ PROKER PAGE – SHARED LAYOUT
   font-weight: 800 !important;
   margin: 0 0 12px !important;
   text-transform: uppercase !important;
-  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4) !important;
+  text-shadow: none !important;
 }
 
 .proker-hero h1 {
@@ -631,13 +631,53 @@ TAP TO EXPAND & UKURAN SERAGAM: DIVISI & PROGRAM KERJA
   min-height: 0 !important;
 }
 
-.division-card .card-collapsible-inner p, .program-card .card-collapsible-inner p, .program-card .program-desc {
+.division-card .card-collapsible-inner p {
   margin: 0 !important;
   color: var(--muted, #554857) !important;
   font-size: 13.5px !important;
   line-height: 1.6 !important;
   text-align: center !important;
 }
+
+.program-card,
+section[data-theme="dark"] .program-card {
+  background: linear-gradient(165deg, #1d1624 0%, #130f18 100%) !important;
+  border: 1.5px solid rgba(255, 101, 155, 0.22) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45) !important;
+  color: #f5edf4 !important;
+}
+
+.program-card:hover,
+section[data-theme="dark"] .program-card:hover {
+  border-color: #ff659b !important;
+  box-shadow: 0 20px 44px rgba(233, 30, 99, 0.3), 0 4px 14px rgba(0, 0, 0, 0.6) !important;
+}
+
+.program-card h3,
+section[data-theme="dark"] .program-card h3 {
+  color: #ffffff !important;
+  text-shadow: none !important;
+}
+
+.program-card .card-collapsible-inner p,
+.program-card .program-desc,
+section[data-theme="dark"] .program-card .card-collapsible-inner p,
+section[data-theme="dark"] .program-card .program-desc {
+  margin: 0 !important;
+  color: #d5ccd3 !important;
+  font-size: 13.5px !important;
+  line-height: 1.6 !important;
+  text-align: center !important;
+  text-shadow: none !important;
+}
+
+.program-card .card-toggle,
+section[data-theme="dark"] .program-card .card-toggle {
+  background: rgba(255, 101, 155, 0.15) !important;
+  border-color: rgba(255, 101, 155, 0.35) !important;
+  color: #ff659b !important;
+}
+
 /* Kartu saat terbuka */
 .division-card.is-expanded, .program-card.is-expanded {
   min-height: 360px !important;
@@ -1467,21 +1507,6 @@ body.theme-dark .facility-card::after {
 body.dark-mode .facility-card:hover::after,
 body.theme-dark .facility-card:hover::after {
   opacity: var(--opacity-w1b-hover)!important;
-}
-  background-size: 200px auto !important;
-  background-repeat: repeat !important;
-  background-position: center top !important;
-  opacity: var(--opacity-w1b)!important;
-  mix-blend-mode: screen !important;
-  pointer-events: none !important;
-  z-index: 1 !important;
-  display: block !important;
-  transition: opacity 0.3s ease, transform 0.3s ease !important;
-}
-
-.facility-card:hover::after {
-  opacity: var(--opacity-w1b-hover)!important;
-  transform: scale(1.02) !important;
 }
 
 .facility-card > *:not(.card-coming-soon-overlay) {
