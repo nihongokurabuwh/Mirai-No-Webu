@@ -481,13 +481,13 @@ body.page-beranda .feedback-preview {
   z-index: 10 !important;
 }
 
-.division-section, .program-section {
-  background-color: #ffffff !important;
+.division-section {
+  background-color: #ffffff;
   position: relative !important;
   z-index: 10 !important;
 }
 
-body.theme-dark .division-section, body.dark-mode .division-section, body.theme-dark .program-section, body.dark-mode .program-section {
+body.theme-dark .division-section, body.dark-mode .division-section {
   background-color: #111111 !important;
 }
 

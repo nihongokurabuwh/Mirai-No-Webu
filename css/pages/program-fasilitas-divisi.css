@@ -498,15 +498,78 @@ PROKER PAGE – BACK BUTTON
   text-decoration: none;
   color: #fff;
 }
-/* =====================================================
-KEGIATAN PAGE ENHANCEMENTS
-===================================================== */
-body.dark-mode .program-section .heading, body.theme-dark .program-section .heading {
-  color: #fff;
+/* ==========================================================================
+   PROGRAM KERJA SECTION (.program-section) — UNIVERSAL ZEBRA THEME
+   - Versi Dark: Latar Hitam Obsidian (#0c0810 / #0e0b12), Teks Putih & Pink, Pola w1b.jpeg
+   - Versi Light: Latar Putih Bersih (#ffffff), Teks Gelap, Pola w1w.jpeg
+   ========================================================================== */
+section.program-section[data-theme="dark"],
+.program-section[data-theme="dark"],
+.program-section.theme-dark,
+body.dark-mode .program-section,
+body.theme-dark .program-section {
+  background-color: #0c0810 !important;
+  background: #0c0810 !important;
+  color: #f5edf4 !important;
+  position: relative !important;
+  z-index: 10 !important;
 }
 
-body.dark-mode .program-section .copy, body.theme-dark .program-section .copy {
-  color: #d7ccd2;
+section.program-section[data-theme="dark"]::after,
+.program-section[data-theme="dark"]::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  background-image: url("../../images/mirai/background/w1b.jpeg") !important;
+  background-size: 200px auto !important;
+  background-repeat: repeat !important;
+  background-position: center top !important;
+  opacity: var(--opacity-w1b, 0.08) !important;
+  mix-blend-mode: screen !important;
+  pointer-events: none !important;
+  z-index: 0 !important;
+}
+
+section.program-section[data-theme="dark"] > *,
+.program-section[data-theme="dark"] > * {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+section.program-section[data-theme="dark"] .heading,
+.program-section[data-theme="dark"] .heading,
+body.dark-mode .program-section .heading,
+body.theme-dark .program-section .heading {
+  color: #ffffff !important;
+  text-shadow: none !important;
+}
+
+section.program-section[data-theme="dark"] .heading span,
+.program-section[data-theme="dark"] .heading span {
+  color: var(--pink, #ff659b) !important;
+  text-shadow: none !important;
+}
+
+section.program-section[data-theme="dark"] .section-desc,
+section.program-section[data-theme="dark"] .copy,
+.program-section[data-theme="dark"] .section-desc,
+.program-section[data-theme="dark"] .copy,
+body.dark-mode .program-section .copy,
+body.theme-dark .program-section .copy {
+  color: #d5ccd3 !important;
+  text-shadow: none !important;
+}
+
+section.program-section[data-theme="dark"] .section-eyebrow,
+.program-section[data-theme="dark"] .section-eyebrow {
+  background: rgba(233, 30, 99, 0.16) !important;
+  border: 1.5px solid rgba(233, 30, 99, 0.4) !important;
+  color: #ff659b !important;
+}
+
+section.program-section[data-theme="dark"] .section-eyebrow .jp-kanji,
+.program-section[data-theme="dark"] .section-eyebrow .jp-kanji {
+  color: #ff659b !important;
 }
 /* ==========================================================================
 TAP TO EXPAND & UKURAN SERAGAM: DIVISI & PROGRAM KERJA
@@ -1207,7 +1270,72 @@ body:not(.theme-dark) .njr-dot {
 /* Slider Dokumentasi Independen (Portrait & Landscape) */
 .documentation-section {
   position: relative;
-  padding-top: 10px;
+  padding-top: 20px;
+}
+
+section.documentation-section[data-theme="dark"],
+.documentation-section[data-theme="dark"] {
+  background-color: #0c0810 !important;
+  background: #0c0810 !important;
+  color: #f5edf4 !important;
+  position: relative !important;
+}
+
+section.documentation-section[data-theme="dark"]::after,
+.documentation-section[data-theme="dark"]::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  background-image: url("../../images/mirai/background/w1b.jpeg") !important;
+  background-size: 200px auto !important;
+  background-repeat: repeat !important;
+  background-position: center top !important;
+  opacity: var(--opacity-w1b, 0.08) !important;
+  mix-blend-mode: screen !important;
+  pointer-events: none !important;
+  z-index: 0 !important;
+}
+
+section.documentation-section[data-theme="dark"] > *,
+.documentation-section[data-theme="dark"] > * {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+.documentation-section .section-intro {
+  max-width: 1100px !important;
+  margin: 0 auto 28px auto !important;
+  padding: 0 4px !important;
+}
+
+section.documentation-section[data-theme="dark"] .heading,
+.documentation-section[data-theme="dark"] .heading {
+  color: #ffffff !important;
+  text-shadow: none !important;
+}
+
+section.documentation-section[data-theme="dark"] .heading span,
+.documentation-section[data-theme="dark"] .heading span {
+  color: var(--pink, #ff659b) !important;
+  text-shadow: none !important;
+}
+
+section.documentation-section[data-theme="dark"] .section-desc,
+.documentation-section[data-theme="dark"] .section-desc {
+  color: #d5ccd3 !important;
+  text-shadow: none !important;
+}
+
+section.documentation-section[data-theme="dark"] .section-eyebrow,
+.documentation-section[data-theme="dark"] .section-eyebrow {
+  background: rgba(233, 30, 99, 0.16) !important;
+  border: 1.5px solid rgba(233, 30, 99, 0.4) !important;
+  color: #ff659b !important;
+}
+
+section.documentation-section[data-theme="dark"] .section-eyebrow .jp-kanji,
+.documentation-section[data-theme="dark"] .section-eyebrow .jp-kanji {
+  color: #ff659b !important;
 }
 
 .dokumentasi-row {
