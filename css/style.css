@@ -17,10 +17,10 @@
 @import url('pages/navbar-hero-footer.css');
 
 /* 3. Beranda: Seksi apa itu web, kisi fitur awal, aktivitas beranda, masukan & saran, quote slider */
-@import url('pages/beranda.css');
+@import url('pages/beranda.css?v=zebra-20261020');
 
 /* 4. Kelas & Materi: Alur kelas, kelas dasar, kelas lanjutan, buuku lesson, kurikulum, & latihan quest */
-@import url('pages/kelas-materi.css');
+@import url('pages/kelas-materi.css?v=zebra-20261020');
 
 /* 5. Kamus & Aksara: Kamus kanji/kana, stroke order kanjivg, kanvas goresan, & quick button */
 @import url('pages/kamus.css');
@@ -29,7 +29,7 @@
 @import url('pages/program-fasilitas-divisi.css');
 
 /* 7. Tentang Klub: Profil klub, bendera, filosofi, logo, slogan, visi-misi, sejarah, haori, pengurus, FAQ */
-@import url('pages/tentang.css');
+@import url('pages/tentang.css?v=about-pink-match-20261020');
 
 /* 8. Rekomendasi & Motivasi: Kata motivasi anime, rekomendasi karya, & media legal */
 @import url('pages/rekomendasi-motivasi.css');

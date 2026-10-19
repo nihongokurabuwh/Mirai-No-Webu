@@ -2355,3 +2355,50 @@ RESPONSIF MODE HP (<= 768px):
   position: relative !important;
   z-index: 2 !important;
 }
+
+body.page-tentang main > section.feedback-preview.feedback-theme-white[data-theme="light"] {
+  background: #ffffff !important;
+  color: #18151b !important;
+}
+
+body.page-tentang main > section.feedback-preview.feedback-theme-white[data-theme="light"] .feedback-feature-card {
+  background: #ffffff !important;
+  border: 1.5px solid #f0c4d4 !important;
+  box-shadow: 0 16px 40px rgba(32, 28, 38, 0.09) !important;
+  color: #18151b !important;
+}
+
+body.page-tentang main > section.feedback-preview.feedback-theme-white[data-theme="light"] .feedback-feature-card::after {
+  background-image: var(--page-pattern-white, var(--pattern-w1w)) !important;
+  opacity: var(--page-pattern-opacity-white, 0.1) !important;
+  mix-blend-mode: multiply !important;
+}
+
+body.page-tentang main > section.feedback-preview.feedback-theme-white[data-theme="light"] .feedback-feature-card:hover::after {
+  opacity: var(--page-pattern-opacity-white-hover, 0.15) !important;
+}
+
+body.page-tentang main > section.feedback-preview.feedback-theme-white[data-theme="light"] .feedback-feature-tag {
+  background: #fff0f5 !important;
+  border-color: #f4bfd3 !important;
+  color: #c2185b !important;
+  box-shadow: none !important;
+}
+
+body.page-tentang main > section.feedback-preview.feedback-theme-white[data-theme="light"] .feedback-feature-tag .badge-dot {
+  background: #c2185b !important;
+  box-shadow: none !important;
+}
+
+body.page-tentang main > section.feedback-preview.feedback-theme-white[data-theme="light"] .feedback-card-title,
+body.page-tentang main > section.feedback-preview.feedback-theme-white[data-theme="light"] .feedback-feature-card h2 {
+  color: #18151b !important;
+}
+
+body.page-tentang main > section.feedback-preview.feedback-theme-white[data-theme="light"] .feedback-card-desc {
+  color: #554e57 !important;
+}
+
+body.page-tentang main > section.feedback-preview.feedback-theme-white[data-theme="light"] .card-sub-jp {
+  color: #c2185b !important;
+}

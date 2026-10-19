@@ -1020,3 +1020,114 @@ MODAL DETAIL RIWAYAT PAPAN PERINGKAT (SIARAN, KEHADIRAN, PRESTASI)
     align-items: flex-start !important;
   }
 }
+
+/* Keep leaderboard surfaces consistent with its light section. */
+body.page-peringkat .peringkat-section {
+  background-color: #ffffff !important;
+  color: #18151b !important;
+}
+
+body.page-peringkat .peringkat-section .section-desc,
+body.page-peringkat .peringkat-section .lb-desc-p,
+body.page-peringkat .peringkat-section .lb-tab-text small,
+body.page-peringkat .peringkat-section .podium-class-info,
+body.page-peringkat .peringkat-section .podium-member-name,
+body.page-peringkat .peringkat-section .podium-member-role,
+body.page-peringkat .peringkat-section .podium-stat-label,
+body.page-peringkat .peringkat-section .lb-row-detail {
+  color: #514957 !important;
+}
+
+body.page-peringkat .peringkat-section .lb-tab-btn {
+  background-color: #ffffff !important;
+  background-image: url("../../images/mirai/background/w1w.jpeg") !important;
+  background-repeat: repeat !important;
+  background-size: 200px auto !important;
+  color: #18151b !important;
+  border-color: #eadde3 !important;
+  box-shadow: 0 8px 24px rgba(31, 20, 29, 0.08) !important;
+}
+
+body.page-peringkat .peringkat-section .lb-category-desc-card,
+body.page-peringkat .peringkat-section .podium-card,
+body.page-peringkat .peringkat-section .lb-table-card,
+body.page-peringkat .peringkat-section .lb-system-info-card {
+  background-color: #ffffff !important;
+  background-image: none !important;
+  color: #18151b !important;
+  border-color: #eadde3 !important;
+  box-shadow: 0 8px 24px rgba(31, 20, 29, 0.08) !important;
+}
+
+body.page-peringkat .peringkat-section .lb-category-desc-card::after,
+body.page-peringkat .peringkat-section .podium-card::after,
+body.page-peringkat .peringkat-section .lb-table-card::after,
+body.page-peringkat .peringkat-section .lb-system-info-card::after {
+  background-image: url("../../images/mirai/background/w1w.jpeg") !important;
+  opacity: var(--opacity-w1w, 0.12) !important;
+  mix-blend-mode: multiply !important;
+}
+
+body.page-peringkat .peringkat-section .lb-tab-btn.active {
+  background-color: #fff5f8 !important;
+  color: #18151b !important;
+  border-color: var(--pink, #e91e63) !important;
+  box-shadow: 0 8px 24px rgba(233, 30, 99, 0.12) !important;
+}
+
+body.page-peringkat .peringkat-section .lb-tab-btn.active .lb-tab-text strong,
+body.page-peringkat .peringkat-section .lb-tab-btn.active .lb-tab-text small {
+  color: #18151b !important;
+}
+
+body.page-peringkat .peringkat-section .lb-desc-title,
+body.page-peringkat .peringkat-section .podium-name,
+body.page-peringkat .peringkat-section .podium-score,
+body.page-peringkat .peringkat-section .podium-period-pill,
+body.page-peringkat .peringkat-section .is-counting,
+body.page-peringkat .peringkat-section .lb-row-rank,
+body.page-peringkat .peringkat-section .podium-class-name,
+body.page-peringkat .peringkat-section .lb-info-title,
+body.page-peringkat .peringkat-section .point-item h4,
+body.page-peringkat .peringkat-section .point-item p,
+body.page-peringkat .peringkat-section .lb-row-name,
+body.page-peringkat .peringkat-section .lb-row-score {
+  color: #18151b !important;
+}
+
+body.page-peringkat .peringkat-section .point-item {
+  background: #ffffff !important;
+  border-color: #eadde3 !important;
+  box-shadow: 0 4px 16px rgba(31, 20, 29, 0.06) !important;
+}
+
+body.page-peringkat .peringkat-section .lb-list-row {
+  background: rgba(255, 255, 255, 0.88) !important;
+  border-color: #eee5e9 !important;
+}
+
+body.page-peringkat .peringkat-section .podium-score-pill {
+  background: #f7f1f4 !important;
+  border-color: #e5d9df !important;
+  color: #514957 !important;
+}
+
+body.page-peringkat .peringkat-section .podium-score-pill *:not(.podium-score-hint) {
+  color: #514957 !important;
+}
+
+body.page-peringkat .peringkat-section .podium-score-pill .podium-score-hint {
+  color: #c2185b !important;
+}
+
+body.page-peringkat .peringkat-section .podium-period-pill {
+  background: #f7f1f4 !important;
+  border-color: #e5d9df !important;
+  color: #514957 !important;
+}
+
+body.page-peringkat .peringkat-section .lb-period-tag {
+  background: #f7f1f4 !important;
+  border-color: #e5d9df !important;
+  color: #514957 !important;
+}

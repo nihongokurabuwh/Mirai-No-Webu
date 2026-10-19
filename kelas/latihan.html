@@ -37,8 +37,36 @@
     <link rel=preconnect href="https://fonts.googleapis.com">
     <link rel=preconnect href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Noto+Serif+JP:wght@600;700;800;900&family=Noto+Sans+JP:wght@500;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/style.css?v=ae0b4b8a">
+    <link rel="stylesheet" href="../css/style.css?v=zebra-20261020">
 <style>
+html body.page-latihan .level-card {
+    position: relative !important;
+}
+
+html body.page-latihan .level-card-top-right {
+    position: absolute !important;
+    top: 0 !important;
+    right: 0 !important;
+    left: auto !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+}
+
+html body.page-latihan .level-card-top {
+    z-index: 3 !important;
+}
+
+html body.page-latihan .level-card .level-select-circle {
+    position: static !important;
+    order: 2 !important;
+    margin: 0 !important;
+}
+
+html body.theme-dark.page-latihan .level-card > strong {
+    color: #ffffff !important;
+}
+
 .answer-grid.is-match-grid,
 .learning-app .answer-grid.is-match-grid,
 .question-card .answer-grid.is-match-grid {
@@ -1012,38 +1040,54 @@ body.theme-dark .stroke-count-indicator {
     opacity: 0.08 !important;
 }
 
-/* 1. Hiragana Level Card: Pola Awan Kumo Gelap (c1b.jpeg) */
+/* 1. Hiragana Level Card: Pola Wagara Terang */
 .level-card--hiragana::after,
 [data-script="hiragana"] .level-card::after,
 .level-grid[data-script="hiragana"] .level-card::after,
 body[data-active-kana="hiragana"] .level-card::after {
-    background-image: url("../images/mirai/background/c1b.jpeg") !important;
-    opacity: 0.045 !important;
-    mix-blend-mode: screen !important;
+    background-image: url("../images/mirai/background/w1w.jpeg") !important;
+    opacity: 0.10 !important;
+    mix-blend-mode: multiply !important;
 }
 
 .level-card--hiragana:hover::after,
 [data-script="hiragana"] .level-card:hover::after,
 .level-grid[data-script="hiragana"] .level-card:hover::after,
 body[data-active-kana="hiragana"] .level-card:hover::after {
-    opacity: 0.08 !important;
+    opacity: 0.16 !important;
 }
 
-/* 2. Katakana Level Card: Pola Ombak Wagara Gelap (w1b.jpeg) */
+/* 2. Katakana Level Card: Pola Wagara Terang */
 .level-card--katakana::after,
 [data-script="katakana"] .level-card::after,
 .level-grid[data-script="katakana"] .level-card::after,
 body[data-active-kana="katakana"] .level-card::after {
-    background-image: url("../images/mirai/background/w1b.jpeg") !important;
-    opacity: 0.045 !important;
-    mix-blend-mode: screen !important;
+    background-image: url("../images/mirai/background/w1w.jpeg") !important;
+    opacity: 0.10 !important;
+    mix-blend-mode: multiply !important;
 }
 
 .level-card--katakana:hover::after,
 [data-script="katakana"] .level-card:hover::after,
 .level-grid[data-script="katakana"] .level-card:hover::after,
 body[data-active-kana="katakana"] .level-card:hover::after {
-    opacity: 0.08 !important;
+    opacity: 0.16 !important;
+}
+
+body.theme-dark .level-card--hiragana::after,
+body.dark-mode .level-card--hiragana::after,
+body.theme-dark .level-card--katakana::after,
+body.dark-mode .level-card--katakana::after {
+    background-image: url("../images/mirai/background/w1b.jpeg") !important;
+    opacity: 0.13 !important;
+    mix-blend-mode: screen !important;
+}
+
+body.theme-dark .level-card--hiragana:hover::after,
+body.dark-mode .level-card--hiragana:hover::after,
+body.theme-dark .level-card--katakana:hover::after,
+body.dark-mode .level-card--katakana:hover::after {
+    opacity: 0.18 !important;
 }
 
 /* Mode Cards Base Setup (Latihan Gabungan) */

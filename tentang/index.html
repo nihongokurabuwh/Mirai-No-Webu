@@ -37,7 +37,7 @@
     <link rel=preconnect href="https://fonts.googleapis.com">
     <link rel=preconnect href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Noto+Serif+JP:wght@600;700;800;900&family=Noto+Sans+JP:wght@500;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/style.css?v=ae0b4b8a">
+    <link rel="stylesheet" href="../css/style.css?v=zebra-20261020">
 </head>
 <body class="page-tentang">
     <a class="skip-link" href="#main-content">Lewati ke konten utama</a>
@@ -218,7 +218,6 @@
 
             <div class="slogan-container">
                 <div class="slogan-hero-card">
-                    <span class="slogan-badge">SLOGAN RESMI · 合言葉</span>
                     <h3 class="slogan-japanese">ここから、未来へ</h3>
                     <p class="slogan-romaji">Koko kara, Mirai e</p>
                     <div class="slogan-divider"></div>
@@ -640,11 +639,15 @@
             <!-- FOTO / STIKER HAORI DEPAN & BELAKANG (TERBARU DARI FOLDER IDENTITAS) -->
             <div class="haori-showcase">
                 <div class="haori-photo-card">
-                    <img src="images/identitas/haori-depan-new.png" alt="Haori Tampak Depan" loading="lazy" decoding="async" width="578" height="668">
+                    <div class="haori-photo-frame">
+                        <img src="images/identitas/haori-depan-new.png" alt="Haori resmi Mirai no Hana — tampak depan" loading="lazy" decoding="async" width="578" height="668">
+                    </div>
                     <div class="haori-photo-tag">TAMPAK DEPAN</div>
                 </div>
                 <div class="haori-photo-card">
-                    <img src="images/identitas/haori-belakang-new.png" alt="Haori Tampak Belakang" loading="lazy" decoding="async" width="578" height="668">
+                    <div class="haori-photo-frame">
+                        <img src="images/identitas/haori-belakang-new.png" alt="Haori resmi Mirai no Hana — tampak belakang" loading="lazy" decoding="async" width="578" height="668">
+                    </div>
                     <div class="haori-photo-tag">TAMPAK BELAKANG</div>
                 </div>
             </div>
@@ -703,22 +706,26 @@
                 </div>
             </article>
 
-            <!-- 3-COLUMN GRID: 2 IDC + 1 PIN -->
+            <!-- 3-COLUMN GRID: TANDA PENGENAL + PIN + NAMETAG -->
             <div class="accessories-grid">
-                <article class="accessory-card">
-                    <div class="accessory-thumb-wrap">
-                        <img src="images/identitas/idc-front.jpeg" alt="ID Card Anggota (Tampak Depan)" loading="lazy" decoding="async" width="197" height="327">
+                <article class="accessory-card identity-carousel-card">
+                    <div class="accessory-thumb-wrap identity-carousel-viewport" data-identity-carousel tabindex="0" role="region" aria-roledescription="carousel" aria-label="Tanda pengenal anggota, tampak depan dan belakang">
+                        <div class="identity-carousel-track">
+                            <div class="identity-carousel-slide" role="group" aria-roledescription="slide" aria-label="1 dari 2, tampak depan">
+                                <img src="images/identitas/idc-front.jpeg" alt="Tanda pengenal anggota, tampak depan" loading="lazy" decoding="async" width="197" height="327">
+                            </div>
+                            <div class="identity-carousel-slide" role="group" aria-roledescription="slide" aria-label="2 dari 2, tampak belakang">
+                                <img src="images/identitas/idc-back.jpeg" alt="Tanda pengenal anggota, tampak belakang" loading="lazy" decoding="async" width="638" height="1004">
+                            </div>
+                        </div>
                     </div>
-                    <h3>ID Card (Depan)</h3>
-                    <p>Tanda pengenal resmi anggota dengan pas foto, nama, dan ornamen khas klub.</p>
-                </article>
-
-                <article class="accessory-card">
-                    <div class="accessory-thumb-wrap">
-                        <img src="images/identitas/idc-back.jpeg" alt="ID Card Anggota (Tampak Belakang)" loading="lazy" decoding="async" width="638" height="1004">
+                    <div class="identity-carousel-controls">
+                        <button type="button" class="identity-carousel-button" data-identity-prev aria-label="Tampak depan tanda pengenal" disabled>‹</button>
+                        <span class="identity-carousel-indicator" data-identity-indicator aria-live="polite">1 dari 2</span>
+                        <button type="button" class="identity-carousel-button" data-identity-next aria-label="Tampak belakang tanda pengenal">›</button>
                     </div>
-                    <h3>ID Card (Belakang)</h3>
-                    <p>Dilengkapi QR Code media sosial resmi dan motto Nihongo Kurabu.</p>
+                    <h3>Tanda Pengenal</h3>
+                    <p>Kartu anggota resmi dengan identitas, foto, QR Code media sosial, dan motto Nihongo Kurabu. Geser untuk melihat sisi depan dan belakang.</p>
                 </article>
 
                 <article class="accessory-card">
@@ -737,6 +744,48 @@
                     <p>Papan nama dengan tulisan nama anggota dalam huruf Katakana sebagai identitas klub.</p>
                 </article>
             </div>
+            <script>
+                (() => {
+                    const carousel = document.querySelector("[data-identity-carousel]");
+                    const track = carousel?.querySelector(".identity-carousel-track");
+                    const previous = document.querySelector("[data-identity-prev]");
+                    const next = document.querySelector("[data-identity-next]");
+                    const indicator = document.querySelector("[data-identity-indicator]");
+                    if (!carousel || !track || !previous || !next || !indicator) return;
+
+                    const slides = [...track.children];
+                    const currentIndex = () => Math.min(
+                        slides.length - 1,
+                        Math.max(0, Math.round(carousel.scrollLeft / carousel.clientWidth))
+                    );
+                    const updateControls = () => {
+                        const index = currentIndex();
+                        indicator.textContent = `${index + 1} dari ${slides.length}`;
+                        previous.disabled = index === 0;
+                        next.disabled = index === slides.length - 1;
+                    };
+                    const goTo = (index) => {
+                        if (slides[index]) {
+                            carousel.scrollTo({ left: index * carousel.clientWidth, behavior: "smooth" });
+                        }
+                    };
+
+                    previous.addEventListener("click", () => goTo(currentIndex() - 1));
+                    next.addEventListener("click", () => goTo(currentIndex() + 1));
+                    carousel.addEventListener("scroll", () => requestAnimationFrame(updateControls), { passive: true });
+                    carousel.addEventListener("keydown", (event) => {
+                        if (event.key === "ArrowLeft" && currentIndex() > 0) {
+                            event.preventDefault();
+                            goTo(currentIndex() - 1);
+                        } else if (event.key === "ArrowRight" && currentIndex() < slides.length - 1) {
+                            event.preventDefault();
+                            goTo(currentIndex() + 1);
+                        }
+                    });
+                    window.addEventListener("resize", updateControls);
+                    updateControls();
+                })();
+            </script>
         </section>
 
         <!-- SECTION 5: KEPENGURUSAN (SLIDER PERIODE 2025/2026 & 2026/2027) -->

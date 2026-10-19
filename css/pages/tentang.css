@@ -689,6 +689,7 @@ section[data-theme="dark"] .mission-box {
 
   .mission-box {
     padding: 22px 20px;
+  }
 }
 /* BAGIAN 3: ETALASE HAORI & 6 MAKNA */
 .haori-section {
@@ -708,37 +709,69 @@ section[data-theme="dark"] .mission-box {
 }
 
 .haori-photo-card {
-  background: var(--white);
-  border: 1px solid var(--pink-border);
-  border-radius: 14px;
+  background: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.82) !important;
+  border-radius: 18px;
   overflow: hidden;
-  box-shadow: 0 8px 24px rgba(72, 32, 52, 0.05);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.24);
   text-align: center;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
 .haori-photo-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 16px 32px rgba(233, 30, 99, 0.12);
+  border-color: rgba(255, 101, 155, 0.72) !important;
+  box-shadow: 0 20px 42px rgba(0, 0, 0, 0.3), 0 0 24px rgba(233, 30, 99, 0.16);
 }
 
-.haori-photo-card img {
-  width: 100%;
-  max-height: 400px;
-  object-fit: contain;
-  background: transparent;
-  padding: 18px 14px;
+.haori-photo-frame {
+  position: relative;
+  z-index: 2;
+  min-height: clamp(360px, 38vw, 480px);
+  padding: clamp(20px, 3vw, 38px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff !important;
+  border: 10px solid #ffffff;
+  border-radius: 17px 17px 0 0;
+  box-shadow: inset 0 0 0 1px rgba(37, 33, 42, 0.08);
+}
+
+.haori-photo-frame img {
   display: block;
+  width: auto !important;
+  height: auto !important;
+  max-width: 100%;
+  max-height: 410px;
+  object-fit: contain;
+  filter: drop-shadow(0 12px 18px rgba(20, 24, 40, 0.18));
 }
 
 .haori-photo-tag {
-  padding: 14px 20px;
+  padding: 13px 20px;
   font-size: 13px;
   font-weight: 800;
   letter-spacing: 1.8px;
-  color: var(--pink);
-  background: var(--pink-soft);
-  border-top: 1px solid var(--pink-border);
+  color: #a8124b;
+  background: #fff7fb;
+  border-top: 1px solid rgba(233, 30, 99, 0.14);
+}
+
+@media (max-width: 760px) {
+  .haori-showcase {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .haori-photo-frame {
+    min-height: clamp(300px, 88vw, 400px);
+    padding: 18px;
+  }
+
+  .haori-photo-frame img {
+    max-height: 340px;
+  }
 }
 
 .haori-grid {
@@ -4090,4 +4123,295 @@ body.dark-mode .page-lomba .lomba-detail-card::after, body.theme-dark .page-lomb
 
 body.dark-mode .page-lomba .lomba-detail-card:hover::after, body.theme-dark .page-lomba .lomba-detail-card:hover::after {
   opacity: var(--opacity-c1b-hover)!important;
+}
+
+/* Contrast and card surfaces for the light/dark About-page sections */
+.page-tentang .about-intro-section .intro-activity-list {
+  color: #554e57 !important;
+}
+
+.page-tentang .about-intro-section .intro-activity-list strong {
+  color: #18151b !important;
+}
+
+.page-tentang .about-filosofi-section .about-name-card {
+  position: relative !important;
+  overflow: hidden !important;
+  background: #ffffff !important;
+  border: 1.5px solid #f4bfd3 !important;
+  border-left: 5px solid var(--pink, #e91e63) !important;
+  box-shadow: 0 8px 24px rgba(72, 32, 52, 0.06) !important;
+  color: #18151b !important;
+}
+
+.page-tentang .about-filosofi-section .about-name-card::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  background: url("../../images/mirai/background/w1w.jpeg") center top / 200px auto repeat !important;
+  opacity: var(--opacity-w1w, 0.1) !important;
+  mix-blend-mode: multiply !important;
+  pointer-events: none !important;
+  z-index: 0 !important;
+}
+
+.page-tentang .about-filosofi-section .about-name-card > * {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+.page-tentang .about-filosofi-section .about-name-badge {
+  color: #c2185b !important;
+}
+
+.page-tentang .about-filosofi-section .about-name-card h3 {
+  color: #18151b !important;
+}
+
+.page-tentang .about-filosofi-section .about-name-card p {
+  color: #554e57 !important;
+}
+
+.page-tentang .logo-meaning-section .logo-meaning-badge-col {
+  position: relative !important;
+  overflow: hidden !important;
+  background: #19141f !important;
+  border: 1.5px solid #3d3040 !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4) !important;
+}
+
+.page-tentang .logo-meaning-section .logo-meaning-badge-col::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  background: url("../../images/mirai/background/w1b.jpeg") center top / 200px auto repeat !important;
+  opacity: var(--opacity-w1b, 0.13) !important;
+  mix-blend-mode: screen !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+}
+
+.page-tentang .logo-meaning-section .logo-meaning-badge-col > * {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+.page-tentang .logo-meaning-section .logo-meaning-card {
+  position: relative !important;
+  overflow: hidden !important;
+  background: #19141f !important;
+  border-color: #3d3040 !important;
+  border-left-color: var(--pink, #e91e63) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4) !important;
+}
+
+.page-tentang .logo-meaning-section .logo-meaning-card::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  background: url("../../images/mirai/background/w1b.jpeg") center top / 200px auto repeat !important;
+  opacity: var(--opacity-w1b, 0.13) !important;
+  mix-blend-mode: screen !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+}
+
+.page-tentang .logo-meaning-section .logo-meaning-card > * {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+.page-tentang .logo-meaning-section .logo-card-badge {
+  color: var(--pink, #e91e63) !important;
+}
+
+.page-tentang .logo-meaning-section .logo-meaning-card h3 {
+  color: #ffffff !important;
+}
+
+.page-tentang .logo-meaning-section .logo-meaning-card p {
+  color: #d5ccd3 !important;
+}
+
+.page-tentang .haori-section .haori-showcase {
+  position: relative !important;
+  isolation: isolate !important;
+  overflow: hidden !important;
+  padding: clamp(16px, 2.5vw, 28px) !important;
+  background: linear-gradient(155deg, #1a1420 0%, #0e0b12 100%) !important;
+  border: 1.5px solid rgba(255, 101, 155, 0.28) !important;
+  border-radius: 22px !important;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4) !important;
+}
+
+.page-tentang .haori-section .haori-showcase::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  background: url("../../images/mirai/background/w1b.jpeg") center top / 200px auto repeat !important;
+  opacity: var(--opacity-w1b, 0.13) !important;
+  mix-blend-mode: screen !important;
+  pointer-events: none !important;
+  z-index: -1 !important;
+}
+
+.page-tentang .haori-section .haori-photo-card {
+  position: relative !important;
+  z-index: 0 !important;
+  background: #ffffff !important;
+  border: 1px solid #f4bfd3 !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18) !important;
+}
+
+.page-tentang .haori-section .haori-photo-card::after {
+  content: none !important;
+  display: none !important;
+}
+
+.page-tentang .haori-section .haori-photo-frame {
+  background: #ffffff !important;
+  border-color: #ffffff !important;
+}
+
+.page-tentang .haori-section .haori-photo-tag {
+  color: #a8124b !important;
+  background: #fff7fb !important;
+  border-top-color: rgba(233, 30, 99, 0.14) !important;
+}
+
+.page-tentang .management-section .pembina-period-badge {
+  background: rgba(255, 101, 155, 0.14) !important;
+  border-color: rgba(255, 133, 179, 0.55) !important;
+  color: #ff9bc0 !important;
+}
+
+.page-tentang .management-section .mgmt-page-indicator {
+  color: #f5edf4 !important;
+}
+
+.page-tentang .management-section .mgmt-slide-badge {
+  position: relative !important;
+  isolation: isolate !important;
+  overflow: hidden !important;
+  background: linear-gradient(155deg, #1a1420 0%, #0e0b12 100%) !important;
+  border: 1px solid rgba(255, 101, 155, 0.32) !important;
+  border-left: 4px solid var(--pink, #e91e63) !important;
+  color: #f5edf4 !important;
+}
+
+.page-tentang .management-section .mgmt-slide-badge.is-concept {
+  border-left-color: #c77dff !important;
+}
+
+.page-tentang .management-section .mgmt-slide-badge::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  background: url("../../images/mirai/background/w1b.jpeg") center top / 200px auto repeat !important;
+  opacity: var(--opacity-w1b, 0.13) !important;
+  mix-blend-mode: screen !important;
+  pointer-events: none !important;
+  z-index: -1 !important;
+}
+
+.page-tentang .management-section .mgmt-badge-period {
+  color: #ff85b3 !important;
+}
+
+.page-tentang .management-section .mgmt-slide-badge.is-concept .mgmt-badge-period {
+  color: #d8a5ff !important;
+}
+
+.page-tentang .management-section .mgmt-badge-desc {
+  color: #f5edf4 !important;
+}
+
+.identity-carousel-viewport {
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  overscroll-behavior-x: contain;
+  touch-action: pan-x;
+}
+
+.identity-carousel-viewport::-webkit-scrollbar {
+  display: none;
+}
+
+.identity-carousel-track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.identity-carousel-slide {
+  display: flex;
+  flex: 0 0 100%;
+  min-width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  scroll-snap-align: start;
+}
+
+.identity-carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.identity-carousel-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.identity-carousel-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border: 1px solid #e9a7c0;
+  border-radius: 50%;
+  background: #fff;
+  color: #a8124b;
+  font: inherit;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.identity-carousel-button:hover:not(:disabled) {
+  border-color: #e91e63;
+  background: #fff0f5;
+}
+
+.identity-carousel-button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.identity-carousel-indicator {
+  min-width: 56px;
+  color: #554e57;
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.page-tentang .about-intro-section .intro-pill {
+  color: #9f1239 !important;
+  background: #ffe3ed !important;
+  border: 1px solid #e91e63 !important;
+  font-weight: 800 !important;
+  box-shadow: none !important;
+}
+
+.page-tentang .management-section .management-card .member-label {
+  color: var(--pink, #e91e63) !important;
 }

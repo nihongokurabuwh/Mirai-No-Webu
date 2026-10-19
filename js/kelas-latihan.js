@@ -1196,8 +1196,8 @@ const renderDashboard = () => {
                                 ` : ""}
                             </div>
                         </div>
-                        <h3>${level.label}</h3>
                         <strong>${displayChars(level.chars)}</strong>
+                        <h3>${level.label}</h3>
                         <button class="start-level" data-level="${level.id}" ${unlocked ? "" : "disabled"}>
                             ${selectedLevels.size > 0 ? `Mulai Latihan (${selectedLevels.size} LV Terpilih) →` : (completed ? "Latih Lagi →" : "Mulai Latihan →")}
                         </button>

@@ -250,21 +250,43 @@ Komponen Pembelajaran Kana Quest: Statistik, Kalender, Level, & Kuis
   font: 700 10px Arial,Helvetica,sans-serif;
 }
 
+.level-card-top-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-left: auto;
+}
+
+.level-card .level-select-circle {
+  position: static !important;
+  order: 2;
+  flex: 0 0 24px;
+  margin: 0 !important;
+}
+
 .level-card-top b {
   color: var(--muted);
 }
 
 .level-card h3 {
-  margin: 26px 0 9px;
-  font-size: 18px;
+  margin: 6px 0 9px;
+  color: #554e57;
+  font-size: 15px;
 }
 
 .level-card > strong {
   min-height: 34px;
-  color: var(--pink);
+  margin-top: 26px;
+  color: #18151b;
   font-size: 29px;
   font-weight: 500;
   letter-spacing: 2px;
+}
+
+body.theme-dark .level-card h3,
+body.theme-dark .level-card > strong {
+  color: #ffffff;
 }
 
 .mini-progress {
@@ -11033,4 +11055,27 @@ body.theme-dark .sync-box textarea {
     padding: 5px 10px;
     font-size: 12px;
   }
+}
+
+html body.learning-app.page-latihan .level-grid[data-script="hiragana"] .level-card::after,
+html body.learning-app.page-latihan .level-grid[data-script="katakana"] .level-card::after {
+  background-image: url("../../images/mirai/background/w1w.jpeg") !important;
+  opacity: 0.1 !important;
+  mix-blend-mode: multiply !important;
+}
+
+html body.learning-app.page-latihan .level-grid[data-script="hiragana"] .level-card:hover::after,
+html body.learning-app.page-latihan .level-grid[data-script="katakana"] .level-card:hover::after {
+  opacity: 0.16 !important;
+}
+
+html body.theme-dark.learning-app.page-latihan .level-grid[data-script="hiragana"] .level-card::after,
+html body.theme-dark.learning-app.page-latihan .level-grid[data-script="katakana"] .level-card::after {
+  background-image: url("../../images/mirai/background/w1b.jpeg") !important;
+  opacity: 0.13 !important;
+  mix-blend-mode: screen !important;
+}
+
+html body.theme-dark.learning-app.page-latihan .level-card > strong {
+  color: #ffffff !important;
 }

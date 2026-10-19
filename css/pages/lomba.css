@@ -1258,6 +1258,268 @@ body.dark-mode .lomba-detail-card:hover::after, body.theme-dark .lomba-detail-ca
   font-weight: 700;
   cursor: pointer;
 }
+
+/* Lomba uses the same light-then-dark section sequence declared in the HTML. */
+body.page-lomba .lomba-upcoming-section {
+  background-color: #ffffff !important;
+  background-image: none !important;
+  color: #18151b !important;
+  border-bottom-color: #e8e1e5 !important;
+}
+
+body.page-lomba .lomba-upcoming-section .heading,
+body.page-lomba .lomba-upcoming-section .section-desc,
+body.page-lomba .lomba-upcoming-section .filter-group-label {
+  color: #18151b !important;
+}
+
+body.page-lomba .lomba-upcoming-section .section-desc {
+  color: #514957 !important;
+}
+
+body.page-lomba .lomba-upcoming-section .lomba-filter-chip {
+  color: #514957 !important;
+  background: #ffffff !important;
+  border-color: #e5d9df !important;
+}
+
+body.page-lomba .lomba-upcoming-section .lomba-filter-chip:hover {
+  color: #18151b !important;
+  background: #fff5f8 !important;
+}
+
+body.page-lomba .lomba-upcoming-section .lomba-filter-chip.active {
+  color: #ffffff !important;
+  background: var(--pink, #e91e63) !important;
+  border-color: var(--pink, #e91e63) !important;
+}
+
+body.page-lomba .lomba-upcoming-section .event-card {
+  background: #ffffff !important;
+  background-image: none !important;
+  border-color: #e5d9df !important;
+  box-shadow: 0 12px 32px rgba(31, 20, 29, 0.1) !important;
+}
+
+body.page-lomba .lomba-upcoming-section .event-card::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+  background: url("../../images/mirai/background/w1w.jpeg") repeat center top / 200px auto !important;
+  opacity: var(--opacity-w1w, 0.12) !important;
+  mix-blend-mode: multiply !important;
+}
+
+body.page-lomba .lomba-upcoming-section .event-card-info,
+body.page-lomba .lomba-upcoming-section .event-card-header {
+  background: transparent !important;
+}
+
+body.page-lomba .lomba-upcoming-section .event-card-header {
+  border-bottom-color: #eee5e9 !important;
+}
+
+body.page-lomba .lomba-upcoming-section .event-title {
+  color: #18151b !important;
+}
+
+body.page-lomba .lomba-upcoming-section .event-desc,
+body.page-lomba .lomba-upcoming-section .meta-label {
+  color: #514957 !important;
+}
+
+body.page-lomba .lomba-upcoming-section .meta-val {
+  color: #18151b !important;
+}
+
+body.page-lomba .lomba-upcoming-section .event-organizer-tag {
+  background: #fff5f8 !important;
+  color: #9f174c !important;
+  border-color: #f0bfd0 !important;
+}
+
+body.page-lomba .lomba-upcoming-section .type-lomba {
+  background: #fff1f5 !important;
+  color: #9f174c !important;
+  border-color: #f0bfd0 !important;
+}
+
+body.page-lomba .lomba-upcoming-section .type-acara {
+  background: #f5f0ff !important;
+  color: #6b21a8 !important;
+  border-color: #d8c7f5 !important;
+}
+
+body.page-lomba .lomba-upcoming-section .level-jatim {
+  background: #fff4eb !important;
+  color: #9a3412 !important;
+  border-color: #fed7aa !important;
+}
+
+body.page-lomba .lomba-upcoming-section .level-sidoarjo {
+  background: #effaff !important;
+  color: #075985 !important;
+  border-color: #bae6fd !important;
+}
+
+body.page-lomba .lomba-upcoming-section .level-surabaya {
+  background: #ecfdf5 !important;
+  color: #047857 !important;
+  border-color: #a7f3d0 !important;
+}
+
+body.page-lomba .lomba-upcoming-section .level-nasional {
+  background: #fff1f2 !important;
+  color: #9f1239 !important;
+  border-color: #fecdd3 !important;
+}
+
+body.page-lomba .lomba-upcoming-section .event-status-tag {
+  color: #166534 !important;
+}
+
+body.page-lomba .lomba-upcoming-section .meta-item {
+  background: rgba(255, 255, 255, 0.86) !important;
+  border-color: #eee5e9 !important;
+}
+
+body.page-lomba .lomba-upcoming-section .lomba-empty-state {
+  background: #ffffff !important;
+  border-color: #d8cbd2 !important;
+  color: #514957 !important;
+}
+
+body.page-lomba .lomba-upcoming-section .lomba-empty-state h3 {
+  color: #18151b !important;
+}
+
+body.page-lomba .lomba-upcoming-section .lomba-empty-state p {
+  color: #514957 !important;
+}
+
+body.page-lomba .lomba-upcoming-section .pagination-btn {
+  background: #ffffff !important;
+  border-color: #e5d9df !important;
+  color: #514957 !important;
+}
+
+body.page-lomba .lomba-upcoming-section .pagination-btn:hover:not(:disabled) {
+  background: #fff5f8 !important;
+  color: #18151b !important;
+}
+
+body.page-lomba .lomba-upcoming-section .pagination-btn.active {
+  background: var(--pink, #e91e63) !important;
+  border-color: var(--pink, #e91e63) !important;
+  color: #ffffff !important;
+}
+
+body.page-lomba .lomba-catalog-section {
+  background-color: #08080a !important;
+  background-image: none !important;
+  color: #f8f6f8 !important;
+  border-top-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+body.page-lomba .lomba-catalog-section .heading,
+body.page-lomba .lomba-catalog-section .copy {
+  color: #e5dfe4 !important;
+}
+
+body.page-lomba .lomba-catalog-section .catalog-page-switcher {
+  background: #151218 !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+body.page-lomba .lomba-catalog-section .catalog-tab-btn {
+  color: #d4cbd3 !important;
+}
+
+body.page-lomba .lomba-catalog-section .catalog-tab-btn:hover {
+  color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+}
+
+body.page-lomba .lomba-catalog-section .catalog-tab-btn.active {
+  color: #ffffff !important;
+  background: #29212b !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3) !important;
+}
+
+body.page-lomba .lomba-catalog-section .catalog-tab-btn .tab-badge-num {
+  color: #f8f6f8 !important;
+  background: rgba(255, 255, 255, 0.12) !important;
+}
+
+body.page-lomba .lomba-catalog-section .catalog-tab-btn.active .tab-badge-num {
+  color: #ffffff !important;
+  background: var(--pink, #e91e63) !important;
+}
+
+body.page-lomba .lomba-catalog-section .lomba-detail-card {
+  background: #111015 !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28) !important;
+}
+
+body.page-lomba .lomba-catalog-section .lomba-detail-card::after {
+  background-image: url("../../images/mirai/background/c1b.jpeg") !important;
+  opacity: var(--opacity-c1b, 0.12) !important;
+  mix-blend-mode: screen !important;
+}
+
+body.page-lomba .lomba-catalog-section .lomba-name,
+body.page-lomba .lomba-catalog-section .card-footer-box strong {
+  color: #f8f6f8 !important;
+}
+
+body.page-lomba .lomba-catalog-section .lomba-subtitle,
+body.page-lomba .lomba-catalog-section .badge-card-item .badge-card-desc,
+body.page-lomba .lomba-catalog-section .lomba-card-tag {
+  color: #c6bdc6 !important;
+}
+
+body.page-lomba .lomba-catalog-section .lomba-stat-pill,
+body.page-lomba .lomba-catalog-section .meta-pill,
+body.page-lomba .lomba-catalog-section .badge-card-item,
+body.page-lomba .lomba-catalog-section .card-footer-box {
+  background: #1b1820 !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+  color: #e5dfe4 !important;
+}
+
+body.page-lomba .lomba-catalog-section .footer-tag {
+  background: #25212a !important;
+  border-color: rgba(255, 255, 255, 0.16) !important;
+  color: #f8f6f8 !important;
+}
+
+body.page-lomba .lomba-catalog-section .catalog-nav-btn {
+  background: #1b1820 !important;
+  border-color: rgba(255, 255, 255, 0.16) !important;
+  color: #f8f6f8 !important;
+}
+
+body.page-lomba .lomba-catalog-section .catalog-nav-btn:hover:not(:disabled) {
+  background: #29212b !important;
+  color: #ffffff !important;
+}
+
+body.page-lomba .lomba-catalog-section .lomba-empty-state {
+  background: #111015 !important;
+  border-color: rgba(255, 255, 255, 0.18) !important;
+  color: #d4cbd3 !important;
+}
+
+body.page-lomba .lomba-catalog-section .lomba-empty-state h3 {
+  color: #ffffff !important;
+}
+
+body.page-lomba .lomba-catalog-section .lomba-empty-state p {
+  color: #c6bdc6 !important;
+}
 /* RESPONSIVE MEDIA QUERIES */
 @media (max-width: 900px) {
   .rek-card {
