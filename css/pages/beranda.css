@@ -1771,10 +1771,22 @@ RESPONSIF MOBILE / HP (MAX-WIDTH: 680PX)
   }
 
   .about-feature-card > .card-corner-chibi, .feedback-feature-card > .card-corner-chibi {
-    width: 64px !important;
-    height: 64px !important;
+    width: 88px !important;
+    height: 88px !important;
     bottom: 10px !important;
     right: 12px !important;
+  }
+
+  /* Sisakan ruang sejajar untuk maskot dan CTA tanpa membuat kartu memanjang. */
+  .about-drawer-card .about-feature-body.stacked-layout {
+    padding-bottom: 0 !important;
+  }
+
+  .about-drawer-card .about-drawer-action {
+    margin-right: 96px !important;
+    min-height: 42px !important;
+    display: flex !important;
+    align-items: flex-end !important;
   }
 }
 /* =====================================================
@@ -2115,8 +2127,8 @@ RESPONSIF MODE HP (<= 768px):
 
   /* Logo NK proporsional di dalam laci 50% */
   .drawer-nk-logo {
-    width: clamp(65px, 20vw, 95px) !important;
-    max-width: 85% !important;
+    width: clamp(96px, 28vw, 138px) !important;
+    max-width: 92% !important;
     height: auto !important;
   }
 

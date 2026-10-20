@@ -481,58 +481,16 @@
         <!-- PROFIL MASKOT SORA (RPG CARD) -->
         <section class="section sora-profile-section" data-theme="dark">
             <div class="section-intro">
+                <p class="section-eyebrow"><span class="jp-kanji" lang="ja">マスコット紹介</span></p>
                 <h2 class="heading">Profil Maskot <span>Asora Aokita (Sora)</span></h2>
-                <p class="copy" style="margin-top: 10px;">
-                    <span class="sora-zoom-hint" id="soraZoomHint" title="Klik untuk melihat pratinjau penuh & zoom">
-                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
-                        Klik 2x / Ketuk 2x untuk melihat gambar lengkap &amp; perbesar
-                    </span>
-                </p>
+                <p class="section-desc">Kenali Asora Aokita, atau Sora: maskot resmi yang menjadi teman perjalanan belajar dan semangat kreatif Mirai no Hana.</p>
             </div>
 
             <div class="sora-full-carousel">
-                <div id="sora-scroll-box" class="sora-carousel-card" title="Klik 2x untuk melihat gambar lengkap &amp; perbesar">
+                <div class="sora-carousel-card">
                     <img id="soraCarouselImg" src="../sora/images/soracarousel.png" alt="Profil Lengkap Asora Aokita (Sora) - Maskot Resmi Mirai No Hana" loading="lazy" decoding="async" width="1280" height="555" draggable="false">
                 </div>
             </div>
-            
-            <script>
-                (function() {
-                    const card = document.getElementById('sora-scroll-box');
-                    const img = document.getElementById('soraCarouselImg');
-                    const hint = document.getElementById('soraZoomHint');
-                    if (!card || !img) return;
-
-                    const triggerLightbox = (e) => {
-                        if (e) {
-                            e.preventDefault();
-                            e.stopPropagation();
-                        }
-                        if (window.openImageLightbox) {
-                            window.openImageLightbox(img);
-                        } else {
-                            img.dispatchEvent(new MouseEvent('dblclick', { bubbles: true, cancelable: true }));
-                        }
-                    };
-
-                    card.addEventListener('dblclick', triggerLightbox);
-                    if (hint) {
-                        hint.addEventListener('click', triggerLightbox);
-                    }
-
-                    // Mobile double-tap pada kartu Sora (dalam 350ms)
-                    let lastTap = 0;
-                    card.addEventListener('touchend', (e) => {
-                        const now = Date.now();
-                        if (now - lastTap < 350 && now - lastTap > 40) {
-                            triggerLightbox(e);
-                            lastTap = 0;
-                        } else {
-                            lastTap = now;
-                        }
-                    }, { passive: false });
-                })();
-            </script>
         </section>
 
         <!-- PAPAN PRESTASI (MODEL JUMLAH PRESTASI MIRAI NO HANA) -->
@@ -651,6 +609,7 @@
                     <div class="haori-photo-tag">TAMPAK BELAKANG</div>
                 </div>
             </div>
+            <p class="haori-swipe-hint" aria-hidden="true">← Geser untuk melihat tampak depan dan belakang →</p>
 
             <!-- MAKNA & FILOSOFI HAORI -->
             <div class="haori-grid">
@@ -847,7 +806,7 @@
                         <h2 class="kabinet-title">KABINET <span>SORA</span></h2>
                         <div class="mgmt-slide-badge">
                             <span class="mgmt-badge-period">Periode 2025–2026</span>
-                            <span class="mgmt-badge-desc">Kepengurusan Aktif Mirai No Hana</span>
+                            <span class="mgmt-badge-desc">Kepengurusan Mirai no Hana</span>
                         </div>
                         <div class="management-grid">
                             <article class="management-card">
@@ -898,7 +857,7 @@
                         <h2 class="kabinet-title">KABINET <span>CLOVER</span></h2>
                         <div class="mgmt-slide-badge is-concept">
                             <span class="mgmt-badge-period">Periode 2026–2027</span>
-                            <span class="mgmt-badge-desc">Susunan Kepengurusan Kabinet Clover &bull; Scroll untuk melihat semua anggota ↓</span>
+                            <span class="mgmt-badge-desc">Kepengurusan Mirai no Hana</span>
                         </div>
                         <div class="management-grid management-grid--11">
                             <article class="management-card">

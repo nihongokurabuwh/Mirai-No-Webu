@@ -9199,6 +9199,11 @@ body.theme-dark .mode-card--custom, body.dark-mode .mode-card--custom {
   background: #f43f5e;
 }
 
+/* Checkbox sudah menjelaskan status pilihan; indikator bulat kedua tidak diperlukan. */
+.custom-type-card .type-card-indicator {
+  display: none !important;
+}
+
 .type-card-info {
   display: flex;
   flex-direction: column;
@@ -9326,37 +9331,6 @@ MINI-GAME CARDS & MEMORY FLIP DIFFICULTY (6, 12, 24 KARTU)
   margin: 28px auto 0 auto;
   max-width: 900px;
   width: 100%;
-}
-
-.mini-game-label-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: #ffffff;
-  border: 1px solid #ebccd8;
-  border-radius: 14px;
-  padding: 12px 24px;
-  margin-bottom: 14px;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
-  text-align: center;
-}
-
-.mini-game-label-card .mini-game-title {
-  font-size: 15px;
-  font-weight: 800;
-  color: #db2777;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-
-body.theme-dark .mini-game-label-card, body.dark-mode .mini-game-label-card {
-  background: #1f1b24;
-  border-color: #4b3648;
-}
-
-body.theme-dark .mini-game-label-card .mini-game-title, body.dark-mode .mini-game-label-card .mini-game-title {
-  color: #f472b6;
 }
 
 .mini-game-grid {
@@ -11097,6 +11071,83 @@ html body.page-latihan .quest-section[data-theme="dark"] .mode-card::after {
 html body.page-latihan .quest-section[data-theme="dark"] .mode-card > span:not(.mode-kana-preview),
 html body.page-latihan .quest-section[data-theme="dark"] .mode-card small {
   color: #e8dfe8 !important;
+}
+
+/* Mode khusus selalu memakai dasar hitam serta kontras putih-pink. */
+html body.page-latihan .quest-section[data-theme="dark"] .mode-card,
+html body.page-latihan .quest-section[data-theme="dark"] .mini-game-card {
+  background: linear-gradient(165deg, #1a101d 0%, #09070b 100%) !important;
+  color: #ffffff !important;
+}
+
+html body.page-latihan .quest-section[data-theme="dark"] .mode-card > span:not(.mode-kana-preview),
+html body.page-latihan .quest-section[data-theme="dark"] .mode-card small,
+html body.page-latihan .quest-section[data-theme="dark"] .mode-card b {
+  color: #ffffff !important;
+}
+
+html body.page-latihan .quest-section[data-theme="dark"] .mode-card .card-sub-jp,
+html body.page-latihan .quest-section[data-theme="dark"] .mode-card .mode-kana-preview {
+  color: #ff83b5 !important;
+}
+
+html body.page-latihan .mix-section .mode-grid .mode-card > span:not(.mode-kana-preview) {
+  color: #ffffff !important;
+  font-size: 15px !important;
+  font-weight: 800 !important;
+  line-height: 1.4 !important;
+}
+
+html body.page-latihan .mix-section .mode-grid .mode-card small {
+  font-size: 11px !important;
+  line-height: 1.45 !important;
+}
+
+html body.page-latihan .mix-section .mode-grid .mode-kana-preview,
+html body.page-latihan .quest-section[data-theme="dark"] .mini-game-card .mode-kana-preview {
+  background: #09070b !important;
+  color: #ff83b5 !important;
+  border: 1px solid rgba(255, 131, 181, 0.42) !important;
+  border-radius: 7px !important;
+  padding: 5px 10px !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  line-height: 1.35 !important;
+}
+
+html body.page-latihan .mini-game-section .mini-game-heading {
+  margin: 0 0 18px !important;
+}
+
+html body.page-latihan .quest-section[data-theme="dark"] .mini-game-card.btn-choukai,
+html body.page-latihan .quest-section[data-theme="dark"] .mini-game-card.btn-memory,
+html body.page-latihan .quest-section[data-theme="dark"] .mini-game-card.btn-choukai b,
+html body.page-latihan .quest-section[data-theme="dark"] .mini-game-card.btn-memory b {
+  background: transparent !important;
+}
+
+html body.page-latihan .quest-section[data-theme="dark"] .mini-game-card.btn-choukai,
+html body.page-latihan .quest-section[data-theme="dark"] .mini-game-card.btn-memory {
+  border-color: rgba(255, 131, 181, 0.32) !important;
+}
+
+/* Hasil latihan adalah layar penuh untuk semua mode, termasuk audio dan memory. */
+html body.page-latihan .result-view {
+  padding: 0 !important;
+  align-items: stretch !important;
+  justify-content: stretch !important;
+}
+
+html body.page-latihan .result-card {
+  width: 100% !important;
+  max-width: none !important;
+  min-height: 100vh !important;
+  min-height: 100dvh !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  padding: clamp(56px, 8vh, 96px) clamp(18px, 7vw, 120px) 48px !important;
+  overflow-y: auto !important;
+  box-sizing: border-box !important;
 }
 
 html body.page-latihan .quest-section[data-theme="light"] .mode-card {

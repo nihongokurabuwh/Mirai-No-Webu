@@ -531,9 +531,9 @@
         <!-- SEKSI 1 (PUTIH): ETALASE PRODUK & KATALOG -->
         <section class="section toko-catalog-section" id="katalog" data-theme="light">
             <div class="section-intro">
-                <p class="section-eyebrow"><span class="jp-kanji" lang="ja">商品カタログ</span></p>
-                <h2 class="heading">Etalase <span>Koleksi Produk</span></h2>
-                <p class="section-desc">Koleksi merchandise resmi klub, atribut anggota, dan aneka sajian lezat stan Mirai no Konbini.</p>
+                <p class="section-eyebrow"><span class="jp-kanji" lang="ja">販売商品</span></p>
+                <h2 class="heading">Produk-Produk <span>Jualan</span></h2>
+                <p class="section-desc">Pilihan produk jualan Mirai no Hana, dari atribut resmi klub hingga jajanan dan minuman Mirai no Konbini.</p>
             </div>
 
             <!-- CONTROLS & FILTER BAR -->
@@ -974,7 +974,9 @@
         <!-- SEKSI 2 (HITAM): PANDUAN CARA PEMESANAN -->
         <section class="section toko-guide-white-section" data-theme="dark">
             <div class="section-intro">
+                <p class="section-eyebrow"><span class="jp-kanji" lang="ja">注文方法</span></p>
                 <h2 class="heading">Cara <span>Pemesanan</span></h2>
+                <p class="section-desc">Ikuti empat langkah sederhana untuk memesan produk klub dengan aman dan praktis.</p>
             </div>
             <div class="toko-steps-grid">
                 <div class="toko-step-card-white">
@@ -1011,7 +1013,9 @@
         <!-- SEKSI 3 (PUTIH): INFORMASI KEWIRAUSAHAAN & KAS MANDIRI -->
         <section class="section toko-kwu-dark-section" data-theme="light">
             <div class="section-intro">
+                <p class="section-eyebrow"><span class="jp-kanji" lang="ja">コンビニと自主財源</span></p>
                 <h2 class="heading">Mirai no Konbini &amp; <span>Kemandirian Kas</span></h2>
+                <p class="section-desc">Belanja sambil mendukung pembelajaran kewirausahaan dan keberlanjutan kegiatan klub.</p>
             </div>
             <div class="toko-kwu-card">
                 <span class="toko-kwu-badge">💡 Program Kerja Divisi Kewirausahaan (KWU)</span>
@@ -1036,7 +1040,9 @@
         <!-- SEKSI 4 (HITAM): PERTANYAAN UMUM / FAQ -->
         <section class="section toko-faq-white-section" data-theme="dark">
             <div class="section-intro">
+                <p class="section-eyebrow"><span class="jp-kanji" lang="ja">よくある質問</span></p>
                 <h2 class="heading">Pertanyaan yang <span>Sering Diajukan</span></h2>
+                <p class="section-desc">Jawaban singkat seputar pembelian, pra-pesan, jadwal stan, dan konfirmasi pesanan.</p>
             </div>
             <div class="toko-faq-grid">
                 <details class="toko-faq-item-white">
@@ -1367,9 +1373,11 @@
 
                     if (matchesCategory) {
                         card.hidden = false;
+                        card.classList.remove('is-filtered-out');
                         visibleCount++;
                     } else {
                         card.hidden = true;
+                        card.classList.add('is-filtered-out');
                     }
                 });
 

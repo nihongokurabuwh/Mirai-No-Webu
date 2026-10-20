@@ -471,16 +471,19 @@ PROKER PAGE – DOCUMENTATION SLIDER
 PROKER PAGE – BACK BUTTON
 ===================================================== */
 .proker-back-wrap {
-  position: relative;
-  z-index: 3;
+  position: fixed;
+  z-index: 100;
+  top: max(16px, env(safe-area-inset-top));
+  left: max(16px, env(safe-area-inset-left));
   padding: 0;
-  margin-bottom: 24px;
+  margin: 0;
   background: transparent;
 }
 
 .proker-back {
-  display: inline-block;
-  padding: 10px 20px;
+  display: inline-flex;
+  align-items: center;
+  padding: 11px 18px;
   background-color: var(--pink-accent, var(--pink));
   color: #fff;
   border-radius: 30px;
@@ -489,6 +492,7 @@ PROKER PAGE – BACK BUTTON
   font-size: 0.9rem;
   margin-bottom: 0;
   transition: 0.3s;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.28);
 }
 
 .proker-back:hover {

@@ -2873,9 +2873,9 @@ MODEL JUMLAH PRESTASI MIRAI NO HANA & STATISTIK KOMPETISI
 }
 /* Light Mode Overrides */
 body:not(.theme-dark):not(.dark-mode) .prestasi-stat-box {
-  background: linear-gradient(165deg, #1d1626 0%, #120e18 100%) !important;
+  background: #ffffff !important;
   border-color: rgba(255, 79, 145, 0.32) !important;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 10px 30px rgba(44, 25, 38, 0.10) !important;
 }
 
 body:not(.theme-dark):not(.dark-mode) .prestasi-stat-num,
@@ -2890,8 +2890,13 @@ body.dark-mode .prestasi-stat-num {
   text-shadow: none !important;
 }
 
+body:not(.theme-dark):not(.dark-mode) .prestasi-stat-num {
+  color: #18151b !important;
+  -webkit-text-fill-color: #18151b !important;
+}
+
 body:not(.theme-dark):not(.dark-mode) .prestasi-stat-label {
-  color: #ffffff !important;
+  color: #18151b !important;
 }
 
 body:not(.theme-dark):not(.dark-mode) .prestasi-stat-desc {
@@ -4277,6 +4282,38 @@ body.dark-mode .page-lomba .lomba-detail-card:hover::after, body.theme-dark .pag
   color: #a8124b !important;
   background: #fff7fb !important;
   border-top-color: rgba(233, 30, 99, 0.14) !important;
+}
+
+/* Satu kartu haori dengan dua halaman yang dapat digeser. */
+.page-tentang .haori-section .haori-showcase {
+  display: flex !important;
+  gap: 18px !important;
+  overflow-x: auto !important;
+  scroll-snap-type: x mandatory !important;
+  scroll-behavior: smooth !important;
+  overscroll-behavior-inline: contain !important;
+  scrollbar-width: thin;
+  scrollbar-color: var(--pink, #e91e63) transparent;
+}
+
+.page-tentang .haori-section .haori-photo-card {
+  flex: 0 0 100% !important;
+  width: 100% !important;
+  scroll-snap-align: center !important;
+}
+
+.haori-swipe-hint {
+  margin: 14px 0 36px !important;
+  color: #ff9bc0 !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  text-align: center !important;
+}
+
+/* Profil Sora adalah tampilan informasi statis, tanpa interaksi zoom. */
+.sora-carousel-card,
+.sora-carousel-card img {
+  cursor: default !important;
 }
 
 .page-tentang .management-section .pembina-period-badge {

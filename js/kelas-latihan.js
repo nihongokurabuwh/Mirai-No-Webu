@@ -1243,7 +1243,7 @@ function renderModes() {
   const modes = [
     {
       id: "weak",
-      label: "🔥 Fokus Perbaikan",
+      label: "Fokus Perbaikan",
       isWeakMode: true,
       levels: allLevelIds,
       icon: "🔥",
@@ -1252,7 +1252,7 @@ function renderModes() {
     },
     {
       id: "bunpou",
-      label: "🧩 Susun Kalimat",
+      label: "Susun Kalimat",
       isBunpouMode: true,
       levels: allLevelIds,
       icon: "🧩",
@@ -1261,7 +1261,7 @@ function renderModes() {
     },
     {
       id: "custom",
-      label: "⚙️ Latihan Kustom",
+      label: "Latihan Kustom",
       isCustomMode: true,
       levels: allLevelIds,
       icon: "⚙️",

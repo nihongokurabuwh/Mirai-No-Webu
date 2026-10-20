@@ -192,9 +192,48 @@ initIndependentSliders();
 initCardSliders();
 }
 
+// Tambahkan penjelajah program pada setiap halaman detail program kerja.
+function addProgramExplorer() {
+const main = document.querySelector('main#main-content');
+const footer = document.querySelector('footer');
+if (!main || !footer || document.querySelector('[data-program-explorer]')) return;
+
+const page = location.pathname.split('/').pop();
+const programs = [
+  ['kimi-to-nippon.html', 'Kimi To Nippon', 'Orientasi hangat untuk mengenal keluarga besar Mirai no Hana.'],
+  ['nihon-go-rajio.html', 'Nihon Go Rajio', 'Siaran radio sekolah dengan obrolan dan lagu Jejepangan.'],
+  ['konbini.html', 'Konbini', 'Proyek kewirausahaan kreatif untuk kas dan kegiatan klub.'],
+  ['ramadhan.html', 'Ramadhan', 'Aksi sosial dan kepedulian berbagi di bulan suci.'],
+  ['tomodachi.html', 'Nihon Tomodachi', 'Kolaborasi budaya bersama sahabat dan komunitas luar.']
+].filter(([href]) => href !== page);
+
+if (programs.length !== 4) return;
+const section = document.createElement('section');
+section.className = 'proker-section program-explorer-section';
+section.dataset.theme = 'dark';
+section.dataset.programExplorer = '';
+section.innerHTML = `
+  <p class="proker-section-subtitle">EKSPLORASI PROGRAM</p>
+  <h2 class="proker-section-title">Jelajahi program kerja lainnya.</h2>
+  <div class="program-grid" style="margin-top:25px;">${programs.map(([href, title, desc], index) => `
+    <a class="program-card-link" href="${href}"><article class="program-card">
+      <img src="../images/mirai/logo/comingsoon.jpg" alt="Program ${title}" loading="lazy" decoding="async" width="2048" height="2048">
+      <p class="card-number">Program ${index + 1}</p><h3>${title}</h3><p class="program-desc">${desc}</p>
+      <span class="program-btn">Lihat Lebih Lanjut →</span>
+    </article></a>`).join('')}</div>`;
+footer.before(section);
+initCardSliders();
+}
+
 if (document.readyState === 'loading') {
 document.addEventListener('DOMContentLoaded', initAllSliders);
 } else {
 initAllSliders();
+}
+
+if (document.readyState === 'loading') {
+document.addEventListener('DOMContentLoaded', addProgramExplorer);
+} else {
+addProgramExplorer();
 }
 

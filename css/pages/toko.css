@@ -238,6 +238,12 @@ body.page-toko, .page-toko {
   box-shadow: 0 8px 24px rgba(233, 30, 99, 0.06) !important;
 }
 
+/* Filter kategori harus selalu menyembunyikan kartu nonaktif, meski kartu memakai display:flex. */
+.toko-product-grid .toko-card[hidden],
+.toko-product-grid .toko-card.is-filtered-out {
+  display: none !important;
+}
+
 .toko-card::before {
   content: "" !important;
   position: absolute !important;
