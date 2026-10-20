@@ -20,10 +20,10 @@
 @import url('pages/beranda.css?v=zebra-20261020');
 
 /* 4. Kelas & Materi: Alur kelas, kelas dasar, kelas lanjutan, buuku lesson, kurikulum, & latihan quest */
-@import url('pages/kelas-materi.css?v=zebra-20261020');
+@import url('pages/kelas-materi.css?v=zebra-responsive-20261020');
 
 /* 5. Kamus & Aksara: Kamus kanji/kana, stroke order kanjivg, kanvas goresan, & quick button */
-@import url('pages/kamus.css');
+@import url('pages/kamus.css?v=responsive-20261020');
 
 /* 6. Program, Fasilitas & Divisi: Struktur 4 divisi, program kerja tahunan, fasilitas klub, & galeri slider */
 @import url('pages/program-fasilitas-divisi.css');

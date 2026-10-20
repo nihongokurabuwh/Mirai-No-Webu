@@ -93,6 +93,9 @@ self.addEventListener("fetch", (event) => {{
   const req = event.request;
   const url = new URL(req.url);
 
+  // API terjemahan lintas-origin harus langsung ke jaringan, tidak masuk cache app-shell.
+  if (url.origin !== self.location.origin) return;
+
   // Abaikan non-GET requests
   if (req.method !== "GET") return;
 

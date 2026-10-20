@@ -723,70 +723,13 @@ async function fetchGoogleTranslate(text, sourceLang, targetLang, signal = null)
 /**
  * Terjemahan Utama Studio: Google Translate Online -> Fallback Offline
  */
-async function translateStudioText(text, direction = "ja-id", signal = null) {
-  const raw = text.trim();
-  if (!raw) return { text: "", romaji: "", from: direction };
-
-  const isJaToId = direction === "ja-id";
-  const srcLang = isJaToId ? "ja" : "id";
-  const tgtLang = isJaToId ? "id" : "ja";
-
-  // 1. Panggil Google Translate API (gtx) dengan AbortController
-  const gResult = await fetchGoogleTranslate(raw, srcLang, tgtLang, signal);
-  if (gResult && gResult.text) {
-    let readingRomaji = gResult.romaji;
-    if (!readingRomaji) {
-      readingRomaji = isJaToId ? getRomajiReading(raw) : getRomajiReading(gResult.text);
-    }
-    return {
-      text: gResult.text,
-      romaji: readingRomaji,
-      isOnline: true
-    };
-  }
-
-  // 2. Cek Kamus Cepat Lokal jika offline
-  const localDict = isJaToId ? jaToIdDictionary : idToJaDictionary;
-  const lowerRaw = raw.toLowerCase();
-
-  if (localDict[raw]) {
-    const res = localDict[raw];
-    return {
-      text: res,
-      romaji: !isJaToId ? getRomajiReading(res) : getRomajiReading(raw),
-      isLocal: true
-    };
-  }
-  if (localDict[lowerRaw]) {
-    const res = localDict[lowerRaw];
-    return {
-      text: res,
-      romaji: !isJaToId ? getRomajiReading(res) : getRomajiReading(raw),
-      isLocal: true
-    };
-  }
-
-  // 3. Fallback Kamus Kata per Kata
-  if (isJaToId) {
-    let fallbackResult = raw;
-    for (const [k, v] of Object.entries(jaToIdDictionary)) {
-      if (fallbackResult.includes(k)) {
-        fallbackResult = fallbackResult.split(k).join(` ${v} `);
-      }
-    }
-    if (fallbackResult !== raw) {
-      return {
-        text: fallbackResult.replace(/\s+/g, " ").trim(),
-        romaji: getRomajiReading(raw),
-        isFallback: true
-      };
-    }
-  }
-
+async function translateStudioText(text, direction, signal = null) {
+  const dictionary = direction === "ja-id" ? jaToIdDictionary : idToJaDictionary;
+  const result = await window.MiraiTranslateService.translate(text, direction, { signal, dictionary });
   return {
-    text: raw,
-    romaji: isJaToId ? getRomajiReading(raw) : getRomajiReading(text),
-    isNone: true
+    text: result.text,
+    romaji: direction === "id-ja" ? getRomajiReading(result.text) : getRomajiReading(text),
+    provider: result.provider
   };
 }
 
@@ -1339,13 +1282,7 @@ function initStudioTranslator() {
     });
   }
 
-  if (kbTranslateNowBtn) {
-    kbTranslateNowBtn.addEventListener('click', () => {
-      commitPendingTap();
-      triggerInputUpdate();
-      window.MiraiSound?.playClickIfIdle();
-    });
-  }
+
 
   // Mode Switching
   function setScriptMode(mode) {
@@ -1459,60 +1396,39 @@ function initStudioTranslator() {
     });
   }
 
-  // =========================================================================
-  // SISTEM PENDETEKSI BAHASA ADAPTIF OTOMATIS (JEPANG vs INDONESIA)
-  // =========================================================================
-  function detectLanguage(text) {
-    if (!text || !text.trim()) return null;
-
-    // Periksa jika teks mengandung minimal 1 karakter Jepang: Kanji, Hiragana, Katakana
-    const JAPANESE_CHAR_REGEX = /[一-龯ぁ-ゔァ-ヴー々〆〤]/;
-    if (JAPANESE_CHAR_REGEX.test(text)) {
-      return 'ja';
-    }
-
-    // Default jika huruf Latin: terjemahkan Indonesia -> Jepang
-    return 'id';
-  }
-
+  // Arah terjemahan dikendalikan tombol; input hanya memperbarui penghitung dan kamus lokal.
   function setDirectionUI(direction) {
     activeDirection = direction;
-    const isJa = activeDirection === 'ja-id';
-
-    if (sourceFlag) sourceFlag.textContent = isJa ? '🇯🇵' : '🇮🇩';
-    if (sourceName) sourceName.textContent = isJa ? 'Jepang (Input)' : 'Indonesia (Input)';
-    if (targetFlag) targetFlag.textContent = isJa ? '🇮🇩' : '🇯🇵';
-    if (targetName) targetName.textContent = isJa ? 'Indonesia (Hasil)' : 'Jepang (Hasil)';
-
+    const isJapaneseInput = direction === "ja-id";
+    if (sourceFlag) sourceFlag.textContent = isJapaneseInput ? "🇯🇵" : "🇮🇩";
+    if (sourceName) sourceName.textContent = isJapaneseInput ? "Jepang (Input)" : "Indonesia (Input)";
+    if (targetFlag) targetFlag.textContent = isJapaneseInput ? "🇮🇩" : "🇯🇵";
+    if (targetName) targetName.textContent = isJapaneseInput ? "Indonesia (Hasil)" : "Jepang (Hasil)";
     if (adaptiveDirectionText) {
-      if (!textarea.value.trim()) {
-        adaptiveDirectionText.textContent = 'Deteksi Otomatis (Jepang ⇄ Indonesia)';
-      } else {
-        adaptiveDirectionText.textContent = isJa
-          ? '🇯🇵 Jepang ➔ 🇮🇩 Indonesia (Otomatis)'
-          : '🇮🇩 Indonesia ➔ 🇯🇵 Jepang (Otomatis)';
-      }
+      adaptiveDirectionText.textContent = isJapaneseInput
+        ? "🇯🇵 Jepang → 🇮🇩 Indonesia"
+        : "🇮🇩 Indonesia → 🇯🇵 Jepang";
     }
-
+    if (textarea) {
+      textarea.placeholder = isJapaneseInput
+        ? "Ketik teks bahasa Jepang atau Romaji untuk diterjemahkan ke bahasa Indonesia..."
+        : "Ketik teks bahasa Indonesia untuk diterjemahkan ke bahasa Jepang...";
+    }
     if (inputHint) {
-      if (!textarea.value.trim()) {
-        inputHint.textContent = 'Sistem otomatis mendeteksi bahasa teks input';
-      } else {
-        inputHint.textContent = isJa ? '✓ Aksara Jepang terdeteksi' : '✓ Bahasa Indonesia terdeteksi';
-      }
+      inputHint.textContent = isJapaneseInput
+        ? "Romaji otomatis aktif untuk arah Jepang → Indonesia."
+        : "Romaji tetap sebagai teks Latin pada arah Indonesia → Jepang.";
     }
+    if (!isJapaneseInput && imeStatusText) imeStatusText.textContent = "Auto-Romaji: nonaktif pada arah Indonesia";
+    else updateRomajiToggleState();
   }
 
-  // Real-time Input Update dengan Auto-Detect Bahasa & AbortController
-  function triggerInputUpdate(immediate = false) {
+  function triggerInputUpdate() {
     const text = textarea.value;
     if (charCount) charCount.textContent = text.length + " karakter";
-    if (statusEl) statusEl.textContent = "Mengetik...";
-
-    clearTimeout(translateDebounceTimer);
     if (!text.trim()) {
       if (outputEl) {
-        outputEl.textContent = "Hasil terjemahan akan otomatis muncul di sini...";
+        outputEl.textContent = "Hasil terjemahan akan muncul setelah menekan Terjemahkan.";
         outputEl.classList.add("placeholder");
       }
       if (romajiEl) romajiEl.hidden = true;
@@ -1521,92 +1437,104 @@ function initStudioTranslator() {
         localDictBox.replaceChildren();
       }
       if (statusEl) statusEl.textContent = "Siap menerjemahkan";
-      setDirectionUI('ja-id');
       updateCandidateBar();
       return;
     }
-
-    // Auto-detect bahasa input pengguna
-    const detectedLang = detectLanguage(text);
-    const targetDirection = (detectedLang === 'ja') ? 'ja-id' : 'id-ja';
-    if (activeDirection !== targetDirection) {
-      setDirectionUI(targetDirection);
-    } else if (adaptiveDirectionText) {
-      adaptiveDirectionText.textContent = (targetDirection === 'ja-id')
-        ? '🇯🇵 Jepang ➔ 🇮🇩 Indonesia (Otomatis)'
-        : '🇮🇩 Indonesia ➔ 🇯🇵 Jepang (Otomatis)';
-    }
-
-    // Perbarui kartu kamus lokal & prediksi kandidat
+    if (statusEl) statusEl.textContent = "Siap diterjemahkan";
     updateLocalDictCard(text);
     updateCandidateBar();
-
-    const doTranslate = async () => {
-      if (statusEl) statusEl.textContent = "Menerjemahkan...";
-
-      // Batalkan request terjemahan sebelumnya yang masih berjalan
-      if (currentTranslationAbortCtrl) {
-        currentTranslationAbortCtrl.abort();
-      }
-      currentTranslationAbortCtrl = new AbortController();
-      const signal = currentTranslationAbortCtrl.signal;
-
-      try {
-        const result = await translateStudioText(text, activeDirection, signal);
-        if (!result) return; // Request dibatalkan
-
-        if (outputEl) {
-          outputEl.textContent = result.text || "";
-          outputEl.classList.remove("placeholder");
-        }
-        if (romajiEl) {
-          if (result.romaji && result.romaji !== result.text) {
-            romajiEl.textContent = "(Romaji: " + result.romaji + ")";
-            romajiEl.hidden = false;
-          } else {
-            romajiEl.hidden = true;
-          }
-        }
-        if (statusEl) {
-          statusEl.textContent = result.isOnline
-            ? 'Terjemahan Online (Live)'
-            : (result.isLocal ? 'Kamus Internal (Instan)' : 'Selesai diterjemahkan');
-        }
-      } catch (e) {
-        if (e && e.name === "AbortError") return;
-        if (statusEl) statusEl.textContent = 'Gagal menerjemahkan';
-      }
-    };
-
-    if (immediate) {
-      doTranslate();
-    } else {
-      translateDebounceTimer = setTimeout(doTranslate, 220);
-    }
   }
 
-  function applyRealtimeImeConversion() {
-    if (!textarea || typeof window.wanakana === "undefined") return;
-    const cursorPos = textarea.selectionStart;
-    const val = textarea.value;
-    if (!val) return;
-
-    const converted = activeScript === "katakana" ? window.wanakana.toKatakana(val) : window.wanakana.toHiragana(val);
-    if (converted !== val) {
-      textarea.value = converted;
-      const diff = converted.length - val.length;
-      textarea.selectionStart = Math.max(0, cursorPos + diff);
-      textarea.selectionEnd = Math.max(0, cursorPos + diff);
-    }
-  }
-
-  textarea.addEventListener('input', () => {
-    if (isAutoRomajiOn) {
-      applyRealtimeImeConversion();
+  function flushRomaji() {
+    if (isAutoRomajiOn && activeDirection === "ja-id") {
+      window.MiraiKana?.flushAtCursor(textarea, activeDirection);
     }
     triggerInputUpdate();
-  });
+  }
 
+  async function runManualTranslation() {
+    flushRomaji();
+    const text = textarea.value.trim();
+    if (!text) {
+      if (statusEl) statusEl.textContent = "Masukkan teks terlebih dahulu.";
+      return;
+    }
+    if (currentTranslationAbortCtrl) currentTranslationAbortCtrl.abort();
+    currentTranslationAbortCtrl = new AbortController();
+    const request = currentTranslationAbortCtrl;
+    if (statusEl) statusEl.textContent = "Menerjemahkan...";
+    const providerBadge = document.getElementById("translationProviderBadge");
+    if (providerBadge) providerBadge.textContent = "Mencoba layanan terjemahan...";
+    try {
+      const result = await translateStudioText(text, activeDirection, request.signal);
+      if (request !== currentTranslationAbortCtrl) return;
+      outputEl.textContent = result.text;
+      outputEl.classList.remove("placeholder");
+      if (romajiEl) {
+        romajiEl.textContent = result.romaji && result.romaji !== result.text
+          ? "(Romaji: " + result.romaji + ")" : "";
+        romajiEl.hidden = !result.romaji || result.romaji === result.text;
+      }
+      if (providerBadge) providerBadge.textContent = result.provider;
+      if (statusEl) statusEl.textContent = "Terjemahan selesai";
+    } catch (error) {
+      if (error?.name === "AbortError") return;
+      const message = error?.message || "Layanan terjemahan sedang tidak tersedia.";
+      outputEl.textContent = message;
+      outputEl.classList.remove("placeholder");
+      if (romajiEl) romajiEl.hidden = true;
+      if (statusEl) statusEl.textContent = "Gagal. Periksa koneksi lalu tekan Terjemahkan lagi.";
+      if (providerBadge) providerBadge.textContent = "Tidak ada penyedia yang berhasil";
+    }
+  }
+
+  const translateButton = document.getElementById("translateButton");
+  const swapButton = document.getElementById("translatorSwapBtn");
+  if (translateButton) translateButton.addEventListener("click", runManualTranslation);
+  if (swapButton) {
+    swapButton.addEventListener("click", () => {
+      const oldOutput = outputEl && !outputEl.classList.contains("placeholder")
+        ? outputEl.textContent.trim() : "";
+      setDirectionUI(activeDirection === "ja-id" ? "id-ja" : "ja-id");
+      if (oldOutput) textarea.value = oldOutput;
+      if (outputEl) {
+        outputEl.textContent = "Hasil terjemahan akan muncul setelah menekan Terjemahkan.";
+        outputEl.classList.add("placeholder");
+      }
+      if (document.getElementById("translationProviderBadge")) {
+        document.getElementById("translationProviderBadge").textContent = "Pilih Terjemahkan untuk memulai";
+      }
+      triggerInputUpdate();
+      if (oldOutput) runManualTranslation();
+    });
+  }
+  if (kbTranslateNowBtn) kbTranslateNowBtn.addEventListener("click", () => {
+    commitPendingTap();
+    runManualTranslation();
+    window.MiraiSound?.playClickIfIdle();
+  });
+  if (textarea) {
+    textarea.addEventListener("input", (event) => {
+      if (isAutoRomajiOn && activeDirection === "ja-id") {
+        window.MiraiKana?.convertAtCursor(textarea, {
+          inputType: event.inputType,
+          isComposing: event.isComposing,
+          direction: activeDirection
+        });
+      }
+      triggerInputUpdate();
+    });
+    textarea.addEventListener("compositionend", () => triggerInputUpdate());
+    textarea.addEventListener("keydown", (event) => {
+      if (event.ctrlKey && event.key === "Enter") {
+        event.preventDefault();
+        runManualTranslation();
+      } else if (event.key === " " || event.key === "Enter") {
+        flushRomaji();
+      }
+    });
+    textarea.addEventListener("blur", flushRomaji);
+  }
   textarea.addEventListener('focus', () => {
     applyMobileKeyboardGuard();
   });

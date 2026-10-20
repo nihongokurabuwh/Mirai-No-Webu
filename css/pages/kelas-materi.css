@@ -11079,3 +11079,135 @@ html body.theme-dark.learning-app.page-latihan .level-grid[data-script="katakana
 html body.theme-dark.learning-app.page-latihan .level-card > strong {
   color: #ffffff !important;
 }
+
+/* Tema kartu latihan mengikuti warna section zebra, bukan hanya toggle halaman. */
+html body.page-latihan .quest-section[data-theme="dark"] .mode-card {
+  color: #ffffff !important;
+  background: linear-gradient(165deg, #1d1624 0%, #130f18 100%) !important;
+  border-color: rgba(255, 101, 155, 0.32) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35) !important;
+}
+
+html body.page-latihan .quest-section[data-theme="dark"] .mode-card::after {
+  background-image: url("../../images/mirai/background/c1b.jpeg") !important;
+  opacity: 0.09 !important;
+  mix-blend-mode: screen !important;
+}
+
+html body.page-latihan .quest-section[data-theme="dark"] .mode-card > span:not(.mode-kana-preview),
+html body.page-latihan .quest-section[data-theme="dark"] .mode-card small {
+  color: #e8dfe8 !important;
+}
+
+html body.page-latihan .quest-section[data-theme="light"] .mode-card {
+  color: #18151b !important;
+  background: #ffffff !important;
+}
+
+html body.page-latihan .quest-section[data-theme="light"] .mode-card > span:not(.mode-kana-preview),
+html body.page-latihan .quest-section[data-theme="light"] .mode-card small {
+  color: #554e57 !important;
+}
+
+/* Dialog konfigurasi menjadi layar penuh; isi tetap dapat digulir tanpa menutup aksi. */
+html body.page-latihan .custom-quiz-modal {
+  padding: 0 !important;
+  align-items: stretch !important;
+  justify-content: stretch !important;
+}
+
+html body.page-latihan.is-modal-open {
+  overflow: hidden !important;
+}
+
+html body.page-latihan .custom-quiz-modal .custom-modal-dialog {
+  display: flex !important;
+  flex-direction: column !important;
+  width: 100vw !important;
+  max-width: none !important;
+  height: 100vh !important;
+  height: 100dvh !important;
+  max-height: none !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+  border-radius: 0 !important;
+  transform: none !important;
+  animation: none !important;
+}
+
+html body.page-latihan .custom-quiz-modal .custom-modal-header,
+html body.page-latihan .custom-quiz-modal .custom-modal-footer {
+  flex: 0 0 auto !important;
+}
+
+html body.page-latihan .custom-quiz-modal .custom-modal-body {
+  flex: 1 1 auto !important;
+  min-height: 0 !important;
+  overflow-y: auto !important;
+  overscroll-behavior: contain;
+}
+
+html body.page-latihan .choukai-replay-btn.btn-audio-slow {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  background: linear-gradient(135deg, #7c3aed, #5b21b6) !important;
+  border-color: #c4b5fd !important;
+  text-shadow: 0 1px 2px rgba(32, 12, 63, 0.45) !important;
+}
+
+@media (max-width: 600px) {
+  html body.page-latihan .quest-section[data-theme="dark"] .mode-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  html body.page-latihan .quest-section .mode-card {
+    min-width: 0 !important;
+    min-height: 150px !important;
+    padding: 13px !important;
+    gap: 10px !important;
+    align-content: start !important;
+    line-height: 1.4 !important;
+  }
+
+  html body.page-latihan .custom-quiz-modal .custom-modal-body {
+    padding-left: max(16px, env(safe-area-inset-left)) !important;
+    padding-right: max(16px, env(safe-area-inset-right)) !important;
+  }
+
+  html body.page-latihan .custom-quiz-modal .custom-section-head {
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+  }
+
+  html body.page-latihan .custom-quiz-modal .custom-section-head button {
+    flex: 1 1 100px !important;
+    min-height: 44px !important;
+    white-space: normal !important;
+  }
+
+  html body.page-latihan .custom-quiz-modal .custom-modal-footer {
+    padding-bottom: max(16px, env(safe-area-inset-bottom)) !important;
+  }
+
+  html body.page-latihan .practice-bottom-nav {
+    flex-wrap: wrap !important;
+  }
+
+  html body.page-latihan .practice-nav-left {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+  }
+
+  html body.page-latihan .practice-nav-left .practice-nav-btn {
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    min-height: 48px !important;
+    white-space: normal !important;
+  }
+
+  html body.page-latihan .practice-nav-right .practice-nav-btn {
+    min-width: 84px !important;
+    min-height: 48px !important;
+    white-space: normal !important;
+  }
+}

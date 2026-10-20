@@ -1,0 +1,153 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Check project command execution",
+			"type": "shell",
+			"command": "/usr/bin/python",
+			"args": [
+				"-c",
+				"print('workspace task execution works')"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Dry-run manual translation patch",
+			"type": "shell",
+			"command": "/usr/bin/python",
+			"args": [
+				"skrip/arsip/apply_manual_translate.py",
+				"--dry-run"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Apply manual translation patch",
+			"type": "shell",
+			"command": "/usr/bin/python",
+			"args": [
+				"skrip/arsip/apply_manual_translate.py"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Run translation service tests",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"skrip/arsip/test_translate_service.js"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Run service tests with nodejs",
+			"type": "shell",
+			"command": "nodejs",
+			"args": [
+				"skrip/arsip/test_translate_service.js"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Verify translation patch idempotence",
+			"type": "shell",
+			"command": "/usr/bin/python",
+			"args": [
+				"skrip/arsip/apply_manual_translate.py",
+				"--dry-run"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Stamp translation asset versions",
+			"type": "shell",
+			"command": "/usr/bin/python",
+			"args": [
+				"skrip/arsip/stamp_asset_versions.py"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Rebuild service worker precache",
+			"type": "shell",
+			"command": "/usr/bin/python",
+			"args": [
+				"skrip/arsip/build_precache_list.py"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Run manual translation UI checks",
+			"type": "shell",
+			"command": "/usr/bin/python",
+			"args": [
+				"skrip/arsip/test_manual_translate_ui.py",
+				"."
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Rerun manual translation UI checks",
+			"type": "shell",
+			"command": "/usr/bin/python",
+			"args": [
+				"skrip/arsip/test_manual_translate_ui.py",
+				"."
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Verify manual translation UI",
+			"type": "shell",
+			"command": "/usr/bin/python",
+			"args": [
+				"skrip/arsip/test_manual_translate_ui.py",
+				"."
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Run translation tests with Bun",
+			"type": "shell",
+			"command": "bun",
+			"args": [
+				"skrip/arsip/test_translate_service.js"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Check diff whitespace",
+			"type": "shell",
+			"command": "git",
+			"args": [
+				"diff",
+				"--check"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Review changed files",
+			"type": "shell",
+			"command": "git",
+			"args": [
+				"status",
+				"--short"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		}
+	]
+}
