@@ -1443,8 +1443,20 @@ SECTION KATA MOTIVASI (HALAMAN/BLOK HITAM SENDIRI DI ATAS DISCLAIMER)
 }
 
 .section-quote-slider.quote-theme-white::before {
-  display: none !important;
-  content: none !important;
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  display: block !important;
+  pointer-events: none !important;
+  background: url("../../images/mirai/background/c1w.jpeg") center top / 200px auto repeat !important;
+  opacity: 0.055 !important;
+  mix-blend-mode: multiply !important;
+  z-index: 0 !important;
+}
+
+.section-quote-slider.quote-theme-white .footer-quote-slider-section {
+  position: relative !important;
+  z-index: 1 !important;
 }
 
 .footer-quote-slider-section {

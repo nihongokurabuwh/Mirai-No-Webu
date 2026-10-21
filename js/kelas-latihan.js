@@ -3551,7 +3551,7 @@ $("[data-close-practice]")?.addEventListener("click", () => {
   renderDashboard();
 });
 
-$("[data-result-home]")?.addEventListener("click", () => {
+document.querySelectorAll("[data-result-home]").forEach((resultHomeButton) => resultHomeButton.addEventListener("click", () => {
   $("[data-result-view]").hidden = true;
   document.body.classList.remove("is-practicing");
   document.body.classList.remove("is-time-attack-mode");
@@ -3568,7 +3568,7 @@ $("[data-result-home]")?.addEventListener("click", () => {
   currentSession = null;
   selectedLevels.clear();
   renderDashboard();
-});
+}));
 
 $("[data-retry]")?.addEventListener("click", () => {
   $("[data-result-view]").hidden = true;

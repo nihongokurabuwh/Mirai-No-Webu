@@ -3151,8 +3151,9 @@ body.dark-mode .memory-card.is-matched .memory-card-front {
 
 /* Mini Game Section & Cards */
 .mini-game-section {
-    margin: 28px auto 0 auto;
-    max-width: 900px;
+    /* Sejajarkan judul dan kartu mini game dengan Mode Latihan Khusus. */
+    margin: 28px 0 0;
+    max-width: none;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -3169,6 +3170,79 @@ body.dark-mode .memory-card.is-matched .memory-card-front {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 14px;
+    text-align: left;
+}
+
+/* Pusatkan informasi sesi agar judul, nomor soal, dan progres berada pada satu sumbu. */
+.practice-head {
+    position: relative !important;
+    justify-content: flex-end !important;
+    padding-right: 46px !important;
+}
+
+.practice-head > [data-practice-label] {
+    position: absolute !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: min(620px, calc(100% - 110px)) !important;
+    text-align: center !important;
+}
+
+.practice-progress-cluster {
+    width: min(720px, 100%) !important;
+    margin: 4px auto 0 !important;
+}
+
+.practice-progress-cluster .question-dots,
+.practice-progress-cluster .question-count,
+.practice-progress-cluster .question-progress {
+    width: 100% !important;
+    max-width: none !important;
+    text-align: center !important;
+}
+
+.result-actions {
+    display: grid !important;
+    grid-template-columns: repeat(2, max-content) !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.result-actions .result-action-secondary {
+    grid-column: 1 / -1;
+    justify-self: center;
+}
+
+.result-actions [data-result-home] {
+    background: transparent !important;
+    color: var(--muted, #7a6e7c) !important;
+    border: 1.5px solid currentColor !important;
+}
+
+.result-actions [data-result-home]:hover {
+    color: var(--pink, #e91e63) !important;
+    background: #fff5f8 !important;
+    transform: translateY(-2px) !important;
+}
+
+@media (max-width: 600px) {
+    .practice-head > [data-practice-label] {
+        width: calc(100% - 90px) !important;
+        font-size: 12px !important;
+    }
+
+    .practice-progress-cluster {
+        width: 100% !important;
+    }
+
+    .result-actions {
+        grid-template-columns: 1fr !important;
+        width: 100% !important;
+    }
+
+    .result-actions .btn {
+        width: 100% !important;
+    }
 }
 
 @media (max-width: 600px) {
@@ -3872,9 +3946,11 @@ body.dark-mode .feedback-sub-tag {
                 <strong>⏱ <span data-timer>00:00</span></strong>
             </div>
         </div>
-        <div class="question-dots" data-question-dots></div>
-        <div class="question-count">Soal <b data-question-number>1</b> dari <span data-question-total>10</span></div>
-        <div class="question-progress"><i data-question-progress></i></div>
+        <div class="practice-progress-cluster">
+            <div class="question-dots" data-question-dots></div>
+            <div class="question-count">Soal <b data-question-number>1</b> dari <span data-question-total>10</span></div>
+            <div class="question-progress"><i data-question-progress></i></div>
+        </div>
 
         <!-- Kartu Soal Utama -->
         <article class="question-card">
@@ -3925,7 +4001,7 @@ body.dark-mode .feedback-sub-tag {
         </div>
     </div>
 </section>
-<section class="result-view" data-result-view hidden><div class="result-card"><button class="icon-close" data-result-home aria-label="Tutup hasil latihan">×</button><p class="section-eyebrow"><span class="jp-kanji" lang="ja">学習完了</span></p><h2>🎉 Latihan selesai!</h2><div class="result-stats"><div><b data-result-accuracy>0%</b><small>Akurasi</small></div><div><b data-result-correct>0</b><small>Benar</small></div><div><b data-result-wrong>0</b><small>Salah</small></div><div><b data-result-time>00:00</b><small>Waktu</small></div></div><p data-result-streak>Runtutan terbaik: 0</p><div class="result-actions"><button class="btn primary" data-retry>↻ Coba Lagi</button><button class="btn btn-retry-wrong" data-result-retry-wrong hidden>🔁 Ulangi Soal yang Salah</button><button class="btn" data-review-result>Tinjau Kesalahan</button></div><div class="mistake-list" data-mistake-list></div>
+<section class="result-view" data-result-view hidden><div class="result-card"><button class="icon-close" data-result-home aria-label="Tutup hasil latihan">×</button><p class="section-eyebrow"><span class="jp-kanji" lang="ja">学習完了</span></p><h2>🎉 Latihan selesai!</h2><div class="result-stats"><div><b data-result-accuracy>0%</b><small>Akurasi</small></div><div><b data-result-correct>0</b><small>Benar</small></div><div><b data-result-wrong>0</b><small>Salah</small></div><div><b data-result-time>00:00</b><small>Waktu</small></div></div><p data-result-streak>Runtutan terbaik: 0</p><div class="result-actions"><button class="btn primary" data-retry>↻ Coba Lagi</button><button class="btn btn-retry-wrong" data-result-retry-wrong hidden>🔁 Ulangi Soal yang Salah</button><button class="btn result-action-secondary" data-review-result>Tinjau Kesalahan</button><button class="btn result-action-secondary" data-result-home>✓ Selesai</button></div><div class="mistake-list" data-mistake-list></div>
 
 </div></section>
 

@@ -1040,12 +1040,34 @@ body.page-peringkat .peringkat-section .lb-row-detail {
 
 body.page-peringkat .peringkat-section .lb-tab-btn {
   background-color: #ffffff !important;
-  background-image: url("../../images/mirai/background/w1w.jpeg") !important;
-  background-repeat: repeat !important;
-  background-size: 200px auto !important;
+  background-image: none !important;
   color: #18151b !important;
   border-color: #eadde3 !important;
   box-shadow: 0 8px 24px rgba(31, 20, 29, 0.08) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  isolation: isolate;
+}
+
+/* Gunakan motif kumo yang lembut, bukan garis kontur yang terlalu ramai. */
+body.page-peringkat .peringkat-section .lb-tab-btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: url("../../images/mirai/background/c1w.jpeg") center top / 200px auto repeat;
+  opacity: 0.07;
+  mix-blend-mode: multiply;
+}
+
+body.page-peringkat .peringkat-section .lb-tab-btn > * {
+  position: relative;
+  z-index: 1;
+}
+
+body.page-peringkat .peringkat-section .lb-tab-btn.active::after {
+  opacity: 0.1;
 }
 
 body.page-peringkat .peringkat-section .lb-category-desc-card,
