@@ -734,7 +734,20 @@ function evaluateCanvasSimilarity(userStrokes, targetChar, targetRecord, options
     return Math.abs(rec.paths.length - uStrokeCount) <= 2;
   });
 
-  for (const [ch, rec] of pool) {
+  // Prioritaskan kandidat satu rumpun aksara (hiragana/katakana/kanji) terlebih dahulu
+  let prioritizedPool = pool;
+  if (activeGroup !== "unknown") {
+    prioritizedPool = pool.slice().sort(([chA], [chB]) => {
+      const matchA = getScriptGroup(chA) === activeGroup ? 1 : 0;
+      const matchB = getScriptGroup(chB) === activeGroup ? 1 : 0;
+      return matchB - matchA;
+    });
+  }
+
+  // Batasi pool evaluasi hingga maksimal 45 kandidat teratas untuk memprioritaskan fluiditas 60 FPS di mobile
+  const evaluationPool = prioritizedPool.slice(0, 45);
+
+  for (const [ch, rec] of evaluationPool) {
     if (ch === targetChar) continue;
     let refSample = _miraiSvgSampleCache.get(ch);
     if (!refSample) {

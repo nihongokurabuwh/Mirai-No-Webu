@@ -289,7 +289,7 @@ Aset visual dikelompokkan berdasarkan halaman yang menggunakannya:
   - **Lomba & Acara**: Hero: `<span class="jp-kanji">大会＆イベント</span>` | Info Lomba: `<span class="jp-kanji">大会とイベント情報</span>`
   - **Papan Peringkat**: Hero: `<span class="jp-kanji">ランキングボード</span>` | Papan Peringkat: `<span class="jp-kanji">栄誉ランキング</span>`
   - **Rekomendasi**: Hero: `<span class="jp-kanji">おすすめ作品</span>` | Rekomendasi Media: `<span class="jp-kanji">人気メディア作品</span>`
-  - **Kamus**: Hero: `<span class="jp-kanji">日本語辞書</span>` | Pencarian: `<span class="jp-kanji">文字と語彙検索</span>`
+  - **Kamus**: Hero: `<span class="jp-kanji">日本語辞書</span>` | Pencarian: `<span class="jp-kanji">文字と語彙検索</span>` | KTP Mirai no Hana: `<span class="jp-kanji">部員証作成</span>`
   - **Kamus Kanji**: Hero: `<span class="jp-kanji">漢字辞典</span>` | Pencarian Kanji: `<span class="jp-kanji">漢字検索</span>`
   - **Kata Motivasi**: Hero: `<span class="jp-kanji">名言集</span>` | Koleksi: `<span class="jp-kanji">名言コレクション</span>`
   - **Divisi**: Hub Divisi Hero: `<span class="jp-kanji">公式部門</span>` | Seksi: `<span class="jp-kanji">部門一覧</span>` | Bahasa: `<span class="jp-kanji">言語部門</span>` | Cosplay: `<span class="jp-kanji">コスプレ部門</span>` | Desain: `<span class="jp-kanji">デザイン部門</span>` | KWU: `<span class="jp-kanji">起業部門</span>`
@@ -297,6 +297,30 @@ Aset visual dikelompokkan berdasarkan halaman yang menggunakannya:
   - **Materi Buuku Dasar**: Hub Dasar Hero: `<span class="jp-kanji">基礎学習</span>` | Hiragana: `<span class="jp-kanji">平仮名入門</span>` | Katakana: `<span class="jp-kanji">片仮名入門</span>` | Jikoshokai: `<span class="jp-kanji">自己紹介</span>`
   - **Materi Buuku Lanjutan**: Hub Lanjutan Hero: `<span class="jp-kanji">上級学習</span>` | Grammar: `<span class="jp-kanji">応用文法</span>` | Kanji JLPT: `<span class="jp-kanji">漢字学習＆JLPT</span>`
   - **Proker Spesifik**: KTN: `<span class="jp-kanji">君と日本</span>` | NJR: `<span class="jp-kanji">日本語ラジオ</span>` | Konbini: `<span class="jp-kanji">未来のコンビニ</span>` | Ramadhan: `<span class="jp-kanji">ラマダン祝福</span>` | Tomodachi: `<span class="jp-kanji">日本友達</span>` | Dokumentasi: `<span class="jp-kanji">活動記録</span>`
+
+- **Sinkronisasi Konten Judul (Title-Content Sync)**:
+  Setiap kali ada instruksi untuk mengubah atau me-rename Judul Utama (Heading) pada suatu halaman atau section, Agent WAJIB secara otomatis memeriksa dan menyesuaikan teks pada Subjudul (Subtitle), Deskripsi (Lead Paragraph), maupun label terkait di sekitarnya agar konteks dan penamaannya tetap konsisten tanpa perlu diperintah satu per satu.
+
+### H. Aturan Desain Anti-AI Slop (Japanese Editorial & Minimalist Standard)
+Untuk menjaga cita rasa estetika visual tingkat tinggi dan mencegah website terdegradasi menjadi tampilan generik khas template buatan AI (AI Slop), seluruh Agent WAJIB mematuhi prinsip desain Japanese Swiss Grid / Editorial Layout berikut:
+
+1. **Larangan Penggunaan OS Emoji di Komponen UI (No OS Emoji Icons)**:
+   - DILARANG KERAS menggunakan emoji sistem operasi bawaan perangkat (`🌟`, `🚀`, `💡`, `📜`, `🎨`, `🗑️`, `✨`, `🌸`, dll.) sebagai ikon UI, tombol, maupun penanda label.
+   - Mengapa? OS Emoji memiliki rendering yang berbeda-beda dan sering kali terdistorsi antar sistem operasi (Windows, Android, iOS, Linux), memicu kesan amatir, dan merusak keselarasan palet warna.
+   - **Solusi**: Wajib gunakan tipografi murni, teks uppercase minimalis, atau ikon SVG monokrom garis tipis (`fill="none"`, `stroke="currentColor"`, `stroke-width="2"`) yang mewarisi warna teks konteksnya.
+
+2. **Larangan Struktur "Cardception" (Maksimal 2 Lapis Kartu / No Nested Over-Boxing)**:
+   - DILARANG membuat kotak di dalam kotak lebih dari 2 lapis (misalnya: kartu kontainer utama -> membungkus foto dalam kotak -> membungkus paragraf teks dalam kotak ber-border lagi -> membungkus makna kutipan dalam kartu ber-border lain).
+   - **Solusi**: Terapkan prinsip Japanese Editorial Grid: pisahkan konten di dalam kartu kontainer murni menggunakan ruang kosong (whitespace), hierarki kontras tipografi (ukuran, bobot font, huruf miring/uppercase), serta garis pembatas tipis elegan (`border-top: 1px solid rgba(255, 255, 255, 0.08)` atau `rgba(0, 0, 0, 0.08)`).
+
+3. **Batasi Penggunaan Pill Badge (Maksimal 1 per Section / No Pill Overkill)**:
+   - DILARANG membungkus setiap elemen teks, nama tokoh, status, dan label kecil menjadi bentuk kapsul/pill bulat (`border-radius: 999px` atau kapsul border). Hal ini menimbulkan kelelahan visual (over-labeling).
+   - **Batasan**: Maksimal 1 pill badge per seksi (hanya untuk eyebrow kategori utama atau indikator status aktif).
+   - **Solusi**: Untuk metadata sekunder, gunakan teks uppercase kecil dengan spasi renggang (`letter-spacing: 0.08em` / `1px`), font-weight 700, warna muted (`#a0a0b0`), tanpa latar kapsul ber-border.
+
+4. **Larangan Callout AI Generik & Neon Glow Tebal**:
+   - DILARANG menggunakan gaya callout generik AI seperti `border-left: 3.5px solid` / `border-left: 4px solid` di dalam isi kartu, serta dilarang menggunakan neon `box-shadow` tebal berlebihan (`box-shadow: 0 0 45px var(--quote-accent)`) yang membuat tampilan kotor dan silau.
+   - **Solusi**: Gunakan bayangan elevasi halus alami (`box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35)`) dengan palet warna resmi klub (Dark `#0a0a0c`, Crimson `#e91e63`, Sakura `#ff659b`, dan Putih Bersih).
 
 ### G. Arsitektur Komposisi Warna Teks Anti-Nabrak (Color Contrast Architecture Rule)
 - **PRINSIP MUTLAK & ZERO-TOLERANCE: DILARANG KERAS TEKS MENABRAK BACKGROUND**:

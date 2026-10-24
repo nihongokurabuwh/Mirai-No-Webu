@@ -140,12 +140,12 @@
 </div>
 </section>
 
-<!-- SEKSI KARTU TANDA PENGENAL NIHONGO KURABU -->
-<section class="section name-generator-section" id="pembuat-nama-kta" data-theme="light">
+<!-- SEKSI KARTU TANDA PENGENAL MIRAI NO HANA -->
+<section class="section name-generator-section" id="pembuat-nama-kta" data-theme="dark">
     <div class="section-intro">
         <p class="section-eyebrow"><span class="jp-kanji" lang="ja">部員証作成</span></p>
-        <h2 class="heading">Kartu Tanda Pengenal <span>Nihongo Kurabu</span></h2>
-        <p class="section-desc">Ubah nama Indonesia menjadi nama resmi Jepang dalam aksara Katakana beserta filosofi Kanji Ateji bermakna positif, lengkap dengan Kartu Tanda Pengenal Nihongo Kurabu digital.</p>
+        <h2 class="heading">Kartu Tanda Pengenal <span>Mirai no Hana</span></h2>
+        <p class="section-desc">Ubah nama Indonesia menjadi nama resmi Jepang dalam aksara Katakana beserta filosofi Kanji Ateji bermakna positif, lengkap dengan Kartu Tanda Pengenal Mirai no Hana digital.</p>
     </div>
 
     <div class="studio-container namegen-container" id="panelNameGen">
@@ -155,7 +155,7 @@
                 <div class="studio-card-head">
                     <div class="card-head-left">
                         <span class="card-badge">
-                            <span class="badge-flag">🎴</span>
+                            <svg class="badge-flag-svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><line x1="15" y1="8" x2="17" y2="8"/><line x1="15" y1="12" x2="17" y2="12"/><line x1="7" y1="16" x2="17" y2="16"/></svg>
                             <span class="badge-name">Identitas Anggota</span>
                         </span>
                         <span class="namegen-badge-tag">Katakana &amp; Ateji</span>
@@ -170,7 +170,7 @@
                         </label>
                         <div class="namegen-input-wrap">
                             <input type="text" id="nameGenInput" class="namegen-input" placeholder="Ketik nama kamu, misal: Asora Aokita..." maxlength="40" autocomplete="off" value="Asora Aokita" aria-label="Ketik nama kamu, misal: Asora Aokita...">
-                            <button type="button" class="mini-clear-btn" id="clearNameInputBtn" title="Hapus teks nama" aria-label="Hapus nama">🗑️</button>
+                            <button type="button" class="mini-clear-btn" id="clearNameInputBtn" title="Hapus teks nama" aria-label="Hapus nama"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg></button>
                         </div>
                     </div>
 
@@ -294,32 +294,34 @@
                         </label>
                         <div class="namegen-select-wrap">
                             <select id="nameGenDivision" class="namegen-select" aria-label="Divisi Pilihan">
-                                <option value="bahasa" selected>📚 Divisi Bahasa &amp; Budaya</option>
-                                <option value="cosplay">🎭 Divisi Cosplay &amp; Seni Peran</option>
-                                <option value="desain">🎨 Divisi Desain &amp; Kreatif</option>
-                                <option value="kewirausahaan">🍱 Divisi Kewirausahaan</option>
-                                <option value="anggota">🌸 Anggota Baru Klub</option>
+                                <option value="bahasa" selected>Divisi Bahasa &amp; Budaya</option>
+                                <option value="cosplay">Divisi Cosplay &amp; Seni Peran</option>
+                                <option value="desain">Divisi Desain &amp; Kreatif</option>
+                                <option value="kewirausahaan">Divisi Kewirausahaan</option>
+                                <option value="anggota">Anggota Baru Klub</option>
                             </select>
                         </div>
                     </div>
 
                     <div class="namegen-field-group namegen-photo-ctrl-group">
                         <label class="namegen-label">
-                            <span>📸 Foto Profil KTP <small>(Opsional: Pas Foto 3x4)</small></span>
+                            <span>Foto Profil KTP <small>(Opsional: Pas Foto 3x4)</small></span>
                             <small class="namegen-sublabel">Gunakan foto sendiri atau pas foto Sora default. Foto dapat digeser &amp; di-zoom.</small>
                         </label>
                         <div class="namegen-photo-actions">
                             <input type="file" id="ktaPhotoUpload" accept="image/*" class="namegen-file-input" hidden aria-label="Upload Foto Profil Sendiri untuk KTP">
                             <button type="button" class="studio-btn namegen-upload-btn" id="ktaPhotoUploadBtn" aria-label="Upload Foto Sendiri">
-                                <span>📸 Upload Foto Sendiri</span>
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                                <span>Upload Foto Sendiri</span>
                             </button>
                             <button type="button" class="studio-btn secondary namegen-reset-photo-btn" id="ktaPhotoResetBtn" title="Kembali ke foto Sora default" aria-label="Reset Foto Default">
-                                <span>🔄 Reset Foto Default</span>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 4 23 10 17 10"></polyline><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path></svg>
+                                <span>Reset Foto Default</span>
                             </button>
                         </div>
                         <div class="namegen-zoom-control">
                             <div class="zoom-label-row">
-                                <span class="zoom-label">🔍 Zoom Foto</span>
+                                <span class="zoom-label"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:middle;margin-right:4px;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>Zoom Foto</span>
                                 <span class="zoom-value" id="ktaPhotoZoomVal">100%</span>
                             </div>
                             <input type="range" id="ktaPhotoZoom" class="namegen-range-slider" min="100" max="250" value="100" step="1" aria-label="Perbesar atau perkecil foto profil KTP">
@@ -333,7 +335,7 @@
 
                     <div class="namegen-actions-bar">
                         <button type="button" class="studio-btn primary namegen-submit-btn" id="generateNameCardBtn">
-                            <span>✨ Buat Kartu Tanda Pengenal Nihongo Kurabu</span>
+                            <span>Buat Kartu Tanda Pengenal Mirai no Hana</span>
                         </button>
                     </div>
                 </div>
@@ -352,10 +354,10 @@
                     </div>
                     <div class="phonetic-right" style="display:flex;gap:6px;align-items:center;">
                         <button type="button" class="icon-audio-btn primary" id="listenKatakanaBtn" title="Dengarkan pelafalan nama dalam Bahasa Jepang (Normal)" aria-label="Dengarkan pelafalan nama">
-                            🔊
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
                         </button>
                         <button type="button" class="icon-audio-btn btn-audio-slow" id="listenKatakanaSlowBtn" title="Dengarkan pelafalan nama pelan (Slow-Mo)" aria-label="Dengarkan pelafalan nama lambat">
-                            🐢
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
                         </button>
                     </div>
                 </div>
@@ -364,14 +366,17 @@
                 <div class="namegen-ateji-box">
                     <div class="ateji-header">
                         <div class="ateji-head-left">
-                            <span class="ateji-icon">📜</span>
+                            <span class="ateji-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                            </span>
                             <div class="ateji-head-text">
                                 <strong>Ateji Kanji Positif &amp; Filosofi Makna</strong>
                                 <small>Karakter Kanji pembawa doa &amp; harapan baik untuk namamu</small>
                             </div>
                         </div>
                         <button type="button" class="studio-btn secondary mini-reroll-btn" id="rerollKanjiBtn" title="Lihat kombinasi pilihan variasi Kanji positif lainnya" aria-label="Ganti variasi kombinasi Kanji">
-                            <span>🎲 Ganti Variasi Kanji</span>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 3 21 3 21 8"></polyline><line x1="4" y1="20" x2="21" y2="3"></line><polyline points="21 16 21 21 16 21"></polyline><line x1="15" y1="15" x2="21" y2="21"></line><line x1="4" y1="4" x2="9" y2="9"></line></svg>
+                            <span>Ganti Variasi Kanji</span>
                         </button>
                     </div>
                     <div class="ateji-kanji-row" id="resAtejiRow">
@@ -384,15 +389,15 @@
                     </p>
                 </div>
 
-                <!-- LIVE PREVIEW KARTU TANDA PENGENAL NIHONGO KURABU (DUAL SISI: DEPAN & BELAKANG) -->
+                <!-- LIVE PREVIEW KARTU TANDA PENGENAL MIRAI NO HANA (DUAL SISI: DEPAN & BELAKANG) -->
                 <div class="member-card-stage">
                     <!-- TAB TOGGLE TAMPAK DEPAN & TAMPAK BELAKANG -->
                     <div class="ktp-view-tabs" role="tablist" aria-label="Pilih Sisi Kartu Tanda Pengenal">
                         <button type="button" class="ktp-tab-btn is-active" id="tabKtpFront" data-ktp-tab="front" role="tab" aria-selected="true">
-                            🪪 Tampak Depan
+                            Tampak Depan
                         </button>
                         <button type="button" class="ktp-tab-btn" id="tabKtpBack" data-ktp-tab="back" role="tab" aria-selected="false">
-                            🌸 Tampak Belakang
+                            Tampak Belakang
                         </button>
                     </div>
 
@@ -439,7 +444,7 @@
                                         <div class="mcard-ktp-row">
                                             <span class="mcard-ktp-label">Divisi / 所属</span>
                                             <span class="mcard-ktp-sep">:</span>
-                                            <span class="mcard-ktp-val highlight-div" id="mcardDivisionPill">📚 Divisi Bahasa &amp; Budaya</span>
+                                            <span class="mcard-ktp-val highlight-div" id="mcardDivisionPill">Divisi Bahasa &amp; Budaya</span>
                                         </div>
                                         <div class="mcard-ktp-row">
                                             <span class="mcard-ktp-label">Tanggal Lahir / 生年月日</span>
@@ -484,11 +489,11 @@
                 <!-- TOMBOL UNDUH KARTU PNG (DEPAN & BELAKANG TERPISAH) -->
                 <div class="namegen-download-row namegen-download-double">
                     <button type="button" class="studio-btn primary download-card-btn" id="downloadCardFrontBtn">
-                        <span class="btn-icon">🪪</span>
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
                         <span>Unduh KTP Depan (.PNG)</span>
                     </button>
                     <button type="button" class="studio-btn secondary download-card-btn" id="downloadCardBackBtn">
-                        <span class="btn-icon">🌸</span>
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
                         <span>Unduh KTP Belakang (.PNG)</span>
                     </button>
                 </div>
@@ -523,6 +528,6 @@
     <div class="global-footer-bottom">
             <p>© 2026 MIRAI NO HANA — SMA Wachid Hasyim 2 Taman | Kabinet Sora | Ditenagai oleh GitHub Pages</p>
         </div>
-</footer><button id="quickStrokeBtn" class="quick-stroke-btn" type="button" aria-label="Geser ke Goresan" title="Geser ke Goresan"><span class="quick-stroke-icon">✍️</span><span class="quick-stroke-text">Goresan</span><span class="quick-stroke-arrow">↓</span></button><button class="to-top" type="button">↑</button><script defer src="../js/sora.js?v=547da8dc"></script><script defer src="../js/main.js?v=c4713d6d"></script><script defer src="../js/kamus-translator.js?v=6333e78e"></script><script defer src="../js/stroke-data.js?v=07d66d9e"></script><script defer src="../js/stroke-overrides.js?v=bbf20e0e"></script><script defer src="../js/stroke.js?v=f765cedd"></script><script defer src="../js/kamus-kana.js?v=5c053065"></script><script defer src="../js/api.js?v=9f3082f1"></script><script defer src="https://cdn.jsdelivr.net/npm/wanakana/wanakana.min.js"></script><script defer src="../js/kamus-kanji.js?v=df7ed260"></script>
+</footer><button id="quickStrokeBtn" class="quick-stroke-btn" type="button" aria-label="Geser ke Goresan" title="Geser ke Goresan"><span class="quick-stroke-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path></svg></span><span class="quick-stroke-text">Goresan</span><span class="quick-stroke-arrow">↓</span></button><button class="to-top" type="button">↑</button><script defer src="../js/sora.js?v=547da8dc"></script><script defer src="../js/main.js?v=f47e885b"></script><script defer src="../js/kamus-translator.js?v=17ee5592"></script><script defer src="../js/stroke-data.js?v=07d66d9e"></script><script defer src="../js/stroke-overrides.js?v=bbf20e0e"></script><script defer src="../js/stroke.js?v=8c286909"></script><script defer src="../js/kamus-kana.js?v=5c053065"></script><script defer src="../js/api.js?v=9f3082f1"></script><script defer src="https://cdn.jsdelivr.net/npm/wanakana/wanakana.min.js"></script><script defer src="../js/kamus-kanji.js?v=73352989"></script>
 </body>
 </html>

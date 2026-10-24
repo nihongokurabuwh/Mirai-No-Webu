@@ -886,7 +886,7 @@ function visibleEntries() {
 */
 function render() {
   const visible = visibleEntries();
-  grid.replaceChildren();
+  const fragment = document.createDocumentFragment();
   count.textContent = `Menampilkan ${visible.length} kanji (N5–N1)`;
   empty.hidden = visible.length > 0;
 
@@ -897,7 +897,7 @@ function render() {
     button.className = "kanji-card";
     button.dataset.kanji = item.kanji;
     if (item.kanji === selectedKanjiChar) {
-    button.classList.add("is-active");
+      button.classList.add("is-active");
     }
     button.innerHTML = `<strong>${item.kanji}</strong><span>${item.meaning}</span><em>${item.jlpt}</em>`;
     button.addEventListener("click", () => {
@@ -907,7 +907,7 @@ function render() {
         renderDetail(item, { userInitiated: true });
       }
     });
-    grid.append(button);
+    fragment.append(button);
   });
 
   // Tombol Muat Lebih Banyak jika data melebihi limit tampilan saat ini
@@ -927,8 +927,10 @@ function render() {
       render();
     });
     loadMoreWrap.append(loadMoreBtn);
-    grid.append(loadMoreWrap);
+    fragment.append(loadMoreWrap);
   }
+
+  grid.replaceChildren(fragment);
 
   // Pertahankan kartu yang sedang dipilih jika masih terlihat, atau tampilkan kanvas awal bersih
   if (visible.length) {
@@ -945,8 +947,24 @@ function render() {
   }
 }
 
-// Pasang event listener untuk input pencarian dan filter kontrol
-[search, jlpt, level, strokes].filter(Boolean).forEach((control) => {
+// Pasang event listener untuk input pencarian dan filter kontrol dengan debounce
+let searchDebounceTimer = null;
+const debouncedRender = () => {
+  clearTimeout(searchDebounceTimer);
+  searchDebounceTimer = setTimeout(() => {
+    currentRenderLimit = 60;
+    render();
+  }, 120);
+};
+
+search?.addEventListener("input", debouncedRender);
+search?.addEventListener("change", () => {
+  clearTimeout(searchDebounceTimer);
+  currentRenderLimit = 60;
+  render();
+});
+
+[jlpt, level, strokes].filter(Boolean).forEach((control) => {
   control.addEventListener("input", () => {
     currentRenderLimit = 60;
     render();
@@ -1152,7 +1170,7 @@ const renderBlankState = () => {
 const render = () => {
   const query = search.value.trim().toLowerCase();
   const selectedType = typeFilter.value;
-  container.replaceChildren();
+  const fragment = document.createDocumentFragment();
 
   let totalVisible = 0;
   let firstButton = null;
@@ -1232,7 +1250,7 @@ const render = () => {
     });
 
     section.append(header, grid);
-    container.append(section);
+    fragment.append(section);
   });
 
   count.textContent = `Menampilkan ${totalVisible} karakter ${mode === 'katakana' ? 'Katakana' : 'Hiragana'}`;
@@ -1243,13 +1261,23 @@ const render = () => {
     const emptyText = document.createElement("p");
     emptyText.textContent = `Tidak ada karakter yang cocok dengan pencarian “${query}”.`;
     emptyEl.append(emptyText);
-    container.append(emptyEl);
+    fragment.append(emptyEl);
   } else if (!selectedChar) {
     renderBlankState();
   }
+
+  container.replaceChildren(fragment);
 };
 
-search.addEventListener("input", render);
+let kanaSearchDebounce = null;
+search.addEventListener("input", () => {
+  clearTimeout(kanaSearchDebounce);
+  kanaSearchDebounce = setTimeout(render, 120);
+});
+search.addEventListener("change", () => {
+  clearTimeout(kanaSearchDebounce);
+  render();
+});
 typeFilter.addEventListener("change", render);
 panel.querySelector("[data-random-kana]").addEventListener("click", () => {
   const allChars = window.KanaData.getCharacters(mode);
@@ -1276,7 +1304,7 @@ if (!btn) {
   btn.setAttribute("aria-label", "Geser ke Goresan");
   btn.setAttribute("title", "Geser ke Goresan");
   btn.innerHTML = `
-            <span class="quick-stroke-icon">✍️</span>
+            <span class="quick-stroke-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path></svg></span>
             <span class="quick-stroke-text">Goresan</span>
             <span class="quick-stroke-arrow">↓</span>
         `;

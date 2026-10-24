@@ -488,7 +488,7 @@ section.theme-light select {
 section[data-theme="dark"],
 section.theme-dark,
 section.section-dark,
-main > section:nth-of-type(even):not(.hero):not(.page-hero):not(.proker-hero):not(.quest-hero):not(.dictionary-section):not(.name-generator-section):not([data-theme="light"]):not(.theme-light) {
+main > section:nth-of-type(even):not(.hero):not(.page-hero):not(.proker-hero):not(.quest-hero):not(.dictionary-section):not([data-theme="light"]):not(.theme-light) {
   background-color: #0e0b12;
   color: #f5edf4;
 }
@@ -846,29 +846,26 @@ section.translator-studio-section .section-desc,
   color: #d5ccd3;
 }
 
-/* Generator Nama KTA: Tema Putih Bersih */
+/* Generator Nama KTA (KTP Mirai no Hana): Tema Hitam Pekat */
 main > section.name-generator-section,
 section.name-generator-section {
-  background-color: #ffffff;
-  color: #18151b;
+  background-color: #0a0a0c;
+  color: #e0e0e6;
 }
 
 main > section.name-generator-section .heading,
 section.name-generator-section .heading {
-  color: #18151b;
+  color: #ffffff;
 }
 
 main > section.name-generator-section .heading span,
 section.name-generator-section .heading span {
-  color: var(--pink, #e91e63);
+  color: var(--pink, #ff659b);
 }
 
-main > section.name-generator-section input,
-main > section.name-generator-section select,
-main > section.name-generator-section textarea {
-  background: #ffffff;
-  color: #18151b;
-  border: 1.5px solid #f6c0d8;
+main > section.name-generator-section .section-desc,
+section.name-generator-section .section-desc {
+  color: #a0a0b0;
 }
 
 /* ----------------------------------------------------
@@ -1047,9 +1044,8 @@ a {
   height: 82px;
   padding: 0 6vw;
   color: var(--white);
-  background: rgba(24, 21, 27, .82);
+  background: rgba(24, 21, 27, 0.95);
   border-bottom: 1px solid rgba(255, 255, 255, .15);
-  backdrop-filter: blur(13px);
 }
 
 .brand {
@@ -1836,9 +1832,7 @@ img:not(.img-lightbox-img) {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(8, 6, 12, 0.88);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  background: rgba(8, 6, 12, 0.94);
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -1878,7 +1872,7 @@ img:not(.img-lightbox-img) {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(30, 24, 36, 0.85);
   border: 1px solid rgba(255, 255, 255, 0.25);
   color: #ffffff;
   font-size: 18px;
@@ -1888,8 +1882,6 @@ img:not(.img-lightbox-img) {
   cursor: pointer;
   transition: all 0.2s ease;
   z-index: 1000001;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
 }
 
 .img-lightbox-close:hover {
@@ -1958,34 +1950,30 @@ Fitur:
 }
 
 ::view-transition-old(root) {
-  animation: 0.22s cubic-bezier(0.4, 0, 1, 1) both mnhViewFadeOut;
+  animation: 0.16s ease-out both mnhViewFadeOut;
 }
 
 ::view-transition-new(root) {
-  animation: 0.36s cubic-bezier(0.16, 1, 0.3, 1) both mnhViewFadeIn;
+  animation: 0.2s ease-out both mnhViewFadeIn;
 }
 
 @keyframes mnhViewFadeOut {
   from {
     opacity: 1;
-    transform: scale(1);
   }
 
   to {
     opacity: 0;
-    transform: scale(0.995);
   }
 }
 
 @keyframes mnhViewFadeIn {
   from {
     opacity: 0;
-    transform: translateY(12px);
   }
 
   to {
     opacity: 1;
-    transform: translateY(0);
   }
 }
 /* B. Animasi Masuk Halaman Utama (Page Entrance Keyframes) */
@@ -2051,48 +2039,45 @@ body, body.learning-app, body.page-latihan {
 /* C. Scroll Motion Reveal: Seksi Halaman & Kartu Mengalir saat Tiba di Layar */
 .section-reveal {
   opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.68s cubic-bezier(0.16, 1, 0.3, 1),
-                transform 0.68s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, transform;
+  transform: translate3d(0, 20px, 0);
+  transition: opacity 0.5s ease-out,
+                transform 0.5s ease-out;
 }
 
 .section-reveal.is-visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translate3d(0, 0, 0);
 }
 /* Heading & Teks Seksi mengalir saat seksi tiba di layar */
 .section-reveal .heading, .section-reveal .subheading, .section-reveal .section-title, .section-reveal .section-desc, .section-reveal .section-lead, .section-reveal > .container > h2, .section-reveal > .container > p, .section-reveal > h2, .section-reveal > p {
   opacity: 0;
-  transform: translateY(18px);
-  transition: opacity 0.58s cubic-bezier(0.16, 1, 0.3, 1),
-                transform 0.58s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, transform;
+  transform: translate3d(0, 14px, 0);
+  transition: opacity 0.45s ease-out,
+                transform 0.45s ease-out;
 }
 
 .section-reveal.is-visible .heading, .section-reveal.is-visible .section-title, .section-reveal.is-visible > .container > h2, .section-reveal.is-visible > h2 {
   opacity: 1;
-  transform: translateY(0);
-  transition-delay: 0.06s;
+  transform: translate3d(0, 0, 0);
+  transition-delay: 0.04s;
 }
 
 .section-reveal.is-visible .subheading, .section-reveal.is-visible .section-desc, .section-reveal.is-visible .section-lead, .section-reveal.is-visible > .container > p, .section-reveal.is-visible > p {
   opacity: 1;
-  transform: translateY(0);
-  transition-delay: 0.14s;
+  transform: translate3d(0, 0, 0);
+  transition-delay: 0.1s;
 }
 /* Kartu & Komponen Mengalir Bertahap (Cascading Motion) */
 .reveal, .motion-reveal {
   opacity: 0;
-  transform: translateY(24px) scale(0.988);
-  transition: opacity 0.62s cubic-bezier(0.16, 1, 0.3, 1),
-                transform 0.62s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, transform;
+  transform: translate3d(0, 16px, 0);
+  transition: opacity 0.45s ease-out,
+                transform 0.45s ease-out;
 }
 
 .reveal.is-visible, .motion-reveal.is-visible {
   opacity: 1;
-  transform: translateY(0) scale(1);
+  transform: translate3d(0, 0, 0);
 }
 
 .motion-delay-1 {
@@ -2221,11 +2206,10 @@ body, body.learning-app, body.page-latihan {
 .error-404-card {
   max-width: 720px;
   width: 100%;
-  background: rgba(24, 21, 27, 0.88);
+  background: rgba(24, 21, 27, 0.95);
   border: 1px solid rgba(255, 79, 145, 0.32);
   border-radius: 28px;
   padding: 48px 32px;
-  backdrop-filter: blur(14px);
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.65), 0 0 50px rgba(233, 30, 99, 0.18);
   position: relative;
   z-index: 1;
@@ -3092,20 +3076,24 @@ section.feedback-preview.feedback-theme-dark .card-toggle::after {
 
 
 .section-quote-slider.quote-theme-white .quote-author-profile {
-  background: rgba(255, 255, 255, 0.88) !important;
-  border: 1px solid #fce4ec !important;
-  backdrop-filter: blur(4px) !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
 }
 
 .section-quote-slider.quote-theme-white .quote-author-name {
   color: #18151b !important;
 }
 
+.section-quote-slider.quote-theme-white .quote-author-series {
+  color: #64748b !important;
+}
+
 .section-quote-slider.quote-theme-white .quote-box {
-  background: rgba(255, 255, 255, 0.95) !important;
-  border: 1px solid #e2e8f0 !important;
-  border-left: 3.5px solid var(--quote-accent, #94a3b8) !important;
-  backdrop-filter: blur(4px) !important;
+  background: transparent !important;
+  border: none !important;
+  border-left: none !important;
+  box-shadow: none !important;
 }
 
 .section-quote-slider.quote-theme-white .quote-kanji {
@@ -3139,9 +3127,10 @@ section.feedback-preview.feedback-theme-dark .card-toggle::after {
 }
 
 .section-quote-slider.quote-theme-white .quote-meaning-card {
-  background: rgba(255, 255, 255, 0.95) !important;
-  border: 1px solid var(--quote-border, #e2e8f0) !important;
-  backdrop-filter: blur(4px) !important;
+  background: transparent !important;
+  border: none !important;
+  border-top: 1px solid rgba(0, 0, 0, 0.08) !important;
+  box-shadow: none !important;
 }
 
 .section-quote-slider.quote-theme-white .quote-meaning-title {
@@ -3278,9 +3267,7 @@ html.is-page-locked-early main, body.is-page-locked main {
   align-items: center !important;
   justify-content: center !important;
   padding: 24px !important;
-  background: rgba(9, 6, 13, 0.76) !important;
-  backdrop-filter: blur(6px) !important;
-  -webkit-backdrop-filter: blur(6px) !important;
+  background: rgba(9, 6, 13, 0.92) !important;
   animation: csFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
 }
 /* 3. Efek Seksi Terkunci (Section-Level Lock & Blur) */
@@ -3290,11 +3277,11 @@ html.is-page-locked-early main, body.is-page-locked main {
 }
 
 .is-section-locked > *:not(.coming-soon-section-overlay) {
-  filter: blur(8px) saturate(0.6) !important;
+  opacity: 0.3 !important;
   pointer-events: none !important;
   user-select: none !important;
   -webkit-user-select: none !important;
-  transition: filter 0.3s ease !important;
+  transition: opacity 0.3s ease !important;
 }
 
 .coming-soon-section-overlay {
@@ -3305,9 +3292,7 @@ html.is-page-locked-early main, body.is-page-locked main {
   align-items: center !important;
   justify-content: center !important;
   padding: 36px 20px !important;
-  background: rgba(14, 11, 18, 0.74) !important;
-  backdrop-filter: blur(5px) !important;
-  -webkit-backdrop-filter: blur(5px) !important;
+  background: rgba(14, 11, 18, 0.9) !important;
   animation: csFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
 }
 /* Kartu Tampilan Segera Hadir (Universal) */
@@ -3464,9 +3449,7 @@ html.is-page-locked-early main, body.is-page-locked main {
   justify-content: center !important;
   padding: 20px !important;
   margin: 0 !important;
-  background: rgba(14, 11, 18, 0.42) !important;
-  backdrop-filter: blur(3px) saturate(120%) !important;
-  -webkit-backdrop-filter: blur(3px) saturate(120%) !important;
+  background: rgba(14, 11, 18, 0.72) !important;
   border-radius: inherit !important;
   cursor: pointer !important;
   text-align: center !important;
@@ -3532,9 +3515,7 @@ html.is-page-locked-early main, body.is-page-locked main {
   content: "" !important;
   position: absolute !important;
   inset: 0 !important;
-  background: rgba(15, 11, 20, 0.45) !important;
-  backdrop-filter: blur(2px) !important;
-  -webkit-backdrop-filter: blur(2px) !important;
+  background: rgba(15, 11, 20, 0.65) !important;
   z-index: 4 !important;
   border-radius: inherit !important;
 }
@@ -3578,9 +3559,7 @@ html.is-page-locked-early main, body.is-page-locked main {
   align-items: center !important;
   justify-content: center !important;
   padding: 20px !important;
-  background: rgba(8, 5, 12, 0.82) !important;
-  backdrop-filter: blur(10px) !important;
-  -webkit-backdrop-filter: blur(10px) !important;
+  background: rgba(8, 5, 12, 0.94) !important;
 }
 
 .password-modal-backdrop.is-active {
@@ -3843,24 +3822,16 @@ html.is-page-locked-early main, body.is-page-locked main {
 .section-quote-slider.quote-theme-white .quote-author-profile,
 .section-quote-slider.quote-theme-white .quote-box,
 .section-quote-slider.quote-theme-white .quote-meaning-card {
-  background: #ffffff !important;
+  background: transparent !important;
   background-image: none !important;
   position: relative !important;
   z-index: 2 !important;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03) !important;
-}
-
-.section-quote-slider.quote-theme-white .quote-author-profile {
-  border: 1px solid #e2e8f0 !important;
-}
-
-.section-quote-slider.quote-theme-white .quote-box {
-  border: 1px solid #e2e8f0 !important;
-  border-left: 3.5px solid var(--quote-accent, #94a3b8) !important;
+  box-shadow: none !important;
+  border: none !important;
 }
 
 .section-quote-slider.quote-theme-white .quote-meaning-card {
-  border: 1px solid var(--quote-border, #e2e8f0) !important;
+  border-top: 1px solid rgba(0, 0, 0, 0.08) !important;
 }
 
 .quote-author-profile::before, .quote-author-profile::after,
@@ -4119,4 +4090,15 @@ body.dark-mode .dictionary-practice-link, body.theme-dark .dictionary-practice-l
 .kurikulum-page-section .doc-big-card,
 .kurikulum-page-section .doc-big-card * {
   text-shadow: none !important;
+}
+
+/* ==========================================================================
+   MOBILE HARDWARE 60 FPS ACCELERATION SAFEGUARD
+   Nonaktifkan komputasi fragment-shader blur pada perangkat mobile
+   ========================================================================== */
+@media (max-width: 768px) {
+  *, *::before, *::after {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
 }

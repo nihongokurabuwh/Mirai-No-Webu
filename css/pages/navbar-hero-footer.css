@@ -42,9 +42,7 @@ header.home-header, .home-header {
   right: 20px;
   z-index: 10000;
   overflow: hidden;
-  background: rgba(0, 0, 0, 0.65);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background: rgba(18, 14, 24, 0.92);
   color: white;
   padding: 11px 22px;
   border-radius: 30px;
@@ -114,9 +112,7 @@ body.is-practicing .quick-scroll-thumb, body:has(.practice-view:not([hidden])) .
 .sidebar-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.65);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
+  background: rgba(0, 0, 0, 0.82);
   z-index: 10005;
   opacity: 0;
   visibility: hidden;
@@ -140,9 +136,7 @@ body.sidebar-open {
   max-width: 100%;
   height: 100vh;
   height: 100dvh;
-  background: rgba(10, 10, 10, 0.95);
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
+  background: rgba(12, 10, 15, 0.98);
   border-left: 1px solid rgba(255, 255, 255, 0.1);
   color: white;
   z-index: 10010;
@@ -544,9 +538,7 @@ body.theme-dark .division-section, body.dark-mode .division-section {
   height: 44px;
   border-radius: 50%;
   border: 1.5px solid rgba(255, 255, 255, 0.45);
-  background: rgba(18, 14, 22, 0.35);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background: rgba(18, 14, 22, 0.75);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -677,13 +669,11 @@ body[data-pattern-family="c1"] .global-footer::before,
   margin: 16px 0 0 0;
   padding: 14px 18px !important;
   max-width: 620px;
-  background: rgba(255, 255, 255, 0.035) !important;
+  background: rgba(26, 21, 32, 0.88) !important;
   border: 1px solid rgba(255, 101, 155, 0.22) !important;
   border-left: 4px solid var(--pink, #ff659b) !important;
   border-radius: 12px !important;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35) !important;
-  backdrop-filter: blur(8px) !important;
-  -webkit-backdrop-filter: blur(8px) !important;
   color: #d5ccd3 !important;
   font-size: 0.86rem;
   line-height: 1.7;
@@ -2610,5 +2600,12 @@ PENGGESER CEPAT POJOK KANAN (QUICK DRAG-SCROLL THUMB)
     width: 34px;
     height: 62px;
     right: 3px;
+  }
+}
+
+/* Matikan partikel kelopak animasi terus-menerus di mobile demi fluiditas 60 FPS */
+@media (max-width: 768px) {
+  .hero-sakura-layer, .hero-petal {
+    display: none !important;
   }
 }

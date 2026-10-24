@@ -2784,11 +2784,11 @@ function initNameGenerator() {
   const downloadCardBtn = document.getElementById('downloadCardPngBtn');
 
   const divisionLabels = {
-    'bahasa': '📚 Divisi Bahasa & Budaya',
-    'cosplay': '🎭 Divisi Cosplay & Seni Peran',
-    'desain': '🎨 Divisi Desain & Kreatif',
-    'kewirausahaan': '🍱 Divisi Kewirausahaan',
-    'anggota': '🌸 Anggota Baru Klub'
+    'bahasa': 'Divisi Bahasa & Budaya',
+    'cosplay': 'Divisi Cosplay & Seni Peran',
+    'desain': 'Divisi Desain & Kreatif',
+    'kewirausahaan': 'Divisi Kewirausahaan',
+    'anggota': 'Anggota Baru Klub'
   };
 
   // Drag & Zoom Photo Transform Logic
@@ -3382,7 +3382,7 @@ function initNameGenerator() {
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
-      a.download = `KTP-Nihongo-Kurabu-Depan-${safeName}.png`;
+      a.download = `KTP-Mirai-No-Hana-Depan-${safeName}.png`;
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
@@ -3483,7 +3483,7 @@ function initNameGenerator() {
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
-      a.download = `KTP-Nihongo-Kurabu-Belakang-${safeName}.png`;
+      a.download = `KTP-Mirai-No-Hana-Belakang-${safeName}.png`;
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);

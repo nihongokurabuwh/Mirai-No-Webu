@@ -2643,9 +2643,7 @@ FLOATING MOBILE 12-KEY KEITAI KEYBOARD (DOCK MELAYANG ANTI-CUT)
   transform: translateX(-50%) !important;
   width: 100% !important;
   max-width: 480px !important;
-  background: rgba(255, 255, 255, 0.98) !important;
-  backdrop-filter: blur(16px) !important;
-  -webkit-backdrop-filter: blur(16px) !important;
+  background: #ffffff !important;
   border: 1.5px solid var(--pink-border, #f4bfd3) !important;
   border-bottom: none !important;
   border-radius: 22px 22px 0 0 !important;
@@ -2958,9 +2956,7 @@ FLOATING MOBILE 12-KEY KEITAI KEYBOARD (DOCK MELAYANG ANTI-CUT)
   width: 40px !important;
   height: 40px !important;
   border-radius: 12px !important;
-  background: rgba(30, 22, 38, 0.96) !important;
-  backdrop-filter: blur(12px) !important;
-  -webkit-backdrop-filter: blur(12px) !important;
+  background: #1e1626 !important;
   border: 1.5px solid rgba(255, 101, 155, 0.45) !important;
   color: #ffffff !important;
   display: flex !important;
@@ -4029,9 +4025,7 @@ body.dark-mode .ktp-tab-btn.is-active {
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(15, 23, 42, 0.72);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
+  background: rgba(15, 23, 42, 0.88);
   color: #ffffff;
   font-size: 8px;
   font-weight: 700;
@@ -4338,14 +4332,25 @@ body.dark-mode .download-hint {
   }
 }
 
-/* Safe clearance agar tidak tertutup tombol melayang */
+/* Safe clearance & jarak proporsional seksi */
 .translator-studio-section {
   padding-bottom: 30px !important;
 }
 
 .name-generator-section {
-  padding-top: 10px;
+  padding-top: clamp(80px, 11vw, 140px) !important;
   padding-bottom: 90px !important;
+}
+
+.name-generator-section .section-intro {
+  margin-bottom: 32px !important;
+}
+
+@media (max-width: 768px) {
+  .name-generator-section {
+    padding-top: 76px !important;
+    padding-bottom: 80px !important;
+  }
 }
 
 /* ==========================================================================
@@ -4645,92 +4650,388 @@ STICKY KANJI DETAIL PANEL & SHORTCUTS HINT (LAPTOP / DESKTOP >= 1200px)
 }
 
 /* ==========================================================================
-   SEKSI KARTU TANDA PENGENAL (KTPNK) - PUTIH BERSIH SESUAI ATURAN SELANG-SELING
+   SEKSI KARTU TANDA PENGENAL (KTPNK) - TEMA HITAM PEKAT (#0a0a0c) MIRAI NO HANA
    ========================================================================== */
 .name-generator-section {
-  background-color: #ffffff !important;
-  color: #18151b !important;
-  border-top: 1px solid rgba(233, 30, 99, 0.15) !important;
+  background-color: #0a0a0c !important;
+  color: #e0e0e6 !important;
+  border-top: 1px solid rgba(255, 101, 155, 0.22) !important;
   position: relative;
 }
 
-.name-generator-section .section-eyebrow {
-  color: var(--pink, #e91e63) !important;
+.name-generator-section .section-eyebrow .jp-kanji {
+  color: #ff659b !important;
+  background: rgba(255, 101, 155, 0.12) !important;
+  border: 1px solid rgba(255, 101, 155, 0.3) !important;
 }
 
 .name-generator-section .heading {
-  color: #18151b !important;
+  color: #ffffff !important;
+  text-shadow: none !important;
 }
 
 .name-generator-section .heading span {
-  color: var(--pink, #e91e63) !important;
+  color: var(--pink, #ff659b) !important;
 }
 
 .name-generator-section .section-desc {
-  color: #554e57 !important;
+  color: #a0a0b0 !important;
 }
 
+/* Card Surface Gelap (Panel Input Kiri & Panel Hasil Kanan) */
 .name-generator-section .namegen-form-card,
 .name-generator-section .namegen-result-card {
-  background: #ffffff !important;
-  border: 1.5px solid #f6c0d8 !important;
-  box-shadow: 0 10px 30px rgba(233, 30, 99, 0.06) !important;
-  color: #18151b !important;
+  background: #141418 !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6) !important;
+  color: #ffffff !important;
+}
+
+.name-generator-section .card-badge {
+  background: #1e1e26 !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: #e0e0e6 !important;
+}
+
+.name-generator-section .badge-name {
+  color: #e0e0e6 !important;
+}
+
+.name-generator-section .namegen-badge-tag {
+  color: #ff659b !important;
+  background: rgba(255, 101, 155, 0.14) !important;
+  border: 1px solid rgba(255, 101, 155, 0.3) !important;
+}
+
+/* Input, Select, & Form Controls Kontras Tinggi */
+.name-generator-section .namegen-label {
+  color: #ffffff !important;
+}
+
+.name-generator-section .namegen-label span {
+  color: #ffffff !important;
+}
+
+.name-generator-section .namegen-label small {
+  color: #a0a0b0 !important;
+}
+
+.name-generator-section .namegen-label .req-star {
+  color: #ff4081 !important;
+}
+
+.name-generator-section .namegen-sublabel {
+  color: #a0a0b0 !important;
 }
 
 .name-generator-section .namegen-input,
 .name-generator-section .namegen-select {
-  background: #ffffff !important;
-  border: 1.5px solid #f6c0d8 !important;
-  color: #18151b !important;
+  background: #1a1a22 !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.12) !important;
+  color: #ffffff !important;
+}
+
+.name-generator-section .namegen-input::placeholder {
+  color: #707080 !important;
+  opacity: 1 !important;
 }
 
 .name-generator-section .namegen-input:focus,
 .name-generator-section .namegen-select:focus {
-  border-color: var(--pink, #e91e63) !important;
-  box-shadow: 0 0 0 3px rgba(255, 101, 155, 0.2) !important;
+  border-color: #ff659b !important;
+  box-shadow: 0 0 0 3px rgba(255, 101, 155, 0.25) !important;
+  background: #20202c !important;
+  color: #ffffff !important;
 }
 
-.name-generator-section .namegen-tips-box {
-  background: #fdf5f8 !important;
-  border: 1px solid #f8d5e3 !important;
-  color: #6d5462 !important;
+.name-generator-section .namegen-birth-group select {
+  background: #1a1a22 !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.12) !important;
+  color: #ffffff !important;
 }
 
+.name-generator-section select option {
+  background: #18181f !important;
+  color: #ffffff !important;
+}
+
+.name-generator-section .mini-clear-btn {
+  background: transparent !important;
+  border: none !important;
+  opacity: 0.8;
+}
+
+.name-generator-section .mini-clear-btn:hover {
+  opacity: 1;
+}
+
+/* Kontrol Foto Profil KTP */
+.name-generator-section .namegen-photo-ctrl-group {
+  background: #181822 !important;
+  border: 1.5px dashed rgba(255, 101, 155, 0.35) !important;
+}
+
+.name-generator-section .namegen-reset-photo-btn {
+  background: #252532 !important;
+  color: #e0e0e6 !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
+
+.name-generator-section .namegen-reset-photo-btn:hover {
+  background: #303040 !important;
+  color: #ffffff !important;
+}
+
+.name-generator-section .namegen-zoom-control .zoom-label {
+  color: #e0e0e6 !important;
+}
+
+.name-generator-section .namegen-zoom-control .zoom-value {
+  color: #ff659b !important;
+  font-weight: 700 !important;
+}
+
+.name-generator-section .zoom-range-markers span {
+  color: #888898 !important;
+}
+
+/* Tombol Submit Utama */
+.name-generator-section .namegen-submit-btn {
+  background: linear-gradient(135deg, #ff4081 0%, #e91e63 100%) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  box-shadow: 0 8px 24px rgba(233, 30, 99, 0.45) !important;
+}
+
+/* Sub-card: Panel Nama Katakana */
 .name-generator-section .namegen-phonetic-banner {
-  background: linear-gradient(135deg, #fff2f7 0%, #ffe4ee 100%) !important;
-  border: 1.5px solid #fbd3e5 !important;
+  background: linear-gradient(135deg, #1d1828 0%, #16131f 100%) !important;
+  border: 1.5px solid rgba(255, 101, 155, 0.28) !important;
+}
+
+.name-generator-section .phonetic-label {
+  color: #ff659b !important;
 }
 
 .name-generator-section .katakana-large {
-  color: #18151b !important;
+  color: #ffffff !important;
+  text-shadow: none !important;
 }
 
 .name-generator-section .romaji-sub {
-  color: var(--pink, #e91e63) !important;
+  color: #ff85b3 !important;
+  font-weight: 700 !important;
 }
 
+.name-generator-section .icon-audio-btn {
+  background: #252535 !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  color: #ffffff !important;
+}
+
+/* Sub-card: Panel Ateji Kanji & Filosofi Makna */
 .name-generator-section .namegen-ateji-box {
-  background: #fff8fb !important;
-  border: 1.5px solid #f9d4e5 !important;
+  background: #181822 !important;
+  border: 1.5px solid rgba(255, 101, 155, 0.22) !important;
 }
 
-.name-generator-section .ateji-kanji-big {
-  color: #18151b !important;
+.name-generator-section .ateji-head-text strong {
+  color: #ffffff !important;
 }
 
-.name-generator-section .ateji-meaning-text {
-  color: #403845 !important;
+.name-generator-section .ateji-head-text small {
+  color: #a0a0b0 !important;
 }
 
-.name-generator-section .mnh-member-card {
-  background: linear-gradient(145deg, #ffffff 0%, #fff4f8 60%, #ffe8f2 100%) !important;
-  border: 2px solid #f5b7d1 !important;
-  color: #18151b !important;
+.name-generator-section .mini-reroll-btn {
+  background: #252233 !important;
+  color: #e0e0e6 !important;
+  border: 1px solid rgba(255, 101, 155, 0.35) !important;
 }
 
-.name-generator-section .download-hint {
-  color: #6d6471 !important;
+.name-generator-section .mini-reroll-btn:hover {
+  background: #ff4081 !important;
+  color: #ffffff !important;
+}
+
+.name-generator-section .ateji-chip {
+  background: #1f1b2c !important;
+  border: 1px solid rgba(255, 101, 155, 0.28) !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25) !important;
+}
+
+.name-generator-section .ateji-kanji {
+  color: #ff659b !important;
+}
+
+.name-generator-section .ateji-reading {
+  color: #ffffff !important;
+}
+
+.name-generator-section .ateji-meaning {
+  color: #b5a8bd !important;
+}
+
+.name-generator-section .ateji-philosophy-text {
+  background: #110e16 !important;
+  border-left: 3.5px solid #ff659b !important;
+  color: #e0e0ea !important;
+  padding: 10px 14px !important;
+  border-radius: 0 8px 8px 0 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.05) !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.05) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+/* Tabs Toggle Sisi Depan / Belakang KTP */
+.name-generator-section .ktp-tab-btn {
+  background: #1c1c26 !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.1) !important;
+  color: #a0a0b0 !important;
+}
+
+.name-generator-section .ktp-tab-btn:hover {
+  background: #262635 !important;
+  color: #ffffff !important;
+  border-color: rgba(255, 101, 155, 0.4) !important;
+}
+
+.name-generator-section .ktp-tab-btn.is-active {
+  background: linear-gradient(135deg, #ff4081 0%, #e91e63 100%) !important;
+  border-color: #ff659b !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 14px rgba(233, 30, 99, 0.4) !important;
+}
+
+/* Sub-card: Live Preview Kartu Tanda Pengenal (Dark Surface) */
+.name-generator-section .member-card-wrap {
+  background: linear-gradient(145deg, #181822 0%, #13131a 60%, #0e0e14 100%) !important;
+  border: 2px solid rgba(255, 101, 155, 0.35) !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.75), 0 0 24px rgba(233, 30, 99, 0.14) !important;
+  color: #e0e0e6 !important;
+}
+
+.name-generator-section .member-card-wrap::before {
+  border: 1.5px dashed rgba(255, 101, 155, 0.25) !important;
+}
+
+.name-generator-section .member-card-wrap::after {
+  border: 24px solid rgba(255, 101, 155, 0.05) !important;
+}
+
+.name-generator-section .mcard-topbar {
+  border-bottom: 1px dashed rgba(255, 101, 155, 0.3) !important;
+}
+
+.name-generator-section .mcard-club-name {
+  color: #ff659b !important;
+}
+
+.name-generator-section .mcard-sub-jp {
+  color: #f472b6 !important;
+}
+
+.name-generator-section .mcard-ktp-title-badge {
+  color: #ffffff !important;
+  background: rgba(233, 30, 99, 0.28) !important;
+  border: 1.5px solid rgba(255, 101, 155, 0.5) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+.name-generator-section .mcard-photo-frame {
+  border: 2px solid #ff659b !important;
+  background: #1e1e2c !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4) !important;
+}
+
+.name-generator-section .mcard-jp-name {
+  color: #ffffff !important;
+}
+
+.name-generator-section .mcard-latin-name {
+  color: #e0e0e6 !important;
+}
+
+.name-generator-section .mcard-ktp-grid {
+  background: rgba(18, 18, 25, 0.92) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4) !important;
+}
+
+.name-generator-section .mcard-ktp-label {
+  color: #a0a0b0 !important;
+}
+
+.name-generator-section .mcard-ktp-sep {
+  color: #707080 !important;
+}
+
+.name-generator-section .mcard-ktp-val {
+  color: #ffffff !important;
+}
+
+.name-generator-section .mcard-ktp-val.highlight-div {
+  color: #ff659b !important;
+}
+
+.name-generator-section .mcard-ktp-val.date-val {
+  color: #ff85b3 !important;
+}
+
+.name-generator-section .mcard-ktp-val.age-val {
+  color: #ff659b !important;
+}
+
+.name-generator-section .mcard-footer {
+  border-top: 1px dashed rgba(255, 101, 155, 0.3) !important;
+  color: #888898 !important;
+}
+
+.name-generator-section .mcard-school {
+  color: #a0a0b0 !important;
+}
+
+.name-generator-section .mcard-validity {
+  color: #707080 !important;
+}
+
+.name-generator-section .mcard-barcode {
+  color: #707080 !important;
+}
+
+/* Preview Kartu Tampak Belakang */
+.name-generator-section .mcard-back-title {
+  color: #ffffff !important;
+}
+
+.name-generator-section .mcard-back-sub-jp {
+  color: #ff659b !important;
+}
+
+.name-generator-section .mcard-back-logo-wrap {
+  background: #181824 !important;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.7), 0 0 0 2.5px rgba(255, 101, 155, 0.45) !important;
+}
+
+/* Tombol Download Dual KTP */
+.name-generator-section #downloadCardFrontBtn {
+  background: linear-gradient(135deg, #ff4081 0%, #e91e63 100%) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  box-shadow: 0 6px 20px rgba(233, 30, 99, 0.4) !important;
+}
+
+.name-generator-section #downloadCardBackBtn {
+  background: #201828 !important;
+  color: #ffffff !important;
+  border: 1.5px solid rgba(255, 101, 155, 0.4) !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35) !important;
+}
+
+.name-generator-section #downloadCardBackBtn:hover {
+  background: #2d1f39 !important;
+  border-color: #ff659b !important;
+  color: #ffffff !important;
 }
 
 /* ==========================================================================
@@ -4747,9 +5048,7 @@ STICKY KANJI DETAIL PANEL & SHORTCUTS HINT (LAPTOP / DESKTOP >= 1200px)
   max-width: min(740px, 96vw);
   min-height: 220px;
   max-height: min(680px, 85vh);
-  background: rgba(24, 19, 30, 0.98) !important;
-  backdrop-filter: blur(20px) !important;
-  -webkit-backdrop-filter: blur(20px) !important;
+  background: #18131e !important;
   border: 1.5px solid rgba(233, 30, 99, 0.35) !important;
   border-radius: 20px !important;
   box-shadow: 0 16px 48px rgba(0, 0, 0, 0.65), 0 2px 14px rgba(233, 30, 99, 0.25) !important;

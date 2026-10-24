@@ -2,26 +2,24 @@
  * Service Worker: service-worker.js
  * Website: MIRAI NO HANA (Mirai no Webu)
  * Dihasilkan otomatis oleh: skrip/arsip/build_precache_list.py
- * Versi Cache: mirai-app-shell-119c9cf647bc
+ * Versi Cache: mirai-app-shell-bda9f0849bce
  */
 
-const CACHE_NAME = "mirai-app-shell-119c9cf647bc";
+const CACHE_NAME = "mirai-app-shell-bda9f0849bce";
 const DATA_CACHE_NAME = "mirai-data-cache-v1";
 const OFFLINE_URL = "offline.html";
 
-// Berkas precache app shell minimal
+// Berkas precache app shell minimal (hanya 5 file inti paling ringan)
 const PRECACHE_URLS = [
   "offline.html",
   "css/pages/global.css",
   "css/pages/navbar-hero-footer.css",
   "js/main.js",
-  "js/kamus-romaji.js",
-  "js/kamus-translate-service.js",
   "images/mirai/logo/MNH1-nav.png"
 ];
 const PRECACHE_ASSETS = PRECACHE_URLS;
 
-// 1. Install: Simpan berkas inti ke dalam cache
+// 1. Install: Simpan hanya 5 berkas inti ke dalam cache
 self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then(async (cache) => {
@@ -79,7 +77,7 @@ self.addEventListener("fetch", (event) => {
               cache.put(req, networkResponse.clone());
             }
             return networkResponse;
-          }).catch(() => Response.error());
+          }).catch(() => null);
         });
       })
     );
@@ -103,7 +101,7 @@ self.addEventListener("fetch", (event) => {
             const anyOffline = await caches.match("offline.html");
             if (anyOffline) return anyOffline;
           }
-          return cachedResponse || Response.error();
+          return cachedResponse;
         });
 
         return cachedResponse || fetchPromise;

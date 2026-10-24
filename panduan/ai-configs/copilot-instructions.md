@@ -26,4 +26,13 @@ Rujuk tabel berikut untuk langsung membuka file target yang benar tanpa perlu be
 | Toko Resmi Mirai no Konbini, Keranjang Belanja | `css/pages/toko.css` | `js/main.js`, `js/carousel.js` |
 | Chatbot Asora Aokita (Sora) | `css/pages/navbar-hero-footer.css` | `js/sora.js`, `js/api.js` |
 
+## 3. Aturan Konten, Tipografi & Desain Anti-AI Slop
+- **Sinkronisasi Konten Judul (Title-Content Sync)**:
+  Setiap kali ada instruksi untuk mengubah atau me-rename Judul Utama (Heading) pada suatu halaman atau section, Agent WAJIB secara otomatis memeriksa dan menyesuaikan teks pada Subjudul (Subtitle), Deskripsi (Lead Paragraph), maupun label terkait di sekitarnya agar konteks dan penamaannya tetap konsisten tanpa perlu diperintah satu per satu.
+- **Standar Desain Anti-AI Slop (Japanese Editorial & Minimalist Standard)**:
+  1. *Larang OS Emoji di Komponen UI*: Dilarang menggunakan emoji bawaan OS (`🌟`, `🚀`, `💡`, `📜`, `🎨`, `🗑️`, dll) sebagai ikon; wajib gunakan SVG monokrom garis tipis (`stroke="currentColor" fill="none"`) atau teks bersih.
+  2. *Larang Struktur Cardception*: Hindari pembuatan nested cards > 2 lapis; pisahkan konten menggunakan whitespace, hierarki tipografi, dan hairline divider tipis (1px solid).
+  3. *Batasi Pill Badge*: Maksimal 1 pill badge per seksi (hanya untuk eyebrow utama/status aktif). Gunakan teks uppercase kecil letter-spacing lega untuk metadata sekunder.
+  4. *Larang Callout Generik & Neon Glow Tebal*: Dilarang menggunakan `border-left: 4px solid` ala AI callout dan neon `box-shadow` tebal tanpa fungsi jelas.
+
 Detail lengkap tersedia di `panduan/CONTEKAN-TAG.md` dan `panduan/agent.md`.

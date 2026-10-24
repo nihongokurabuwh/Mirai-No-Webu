@@ -574,10 +574,14 @@ const heroContent = hero.querySelector(".hero-text-box, .hero-content, .proker-h
 const heroSocial = hero.querySelector(".hero-social-sidebar");
 
 let ticking = false;
+let heroHeight = hero.offsetHeight || window.innerHeight;
+
+window.addEventListener("resize", () => {
+  heroHeight = hero.offsetHeight || window.innerHeight;
+}, { passive: true });
 
 function update() {
   const scrollY = window.pageYOffset || document.documentElement.scrollTop;
-  const heroHeight = hero.offsetHeight || window.innerHeight;
 
   if (scrollY <= heroHeight) {
     // Hero aktif di viewport
@@ -585,20 +589,20 @@ function update() {
     const translateY = scrollY * 1.0;
 
     if (heroContent) {
-    heroContent.style.transform = `translate3d(0, -${translateY}px, 0)`;
+      heroContent.style.transform = `translate3d(0, -${translateY}px, 0)`;
     }
     if (heroSocial) {
-    heroSocial.style.transform = `translate3d(0, -${translateY}px, 0)`;
+      heroSocial.style.transform = `translate3d(0, -${translateY}px, 0)`;
     }
   } else {
     // Begitu seksi berikutnya sudah menutupi hero secara penuh,
     // sembunyikan hero agar background Sora tidak pernah tembus di seksi bawah!
     hero.style.visibility = "hidden";
     if (heroContent) {
-    heroContent.style.transform = `translate3d(0, -${heroHeight}px, 0)`;
+      heroContent.style.transform = `translate3d(0, -${heroHeight}px, 0)`;
     }
     if (heroSocial) {
-    heroSocial.style.transform = `translate3d(0, -${heroHeight}px, 0)`;
+      heroSocial.style.transform = `translate3d(0, -${heroHeight}px, 0)`;
     }
   }
 
@@ -1152,77 +1156,6 @@ targets.forEach((target) => {
     observer.observe(target);
   }
 });
-}
-
-async function setupKanjiDictionary() {
-const dictionary = document.querySelector("[data-kanji-dictionary]");
-if (!dictionary) return;
-
-const grid = dictionary.querySelector("[data-kanji-grid]");
-const count = dictionary.querySelector("[data-kanji-count]");
-const empty = dictionary.querySelector("[data-kanji-empty]");
-const detail = dictionary.querySelector("[data-kanji-detail]");
-const search = dictionary.querySelector("[data-kanji-search]");
-const jlpt = dictionary.querySelector("[data-kanji-jlpt]");
-const level = dictionary.querySelector("[data-kanji-level]");
-let kanjiData = [];
-
-try {
-  const response = await fetch(getAppBasePath() + "data/kanji.json");
-  if (!response.ok) throw new Error("Data Kamus Kanji tidak dapat dimuat.");
-  kanjiData = await response.json();
-} catch (error) {
-  count.textContent = "Data kamus belum dapat dimuat.";
-  return;
-}
-
-function matches(item) {
-  const query = search.value.toLowerCase().trim();
-  const searchable = [
-    item.kanji,
-    item.meaning,
-    ...item.onyomi,
-    ...item.kunyomi,
-    ...item.words.flatMap((word) => [word.word, word.reading, word.meaning])
-  ].join(" ").toLowerCase();
-  return (!query || searchable.includes(query)) &&
-    (!jlpt.value || item.jlpt === jlpt.value) &&
-    (!level.value || item.level === level.value);
-}
-
-function renderDetail(item) {
-  detail.innerHTML = `
-            <div class="kanji-detail-head">
-                <strong>${item.kanji}</strong>
-                <div><p class="card-number">${item.jlpt} / ${item.level}</p><h3>${item.meaning}</h3><p><b>Onyomi:</b> ${item.onyomi.join(", ") || "—"}<br><b>Kunyomi:</b> ${item.kunyomi.join(", ") || "—"}</p></div>
-            </div>
-            <h4>Kosakata contoh</h4>
-            <ul>${item.words.map((word) => `<li><b>${word.word}</b> <span>${word.reading}</span> — ${word.meaning}</li>`).join("")}</ul>
-            <h4>Contoh kalimat</h4>
-            <p class="sentence"><b>${item.sentence.japanese}</b><br><span>${item.sentence.reading}</span><br>${item.sentence.meaning}</p>`;
-}
-
-function render() {
-  const visible = kanjiData.filter(matches);
-  grid.innerHTML = "";
-  count.textContent = `Menampilkan ${visible.length} kanji`;
-  empty.hidden = visible.length > 0;
-  visible.forEach((item) => {
-    const button = document.createElement("button");
-    button.className = "kanji-card";
-    button.type = "button";
-    button.innerHTML = `<strong>${item.kanji}</strong><span>${item.meaning}</span><em>${item.jlpt}</em>`;
-    button.addEventListener("click", () => renderDetail(item));
-    grid.appendChild(button);
-  });
-  if (visible.length) renderDetail(visible[0]);
-}
-
-[search, jlpt, level].forEach((control) => {
-  control.addEventListener("input", render);
-  control.addEventListener("change", render);
-});
-render();
 }
 
 function setupSora() {
@@ -1826,8 +1759,7 @@ const quotes = [
   {
     id: 1,
     animeId: "one-piece",
-    tokohBadge: "Tokoh 1 · 麦わらのルフィ",
-    tag: "ONE PIECE · ワンピース · EIICHIRO ODA",
+    tag: "ONE PIECE · EIICHIRO ODA",
     name: "Monkey D. Luffy",
     anime: "One Piece",
     animeJP: "ワンピース",
@@ -1837,11 +1769,11 @@ const quotes = [
     kanji: "海賊王に、おれはなる！",
     romaji: "Kaizoku-ou ni, ore wa naru!",
     literal: 'Arti Harfiah: "Aku akan menjadi Raja Bajak Laut!"',
-    meaningTitle: "Berani Bermimpi Besar Tanpa Ragu",
-    meaningText: "Deklarasi tanpa kompromi untuk menancapkan tujuan hidup setinggi-tingginya. Jangan takut memimpikan hal yang dianggap mustahil oleh orang lain; ucapkan dengan yakin dan kejarlah dengan seluruh tenaga.",
+    meaningTitle: "Berani Memulai Mimpi Besar",
+    meaningText: "Jangan ragu menetapkan impian hanya karena orang lain menganggapnya sulit. Ketika kita berani melangkah dengan sungguh-sungguh, jalan dan teman seperjuangan akan selalu menyertai perjalanan kita.",
     accent: "#ff5252",
     glow: "rgba(255, 82, 82, 0.4)",
-    line: "linear-gradient(90deg, #ff5252, #ffb142)",
+    line: "#ff5252",
     border: "rgba(255, 82, 82, 0.35)",
     badgeBg: "rgba(255, 82, 82, 0.16)",
     badgeBorder: "rgba(255, 82, 82, 0.45)"
@@ -1849,8 +1781,7 @@ const quotes = [
   {
     id: 2,
     animeId: "attack-on-titan",
-    tokohBadge: "Tokoh 2 · 調査兵団",
-    tag: "ATTACK ON TITAN · 進撃の巨人 · HAJIME ISAYAMA",
+    tag: "ATTACK ON TITAN · HAJIME ISAYAMA",
     name: "Eren Yeager & Pasukan Penyelidik",
     anime: "Attack on Titan",
     animeJP: "進撃の巨人",
@@ -1860,11 +1791,11 @@ const quotes = [
     kanji: "心臓を捧げよ！",
     romaji: "Shinzou o sasageyo!",
     literal: 'Arti Harfiah: "Persembahkan hatimu!"',
-    meaningTitle: "Dedikasi Total & Berikan yang Terbaik",
-    meaningText: 'Memberikan "hati" bukan berarti mengorbankan nyawa secara sia-sia, melainkan mencurahkan 100% komitmen, energi, dan ketulusan pada apa yang sedang diperjuangkan (seperti belajar, berkarya, atau memajukan komunitas).',
+    meaningTitle: "Dedikasi Sepenuh Hati",
+    meaningText: "Mencurahkan hati berarti memberikan fokus, perhatian, dan ketulusan terbaik saat belajar maupun berkarya bersama klub. Hasil yang berharga lahir dari usaha yang kita perjuangkan dengan tulus.",
     accent: "#10b981",
     glow: "rgba(16, 185, 129, 0.4)",
-    line: "linear-gradient(90deg, #10b981, #34d399)",
+    line: "#10b981",
     border: "rgba(16, 185, 129, 0.35)",
     badgeBg: "rgba(16, 185, 129, 0.16)",
     badgeBorder: "rgba(16, 185, 129, 0.45)"
@@ -1872,8 +1803,7 @@ const quotes = [
   {
     id: 3,
     animeId: "naruto",
-    tokohBadge: "Tokoh 3 · うずまきナルト",
-    tag: "NARUTO · ナルト · MASASHI KISHIMOTO",
+    tag: "NARUTO · MASASHI KISHIMOTO",
     name: "Uzumaki Naruto",
     anime: "Naruto",
     animeJP: "NARUTO -ナルト-",
@@ -1883,11 +1813,11 @@ const quotes = [
     kanji: "まっすぐ自分の言葉は曲げねぇ。それが俺の忍道だ！",
     romaji: "Massugu jibun no kotoba wa magenee. Sore ga ore no nindou da!",
     literal: 'Arti Harfiah: "Aku tidak akan menarik kembali kata-kataku. Itulah jalan ninjaku!"',
-    meaningTitle: "Integritas & Memegang Teguh Prinsip",
-    meaningText: "Komitmen sejati terhadap janji dan tujuan diri sendiri. Apabila sudah menetapkan target untuk berkembang, jangan goyah oleh godaan rasa malas atau omongan orang lain.",
+    meaningTitle: "Pegang Teguh Komitmen Diri",
+    meaningText: "Saat kita menetapkan niat untuk menguasai bahasa dan keterampilan baru, jangan mudah goyah oleh rasa lelah. Konsistensi kecil setiap hari akan membentuk kemajuan yang nyata.",
     accent: "#f97316",
     glow: "rgba(249, 115, 22, 0.4)",
-    line: "linear-gradient(90deg, #f97316, #fbbf24)",
+    line: "#f97316",
     border: "rgba(249, 115, 22, 0.35)",
     badgeBg: "rgba(249, 115, 22, 0.16)",
     badgeBorder: "rgba(249, 115, 22, 0.45)"
@@ -1895,8 +1825,7 @@ const quotes = [
   {
     id: 4,
     animeId: "my-hero-academia",
-    tokohBadge: "Tokoh 4 · デク · PLUS ULTRA",
-    tag: "MY HERO ACADEMIA · 僕のヒーローアカデミア · KOHEI HORIKOSHI",
+    tag: "MY HERO ACADEMIA · KOHEI HORIKOSHI",
     name: "Midoriya Izuku (Deku)",
     anime: "My Hero Academia",
     animeJP: "僕のヒーローアカデミア",
@@ -1906,11 +1835,11 @@ const quotes = [
     kanji: "限界を超えて、さらに向こうへ！プルス・ウルトラ！",
     romaji: "Genkai o koete, sara ni mukou e! Purusu Urutora! (Plus Ultra)",
     literal: 'Arti Harfiah: "Lampaui batas, melangkah lebih jauh lagi! Plus Ultra!"',
-    meaningTitle: "Terus Mengembangkan Diri Tanpa Batas",
-    meaningText: "Saat merasa sudah berada di ujung kemampuan, itu adalah tanda bahwa potensi diri sedang siap naik ke tingkat berikutnya. Selalu ada ruang untuk melangkah satu langkah lebih jauh dari kemarin.",
+    meaningTitle: "Melangkah Sedikit Lebih Jauh",
+    meaningText: "Rasa jenuh dan buntu adalah pertanda bahwa kemampuan kita sedang berkembang ke tingkat berikutnya. Istirahat sejenak bila perlu, lalu lanjutkan langkah untuk berkembang lebih baik dari kemarin.",
     accent: "#06b6d4",
     glow: "rgba(6, 182, 212, 0.4)",
-    line: "linear-gradient(90deg, #06b6d4, #10b981)",
+    line: "#06b6d4",
     border: "rgba(6, 182, 212, 0.35)",
     badgeBg: "rgba(6, 182, 212, 0.16)",
     badgeBorder: "rgba(6, 182, 212, 0.45)"
@@ -1918,8 +1847,7 @@ const quotes = [
   {
     id: 5,
     animeId: "demon-slayer",
-    tokohBadge: "Tokoh 5 · 竈門炭治郎",
-    tag: "DEMON SLAYER · 鬼滅の刃 · KOYOHARU GOTOUGE",
+    tag: "DEMON SLAYER · KOYOHARU GOTOUGE",
     name: "Tanjiro Kamado",
     anime: "Demon Slayer",
     animeJP: "鬼滅の刃",
@@ -1929,11 +1857,11 @@ const quotes = [
     kanji: "頑張れ炭治郎、頑張れ！俺は今までよくやってきた！",
     romaji: "Ganbare Tanjiro, ganbare! Ore wa ima made yoku yatte kita!",
     literal: 'Arti Harfiah: "Semangat Tanjiro, semangat! Selama ini aku sudah berjuang dengan baik!"',
-    meaningTitle: "Apresiasi Diri Sendiri (Self-Compassion)",
-    meaningText: "Saat menghadapi rintangan berat, jangan terburu-buru mengkritik diri sendiri. Beri semangat pada diri, hargai proses perjuangan yang telah dilewati, lalu bangkit lagi dengan kepala tegak.",
+    meaningTitle: "Hargai Setiap Proses Belajar",
+    meaningText: "Belajar hal baru tentu ada jatuh bangunnya. Daripada menyalahkan diri saat salah menjawab soal atau kesulitan memahami materi, beri apresiasi pada proses latihan yang sudah kamu jalani.",
     accent: "#38bdf8",
     glow: "rgba(56, 189, 248, 0.4)",
-    line: "linear-gradient(90deg, #38bdf8, #ef4444)",
+    line: "#38bdf8",
     border: "rgba(56, 189, 248, 0.35)",
     badgeBg: "rgba(56, 189, 248, 0.16)",
     badgeBorder: "rgba(56, 189, 248, 0.45)"
@@ -1983,16 +1911,9 @@ function renderSlide(index) {
   const q = quotes[currentIndex];
 
   cardContainer.innerHTML = `
-            <article class="quote-card quote-slide-enter" data-anime="${q.animeId}" style="--quote-accent: ${q.accent}; --quote-glow: ${q.glow}; --quote-line: ${q.line}; --quote-border: ${q.border}; --quote-badge-bg: ${q.badgeBg}; --quote-badge-border: ${q.badgeBorder};">
+            <article class="quote-card quote-slide-enter" data-anime="${q.animeId}" style="--quote-accent: ${q.accent}; --quote-line: ${q.accent}; --quote-border: rgba(255, 255, 255, 0.12);">
                 <div class="quote-card-header">
-                    <span class="quote-card-badge">
-                        <span class="badge-dot"></span>
-                        ${q.tokohBadge}
-                    </span>
-                    <span class="quote-card-tag">
-                        <span class="badge-dot"></span>
-                        ${q.tag}
-                    </span>
+                    <span class="quote-card-tag">${q.tag}</span>
                 </div>
                 <div class="quote-card-body">
                     <div class="quote-top-row">
@@ -2001,6 +1922,7 @@ function renderSlide(index) {
                                 <img class="quote-avatar-img" src="${basePath}images/mirai/karakter/${q.image}" alt="${q.name}">
                             </div>
                             <h3 class="quote-author-name">${q.name}</h3>
+                            <p class="quote-author-series">${q.anime} (${q.animeJP})</p>
                         </div>
                         <div class="quote-box">
                             <h4 class="quote-kanji">${q.kanji}</h4>
@@ -2012,7 +1934,7 @@ function renderSlide(index) {
                     </div>
                     <div class="quote-meaning-card">
                         <div class="quote-meaning-head">
-                            <span class="quote-meaning-badge">🌟 Makna Kutipan</span>
+                            <span class="quote-meaning-eyebrow quote-meaning-badge">MAKNA KUTIPAN</span>
                             <h5 class="quote-meaning-title">${q.meaningTitle}</h5>
                         </div>
                         <p class="quote-meaning-body">${q.meaningText}</p>
@@ -2324,6 +2246,7 @@ updateProgress();
  * CSS murni (.hero-petal) ke dalam seluruh hero banner.
 */
 function setupHeroSakuraPetals() {
+if (window.innerWidth < 768) return;
 const heroElements = document.querySelectorAll(".hero, .page-hero, .proker-hero, .quest-hero, .toko-hero");
 if (!heroElements.length) return;
 
