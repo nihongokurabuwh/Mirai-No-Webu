@@ -1961,16 +1961,16 @@ TIMELINE SEJARAH KLUB (Horizontal Sequential Stream - Redesign Modern)
   z-index: 2 !important;
   transition: transform 0.28s ease !important;
 }
-/* Titik Simpul (Node Dot) Elegan */
+/* Titik Simpul (Node Dot) Elegan Putih Bersih */
 .timeline-dot {
   position: relative !important;
   order: 1 !important;
   width: 14px !important;
   height: 14px !important;
   border-radius: 50% !important;
-  background: #1c1523 !important;
-  border: 2.5px solid var(--pink, #e91e63) !important;
-  box-shadow: 0 0 10px rgba(233, 30, 99, 0.65), inset 0 0 4px var(--pink, #e91e63) !important;
+  background: #ffffff !important;
+  border: 3px solid var(--pink, #ff659b) !important;
+  box-shadow: 0 0 0 2px #ffffff, 0 0 10px rgba(255, 101, 155, 0.45) !important;
   margin-bottom: 18px !important;
   cursor: pointer !important;
   z-index: 3 !important;
@@ -1985,15 +1985,19 @@ TIMELINE SEJARAH KLUB (Horizontal Sequential Stream - Redesign Modern)
   transform: translateX(-50%) !important;
   width: 2px !important;
   height: 18px !important;
-  background: linear-gradient(180deg, var(--pink, #e91e63), rgba(255, 101, 155, 0.25)) !important;
+  background: linear-gradient(180deg, var(--pink, #ff659b), rgba(255, 101, 155, 0.25)) !important;
   pointer-events: none !important;
 }
 
 .timeline-node:hover .timeline-dot {
   transform: scale(1.35) !important;
-  background: #ff659b !important;
-  border-color: #ffffff !important;
-  box-shadow: 0 0 18px rgba(255, 101, 155, 0.95) !important;
+  background: #ffffff !important;
+  border-color: #ff4f91 !important;
+  box-shadow: 0 0 18px rgba(255, 79, 145, 0.95) !important;
+}
+
+.timeline-hint {
+  display: none !important;
 }
 /* Kartu Angkatan Modern (Sejajar Lurus, Bukan Zig-Zag) */
 .timeline-content {
@@ -3077,8 +3081,10 @@ FAQ INTERAKTIF (Tanya Sora - Details / Summary Accordion)
 /* ==========================================================================
 DARK MODE ADJUSTMENTS FOR NEW TENTANG SECTIONS
 ========================================================================== */
-body.theme-dark .timeline-dot {
-  border-color: var(--bg-card);
+body.theme-dark .timeline-dot,
+[data-theme="dark"] .timeline-dot {
+  background: #ffffff !important;
+  border-color: var(--pink, #ff659b) !important;
 }
 
 body.theme-dark .timeline-content {
@@ -4242,11 +4248,15 @@ body.dark-mode .page-lomba .lomba-detail-card:hover::after, body.theme-dark .pag
   position: relative !important;
   isolation: isolate !important;
   overflow: hidden !important;
-  padding: clamp(16px, 2.5vw, 28px) !important;
+  padding: clamp(16px, 2.5vw, 24px) !important;
   background: linear-gradient(155deg, #1a1420 0%, #0e0b12 100%) !important;
   border: 1.5px solid rgba(255, 101, 155, 0.28) !important;
   border-radius: 22px !important;
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4) !important;
+  max-width: 520px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  display: block !important;
 }
 
 .page-tentang .haori-section .haori-showcase::before {
@@ -4260,11 +4270,47 @@ body.dark-mode .page-lomba .lomba-detail-card:hover::after, body.theme-dark .pag
   z-index: -1 !important;
 }
 
+.haori-carousel-viewport {
+  width: 100% !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  scroll-snap-type: x mandatory !important;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+  overscroll-behavior-x: contain !important;
+  touch-action: pan-x !important;
+  border-radius: 18px !important;
+}
+
+.haori-carousel-viewport::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+.haori-carousel-track {
+  display: flex !important;
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.haori-carousel-slide {
+  flex: 0 0 100% !important;
+  min-width: 100% !important;
+  width: 100% !important;
+  scroll-snap-align: start !important;
+  box-sizing: border-box !important;
+}
+
 .page-tentang .haori-section .haori-photo-card {
   position: relative !important;
   z-index: 0 !important;
   background: #ffffff !important;
   border: 1px solid #f4bfd3 !important;
+  border-radius: 18px !important;
+  overflow: hidden !important;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18) !important;
 }
 
@@ -4284,30 +4330,61 @@ body.dark-mode .page-lomba .lomba-detail-card:hover::after, body.theme-dark .pag
   border-top-color: rgba(233, 30, 99, 0.14) !important;
 }
 
-/* Satu kartu haori dengan dua halaman yang dapat digeser. */
-.page-tentang .haori-section .haori-showcase {
+/* Kontrol Navigasi Kiri & Kanan Carousel Haori (Persis Seperti Tanda Pengenal) */
+.haori-carousel-controls {
   display: flex !important;
-  gap: 18px !important;
-  overflow-x: auto !important;
-  scroll-snap-type: x mandatory !important;
-  scroll-behavior: smooth !important;
-  overscroll-behavior-inline: contain !important;
-  scrollbar-width: thin;
-  scrollbar-color: var(--pink, #e91e63) transparent;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 14px !important;
+  margin: 18px auto 36px auto !important;
 }
 
-.page-tentang .haori-section .haori-photo-card {
-  flex: 0 0 100% !important;
-  width: 100% !important;
-  scroll-snap-align: center !important;
+.haori-carousel-button {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 34px !important;
+  height: 34px !important;
+  padding: 0 !important;
+  border: 1px solid #e9a7c0 !important;
+  border-radius: 50% !important;
+  background: #ffffff !important;
+  color: #a8124b !important;
+  font: inherit !important;
+  font-size: 22px !important;
+  line-height: 1 !important;
+  cursor: pointer !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25) !important;
+  transition: all 0.2s ease !important;
+  user-select: none !important;
 }
 
-.haori-swipe-hint {
-  margin: 14px 0 36px !important;
-  color: #ff9bc0 !important;
+.haori-carousel-button:hover:not(:disabled) {
+  border-color: #e91e63 !important;
+  background: #fff0f5 !important;
+  color: #e91e63 !important;
+  transform: scale(1.08) !important;
+  box-shadow: 0 0 14px rgba(255, 79, 145, 0.55) !important;
+}
+
+.haori-carousel-button:disabled {
+  opacity: 0.45 !important;
+  cursor: default !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.haori-carousel-indicator {
+  min-width: 60px !important;
+  color: #ffffff !important;
   font-size: 13px !important;
   font-weight: 700 !important;
   text-align: center !important;
+  letter-spacing: 0.5px !important;
+}
+
+.haori-swipe-hint {
+  display: none !important;
 }
 
 /* Profil Sora adalah tampilan informasi statis, tanpa interaksi zoom. */

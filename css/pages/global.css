@@ -3013,9 +3013,15 @@ section.feedback-preview.feedback-theme-dark .card-toggle::after {
   position: relative !important;
 }
 
-.section-quote-slider.quote-theme-white::before {
+.section-quote-slider::before,
+.section-quote-slider::after,
+.section-quote-slider.quote-theme-white::before,
+.section-quote-slider.quote-theme-white::after,
+.section-quote-slider.quote-theme-dark::before,
+.section-quote-slider.quote-theme-dark::after {
   display: none !important;
   content: none !important;
+  background: none !important;
 }
 
 .section-quote-slider.quote-theme-white > * {
@@ -3345,29 +3351,16 @@ html.is-page-locked-early main, body.is-page-locked main {
 }
 
 .coming-soon-title {
-  font-size: clamp(1.3rem, 3.2vw, 1.7rem) !important;
+  font-size: clamp(1.25rem, 3vw, 1.6rem) !important;
   font-weight: 900 !important;
   color: #ffffff !important;
-  margin: 0 0 6px 0 !important;
+  margin: 0 0 20px 0 !important;
   line-height: 1.25 !important;
 }
 
-.coming-soon-kanji {
-  font-family: var(--font-jp, "Noto Sans JP", sans-serif) !important;
-  font-size: 13px !important;
-  font-weight: 700 !important;
-  letter-spacing: 2px !important;
-  color: #ff659b !important;
-  margin-bottom: 14px !important;
-  display: block !important;
-}
-
+.coming-soon-kanji,
 .coming-soon-desc {
-  color: #d5ccd3 !important;
-  font-size: 14px !important;
-  line-height: 1.65 !important;
-  margin: 0 auto 24px auto !important;
-  max-width: 440px !important;
+  display: none !important;
 }
 
 .coming-soon-actions {
@@ -3484,24 +3477,19 @@ html.is-page-locked-early main, body.is-page-locked main {
   padding: 10px 22px !important;
   max-width: 90% !important;
   border-radius: 999px !important;
-  background: linear-gradient(135deg, #e91e63 0%, #a855f7 100%) !important;
+  background: linear-gradient(135deg, #e60046 0%, #ff2d6c 100%) !important;
   color: #ffffff !important;
   font-size: 0.95rem !important;
   font-weight: 800 !important;
   letter-spacing: 0.04em !important;
-  box-shadow: 0 6px 20px rgba(233, 30, 99, 0.5), 0 0 12px rgba(168, 85, 247, 0.35) !important;
+  box-shadow: 0 6px 20px rgba(230, 0, 70, 0.45), 0 0 12px rgba(255, 45, 108, 0.3) !important;
   border: 1.5px solid rgba(255, 255, 255, 0.45) !important;
   text-shadow: none !important;
   animation: pulseLockBadge 2.4s infinite ease-in-out !important;
 }
 
 .card-coming-soon-sub {
-  display: block !important;
-  font-size: 0.74rem !important;
-  font-weight: 600 !important;
-  color: rgba(255, 255, 255, 0.9) !important;
-  letter-spacing: 0.02em !important;
-  text-shadow: none !important;
+  display: none !important;
 }
 /* 3.2. Efek Tombol Terkunci & Blur dengan Timpa Teks Segera Hadir di Tengah */
 .btn-coming-soon-locked {
@@ -3521,7 +3509,7 @@ html.is-page-locked-early main, body.is-page-locked main {
 }
 
 .btn-coming-soon-locked::after {
-  content: "🔒 Segera Hadir" !important;
+  content: "SEGERA HADIR" !important;
   position: absolute !important;
   inset: 0 !important;
   z-index: 5 !important;
@@ -3533,21 +3521,21 @@ html.is-page-locked-early main, body.is-page-locked main {
   letter-spacing: 0.03em !important;
   color: #ffffff !important;
   text-shadow: none !important;
-  background: linear-gradient(135deg, rgba(233, 30, 99, 0.82), rgba(168, 85, 247, 0.82)) !important;
+  background: linear-gradient(135deg, rgba(230, 0, 70, 0.9), rgba(255, 45, 108, 0.9)) !important;
   border-radius: inherit !important;
   border: 1px solid rgba(255, 255, 255, 0.35) !important;
-  box-shadow: 0 4px 14px rgba(233, 30, 99, 0.45) !important;
+  box-shadow: 0 4px 14px rgba(230, 0, 70, 0.45) !important;
 }
 
 @keyframes pulseLockBadge {
   0%, 100% {
     transform: scale(1);
-    box-shadow: 0 6px 20px rgba(233, 30, 99, 0.5), 0 0 12px rgba(168, 85, 247, 0.35);
+    box-shadow: 0 6px 20px rgba(230, 0, 70, 0.45), 0 0 12px rgba(255, 45, 108, 0.3);
   }
 
   50% {
     transform: scale(1.04);
-    box-shadow: 0 8px 24px rgba(233, 30, 99, 0.75), 0 0 18px rgba(168, 85, 247, 0.55);
+    box-shadow: 0 8px 24px rgba(230, 0, 70, 0.65), 0 0 18px rgba(255, 45, 108, 0.45);
   }
 }
 /* 4. Modal Dialog Kata Sandi Pengurus (#mnhPasswordModal) */

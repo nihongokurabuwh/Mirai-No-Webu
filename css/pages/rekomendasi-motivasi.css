@@ -233,6 +233,29 @@ HALAMAN KATA-KATA MOTIVASI (KUTIPAN KARAKTER ANIME)
   transform: scaleX(1) !important;
 }
 
+/* Pattern Wagara untuk Kartu Kutipan */
+.quote-card::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  background-image: var(--page-pattern-dark, url("../../images/mirai/background/c1b.jpeg")) !important;
+  background-size: 200px auto !important;
+  background-repeat: repeat !important;
+  background-position: center top !important;
+  opacity: var(--page-pattern-opacity-dark, var(--opacity-c1b, 0.18)) !important;
+  mix-blend-mode: screen !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+  border-radius: inherit !important;
+  display: block !important;
+  transition: opacity 0.3s ease, transform 0.3s ease !important;
+}
+
+.quote-card:hover::after {
+  opacity: var(--page-pattern-opacity-dark-hover, var(--opacity-c1b-hover, 0.25)) !important;
+  transform: scale(1.02) !important;
+}
+
 .quote-card > * {
   position: relative !important;
   z-index: 2 !important;
@@ -280,12 +303,12 @@ HALAMAN KATA-KATA MOTIVASI (KUTIPAN KARAKTER ANIME)
 /* Baris Atas: Profil Karakter di Kiri & Kutipan Utama di Kanan */
 .quote-top-row {
   display: grid !important;
-  grid-template-columns: 220px 1fr !important;
-  gap: 28px !important;
+  grid-template-columns: 210px 1fr !important;
+  gap: 24px !important;
   align-items: center !important;
 }
 
-/* Kolom Kiri: Profil Foto & Nama Karakter (Tanpa Nested Box) */
+/* Kolom Kiri: Profil Foto & Nama Karakter */
 .quote-author-profile {
   display: flex !important;
   flex-direction: column !important;
@@ -300,18 +323,20 @@ HALAMAN KATA-KATA MOTIVASI (KUTIPAN KARAKTER ANIME)
 }
 
 .quote-avatar-wrap {
-  width: 76px !important;
-  height: 76px !important;
+  width: 96px !important;
+  height: 96px !important;
   border-radius: 50% !important;
   overflow: hidden !important;
-  border: 1.5px solid rgba(255, 255, 255, 0.14) !important;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35) !important;
-  margin-bottom: 10px !important;
-  transition: transform 0.3s ease !important;
+  border: 3px solid var(--pink, #ff659b) !important;
+  box-shadow: 0 6px 20px rgba(255, 79, 145, 0.28) !important;
+  margin-bottom: 12px !important;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease !important;
+  flex-shrink: 0 !important;
 }
 
 .quote-card:hover .quote-avatar-wrap {
-  transform: scale(1.04) !important;
+  transform: scale(1.06) !important;
+  box-shadow: 0 8px 24px rgba(255, 79, 145, 0.42) !important;
 }
 
 .quote-avatar-img {
@@ -322,34 +347,36 @@ HALAMAN KATA-KATA MOTIVASI (KUTIPAN KARAKTER ANIME)
 }
 
 .quote-author-name {
-  font-size: 15.5px !important;
+  font-size: 1.15rem !important;
   font-weight: 800 !important;
   color: #ffffff !important;
   margin: 0 !important;
   line-height: 1.3 !important;
+  letter-spacing: -0.01em !important;
 }
 
 .quote-author-series {
-  font-size: 12px !important;
-  font-weight: 500 !important;
-  color: #a0a0b0 !important;
+  font-size: 12.5px !important;
+  font-weight: 700 !important;
+  color: var(--pink, #ff659b) !important;
   margin: 4px 0 0 0 !important;
-  line-height: 1.3 !important;
+  line-height: 1.35 !important;
+  letter-spacing: 0.01em !important;
 }
 
 .quote-anime-meta {
   display: none !important;
 }
 
-/* Kolom Kanan: Teks Kutipan (Kanji, Romaji, Arti Harfiah - Tanpa Nested Box) */
+/* Kolom Kanan: Teks Kutipan (Display Card Tersendiri) */
 .quote-box {
   position: relative !important;
-  padding: 0 !important;
-  border-radius: 0 !important;
-  background: transparent !important;
-  border: none !important;
-  border-left: none !important;
-  box-shadow: none !important;
+  padding: 20px 24px !important;
+  border-radius: 16px !important;
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 79, 145, 0.25) !important;
+  border-left: 3.5px solid var(--pink, #ff659b) !important;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25) !important;
   display: flex !important;
   flex-direction: column !important;
   justify-content: center !important;
@@ -361,7 +388,7 @@ HALAMAN KATA-KATA MOTIVASI (KUTIPAN KARAKTER ANIME)
   font-weight: 700 !important;
   color: #ffffff !important;
   line-height: 1.4 !important;
-  margin: 0 0 6px 0 !important;
+  margin: 0 0 8px 0 !important;
   letter-spacing: 0.02em !important;
   text-shadow: none !important;
 }
@@ -369,47 +396,47 @@ HALAMAN KATA-KATA MOTIVASI (KUTIPAN KARAKTER ANIME)
 .quote-romaji {
   font-size: 14px !important;
   font-style: italic !important;
-  color: #ff85b3 !important;
-  font-weight: 500 !important;
+  color: var(--pink, #ff659b) !important;
+  font-weight: 600 !important;
   text-shadow: none !important;
-  margin: 0 0 8px 0 !important;
+  margin: 0 0 12px 0 !important;
   letter-spacing: 0.02em !important;
 }
 
 .quote-literal {
-  display: block !important;
-  padding: 0 !important;
-  border-radius: 0 !important;
-  background: transparent !important;
-  border: none !important;
-  color: #a0a0b0 !important;
-  font-size: 13.5px !important;
-  font-weight: 400 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  padding: 6px 14px !important;
+  border-radius: 8px !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  color: #cbd5e1 !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
   font-style: normal !important;
   line-height: 1.5 !important;
-  width: auto !important;
+  width: fit-content !important;
   box-shadow: none !important;
   text-shadow: none !important;
   margin-top: 0 !important;
 }
 
-/* Baris Bawah: Makna Kutipan (Dipisahkan Hairline Divider 1px Tipis) */
+/* Baris Bawah: Makna Kutipan (Display Card Tersendiri) */
 .quote-meaning-card {
   width: 100% !important;
   box-sizing: border-box !important;
-  padding: 18px 0 0 0 !important;
+  padding: 18px 22px !important;
   margin-top: 18px !important;
-  border-radius: 0 !important;
-  background: transparent !important;
-  border: none !important;
-  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
-  box-shadow: none !important;
+  border-radius: 16px !important;
+  background: rgba(255, 255, 255, 0.025) !important;
+  border: 1px solid rgba(255, 79, 145, 0.22) !important;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25) !important;
 }
 
 .quote-meaning-head {
   display: flex !important;
-  align-items: baseline !important;
-  gap: 12px !important;
+  align-items: center !important;
+  gap: 10px !important;
   margin-bottom: 8px !important;
   flex-wrap: wrap !important;
 }
@@ -421,10 +448,10 @@ HALAMAN KATA-KATA MOTIVASI (KUTIPAN KARAKTER ANIME)
   text-transform: uppercase !important;
   letter-spacing: 0.08em !important;
   color: var(--pink, #ff659b) !important;
-  padding: 0 !important;
-  border-radius: 0 !important;
-  background: transparent !important;
-  border: none !important;
+  padding: 3px 10px !important;
+  border-radius: 6px !important;
+  background: rgba(255, 79, 145, 0.12) !important;
+  border: 1px solid rgba(255, 79, 145, 0.3) !important;
   box-shadow: none !important;
   text-shadow: none !important;
   display: inline-block !important;
@@ -440,16 +467,17 @@ HALAMAN KATA-KATA MOTIVASI (KUTIPAN KARAKTER ANIME)
 
 .quote-meaning-body {
   font-size: 13.5px !important;
-  line-height: 1.6 !important;
+  line-height: 1.65 !important;
   color: #cbd5e1 !important;
   font-weight: 400 !important;
   margin: 0 !important;
 }
-}
+
 /* Hapus maskot chibi dari seluruh kata motivasi */
 .quote-card .card-corner-chibi {
   display: none !important;
 }
+
 /* Responsif Mobile & Layar Kecil untuk Kartu Kutipan */
 @media (max-width: 768px) {
   .quote-card {
@@ -458,30 +486,32 @@ HALAMAN KATA-KATA MOTIVASI (KUTIPAN KARAKTER ANIME)
 
   .quote-top-row {
     grid-template-columns: 1fr !important;
-    gap: 10px !important;
+    gap: 16px !important;
   }
 
   .quote-author-profile {
     flex-direction: row !important;
     text-align: left !important;
-    gap: 14px !important;
+    gap: 16px !important;
     padding: 10px 14px !important;
+    align-items: center !important;
     justify-content: flex-start !important;
   }
 
   .quote-avatar-wrap {
-    width: 58px !important;
-    height: 58px !important;
+    width: 72px !important;
+    height: 72px !important;
     margin-bottom: 0 !important;
     flex-shrink: 0 !important;
   }
 
   .quote-box {
-    padding: 14px 16px !important;
+    padding: 16px 18px !important;
   }
 
   .quote-meaning-card {
-    padding: 12px 16px !important;
+    padding: 16px 18px !important;
+    margin-top: 14px !important;
   }
 }
 /* ==========================================================================
@@ -1404,16 +1434,15 @@ SECTION KATA MOTIVASI (HALAMAN/BLOK HITAM SENDIRI DI ATAS DISCLAIMER)
   position: relative !important;
 }
 
-.section-quote-slider.quote-theme-white::before {
-  content: "" !important;
-  position: absolute !important;
-  inset: 0 !important;
-  display: block !important;
-  pointer-events: none !important;
-  background: url("../../images/mirai/background/c1w.jpeg") center top / 200px auto repeat !important;
-  opacity: 0.055 !important;
-  mix-blend-mode: multiply !important;
-  z-index: 0 !important;
+.section-quote-slider::before,
+.section-quote-slider::after,
+.section-quote-slider.quote-theme-white::before,
+.section-quote-slider.quote-theme-white::after,
+.section-quote-slider.quote-theme-dark::before,
+.section-quote-slider.quote-theme-dark::after {
+  content: none !important;
+  display: none !important;
+  background: none !important;
 }
 
 .section-quote-slider.quote-theme-white .footer-quote-slider-section {
@@ -1441,39 +1470,29 @@ SECTION KATA MOTIVASI (HALAMAN/BLOK HITAM SENDIRI DI ATAS DISCLAIMER)
 .footer-quote-header-left {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 2px;
+}
+
+.footer-quote-header-left .section-eyebrow {
+  margin: 0 0 4px 0 !important;
 }
 
 .footer-quote-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 0;
-  border-radius: 0;
-  background: transparent;
-  border: none;
-  box-shadow: none;
-  text-shadow: none !important;
-  color: var(--quote-accent, #94a3b8);
-  font-size: 11.5px;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  width: fit-content;
-  margin-bottom: 6px;
-}
-
-.footer-quote-pill .badge-dot {
-  display: none;
+  display: none !important;
 }
 
 .footer-quote-heading {
-  font-size: 1.15rem;
-  font-weight: 800;
+  font-size: clamp(20px, 2.4vw, 28px) !important;
+  font-weight: 800 !important;
   color: #ffffff;
   margin: 0;
-  letter-spacing: -0.2px;
+  line-height: 1.25 !important;
+  letter-spacing: -0.02em !important;
   text-shadow: none !important;
+}
+
+.footer-quote-heading span {
+  color: var(--pink, #ff659b) !important;
 }
 
 .footer-quote-controls {
@@ -1504,10 +1523,11 @@ SECTION KATA MOTIVASI (HALAMAN/BLOK HITAM SENDIRI DI ATAS DISCLAIMER)
 }
 
 .footer-quote-btn:hover {
-  background: var(--quote-accent, #e91e63);
-  border-color: transparent;
+  background: var(--pink, #ff4f91) !important;
+  border-color: var(--pink, #ff4f91) !important;
+  color: #ffffff !important;
   transform: scale(1.08);
-  box-shadow: 0 0 12px var(--quote-accent, rgba(233, 30, 99, 0.5));
+  box-shadow: 0 0 14px rgba(255, 79, 145, 0.5) !important;
 }
 
 .footer-quote-counter {
@@ -1539,11 +1559,11 @@ SECTION KATA MOTIVASI (HALAMAN/BLOK HITAM SENDIRI DI ATAS DISCLAIMER)
 }
 
 .footer-quote-dot.active {
-  width: 26px;
-  height: 8px;
-  border-radius: 12px;
-  background: var(--quote-accent, var(--pink, #e91e63)) !important;
-  box-shadow: 0 0 12px var(--quote-accent, rgba(233, 30, 99, 0.5)), 0 0 4px var(--quote-accent, rgba(233, 30, 99, 0.5)) !important;
+  width: 26px !important;
+  height: 8px !important;
+  border-radius: 12px !important;
+  background: var(--pink, #ff4f91) !important;
+  box-shadow: 0 0 12px rgba(255, 79, 145, 0.5), 0 0 4px rgba(255, 79, 145, 0.5) !important;
 }
 
 .quote-slide-enter {
@@ -1566,15 +1586,10 @@ UNIVERSAL THEMES: KUTIPAN INSPIRATIF (.quote-theme-white & .quote-theme-dark)
 Memastikan kontras tinggi, keterbacaan 100%, dan bebas benturan warna
 ========================================================================== */
 /* --- 1. TEMA PUTIH / BERSIH CERAH (.quote-theme-white) --- */
-.section-quote-slider.quote-theme-white .footer-quote-pill {
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  text-shadow: none !important;
-  padding: 0 !important;
-  color: var(--quote-accent, #64748b) !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.5px !important;
+.section-quote-slider.quote-theme-white .footer-quote-header-left .section-eyebrow .jp-kanji {
+  color: var(--pink, #ff659b) !important;
+  background: rgba(255, 79, 145, 0.08) !important;
+  border-color: rgba(255, 79, 145, 0.28) !important;
 }
 
 .section-quote-slider.quote-theme-white .footer-quote-heading {
@@ -1594,10 +1609,10 @@ Memastikan kontras tinggi, keterbacaan 100%, dan bebas benturan warna
 }
 
 .section-quote-slider.quote-theme-white .footer-quote-btn:hover {
-  background: var(--quote-accent, #f1f5f9) !important;
-  border-color: var(--quote-accent, #cbd5e1) !important;
+  background: var(--pink, #ff4f91) !important;
+  border-color: var(--pink, #ff4f91) !important;
   color: #ffffff !important;
-  box-shadow: 0 2px 10px var(--quote-glow, rgba(0, 0, 0, 0.12)) !important;
+  box-shadow: 0 0 14px rgba(255, 79, 145, 0.5) !important;
 }
 
 .section-quote-slider.quote-theme-white .footer-quote-counter {
@@ -1613,8 +1628,8 @@ Memastikan kontras tinggi, keterbacaan 100%, dan bebas benturan warna
   width: 26px !important;
   height: 8px !important;
   border-radius: 12px !important;
-  background: var(--quote-accent, var(--pink)) !important;
-  box-shadow: 0 0 12px var(--quote-accent, var(--pink)), 0 0 4px var(--quote-accent, var(--pink)) !important;
+  background: var(--pink, #ff4f91) !important;
+  box-shadow: 0 0 12px rgba(255, 79, 145, 0.5), 0 0 4px rgba(255, 79, 145, 0.5) !important;
 }
 
 .section-quote-slider.quote-theme-white .quote-card > * {
@@ -1702,14 +1717,18 @@ Memastikan kontras tinggi, keterbacaan 100%, dan bebas benturan warna
 }
 
 .section-quote-slider.quote-theme-white .quote-author-series {
-  color: #64748b !important;
+  color: var(--pink, #ff659b) !important;
+  font-weight: 700 !important;
+  font-size: 12.5px !important;
 }
 
 .section-quote-slider.quote-theme-white .quote-box {
-  background: transparent !important;
-  border: none !important;
-  border-left: none !important;
-  box-shadow: none !important;
+  background: #fdfafd !important;
+  border: 1px solid rgba(255, 79, 145, 0.22) !important;
+  border-left: 3.5px solid var(--pink, #ff659b) !important;
+  border-radius: 14px !important;
+  padding: 18px 22px !important;
+  box-shadow: 0 4px 16px rgba(255, 79, 145, 0.04) !important;
   backdrop-filter: none !important;
 }
 
@@ -1719,49 +1738,57 @@ Memastikan kontras tinggi, keterbacaan 100%, dan bebas benturan warna
 }
 
 .section-quote-slider.quote-theme-white .quote-romaji {
-  color: #d81b60 !important;
+  color: var(--pink, #ff659b) !important;
   font-style: italic !important;
   font-weight: 600 !important;
   text-shadow: none !important;
 }
 
 .section-quote-slider.quote-theme-white .quote-literal {
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  padding: 6px 14px !important;
+  border-radius: 8px !important;
+  background: #ffffff !important;
+  border: 1px solid #ebdbe2 !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03) !important;
   text-shadow: none !important;
-  padding: 0 !important;
-  color: #4b5563 !important;
+  color: #475569 !important;
   font-style: normal !important;
-  font-weight: 400 !important;
+  font-weight: 500 !important;
+  font-size: 13px !important;
   margin-top: 0 !important;
+  width: fit-content !important;
 }
 
 .section-quote-slider.quote-theme-white .quote-literal span {
-  color: #4b5563 !important;
+  color: #475569 !important;
   font-style: normal !important;
   text-shadow: none !important;
 }
 
 .section-quote-slider.quote-theme-white .quote-meaning-card {
-  background: transparent !important;
-  border: none !important;
-  border-top: 1px solid rgba(0, 0, 0, 0.08) !important;
-  box-shadow: none !important;
+  background: #ffffff !important;
+  border: 1px solid rgba(255, 79, 145, 0.22) !important;
+  border-radius: 14px !important;
+  padding: 18px 22px !important;
+  margin-top: 18px !important;
+  box-shadow: 0 4px 16px rgba(255, 79, 145, 0.04) !important;
   backdrop-filter: none !important;
 }
 
 .section-quote-slider.quote-theme-white .quote-meaning-eyebrow,
 .section-quote-slider.quote-theme-white .quote-meaning-badge {
-  color: #e91e63 !important;
+  color: var(--pink, #ff659b) !important;
   font-weight: 800 !important;
   text-transform: uppercase !important;
   letter-spacing: 0.08em !important;
-  background: transparent !important;
-  border: none !important;
+  background: rgba(255, 79, 145, 0.1) !important;
+  border: 1px solid rgba(255, 79, 145, 0.28) !important;
+  border-radius: 6px !important;
   box-shadow: none !important;
   text-shadow: none !important;
-  padding: 0 !important;
+  padding: 3px 10px !important;
 }
 
 .section-quote-slider.quote-theme-white .quote-meaning-title {
@@ -1773,19 +1800,14 @@ Memastikan kontras tinggi, keterbacaan 100%, dan bebas benturan warna
 .section-quote-slider.quote-theme-white .quote-meaning-body {
   color: #475569 !important;
   font-weight: 400 !important;
-  line-height: 1.6 !important;
+  line-height: 1.65 !important;
   text-shadow: none !important;
 }
 /* --- 2. TEMA HITAM / OBSIDIAN GELAP (.quote-theme-dark) --- */
-.section-quote-slider.quote-theme-dark .footer-quote-pill {
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  text-shadow: none !important;
-  padding: 0 !important;
-  color: var(--quote-accent, #94a3b8) !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.5px !important;
+.section-quote-slider.quote-theme-dark .footer-quote-header-left .section-eyebrow .jp-kanji {
+  color: #ff659b !important;
+  background: rgba(255, 79, 145, 0.16) !important;
+  border-color: rgba(255, 79, 145, 0.4) !important;
 }
 
 .section-quote-slider.quote-theme-dark .footer-quote-heading {
@@ -1804,6 +1826,13 @@ Memastikan kontras tinggi, keterbacaan 100%, dan bebas benturan warna
   color: #ffffff !important;
 }
 
+.section-quote-slider.quote-theme-dark .footer-quote-btn:hover {
+  background: var(--pink, #ff4f91) !important;
+  border-color: var(--pink, #ff4f91) !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 14px rgba(255, 79, 145, 0.5) !important;
+}
+
 .section-quote-slider.quote-theme-dark .footer-quote-counter {
   color: #cbd5e1 !important;
   text-shadow: none !important;
@@ -1817,14 +1846,19 @@ Memastikan kontras tinggi, keterbacaan 100%, dan bebas benturan warna
   width: 26px !important;
   height: 8px !important;
   border-radius: 12px !important;
-  background: var(--quote-accent, var(--pink)) !important;
-  box-shadow: 0 0 12px var(--quote-accent, var(--pink)), 0 0 4px var(--quote-accent, var(--pink)) !important;
+  background: var(--pink, #ff4f91) !important;
+  box-shadow: 0 0 12px rgba(255, 79, 145, 0.5), 0 0 4px rgba(255, 79, 145, 0.5) !important;
 }
 
 .section-quote-slider.quote-theme-dark .quote-card {
   background: linear-gradient(165deg, #16121d 0%, #0d0a13 100%) !important;
-  border: 1.5px solid var(--quote-border, rgba(255, 255, 255, 0.12)) !important;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px var(--quote-glow, transparent) !important;
+  border: 1.5px solid rgba(255, 79, 145, 0.25) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 79, 145, 0.12) !important;
+}
+
+.section-quote-slider.quote-theme-dark .quote-card:hover {
+  border-color: rgba(255, 79, 145, 0.4) !important;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.5), 0 0 24px rgba(255, 79, 145, 0.25) !important;
 }
 
 .section-quote-slider.quote-theme-dark .quote-card-badge {
@@ -1833,7 +1867,7 @@ Memastikan kontras tinggi, keterbacaan 100%, dan bebas benturan warna
   box-shadow: none !important;
   text-shadow: none !important;
   padding: 0 !important;
-  color: var(--quote-accent, #cbd5e1) !important;
+  color: var(--pink, #ff659b) !important;
   font-weight: 700 !important;
   text-transform: none !important;
   letter-spacing: normal !important;
@@ -1864,14 +1898,19 @@ Memastikan kontras tinggi, keterbacaan 100%, dan bebas benturan warna
 }
 
 .section-quote-slider.quote-theme-dark .quote-author-series {
-  color: #a0a0b0 !important;
+  color: var(--pink, #ff659b) !important;
+  font-weight: 700 !important;
+  font-size: 12.5px !important;
 }
 
 .section-quote-slider.quote-theme-dark .quote-box {
-  background: transparent !important;
-  border: none !important;
-  border-left: none !important;
-  box-shadow: none !important;
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 79, 145, 0.22) !important;
+  border-left: 3.5px solid var(--pink, #ff659b) !important;
+  border-radius: 14px !important;
+  padding: 18px 22px !important;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25) !important;
+  backdrop-filter: none !important;
 }
 
 .section-quote-slider.quote-theme-dark .quote-kanji {
@@ -1880,22 +1919,27 @@ Memastikan kontras tinggi, keterbacaan 100%, dan bebas benturan warna
 }
 
 .section-quote-slider.quote-theme-dark .quote-romaji {
-  color: #ff85b3 !important;
+  color: var(--pink, #ff659b) !important;
   font-style: italic !important;
   font-weight: 600 !important;
   text-shadow: none !important;
 }
 
 .section-quote-slider.quote-theme-dark .quote-literal {
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  text-shadow: none !important;
-  padding: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  padding: 6px 14px !important;
+  border-radius: 8px !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
   color: #cbd5e1 !important;
   font-style: normal !important;
-  font-weight: 400 !important;
+  font-weight: 500 !important;
+  font-size: 13px !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
   margin-top: 0 !important;
+  width: fit-content !important;
 }
 
 .section-quote-slider.quote-theme-dark .quote-literal span {
@@ -1905,10 +1949,13 @@ Memastikan kontras tinggi, keterbacaan 100%, dan bebas benturan warna
 }
 
 .section-quote-slider.quote-theme-dark .quote-meaning-card {
-  background: transparent !important;
-  border: none !important;
-  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
-  box-shadow: none !important;
+  background: rgba(255, 255, 255, 0.025) !important;
+  border: 1px solid rgba(255, 79, 145, 0.22) !important;
+  border-radius: 14px !important;
+  padding: 18px 22px !important;
+  margin-top: 18px !important;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25) !important;
+  backdrop-filter: none !important;
 }
 
 .section-quote-slider.quote-theme-dark .quote-meaning-eyebrow,
@@ -1917,11 +1964,12 @@ Memastikan kontras tinggi, keterbacaan 100%, dan bebas benturan warna
   font-weight: 800 !important;
   text-transform: uppercase !important;
   letter-spacing: 0.08em !important;
-  background: transparent !important;
-  border: none !important;
+  background: rgba(255, 79, 145, 0.12) !important;
+  border: 1px solid rgba(255, 79, 145, 0.3) !important;
+  border-radius: 6px !important;
   box-shadow: none !important;
   text-shadow: none !important;
-  padding: 0 !important;
+  padding: 3px 10px !important;
 }
 
 .section-quote-slider.quote-theme-dark .quote-meaning-title {
@@ -1933,7 +1981,7 @@ Memastikan kontras tinggi, keterbacaan 100%, dan bebas benturan warna
 .section-quote-slider.quote-theme-dark .quote-meaning-body {
   color: #cbd5e1 !important;
   font-weight: 400 !important;
-  line-height: 1.6 !important;
+  line-height: 1.65 !important;
   text-shadow: none !important;
 }
 
@@ -1956,16 +2004,18 @@ Memastikan kontras tinggi, keterbacaan 100%, dan bebas benturan warna
   background-size: 200px auto !important;
   background-repeat: repeat !important;
   background-position: center top !important;
-  opacity: var(--page-pattern-opacity-white, var(--opacity-c1w)) !important;
+  opacity: var(--page-pattern-opacity-white, var(--opacity-c1w, 0.15)) !important;
   mix-blend-mode: multiply !important;
   pointer-events: none !important;
   z-index: 1 !important;
   border-radius: inherit !important;
   display: block !important;
+  transition: opacity 0.3s ease, transform 0.3s ease !important;
 }
 
 .section-quote-slider.quote-theme-white .quote-card:hover::after {
-  opacity: var(--page-pattern-opacity-white-hover, var(--opacity-c1w-hover)) !important;
+  opacity: var(--page-pattern-opacity-white-hover, var(--opacity-c1w-hover, 0.22)) !important;
+  transform: scale(1.02) !important;
 }
 
 .section-quote-slider.quote-theme-white .quote-card > * {
@@ -1973,19 +2023,13 @@ Memastikan kontras tinggi, keterbacaan 100%, dan bebas benturan warna
   z-index: 2 !important;
 }
 
-.section-quote-slider.quote-theme-white .quote-author-profile,
-.section-quote-slider.quote-theme-white .quote-box,
-.section-quote-slider.quote-theme-white .quote-meaning-card {
+.section-quote-slider.quote-theme-white .quote-author-profile {
   background: transparent !important;
   background-image: none !important;
   position: relative !important;
   z-index: 2 !important;
   box-shadow: none !important;
   border: none !important;
-}
-
-.section-quote-slider.quote-theme-white .quote-meaning-card {
-  border-top: 1px solid rgba(0, 0, 0, 0.08) !important;
 }
 
 .quote-author-profile::before, .quote-author-profile::after,

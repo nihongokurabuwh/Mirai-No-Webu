@@ -1168,8 +1168,8 @@ if (!widget && window.SoraService) {
   widget.setAttribute("aria-label", "Asisten Sora");
   widget.innerHTML = [
     `<button class="sora-toggle" type="button" data-sora-toggle aria-expanded="false"><img src="${basePath}images/mirai/icon/Ay.png" alt=""><span>SORA</span></button>`,
-    '<div class="sora-panel" data-sora-panel hidden><header><strong>Sora ✨</strong><span>Teman belajar bahasa Jepangmu.</span><button class="sora-close" type="button" data-sora-close aria-label="Tutup Sora">×</button></header>',
-    '<div class="sora-messages" data-sora-messages><p class="chat-message sora">Yatta! Aku Sora ✨ Ada yang bisa kubantu?</p></div>',
+    '<div class="sora-panel" data-sora-panel hidden><header><strong>Sora</strong><span>Teman belajar bahasa Jepangmu.</span><button class="sora-close" type="button" data-sora-close aria-label="Tutup Sora">×</button></header>',
+    '<div class="sora-messages" data-sora-messages><p class="chat-message sora">Yatta! Aku Sora. Ada yang bisa kubantu?</p></div>',
     '<form class="sora-form" data-sora-form><input data-sora-input aria-label="Tanya Sora" placeholder="Tanya Sora sesuatu..." required><button type="submit">Kirim</button></form></div>'
   ].join("");
   document.body.appendChild(widget);
@@ -1759,11 +1759,11 @@ const quotes = [
   {
     id: 1,
     animeId: "one-piece",
-    tag: "ONE PIECE · EIICHIRO ODA",
     name: "Monkey D. Luffy",
     anime: "One Piece",
-    animeJP: "ワンピース",
+    animeRomaji: "One Piece",
     author: "Eiichiro Oda",
+    seriesDisplay: "One Piece · Eiichiro Oda",
     image: "luf.jpeg",
     chibi: "Ay.png",
     kanji: "海賊王に、おれはなる！",
@@ -1771,21 +1771,21 @@ const quotes = [
     literal: 'Arti Harfiah: "Aku akan menjadi Raja Bajak Laut!"',
     meaningTitle: "Berani Memulai Mimpi Besar",
     meaningText: "Jangan ragu menetapkan impian hanya karena orang lain menganggapnya sulit. Ketika kita berani melangkah dengan sungguh-sungguh, jalan dan teman seperjuangan akan selalu menyertai perjalanan kita.",
-    accent: "#ff5252",
-    glow: "rgba(255, 82, 82, 0.4)",
-    line: "#ff5252",
-    border: "rgba(255, 82, 82, 0.35)",
-    badgeBg: "rgba(255, 82, 82, 0.16)",
-    badgeBorder: "rgba(255, 82, 82, 0.45)"
+    accent: "#ff4f91",
+    glow: "rgba(255, 79, 145, 0.35)",
+    line: "#ff4f91",
+    border: "rgba(255, 79, 145, 0.3)",
+    badgeBg: "rgba(255, 79, 145, 0.12)",
+    badgeBorder: "rgba(255, 79, 145, 0.35)"
   },
   {
     id: 2,
     animeId: "attack-on-titan",
-    tag: "ATTACK ON TITAN · HAJIME ISAYAMA",
-    name: "Eren Yeager & Pasukan Penyelidik",
+    name: "Eren Yeager",
     anime: "Attack on Titan",
-    animeJP: "進撃の巨人",
+    animeRomaji: "Shingeki no Kyojin",
     author: "Hajime Isayama",
+    seriesDisplay: "Shingeki no Kyojin · Hajime Isayama",
     image: "ere.jpeg",
     chibi: "Ka.png",
     kanji: "心臓を捧げよ！",
@@ -1793,21 +1793,21 @@ const quotes = [
     literal: 'Arti Harfiah: "Persembahkan hatimu!"',
     meaningTitle: "Dedikasi Sepenuh Hati",
     meaningText: "Mencurahkan hati berarti memberikan fokus, perhatian, dan ketulusan terbaik saat belajar maupun berkarya bersama klub. Hasil yang berharga lahir dari usaha yang kita perjuangkan dengan tulus.",
-    accent: "#10b981",
-    glow: "rgba(16, 185, 129, 0.4)",
-    line: "#10b981",
-    border: "rgba(16, 185, 129, 0.35)",
-    badgeBg: "rgba(16, 185, 129, 0.16)",
-    badgeBorder: "rgba(16, 185, 129, 0.45)"
+    accent: "#ff4f91",
+    glow: "rgba(255, 79, 145, 0.35)",
+    line: "#ff4f91",
+    border: "rgba(255, 79, 145, 0.3)",
+    badgeBg: "rgba(255, 79, 145, 0.12)",
+    badgeBorder: "rgba(255, 79, 145, 0.35)"
   },
   {
     id: 3,
     animeId: "naruto",
-    tag: "NARUTO · MASASHI KISHIMOTO",
     name: "Uzumaki Naruto",
     anime: "Naruto",
-    animeJP: "NARUTO -ナルト-",
+    animeRomaji: "Naruto",
     author: "Masashi Kishimoto",
+    seriesDisplay: "Naruto · Masashi Kishimoto",
     image: "nar.jpeg",
     chibi: "Lo.png",
     kanji: "まっすぐ自分の言葉は曲げねぇ。それが俺の忍道だ！",
@@ -1815,21 +1815,21 @@ const quotes = [
     literal: 'Arti Harfiah: "Aku tidak akan menarik kembali kata-kataku. Itulah jalan ninjaku!"',
     meaningTitle: "Pegang Teguh Komitmen Diri",
     meaningText: "Saat kita menetapkan niat untuk menguasai bahasa dan keterampilan baru, jangan mudah goyah oleh rasa lelah. Konsistensi kecil setiap hari akan membentuk kemajuan yang nyata.",
-    accent: "#f97316",
-    glow: "rgba(249, 115, 22, 0.4)",
-    line: "#f97316",
-    border: "rgba(249, 115, 22, 0.35)",
-    badgeBg: "rgba(249, 115, 22, 0.16)",
-    badgeBorder: "rgba(249, 115, 22, 0.45)"
+    accent: "#ff4f91",
+    glow: "rgba(255, 79, 145, 0.35)",
+    line: "#ff4f91",
+    border: "rgba(255, 79, 145, 0.3)",
+    badgeBg: "rgba(255, 79, 145, 0.12)",
+    badgeBorder: "rgba(255, 79, 145, 0.35)"
   },
   {
     id: 4,
     animeId: "my-hero-academia",
-    tag: "MY HERO ACADEMIA · KOHEI HORIKOSHI",
     name: "Midoriya Izuku (Deku)",
     anime: "My Hero Academia",
-    animeJP: "僕のヒーローアカデミア",
+    animeRomaji: "Boku no Hero Academia",
     author: "Kohei Horikoshi",
+    seriesDisplay: "Boku no Hero Academia · Kohei Horikoshi",
     image: "dek.jpeg",
     chibi: "Al.png",
     kanji: "限界を超えて、さらに向こうへ！プルス・ウルトラ！",
@@ -1837,21 +1837,21 @@ const quotes = [
     literal: 'Arti Harfiah: "Lampaui batas, melangkah lebih jauh lagi! Plus Ultra!"',
     meaningTitle: "Melangkah Sedikit Lebih Jauh",
     meaningText: "Rasa jenuh dan buntu adalah pertanda bahwa kemampuan kita sedang berkembang ke tingkat berikutnya. Istirahat sejenak bila perlu, lalu lanjutkan langkah untuk berkembang lebih baik dari kemarin.",
-    accent: "#06b6d4",
-    glow: "rgba(6, 182, 212, 0.4)",
-    line: "#06b6d4",
-    border: "rgba(6, 182, 212, 0.35)",
-    badgeBg: "rgba(6, 182, 212, 0.16)",
-    badgeBorder: "rgba(6, 182, 212, 0.45)"
+    accent: "#ff4f91",
+    glow: "rgba(255, 79, 145, 0.35)",
+    line: "#ff4f91",
+    border: "rgba(255, 79, 145, 0.3)",
+    badgeBg: "rgba(255, 79, 145, 0.12)",
+    badgeBorder: "rgba(255, 79, 145, 0.35)"
   },
   {
     id: 5,
     animeId: "demon-slayer",
-    tag: "DEMON SLAYER · KOYOHARU GOTOUGE",
     name: "Tanjiro Kamado",
     anime: "Demon Slayer",
-    animeJP: "鬼滅の刃",
+    animeRomaji: "Kimetsu no Yaiba",
     author: "Koyoharu Gotouge",
+    seriesDisplay: "Kimetsu no Yaiba · Koyoharu Gotouge",
     image: "tan.jpeg",
     chibi: "Fu.png",
     kanji: "頑張れ炭治郎、頑張れ！俺は今までよくやってきた！",
@@ -1859,12 +1859,12 @@ const quotes = [
     literal: 'Arti Harfiah: "Semangat Tanjiro, semangat! Selama ini aku sudah berjuang dengan baik!"',
     meaningTitle: "Hargai Setiap Proses Belajar",
     meaningText: "Belajar hal baru tentu ada jatuh bangunnya. Daripada menyalahkan diri saat salah menjawab soal atau kesulitan memahami materi, beri apresiasi pada proses latihan yang sudah kamu jalani.",
-    accent: "#38bdf8",
-    glow: "rgba(56, 189, 248, 0.4)",
-    line: "#38bdf8",
-    border: "rgba(56, 189, 248, 0.35)",
-    badgeBg: "rgba(56, 189, 248, 0.16)",
-    badgeBorder: "rgba(56, 189, 248, 0.45)"
+    accent: "#ff4f91",
+    glow: "rgba(255, 79, 145, 0.35)",
+    line: "#ff4f91",
+    border: "rgba(255, 79, 145, 0.3)",
+    badgeBg: "rgba(255, 79, 145, 0.12)",
+    badgeBorder: "rgba(255, 79, 145, 0.35)"
   }
 ];
 
@@ -1879,11 +1879,8 @@ section.innerHTML = `
         <div class="footer-quote-slider-section">
             <div class="footer-quote-slider-header">
                 <div class="footer-quote-header-left">
-                    <span class="footer-quote-pill">
-                        <span class="badge-dot"></span>
-                        KUTIPAN INSPIRATIF · 名言
-                    </span>
-                    <h3 class="footer-quote-heading">Kata-Kata Motivasi Karakter Anime</h3>
+                    <p class="section-eyebrow"><span class="jp-kanji" lang="ja">名言コレクション</span></p>
+                    <h2 class="heading footer-quote-heading">Kata-Kata Motivasi <span>Karakter Anime</span></h2>
                 </div>
                 <div class="footer-quote-controls">
                     <button type="button" class="footer-quote-btn" id="footerQuotePrevBtn" aria-label="Kutipan Sebelumnya">‹</button>
@@ -1911,18 +1908,15 @@ function renderSlide(index) {
   const q = quotes[currentIndex];
 
   cardContainer.innerHTML = `
-            <article class="quote-card quote-slide-enter" data-anime="${q.animeId}" style="--quote-accent: ${q.accent}; --quote-line: ${q.accent}; --quote-border: rgba(255, 255, 255, 0.12);">
-                <div class="quote-card-header">
-                    <span class="quote-card-tag">${q.tag}</span>
-                </div>
+            <article class="quote-card quote-slide-enter" data-anime="${q.animeId}" style="--quote-accent: #ff4f91; --quote-line: #ff4f91; --quote-border: rgba(255, 79, 145, 0.3);">
                 <div class="quote-card-body">
                     <div class="quote-top-row">
                         <div class="quote-author-profile">
                             <div class="quote-avatar-wrap">
-                                <img class="quote-avatar-img" src="${basePath}images/mirai/karakter/${q.image}" alt="${q.name}">
+                                <img class="quote-avatar-img" src="${basePath}images/mirai/karakter/${q.image}" alt="${q.name}" width="96" height="96" loading="lazy" decoding="async">
                             </div>
                             <h3 class="quote-author-name">${q.name}</h3>
-                            <p class="quote-author-series">${q.anime} (${q.animeJP})</p>
+                            <p class="quote-author-series">${q.seriesDisplay}</p>
                         </div>
                         <div class="quote-box">
                             <h4 class="quote-kanji">${q.kanji}</h4>
@@ -1934,7 +1928,7 @@ function renderSlide(index) {
                     </div>
                     <div class="quote-meaning-card">
                         <div class="quote-meaning-head">
-                            <span class="quote-meaning-eyebrow quote-meaning-badge">MAKNA KUTIPAN</span>
+                            <span class="quote-meaning-eyebrow">MAKNA KUTIPAN</span>
                             <h5 class="quote-meaning-title">${q.meaningTitle}</h5>
                         </div>
                         <p class="quote-meaning-body">${q.meaningText}</p>
@@ -2729,7 +2723,7 @@ if (rawPath.includes("/toko/")) {
   return {
     title: "Toko Resmi Klub",
     kanji: "公式ショップ",
-    icon: "🛍️",
+    icon: '<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>',
     desc: "Katalog merchandise eksklusif klub Mirai No Hana sedang dipersiapkan dan akan segera dirilis resmi."
   };
 }
@@ -2737,7 +2731,7 @@ if (rawPath.includes("/peringkat/")) {
   return {
     title: "Papan Peringkat Prestasi",
     kanji: "リーダーボード",
-    icon: "🏆",
+    icon: '<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path><path d="M4 22h16"></path><path d="M10 14.66V17c0 .55-.45 1-1 1H8c-.55 0-1 .45-1 1v1h10v-1c0-.55-.45-1-1-1h-1c-.55 0-1-.45-1-1v-2.34"></path><path d="M18 2H6v7a6 6 0 0 0 12 0V2z"></path></svg>',
     desc: "Sistem papan peringkat dan leaderboard pencapaian belajar anggota klub sedang dalam tahap finalisasi data."
   };
 }
@@ -2745,7 +2739,7 @@ if (rawPath.includes("/lomba/")) {
   return {
     title: "Informasi Lomba & Acara",
     kanji: "大会＆イベント",
-    icon: "🎪",
+    icon: '<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>',
     desc: "Jadwal kompetisi, lomba internal/eksternal, serta festival kebudayaan Jepang akan segera diumumkan."
   };
 }
@@ -2753,7 +2747,7 @@ if (rawPath.includes("/tentang/")) {
   return {
     title: "Profil Klub & Struktur",
     kanji: "クラブ概要",
-    icon: "👥",
+    icon: '<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>',
     desc: "Halaman informasi sejarah, visi misi, serta struktur kepengurusan resmi klub sedang disempurnakan."
   };
 }
@@ -2761,7 +2755,7 @@ if (rawPath.includes("/kegiatan/")) {
   return {
     title: "Program Kerja & Kegiatan",
     kanji: "活動＆プログラム",
-    icon: "📅",
+    icon: '<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>',
     desc: "Dokumentasi dan jadwal program kerja tahunan klub sedang dalam proses kurasi konten interaktif."
   };
 }
@@ -2769,7 +2763,7 @@ if (rawPath.includes("/divisi/")) {
   return {
     title: "Divisi & Kepengurusan Klub",
     kanji: "クラブ部門",
-    icon: "🎨",
+    icon: '<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>',
     desc: "Detail informasi mengenai pembagian divisi minat dan bakat klub sedang dalam tahap penyempurnaan."
   };
 }
@@ -2777,7 +2771,7 @@ const pageTitle = (document.title || "").split("-")[0].trim() || "Segera Hadir";
 return {
   title: pageTitle,
   kanji: "近日公開",
-  icon: "🌸",
+  icon: '<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>',
   desc: "Halaman ini sedang dalam tahap pengembangan dan persiapan konten resmi."
 };
 }
@@ -2793,19 +2787,19 @@ modal.setAttribute("aria-hidden", "true");
 modal.innerHTML = `
         <div class="password-modal-card" role="dialog" aria-modal="true" aria-labelledby="csModalTitle">
             <button type="button" class="password-modal-close" id="csModalCloseBtn" aria-label="Tutup Dialog">✕</button>
-            <div class="password-modal-icon">🔐</div>
+            <div class="password-modal-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></div>
             <h3 class="password-modal-title" id="csModalTitle">Akses Khusus Pengurus</h3>
             <span class="password-modal-kanji">管理者アクセス制限</span>
             <p class="password-modal-desc">Halaman atau seksi ini berstatus <strong>Segera Hadir</strong>. Masukkan kata sandi pengurus untuk membuka seluruh akses fitur secara instan.</p>
             <form id="csPasswordForm" autocomplete="off" onsubmit="return false;">
                 <div class="password-input-wrap">
                     <input type="password" class="password-modal-input" id="csPasswordInput" placeholder="Masukkan kata sandi..." autocomplete="current-password" spellcheck="false">
-                    <button type="button" class="password-toggle-visibility" id="csPasswordToggleBtn" aria-label="Lihat kata sandi">👁️</button>
+                    <button type="button" class="password-toggle-visibility" id="csPasswordToggleBtn" aria-label="Lihat kata sandi"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></button>
                 </div>
                 <div class="password-modal-msg" id="csPasswordMsg" style="display: none;"></div>
                 <div class="password-modal-actions">
                     <button type="button" class="password-btn-cancel" id="csModalCancelBtn">Batal</button>
-                    <button type="submit" class="password-btn-submit" id="csModalSubmitBtn">Buka Akses 🔓</button>
+                    <button type="submit" class="password-btn-submit" id="csModalSubmitBtn">Buka Akses</button>
                 </div>
             </form>
         </div>
@@ -2835,11 +2829,11 @@ document.addEventListener("keydown", (e) => {
 toggleBtn?.addEventListener("click", () => {
   if (input.type === "password") {
     input.type = "text";
-    toggleBtn.textContent = "🙈";
+    toggleBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line></svg>';
     toggleBtn.setAttribute("aria-label", "Sembunyikan kata sandi");
   } else {
     input.type = "password";
-    toggleBtn.textContent = "👁️";
+    toggleBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>';
     toggleBtn.setAttribute("aria-label", "Lihat kata sandi");
   }
 });
@@ -2975,12 +2969,12 @@ if (!lockBtn) {
 }
 
 if (isUnlocked) {
-  lockBtn.innerHTML = "🔓";
+  lockBtn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 9.9-1"></path></svg>';
   lockBtn.classList.add("is-unlocked");
   lockBtn.setAttribute("title", "Akses Pengurus Terbuka - Klik untuk mengunci kembali");
   lockBtn.setAttribute("aria-label", "Akses Pengurus Terbuka");
 } else {
-  lockBtn.innerHTML = "🔒";
+  lockBtn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>';
   lockBtn.classList.remove("is-unlocked");
   lockBtn.setAttribute("title", "Akses Terkunci (Segera Hadir) - Klik untuk memasukkan kata sandi");
   lockBtn.setAttribute("aria-label", "Akses Terkunci Segera Hadir");
@@ -3001,7 +2995,7 @@ navLinks.forEach((link) => {
     if (!existingBadge) {
     const badge = document.createElement("span");
     badge.className = "menu-coming-soon-badge";
-    badge.textContent = "🔒 Segera Hadir";
+    badge.textContent = "SEGERA HADIR";
     link.appendChild(badge);
     }
     if (!link.dataset.lockBound) {
@@ -3038,14 +3032,12 @@ if (isLocked) {
     pageOverlay.className = "coming-soon-page-overlay";
     pageOverlay.innerHTML = `
                 <div class="coming-soon-card">
-                    <div class="coming-soon-pill">🔒 PREVIEW TERBATAS</div>
+                    <div class="coming-soon-pill">SEGERA HADIR</div>
                     <div class="coming-soon-icon">${info.icon}</div>
                     <h2 class="coming-soon-title">${info.title}</h2>
-                    <span class="coming-soon-kanji">${info.kanji} (近日公開)</span>
-                    <p class="coming-soon-desc">${info.desc}</p>
                     <div class="coming-soon-actions">
                         <button type="button" class="coming-soon-btn-unlock" id="csPageUnlockBtn">
-                            <span>🔑 Buka dengan Kata Sandi</span>
+                            <span>Masukkan Sandi Pengurus</span>
                         </button>
                         <a href="${homeUrl}" class="coming-soon-btn-home">
                             <span>← Kembali ke Beranda</span>
@@ -3079,14 +3071,12 @@ if (kurikulumEl) {
     overlay.className = "coming-soon-section-overlay";
     overlay.innerHTML = `
                     <div class="coming-soon-card">
-                        <div class="coming-soon-pill">🔒 SEGERA HADIR</div>
-                        <div class="coming-soon-icon">📜</div>
+                        <div class="coming-soon-pill">SEGERA HADIR</div>
+                        <div class="coming-soon-icon"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg></div>
                         <h3 class="coming-soon-title">Kurikulum &amp; Tata Cara Pengajaran</h3>
-                        <span class="coming-soon-kanji">カリキュラムと指導法 (近日公開)</span>
-                        <p class="coming-soon-desc">Pedoman resmi standar alur kurikulum pembelajaran dan pedoman teknis pengajaran sedang dalam tahap peninjauan akhir oleh pembina klub.</p>
                         <div class="coming-soon-actions">
                             <button type="button" class="coming-soon-btn-unlock cs-section-unlock-btn">
-                                <span>🔑 Masukkan Sandi Pengurus</span>
+                                <span>Masukkan Sandi Pengurus</span>
                             </button>
                         </div>
                     </div>
@@ -3114,14 +3104,12 @@ if (studioEl) {
     overlay.className = "coming-soon-section-overlay";
     overlay.innerHTML = `
                     <div class="coming-soon-card">
-                        <div class="coming-soon-pill">🔒 SEGERA HADIR</div>
-                        <div class="coming-soon-icon">⌨️</div>
+                        <div class="coming-soon-pill">SEGERA HADIR</div>
+                        <div class="coming-soon-icon"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"></rect><line x1="6" y1="8" x2="6.01" y2="8"></line><line x1="10" y1="8" x2="10.01" y2="8"></line><line x1="14" y1="8" x2="14.01" y2="8"></line><line x1="18" y1="8" x2="18.01" y2="8"></line><line x1="6" y1="12" x2="6.01" y2="12"></line><line x1="18" y1="12" x2="18.01" y2="12"></line><line x1="9" y1="16" x2="15" y2="16"></line></svg></div>
                         <h3 class="coming-soon-title">Studio Ketik &amp; Terjemahan Jepang</h3>
-                        <span class="coming-soon-kanji">翻訳＆キーボードスタジオ (近日公開)</span>
-                        <p class="coming-soon-desc">Fitur Virtual Keyboard pintar (Kana &amp; QWERTY IME) serta Penerjemah 2 Arah Jepang ⇄ Indonesia sedang dalam pengujian performa sistem.</p>
                         <div class="coming-soon-actions">
                             <button type="button" class="coming-soon-btn-unlock cs-section-unlock-btn">
-                                <span>🔑 Masukkan Sandi Pengurus</span>
+                                <span>Masukkan Sandi Pengurus</span>
                             </button>
                         </div>
                     </div>
@@ -3149,14 +3137,12 @@ if (prestasiEl) {
       overlay.className = "coming-soon-section-overlay";
       overlay.innerHTML = `
         <div class="coming-soon-card">
-          <div class="coming-soon-pill">🔒 SEGERA HADIR</div>
-          <div class="coming-soon-icon">🏆</div>
+          <div class="coming-soon-pill">SEGERA HADIR</div>
+          <div class="coming-soon-icon"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path><path d="M4 22h16"></path><path d="M10 14.66V17c0 .55-.45 1-1 1H8c-.55 0-1 .45-1 1v1h10v-1c0-.55-.45-1-1-1h-1c-.55 0-1-.45-1-1v-2.34"></path><path d="M18 2H6v7a6 6 0 0 0 12 0V2z"></path></svg></div>
           <h3 class="coming-soon-title">Prestasi &amp; Penghargaan</h3>
-          <span class="coming-soon-kanji">実績と表彰 (近日公開)</span>
-          <p class="coming-soon-desc">Rekapitulasi resmi daftar kejuaraan, medali, dan piagam apresiasi prestasi anggota klub sedang dalam tahap verifikasi data dokumentasi.</p>
           <div class="coming-soon-actions">
             <button type="button" class="coming-soon-btn-unlock cs-section-unlock-btn">
-              <span>🔑 Masukkan Sandi Pengurus</span>
+              <span>Masukkan Sandi Pengurus</span>
             </button>
           </div>
         </div>
@@ -3180,7 +3166,7 @@ if (translatorTabJump) {
     if (!translatorTabJump.querySelector(".tab-lock-icon")) {
     const lockIcon = document.createElement("span");
     lockIcon.className = "tab-lock-icon";
-    lockIcon.textContent = " 🔒";
+    lockIcon.innerHTML = ' <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>';
     translatorTabJump.appendChild(lockIcon);
     }
   } else {
@@ -3268,8 +3254,7 @@ actionLinks.forEach((link) => {
     cardOverlay.setAttribute("aria-hidden", "true");
     cardOverlay.innerHTML = `
                         <div class="card-coming-soon-center">
-                            <span class="card-coming-soon-badge">🔒 Segera Hadir</span>
-                            <span class="card-coming-soon-sub">Fitur ini masih dalam tahap pengembangan</span>
+                            <span class="card-coming-soon-badge">SEGERA HADIR</span>
                         </div>
                     `;
     parentCard.appendChild(cardOverlay);
@@ -3315,8 +3300,7 @@ docCards.forEach((card) => {
     overlay.setAttribute("aria-hidden", "true");
     overlay.innerHTML = `
                     <div class="card-coming-soon-center">
-                        <span class="card-coming-soon-badge">🔒 Segera Hadir</span>
-                        <span class="card-coming-soon-sub">Fitur ini masih dalam tahap pengembangan</span>
+                        <span class="card-coming-soon-badge">SEGERA HADIR</span>
                     </div>
                 `;
     card.appendChild(overlay);

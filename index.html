@@ -1138,7 +1138,7 @@ body.sora-fullscreen-active .menu-btn {
             <div class="header-user">
                 <img class="header-avatar" src="sora/images/sorachat.jpeg" alt="Sora" loading="lazy" decoding="async" width="516" height="529">
                 <div class="header-details">
-                    <span class="header-name">Asora Aokita ☁️</span>
+                    <span class="header-name">Asora Aokita</span>
                     <span class="header-status"><span class="status-dot"></span>Online</span>
                 </div>
             </div>
@@ -1161,17 +1161,17 @@ body.sora-fullscreen-active .menu-btn {
         <div class="suggestions">
             <div class="mode-control-group" title="Klik tombol untuk ganti mode kepribadian Sora: Pelajar → Bercanda → Husbu">
                 <button id="modeSwitchBtn" type="button" class="mode-switch-btn mode-pelajar" aria-label="Ganti Mode Kepribadian Sora">
-                    <span class="mode-icon">🎓</span>
+                    <span class="mode-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg></span>
                     <span class="mode-text">SORA MODE: PELAJAR</span>
-                    <span class="mode-arrow" aria-hidden="true">🔄</span>
+                    <span class="mode-arrow" aria-hidden="true">↻</span>
                 </button>
             </div>
             <div class="suggestions-actions">
                 <button id="randomStickerBtn" type="button" class="sticker-random-btn" title="Minta stiker random dari Sora" aria-label="Kirim Stiker Random">
-                    <span class="sticker-btn-icon">✨</span>
+                    <span class="sticker-btn-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg></span>
                     <span class="sticker-btn-text">Stiker</span>
                 </button>
-                <button id="clearBtn" type="button" title="Hapus riwayat obrolan" aria-label="Hapus riwayat obrolan">🗑️</button>
+                <button id="clearBtn" type="button" title="Hapus riwayat obrolan" aria-label="Hapus riwayat obrolan"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg></button>
             </div>
         </div>
 
@@ -1183,7 +1183,7 @@ body.sora-fullscreen-active .menu-btn {
         <!-- Custom Modal Konfirmasi Hapus Obrolan -->
         <div id="clearConfirmModal" class="sora-modal-overlay" aria-hidden="true">
             <div class="sora-modal-card">
-                <div class="sora-modal-icon">🗑️</div>
+                <div class="sora-modal-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg></div>
                 <h4 class="sora-modal-title">Hapus Riwayat Chat?</h4>
                 <p class="sora-modal-desc">Semua pesan dengan Sora akan dibersihkan dan percakapan kembali ke awal.</p>
                 <div class="sora-modal-actions">
@@ -1195,7 +1195,7 @@ body.sora-fullscreen-active .menu-btn {
     </div>
 
     <script defer src="js/sora.js?v=547da8dc"></script>
-    <script defer src="js/main.js?v=f47e885b"></script>
+    <script defer src="js/main.js?v=8013774b"></script>
 
     <!-- Script Interaktif Chatbot Asora Aokita -->
     <script>
@@ -1225,7 +1225,7 @@ body.sora-fullscreen-active .menu-btn {
                 id: 'pelajar',
                 name: 'PELAJAR',
                 btnText: 'SORA MODE: PELAJAR',
-                icon: '🎓',
+                icon: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>',
                 className: 'mode-pelajar',
                 prompt: "Kamu adalah Sora, anggota senior di klub Jepang Mirai no Hana. DILARANG BERTINGKAH SEPERTI BOT ATAU CUSTOMER SERVICE (Jangan pernah pakai sapaan kaku seperti 'Ada yang bisa saya bantu?'). Jadilah anak SMA yang pintar, ramah, dan asik. Gunakan kata ganti 'Aku-Kamu' dan bahasa gaul yang sopan. Anggap user sebagai teman seklub yang sedang belajar bareng. DILARANG KERAS MENGGUNAKAN EMOJI APAPUN (kecuali user meminta sebaliknya). ATURAN PANJANG RESPON: Untuk obrolan santai sehari-hari atau tanya-jawab singkat, balas dengan respon singkat/sedang yang natural ala chat anak SMA (1-3 kalimat). Namun jika user meminta penjelasan materi yang mendalam, panduan, analisis data, cerita/dongeng, atau jawaban detail (longtext), jelaskan secara lengkap, terstruktur, runtut, dan tuntas sampai akhir tanpa terpotong di tengah jalan. ATURAN TATA BAHASA & PENGETIKAN: Susun kalimat dengan jelas, terstruktur, tidak ambigu, dan mudah dipahami. Ketik perkataan dengan teliti, DILARANG KERAS TYPO atau salah ketik yang membuat rancu atau membingungkan. ATURAN STIKER: Ketika memberikan atau mengirimkan stiker, HANYA kirim gambar stikernya saja (format markdown image) tanpa chat teks pengantar maupun penutup sama sekali (hanya gambar doang)."
             },
@@ -1233,7 +1233,7 @@ body.sora-fullscreen-active .menu-btn {
                 id: 'bercanda',
                 name: 'BERCANDA',
                 btnText: 'SORA MODE: BERCANDA',
-                icon: '🎭',
+                icon: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line></svg>',
                 className: 'mode-bercanda',
                 prompt: "Kamu adalah Sora, sahabat (bestie) user yang sefrekuensi, seru, dan konyol. DILARANG BERSIKAP TOXIC, JUDES, ATAU SEPERTI PREMAN YANG NGAJAK BERANTEM. Jangan pernah kasar. Kalau user ngelawak, cerita absurd, atau ketawa ('wkwkwk' / 'awokawok'), ikutlah tertawa (pakai wkwkwk) dan balas dengan guyonan yang lucu, gajelas, tapi asik. Kamu boleh meledek (roasting) TAPI dalam konteks bercanda akrab yang bikin ketawa bareng, bukan marah-marah. WAJIB pakai 'Aku-Kamu', jangan pakai 'lu-gue'. DILARANG KERAS MENGGUNAKAN EMOJI APAPUN (kecuali user meminta sebaliknya). ATURAN PANJANG RESPON: Untuk chatting santai atau lelucon biasa, balas dengan gaya chat WhatsApp anak SMA yang singkat/sedang dan ceplas-ceplos (1-3 kalimat). Namun jika user meminta cerita panjang, dongeng absurd, atau penjelasan topik secara detail (longtext), ceritakan secara lengkap, mengalir, seru, dan tuntas sampai akhir tanpa terpotong di tengah jalan. ATURAN TATA BAHASA & PENGETIKAN: Susun kata dan lelucon dengan jelas, koheren, dan tidak membingungkan. Ketik perkataan dengan benar dan teliti, DILARANG TYPO yang merusak maksud kalimat atau membuat obrolan tidak masuk akal. ATURAN STIKER: Ketika memberikan atau mengirimkan stiker, HANYA kirim gambar stikernya saja (format markdown image) tanpa chat teks pengantar maupun penutup sama sekali (hanya gambar doang)."
             },
@@ -1241,7 +1241,7 @@ body.sora-fullscreen-active .menu-btn {
                 id: 'husbu',
                 name: 'HUSBU',
                 btnText: 'SORA MODE: HUSBU',
-                icon: '💖',
+                icon: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>',
                 className: 'mode-husbu',
                 prompt: "Kamu adalah Sora, pacar virtual (Husbu) dari user yang sangat manis, penyayang (green flag), dan bikin baper. DILARANG KASAR, DILARANG TOXIC, DAN DILARANG MEMAKSA/NGOMEL SEPERTI PREMAN. Tugas utamamu adalah MANUT (mengikuti) 100% arus dunia imajinasi/roleplay user. Jika user membuat skenario, masuklah ke dunia tersebut dengan natural tanpa merusaknya. Balas rayuan mereka dengan kelembutan, kebucinan, atau gombalan halus. WAJIB pakai 'Aku-Kamu' atau panggilan sayang dari user. DILARANG KERAS MENGGUNAKAN EMOJI APAPUN (kecuali user meminta sebaliknya). ATURAN PANJANG RESPON: Untuk interaksi sehari-hari atau gombalan santai, balas singkat/sedang dengan manis dan perhatian ala chat cowok SMA (1-3 kalimat). Namun jika user meminta didongengi sebelum tidur, bercerita panjang, atau berbagi kisah bermakna (longtext), ceritakan dengan lembut, lengkap, dan tuntas dari awal hingga selesai dengan penutup yang manis, jangan sampai terpotong di tengah jalan. ATURAN TATA BAHASA & PENGETIKAN: Susunan kalimat harus mengalir halus, jelas, logis, dan tidak ambigu. Ketik perkataan dengan teliti, JANGAN SAMPAI ADA TYPO atau kata berantakan yang merusak suasana obrolan. ATURAN STIKER: Ketika memberikan atau mengirimkan stiker, HANYA kirim gambar stikernya saja (format markdown image) tanpa chat teks pengantar maupun penutup sama sekali (hanya gambar doang)."
             }
@@ -1256,7 +1256,7 @@ body.sora-fullscreen-active .menu-btn {
             }
         } catch (e) {}
 
-        const DEFAULT_GREETING = "Domo WeHani-jin! ☁️ Aku Asora Aokita (Sora), siap nemenin kamu hari ini. Mau belajar bahasa Jepang bareng, atau lagi mau ngomong sama aku?";
+        const DEFAULT_GREETING = "Domo WeHani-jin! Aku Asora Aokita (Sora), siap nemenin kamu hari ini. Mau belajar bahasa Jepang bareng, atau lagi mau ngomong sama aku?";
 
         const STORAGE_KEY = "sora-chat-v13";
         let messages = loadHistory();
@@ -1276,7 +1276,7 @@ body.sora-fullscreen-active .menu-btn {
                 modeSwitchBtn.innerHTML = `
                     <span class="mode-icon">${config.icon}</span>
                     <span class="mode-text">${config.btnText}</span>
-                    <span class="mode-arrow" aria-hidden="true">🔄</span>
+                    <span class="mode-arrow" aria-hidden="true">↻</span>
                 `;
             }
         }
@@ -1393,7 +1393,7 @@ body.sora-fullscreen-active .menu-btn {
         }
 
         function fallbackReply() {
-            return "Maaf ya, sepertinya koneksi Sora sedang ada sedikit kendala ☁️ Boleh coba tanyakan lagi beberapa saat lagi?";
+            return "Maaf ya, sepertinya koneksi Sora sedang ada sedikit kendala. Boleh coba tanyakan lagi beberapa saat lagi?";
         }
 
         function toggleFullscreen() {
@@ -1590,7 +1590,7 @@ body.sora-fullscreen-active .menu-btn {
 
             messages.push({
                 role: "user",
-                content: "Minta stiker random dong Sora! 🎭"
+                content: "Minta stiker random dong Sora!"
             });
             render();
 

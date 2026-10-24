@@ -1046,7 +1046,7 @@ function renderFloatingMultiBar() {
         </div>
         <div class="multi-bar-actions">
           <button type="button" class="btn-multi-clear" id="btnMultiClear">Batal</button>
-          <button type="button" class="btn-multi-start" id="btnMultiStart">Mulai Latihan Gabungan 🚀</button>
+          <button type="button" class="btn-multi-start" id="btnMultiStart">Mulai Latihan Gabungan</button>
         </div>
       </div>
     `;
@@ -1187,7 +1187,7 @@ const renderDashboard = () => {
     return `
                     <article class="level-card level-card--${script} ${unlocked ? "is-unlocked" : "is-locked"} ${completed ? "is-completed" : ""} ${isSelected ? "is-multi-selected" : ""}" data-script="${script}">
                         <div class="level-card-top">
-                            <span>${completed ? "✓ Completed" : unlocked ? "🔓 Unlocked" : "🔒 Locked"}</span>
+                            <span>${completed ? "✓ Selesai" : unlocked ? "Terbuka" : "Terkunci"}</span>
                             <div class="level-card-top-right">
                                 <b>LV ${level.id}</b>
                                 ${unlocked ? `
@@ -1238,7 +1238,7 @@ function renderModes() {
   const weakKanaChars = weakKanaItems.map((item) => item.character);
   const weakPreviewText = weakKanaChars.length > 0
     ? `${weakKanaChars.slice(0, 4).join("・")}${weakKanaChars.length > 4 ? ` (+${weakKanaChars.length - 4})` : ` (${weakKanaChars.length} Huruf)`}`
-    : "✨ Belum ada huruf salah";
+    : "Belum ada huruf salah";
 
   const modes = [
     {
@@ -1246,7 +1246,7 @@ function renderModes() {
       label: "Fokus Perbaikan",
       isWeakMode: true,
       levels: allLevelIds,
-      icon: "🔥",
+      icon: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path></svg>',
       preview: weakPreviewText,
       subText: weakKanaChars.length > 0 ? `${weakKanaChars.length} huruf sering salah` : "Evaluasi huruf yang sering salah"
     },
@@ -1255,7 +1255,7 @@ function renderModes() {
       label: "Susun Kalimat",
       isBunpouMode: true,
       levels: allLevelIds,
-      icon: "🧩",
+      icon: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19.439 7.85c0-1.57-1.28-2.85-2.85-2.85h-2.17a3.5 3.5 0 0 0-6.838 0H5.41c-1.57 0-2.85 1.28-2.85 2.85v2.17a3.5 3.5 0 0 0 0 6.838v2.17c0 1.57 1.28 2.85 2.85 2.85h2.17a3.5 3.5 0 0 0 6.838 0h2.17c1.57 0 2.85-1.28 2.85-2.85v-2.17a3.5 3.5 0 0 0 0-6.838v-2.17z"></path></svg>',
       preview: "わたし・は・が・を・です",
       subText: "10 Soal • Struktur N5"
     },
@@ -1264,8 +1264,8 @@ function renderModes() {
       label: "Latihan Kustom",
       isCustomMode: true,
       levels: allLevelIds,
-      icon: "⚙️",
-      preview: "🎯 Kustomisasi Bebas",
+      icon: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>',
+      preview: "Kustomisasi Bebas",
       subText: "Atur jumlah & jenis soal"
     }
   ];
@@ -1287,23 +1287,23 @@ function renderModes() {
     if (mode.isTimeAttackMode) {
     const taSaved = localStorage.getItem(`mirai_time_attack_best_${script}`) || localStorage.getItem("mirai_time_attack_best");
     if (taSaved !== null && taSaved !== "" && !isNaN(taSaved)) {
-    scoreText = `🏆 Rekor: ${parseInt(taSaved, 10)} Pts`;
+    scoreText = `Rekor: ${parseInt(taSaved, 10)} Pts`;
     }
     } else if (mode.isBunpouMode) {
     const bpSaved = localStorage.getItem("mirai_mode_best_bunpou");
     if (bpSaved !== null && bpSaved !== "" && !isNaN(bpSaved)) {
-    scoreText = `🏆 Skor Terbaik: ${parseInt(bpSaved, 10)}%`;
+    scoreText = `Skor Terbaik: ${parseInt(bpSaved, 10)}%`;
     }
     } else if (mode.isCustomMode) {
     const customSaved = localStorage.getItem("mirai_mode_best_custom");
     if (customSaved !== null && customSaved !== "" && !isNaN(customSaved)) {
-    scoreText = `🏆 Skor Terbaik: ${parseInt(customSaved, 10)}%`;
+    scoreText = `Skor Terbaik: ${parseInt(customSaved, 10)}%`;
     }
     } else {
     const storageKey = `mirai_mode_best_${script}_${mode.id || index}`;
     const savedScore = localStorage.getItem(storageKey);
     if (savedScore !== null && savedScore !== "" && !isNaN(savedScore)) {
-    scoreText = `🏆 Skor Terbaik: ${parseInt(savedScore, 10)}%`;
+    scoreText = `Skor Terbaik: ${parseInt(savedScore, 10)}%`;
     }
     }
 
@@ -1545,7 +1545,7 @@ function finishTimeAttack() {
 
   const heading = resultView ? resultView.querySelector("h2") : null;
   if (heading) {
-    heading.innerHTML = `⚡ Dojo Refleks Selesai! ${isNewRecord ? "<span class='new-record-pill'>🏆 Rekor Baru!</span>" : ""}`;
+    heading.innerHTML = `Dojo Refleks Selesai! ${isNewRecord ? "<span class='new-record-pill'>Rekor Baru!</span>" : ""}`;
   }
 
   const accEl = $("[data-result-accuracy]");
@@ -2382,7 +2382,7 @@ function renderInteractiveStroke(question) {
     if (feedback) {
     feedback.hidden = false;
     feedback.className = "feedback is-good";
-    feedback.innerHTML = `<strong>Goresan Sempurna! 🎉</strong><span>Huruf <b>${char}</b> (${romaji}) selesai ditulis dengan urutan tepat.</span>`;
+    feedback.innerHTML = `<strong>Goresan Sempurna!</strong><span>Huruf <b>${char}</b> (${romaji}) selesai ditulis dengan urutan tepat.</span>`;
     }
 
     currentSession.results[currentSession.index] = {
@@ -2502,10 +2502,10 @@ function renderQuestion() {
   const question = currentSession.questions[currentSession.index];
 
   if (currentSession.isTimeAttack) {
-    $("[data-practice-label]").textContent = `⚡ TIME ATTACK • 60 DETIK`;
+    $("[data-practice-label]").textContent = `TIME ATTACK • 60 DETIK`;
   } else if (currentSession.isCustom) {
     const kindText = question.type === "bunpou" ? "SUSUN KALIMAT" : question.type === "match-table" ? "PASANGKAN KATA" : question.type === "word" ? "KOSAKATA" : question.type === "stroke" ? "TULIS GORESAN" : question.type === "choukai" ? "TEBAK SUARA" : question.kind === "romaji" ? "ROMAJI → KANA" : "KANA → ROMAJI";
-    $("[data-practice-label]").textContent = `⚙️ KUSTOM • ${kindText}`;
+    $("[data-practice-label]").textContent = `KUSTOM • ${kindText}`;
   } else if (question.type === "bunpou") {
     $("[data-practice-label]").textContent = question.puzzleMode === "kana_to_romaji"
     ? "BUNPOU • SUSUN ROMAJI N5"
@@ -2579,11 +2579,11 @@ function renderQuestion() {
                 <div class="choukai-audio-center">
                     <div class="choukai-btn-group">
                         <button type="button" class="choukai-replay-btn" data-choukai-replay aria-label="Putar ulang suara normal">
-                            <span class="choukai-speaker-icon">🔊</span>
+                            <span class="choukai-speaker-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg></span>
                             <span class="choukai-btn-text">Suara Normal</span>
                         </button>
                         <button type="button" class="choukai-replay-btn btn-audio-slow" data-choukai-replay-slow aria-label="Putar ulang suara pelan (Slow-Mo)">
-                            <span class="choukai-speaker-icon">🐢</span>
+                            <span class="choukai-speaker-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 8 14"></polyline></svg></span>
                             <span class="choukai-btn-text">Suara Pelan</span>
                         </button>
                     </div>
@@ -2630,7 +2630,7 @@ function renderQuestion() {
     if (existingResult.state === "is-correct") {
     feedback.hidden = false;
     feedback.className = "feedback is-good";
-    feedback.innerHTML = `<strong>Tepat Sekali! 🎉</strong><span>Aksara <b>${question.answer.character}</b> dibaca “<b>${question.answer.romaji}</b>”</span>`;
+    feedback.innerHTML = `<strong>Tepat Sekali!</strong><span>Aksara <b>${question.answer.character}</b> dibaca “<b>${question.answer.romaji}</b>”</span>`;
     $("[data-answer-grid]").querySelectorAll("button").forEach((btn) => {
       btn.disabled = true;
       if (btn.dataset.answer === question.answer.character) btn.classList.add("is-answer");
@@ -2718,7 +2718,7 @@ function renderQuestion() {
         if (feedback) {
         feedback.hidden = false;
         feedback.className = "feedback is-good";
-        feedback.innerHTML = `<strong>Cocok! ✨</strong><span>Pasangan aksara <b>${pair1}</b> ditemukan!</span>`;
+        feedback.innerHTML = `<strong>Cocok!</strong><span>Pasangan aksara <b>${pair1}</b> ditemukan!</span>`;
         }
 
         flipped = [];
@@ -2739,7 +2739,7 @@ function renderQuestion() {
           resultView.scrollTop = 0;
         }
         const heading = resultView ? resultView.querySelector("h2") : null;
-        if (heading) heading.innerHTML = "🃏 Balik Kartu Selesai! 🎉";
+        if (heading) heading.innerHTML = "Balik Kartu Selesai!";
         const accEl = $("[data-result-accuracy]");
         if (accEl) {
           accEl.textContent = "100%";
@@ -2800,8 +2800,8 @@ function renderQuestion() {
                     <div class="bunpou-meaning-text">
                         <span>${question.mainPrompt}</span>
                         <div style="display:inline-flex;gap:6px;align-items:center;">
-                            <button type="button" class="bunpou-audio-btn" data-bunpou-speak aria-label="Dengarkan pelafalan normal" title="Dengarkan pelafalan normal">🔊</button>
-                            <button type="button" class="bunpou-audio-btn btn-audio-slow" data-bunpou-speak-slow aria-label="Dengarkan pelafalan pelan" title="Dengarkan pelafalan pelan">🐢</button>
+                            <button type="button" class="bunpou-audio-btn" data-bunpou-speak aria-label="Dengarkan pelafalan normal" title="Dengarkan pelafalan normal"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg></button>
+                            <button type="button" class="bunpou-audio-btn btn-audio-slow" data-bunpou-speak-slow aria-label="Dengarkan pelafalan pelan" title="Dengarkan pelafalan pelan"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 8 14"></polyline></svg></button>
                         </div>
                     </div>
                     <div class="bunpou-meaning-sub">(${question.meaning})</div>
@@ -2921,7 +2921,7 @@ function renderQuestion() {
       const answerSummary = isRomaji
         ? `<b>${question.target.join(" ")}</b> (${question.kanaText || question.kana})`
         : `<b>${question.target.join("")}</b> (${question.romaji})`;
-      feedback.innerHTML = `<strong>Tepat Sekali! 🎉</strong><span>Kalimat: ${answerSummary} • <i>${question.meaning}</i></span>`;
+      feedback.innerHTML = `<strong>Tepat Sekali!</strong><span>Kalimat: ${answerSummary} • <i>${question.meaning}</i></span>`;
 
       currentSession.results[currentSession.index] = {
         state: "is-correct",
@@ -2973,7 +2973,7 @@ function renderQuestion() {
       const answerSummary = isRomaji
         ? `<b>${question.target.join(" ")}</b> (${question.kanaText || question.kana})`
         : `<b>${question.target.join("")}</b> (${question.romaji})`;
-      feedback.innerHTML = `<strong>Benar! 🎉</strong><span>Kalimat: ${answerSummary} • <i>${question.meaning}</i></span>`;
+      feedback.innerHTML = `<strong>Benar!</strong><span>Kalimat: ${answerSummary} • <i>${question.meaning}</i></span>`;
     }
     }
     }
@@ -3136,7 +3136,7 @@ function renderQuestion() {
     if (existingResult.state === "is-correct") {
     feedback.hidden = false;
     feedback.className = "feedback is-good";
-    feedback.innerHTML = `<strong>Benar! 🎉</strong><span><b>${question.answer?.character || ""}</b> = <b>${question.answer?.romaji || ""}</b> <span class="feedback-sub-tag">Sudah Dijawab Benar</span></span>`;
+    feedback.innerHTML = `<strong>Benar!</strong><span><b>${question.answer?.character || ""}</b> = <b>${question.answer?.romaji || ""}</b> <span class="feedback-sub-tag">Sudah Dijawab Benar</span></span>`;
     $("[data-answer-grid]").querySelectorAll("button").forEach((button) => {
     button.disabled = true;
     if (button.dataset.answer === question.answer?.character) {
@@ -3237,7 +3237,7 @@ function handleMatchSelection(side, id) {
 
     if (match.matchedIds.length >= match.total) {
     feedback.className = "feedback is-good";
-    feedback.innerHTML = "<strong>Semua pasangan benar! 🎉</strong><span>Lanjut ke hasil latihan...</span>";
+    feedback.innerHTML = "<strong>Semua pasangan benar!</strong><span>Lanjut ke hasil latihan...</span>";
 
     currentSession.results[currentSession.index] = {
     state: "is-correct",
@@ -3259,7 +3259,7 @@ function handleMatchSelection(side, id) {
     } else {
     feedback.className = "feedback is-good";
     const info = matchedItem ? `<b>${matchedItem.character}</b> = <b>${matchedItem.romaji}</b> (${matchedItem.meaning})` : "";
-    feedback.innerHTML = `<strong>Cocok! ✨</strong><span>${info}</span>`;
+    feedback.innerHTML = `<strong>Cocok!</strong><span>${info}</span>`;
     }
 
     return;
@@ -3457,10 +3457,10 @@ function answerQuestion(value, state = "answered") {
   feedback.className = `feedback ${correct ? "is-good" : state === "skipped" ? "is-skip" : "is-bad"}`;
 
   const meaningText = question.type === "word" ? ` (${question.answer.meaning})` : "";
-  const streakBadge = currentSession.streak > 2 ? `<span class="feedback-streak-badge">🔥 ${currentSession.streak} runtunan</span>` : "";
+  const streakBadge = currentSession.streak > 2 ? `<span class="feedback-streak-badge">${currentSession.streak} runtunan</span>` : "";
 
   if (correct) {
-    feedback.innerHTML = `<strong>Benar! 🎉</strong><span><b>${question.answer.character}</b> = <b>${question.answer.romaji}</b>${meaningText}${streakBadge}</span>`;
+    feedback.innerHTML = `<strong>Benar!</strong><span><b>${question.answer.character}</b> = <b>${question.answer.romaji}</b>${meaningText}${streakBadge}</span>`;
   } else if (state === "skipped") {
     feedback.innerHTML = `<strong>Soal Dilewati</strong><span>Jawaban benar: <b>${question.answer.character}</b> = <b>${question.answer.romaji}</b>${meaningText}</span>`;
   } else {
@@ -3489,7 +3489,7 @@ function answerQuestion(value, state = "answered") {
     if (currentSession.combo > currentSession.maxCombo) {
     currentSession.maxCombo = currentSession.combo;
     }
-    feedback.innerHTML = `<strong>Benar! 🎉 +1s (+${bonusPts} PTS)</strong><span>🔥 Combo x${currentSession.combo}</span>`;
+    feedback.innerHTML = `<strong>Benar! +1s (+${bonusPts} PTS)</strong><span>Combo x${currentSession.combo}</span>`;
     } else {
     currentSession.combo = 1;
     feedback.innerHTML = `<strong>Kurang Tepat</strong><span>Jawaban benar: <b>${question.answer.character}</b> = <b>${question.answer.romaji}</b> (Combo ter-reset)</span>`;
@@ -3562,7 +3562,7 @@ document.querySelectorAll("[data-result-home]").forEach((resultHomeButton) => re
   const reviewBtn = $("[data-review-result]");
   if (reviewBtn) reviewBtn.style.display = "";
   const heading = document.querySelector("[data-result-view] h2");
-  if (heading) heading.innerHTML = "🎉 Latihan selesai!";
+  if (heading) heading.innerHTML = "Latihan selesai!";
   const accEl = $("[data-result-accuracy]");
   if (accEl && accEl.nextElementSibling) accEl.nextElementSibling.textContent = "Akurasi";
   currentSession = null;
@@ -3797,7 +3797,7 @@ function finishPractice() {
   if (resultRetryWrongBtn) {
     if (wrongQuestions.length > 0) {
     resultRetryWrongBtn.hidden = false;
-    resultRetryWrongBtn.textContent = `🔁 Ulangi ${wrongQuestions.length} Soal yang Salah`;
+    resultRetryWrongBtn.textContent = `Ulangi ${wrongQuestions.length} Soal yang Salah`;
     resultRetryWrongBtn.onclick = () => {
     startRetrySession(wrongQuestions);
     };
@@ -3973,7 +3973,7 @@ function finishPractice() {
     if (allMistakes.length > 0) {
     reviewBtn.textContent = `Tinjau Kesalahan (${allMistakes.length})`;
     } else {
-    reviewBtn.textContent = "Nilai Sempurna 🎉";
+    reviewBtn.textContent = "Nilai Sempurna";
     }
   }
 
@@ -3992,8 +3992,8 @@ function finishPractice() {
         <div style="display:inline-flex;align-items:center;gap:8px;">
         ${item.speakText ? `
         <div style="display:inline-flex;gap:4px;align-items:center;">
-          <button type="button" class="mistake-audio-btn" data-mistake-speak="${item.speakText}" aria-label="Dengarkan pengucapan normal">🔊 Dengarkan</button>
-          <button type="button" class="mistake-audio-btn btn-audio-slow" data-mistake-speak-slow="${item.speakText}" aria-label="Dengarkan pengucapan pelan">🐢 Pelan</button>
+          <button type="button" class="mistake-audio-btn" data-mistake-speak="${item.speakText}" aria-label="Dengarkan pengucapan normal"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg> Dengarkan</button>
+          <button type="button" class="mistake-audio-btn btn-audio-slow" data-mistake-speak-slow="${item.speakText}" aria-label="Dengarkan pengucapan pelan"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 8 14"></polyline></svg> Pelan</button>
         </div>` : ""}
         <span class="mistake-num">#${idx + 1}</span>
         </div>
@@ -4001,18 +4001,18 @@ function finishPractice() {
         <div class="mistake-prompt">${item.prompt}</div>
         <div class="mistake-comparison-boxes">
         <div class="mistake-box is-wrong">
-        <small>❌ Jawaban Kamu</small>
+        <small>Jawaban Kamu</small>
         <strong>${item.userAns}</strong>
         </div>
         <div class="mistake-box is-correct">
-        <small>✅ Jawaban Benar</small>
+        <small>Jawaban Benar</small>
         <strong>${item.correctAns}</strong>
         </div>
         </div>
         ${item.hasStrokePreview && item.character ? `
                                 <div class="mistake-stroke-preview-section">
                                     <div class="mistake-stroke-header">
-                                        <span class="mistake-stroke-icon">✍️</span>
+                                        <span class="mistake-stroke-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path></svg></span>
                                         <span class="mistake-stroke-title">Urutan & Bentuk Goresan Resmi (KanjiVG)</span>
                                     </div>
                                     <div class="mistake-stroke-grid">
@@ -4021,7 +4021,7 @@ function finishPractice() {
                                 </div>
                             ` : ""}
         <div class="mistake-explanation-box">
-        <span class="exp-icon">💡</span>
+        <span class="exp-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg></span>
         <span>${item.explanation}</span>
         </div>
       </div>
@@ -4060,7 +4060,7 @@ function finishPractice() {
     mistakeContainer.innerHTML = `
                 <div class="perfect-note">
                     <div class="perfect-badge">PERFECT SCORE · 満点達成</div>
-                    <h3>🎉 Luar Biasa! Sempurna!</h3>
+                    <h3>Luar Biasa! Sempurna!</h3>
                     <p>Semua soal dalam sesi latihan ini berhasil kamu selesaikan 100% tepat tanpa ada kesalahan.</p>
                 </div>
             `;
@@ -4108,7 +4108,7 @@ const answerObserver = new MutationObserver(() => {
     return;
   }
   if (question.kind === "audio") {
-    $("[data-question-prompt]").textContent = "🔊";
+    $("[data-question-prompt]").innerHTML = '<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>';
   }
 
   if (question.kind !== "understand" && question.kind !== "audio") {

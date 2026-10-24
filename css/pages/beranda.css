@@ -2330,21 +2330,26 @@ RESPONSIF MODE HP (<= 768px):
 }
 /* Pattern Kumo Gelap & Terang untuk Slider Kutipan Beranda */
 .page-beranda .section-quote-slider.quote-theme-dark .quote-card::after,
-.page-beranda .quote-card:not(.quote-theme-white)::after {
+.page-beranda .section-quote-slider.quote-theme-white .quote-card::after,
+.page-beranda .quote-card::after {
   content: "" !important;
   position: absolute !important;
   inset: 0 !important;
-  background-image: url("../../images/mirai/background/c1b.jpeg") !important;
   background-size: 200px auto !important;
   background-repeat: repeat !important;
   background-position: center top !important;
-  opacity: var(--opacity-c1b) !important;
-  mix-blend-mode: screen !important;
   pointer-events: none !important;
   z-index: 1 !important;
   border-radius: inherit !important;
   display: block !important;
   transition: opacity 0.3s ease, transform 0.3s ease !important;
+}
+
+.page-beranda .section-quote-slider.quote-theme-dark .quote-card::after,
+.page-beranda .quote-card:not(.quote-theme-white)::after {
+  background-image: url("../../images/mirai/background/c1b.jpeg") !important;
+  opacity: var(--opacity-c1b) !important;
+  mix-blend-mode: screen !important;
 }
 
 .page-beranda .section-quote-slider.quote-theme-dark .quote-card:hover::after,
@@ -2361,6 +2366,7 @@ RESPONSIF MODE HP (<= 768px):
 
 .page-beranda .section-quote-slider.quote-theme-white .quote-card:hover::after {
   opacity: var(--opacity-c1w-hover) !important;
+  transform: scale(1.02) !important;
 }
 
 .page-beranda .quote-card > * {

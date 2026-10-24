@@ -603,12 +603,34 @@ MODAL DETAIL RIWAYAT PAPAN PERINGKAT (SIARAN, KEHADIRAN, PRESTASI)
   padding: 32px 30px 28px !important;
   box-sizing: border-box !important;
   border-radius: 24px !important;
-  background: linear-gradient(165deg, #1c1326 0%, #110b17 100%) !important;
-  border: 1.5px solid rgba(255, 79, 145, 0.45) !important;
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.75), 0 0 35px rgba(255, 79, 145, 0.22) !important;
-  color: #ffffff !important;
+  background-color: #ffffff !important;
+  background-image: none !important;
+  border: 1.5px solid #f4bfd3 !important;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18), 0 8px 24px rgba(233, 30, 99, 0.08) !important;
+  color: #18151b !important;
   transform: scale(0.94) translateY(12px) !important;
   transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.lb-modal-box::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  background-image: url("../../images/mirai/background/w1w.jpeg") !important;
+  background-size: 200px auto !important;
+  background-repeat: repeat !important;
+  background-position: center top !important;
+  opacity: var(--opacity-w1w, 0.12) !important;
+  mix-blend-mode: multiply !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+  border-radius: inherit !important;
+  display: block !important;
+}
+
+.lb-modal-box > * {
+  position: relative !important;
+  z-index: 2 !important;
 }
 
 .lb-modal-backdrop.active .lb-modal-box {
@@ -620,17 +642,17 @@ MODAL DETAIL RIWAYAT PAPAN PERINGKAT (SIARAN, KEHADIRAN, PRESTASI)
 }
 
 .lb-modal-box::-webkit-scrollbar-track, .lb-modal-log-list::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(0, 0, 0, 0.04);
   border-radius: 4px;
 }
 
 .lb-modal-box::-webkit-scrollbar-thumb, .lb-modal-log-list::-webkit-scrollbar-thumb {
-  background: rgba(255, 79, 145, 0.45);
+  background: rgba(233, 30, 99, 0.3);
   border-radius: 4px;
 }
 
 .lb-modal-box::-webkit-scrollbar-thumb:hover, .lb-modal-log-list::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 79, 145, 0.75);
+  background: rgba(233, 30, 99, 0.6);
 }
 
 .lb-modal-close-btn {
@@ -640,9 +662,9 @@ MODAL DETAIL RIWAYAT PAPAN PERINGKAT (SIARAN, KEHADIRAN, PRESTASI)
   width: 36px !important;
   height: 36px !important;
   border-radius: 50% !important;
-  background: rgba(255, 255, 255, 0.08) !important;
-  border: 1px solid rgba(255, 255, 255, 0.12) !important;
-  color: #ffffff !important;
+  background: rgba(0, 0, 0, 0.05) !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  color: #18151b !important;
   font-size: 22px !important;
   line-height: 1 !important;
   display: flex !important;
@@ -650,11 +672,13 @@ MODAL DETAIL RIWAYAT PAPAN PERINGKAT (SIARAN, KEHADIRAN, PRESTASI)
   justify-content: center !important;
   cursor: pointer !important;
   transition: all 0.2s ease !important;
+  z-index: 5 !important;
 }
 
 .lb-modal-close-btn:hover {
   background: var(--pink, #ff4f91) !important;
   border-color: var(--pink, #ff4f91) !important;
+  color: #ffffff !important;
   transform: rotate(90deg) !important;
 }
 
@@ -672,7 +696,7 @@ MODAL DETAIL RIWAYAT PAPAN PERINGKAT (SIARAN, KEHADIRAN, PRESTASI)
   flex-shrink: 0 !important;
   border-radius: 50% !important;
   border: 3px solid #ff4f91 !important;
-  box-shadow: 0 0 20px rgba(255, 79, 145, 0.35) !important;
+  box-shadow: 0 4px 16px rgba(255, 79, 145, 0.25) !important;
   background: #ffffff !important;
 }
 
@@ -699,7 +723,8 @@ MODAL DETAIL RIWAYAT PAPAN PERINGKAT (SIARAN, KEHADIRAN, PRESTASI)
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  border: 2px solid #1c1326 !important;
+  border: 2px solid #ffffff !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15) !important;
 }
 
 .lb-modal-meta {
@@ -711,10 +736,10 @@ MODAL DETAIL RIWAYAT PAPAN PERINGKAT (SIARAN, KEHADIRAN, PRESTASI)
   display: inline-block !important;
   padding: 3px 10px !important;
   border-radius: 12px !important;
-  background: rgba(255, 79, 145, 0.16) !important;
-  border: 1px solid rgba(255, 79, 145, 0.3) !important;
-  color: #ff659b !important;
-  font-size: 10.5px !important;
+  background: rgba(233, 30, 99, 0.08) !important;
+  border: 1px solid rgba(233, 30, 99, 0.22) !important;
+  color: #d81b60 !important;
+  font-size: 11px !important;
   font-weight: 800 !important;
   letter-spacing: 0.8px !important;
   margin-bottom: 6px !important;
@@ -723,14 +748,31 @@ MODAL DETAIL RIWAYAT PAPAN PERINGKAT (SIARAN, KEHADIRAN, PRESTASI)
 .lb-modal-name {
   font-size: 1.4rem !important;
   font-weight: 800 !important;
-  color: #ffffff !important;
+  color: #18151b !important;
   margin: 0 0 4px 0 !important;
 }
 
 .lb-modal-sub {
   font-size: 12.5px !important;
-  color: rgba(255, 255, 255, 0.65) !important;
+  color: #554e57 !important;
   margin: 0 0 10px 0 !important;
+}
+
+.lb-modal-sub .lb-div-tag {
+  color: #d81b60 !important;
+  font-weight: 700 !important;
+}
+
+.lb-modal-sub .lb-period-tag,
+.lb-modal-sub .podium-period-pill {
+  display: inline-block !important;
+  padding: 2px 8px !important;
+  border-radius: 6px !important;
+  background: rgba(0, 0, 0, 0.05) !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  color: #64748b !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
 }
 
 .lb-modal-stats-pill {
@@ -739,23 +781,24 @@ MODAL DETAIL RIWAYAT PAPAN PERINGKAT (SIARAN, KEHADIRAN, PRESTASI)
   gap: 8px !important;
   padding: 5px 14px !important;
   border-radius: 12px !important;
-  background: rgba(255, 255, 255, 0.06) !important;
-  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+  background: #fff5f8 !important;
+  border: 1px solid #fbcfe8 !important;
   font-size: 12.5px !important;
 }
 
 .lb-modal-stats-pill strong {
-  color: #ffd700 !important;
+  color: #d97706 !important;
   font-size: 14px !important;
 }
 
 .lb-modal-stats-pill span {
-  color: #cbd5e1 !important;
+  color: #475569 !important;
+  font-weight: 600 !important;
 }
 
 .lb-modal-divider {
   height: 1px !important;
-  background: linear-gradient(90deg, rgba(255, 79, 145, 0.4), transparent) !important;
+  background: #eee5e9 !important;
   margin-bottom: 20px !important;
 }
 
@@ -771,7 +814,7 @@ MODAL DETAIL RIWAYAT PAPAN PERINGKAT (SIARAN, KEHADIRAN, PRESTASI)
 .lb-modal-list-heading {
   font-size: 1.05rem !important;
   font-weight: 800 !important;
-  color: #ffffff !important;
+  color: #18151b !important;
   margin: 0 !important;
   display: flex !important;
   align-items: center !important;
@@ -781,9 +824,9 @@ MODAL DETAIL RIWAYAT PAPAN PERINGKAT (SIARAN, KEHADIRAN, PRESTASI)
 .lb-modal-count-badge {
   padding: 3px 10px !important;
   border-radius: 10px !important;
-  background: rgba(34, 197, 94, 0.16) !important;
-  border: 1px solid rgba(34, 197, 94, 0.35) !important;
-  color: #4ade80 !important;
+  background: rgba(16, 185, 129, 0.1) !important;
+  border: 1px solid rgba(16, 185, 129, 0.28) !important;
+  color: #047857 !important;
   font-size: 11.5px !important;
   font-weight: 700 !important;
 }
@@ -800,14 +843,16 @@ MODAL DETAIL RIWAYAT PAPAN PERINGKAT (SIARAN, KEHADIRAN, PRESTASI)
 .lb-log-card {
   padding: 14px 18px !important;
   border-radius: 14px !important;
-  background: rgba(255, 255, 255, 0.04) !important;
-  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  background: #ffffff !important;
+  border: 1px solid #eadde3 !important;
+  box-shadow: 0 2px 8px rgba(31, 20, 29, 0.04) !important;
   transition: all 0.2s ease !important;
 }
 
 .lb-log-card:hover {
-  background: rgba(255, 79, 145, 0.08) !important;
-  border-color: rgba(255, 79, 145, 0.3) !important;
+  background: #fff5f8 !important;
+  border-color: rgba(233, 30, 99, 0.35) !important;
+  box-shadow: 0 4px 14px rgba(233, 30, 99, 0.08) !important;
   transform: translateX(3px) !important;
 }
 
@@ -826,8 +871,9 @@ MODAL DETAIL RIWAYAT PAPAN PERINGKAT (SIARAN, KEHADIRAN, PRESTASI)
   gap: 5px !important;
   font-size: 11.5px !important;
   font-weight: 700 !important;
-  color: #fb923c !important;
-  background: rgba(249, 115, 22, 0.12) !important;
+  color: #c2410c !important;
+  background: #fff7ed !important;
+  border: 1px solid #ffedd5 !important;
   padding: 2px 8px !important;
   border-radius: 6px !important;
 }
@@ -837,14 +883,15 @@ MODAL DETAIL RIWAYAT PAPAN PERINGKAT (SIARAN, KEHADIRAN, PRESTASI)
   font-weight: 700 !important;
   padding: 2px 8px !important;
   border-radius: 6px !important;
-  background: rgba(255, 255, 255, 0.07) !important;
-  color: #cbd5e1 !important;
+  background: #f1f5f9 !important;
+  border: 1px solid #e2e8f0 !important;
+  color: #475569 !important;
 }
 
 .lb-log-title {
   font-size: 13.5px !important;
   font-weight: 700 !important;
-  color: #ffffff !important;
+  color: #18151b !important;
   line-height: 1.45 !important;
   margin: 0 0 8px 0 !important;
 }
@@ -852,13 +899,13 @@ MODAL DETAIL RIWAYAT PAPAN PERINGKAT (SIARAN, KEHADIRAN, PRESTASI)
 .lb-log-rekan-wrap, .lb-log-meta-wrap {
   margin-top: 6px !important;
   padding-top: 8px !important;
-  border-top: 1px dashed rgba(255, 255, 255, 0.08) !important;
+  border-top: 1px dashed #e5e7eb !important;
 }
 
 .lb-rekan-label {
   display: block !important;
   font-size: 11px !important;
-  color: rgba(255, 255, 255, 0.6) !important;
+  color: #64748b !important;
   margin-bottom: 5px !important;
   font-weight: 600 !important;
 }
@@ -876,17 +923,17 @@ MODAL DETAIL RIWAYAT PAPAN PERINGKAT (SIARAN, KEHADIRAN, PRESTASI)
   gap: 4px !important;
   padding: 3px 10px !important;
   border-radius: 8px !important;
-  background: rgba(147, 51, 234, 0.18) !important;
-  border: 1px solid rgba(147, 51, 234, 0.35) !important;
-  color: #c084fc !important;
+  background: #fdf2f8 !important;
+  border: 1px solid #fbcfe8 !important;
+  color: #be185d !important;
   font-size: 11.5px !important;
   font-weight: 700 !important;
 }
 
 .lb-rekan-badge.solo {
-  background: rgba(255, 255, 255, 0.07) !important;
-  border-color: rgba(255, 255, 255, 0.15) !important;
-  color: #94a3b8 !important;
+  background: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+  color: #64748b !important;
 }
 
 .lb-agenda-badge, .lb-prestasi-badge {
@@ -894,7 +941,11 @@ MODAL DETAIL RIWAYAT PAPAN PERINGKAT (SIARAN, KEHADIRAN, PRESTASI)
   align-items: center !important;
   gap: 4px !important;
   font-size: 11.5px !important;
-  color: #cbd5e1 !important;
+  color: #475569 !important;
+  background: #f8fafc !important;
+  border: 1px solid #e2e8f0 !important;
+  padding: 2px 8px !important;
+  border-radius: 6px !important;
 }
 
 .lb-modal-footer {
@@ -904,22 +955,22 @@ MODAL DETAIL RIWAYAT PAPAN PERINGKAT (SIARAN, KEHADIRAN, PRESTASI)
   gap: 16px !important;
   margin-top: 22px !important;
   padding-top: 16px !important;
-  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-top: 1px solid #eee5e9 !important;
   flex-wrap: wrap !important;
 }
 
 .lb-modal-notice {
   font-size: 11.5px !important;
-  color: rgba(255, 255, 255, 0.5) !important;
+  color: #64748b !important;
   margin: 0 !important;
 }
 
 .lb-modal-btn-close {
   padding: 8px 20px !important;
   border-radius: 12px !important;
-  background: rgba(255, 255, 255, 0.08) !important;
-  border: 1px solid rgba(255, 255, 255, 0.16) !important;
-  color: #ffffff !important;
+  background: #f1f5f9 !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #1e293b !important;
   font-size: 13px !important;
   font-weight: 700 !important;
   cursor: pointer !important;
@@ -929,6 +980,7 @@ MODAL DETAIL RIWAYAT PAPAN PERINGKAT (SIARAN, KEHADIRAN, PRESTASI)
 .lb-modal-btn-close:hover {
   background: var(--pink, #ff4f91) !important;
   border-color: var(--pink, #ff4f91) !important;
+  color: #ffffff !important;
 }
 /* Interaktivitas Podium & Baris Tabel */
 .podium-card {

@@ -804,118 +804,19 @@ body.page-toko, .page-toko {
   color: #d5ccd3 !important;
   margin: 0 !important;
 }
-/* 5. Seksi 3 (GELAP): Mirai no Konbini & Kemandirian Kas (Pola Kumo Gelap c1b.jpeg) */
-.toko-kwu-dark-section {
+/* 5. Seksi 3 (PUTIH): Pertanyaan yang Sering Diajukan / FAQ (Pola Kumo Terang c1w.jpeg) */
+.toko-faq-white-section {
   position: relative !important;
   z-index: 12 !important;
   width: 100% !important;
   background-color: #ffffff !important;
   background: #ffffff !important;
-  color: #242126 !important;
-  padding: 85px 7vw !important;
-}
-
-.toko-kwu-card {
-  max-width: 1240px !important;
-  margin: 0 auto !important;
-  background: #ffffff !important;
-  border: 1.5px solid var(--pink-border, #f4bfd3) !important;
-  border-radius: 20px !important;
-  padding: 40px 44px !important;
-  position: relative !important;
-  overflow: hidden !important;
-  box-shadow: 0 8px 24px rgba(233, 30, 99, 0.06) !important;
-}
-
-.toko-kwu-card::after {
-  content: "" !important;
-  position: absolute !important;
-  inset: 0 !important;
-  background-image: url("../../images/mirai/background/c1w.jpeg") !important;
-  background-size: 200px auto !important;
-  opacity: var(--opacity-c1w)!important;
-  mix-blend-mode: multiply !important;
-  pointer-events: none !important;
-}
-
-.toko-kwu-card > * {
-  position: relative !important;
-  z-index: 2 !important;
-}
-
-.toko-kwu-badge {
-  display: inline-block !important;
-  padding: 6px 16px !important;
-  border-radius: 999px !important;
-  font-size: 12.5px !important;
-  font-weight: 800 !important;
-  background: #fff0f5 !important;
-  border: 1.5px solid #fbcfe8 !important;
-  color: #c2185b !important;
-  margin-bottom: 18px !important;
-  box-shadow: 0 2px 8px rgba(233, 30, 99, 0.06) !important;
-}
-
-.kwu-description {
-  font-size: 15.5px !important;
-  line-height: 1.8 !important;
-  color: #2d2433 !important;
-  font-weight: 500 !important;
-  max-width: 900px !important;
-  margin: 0 0 28px !important;
-}
-
-.toko-kwu-stats {
-  display: grid !important;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;
-  gap: 16px !important;
-}
-
-.kwu-stat-box {
-  background: linear-gradient(135deg, #ffffff 0%, #fff5f8 100%) !important;
-  border: 1.5px solid rgba(233, 30, 99, 0.2) !important;
-  border-radius: 14px !important;
-  padding: 22px 20px !important;
-  text-align: center !important;
-  box-shadow: 0 4px 16px rgba(233, 30, 99, 0.06), 0 1px 3px rgba(0, 0, 0, 0.03) !important;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease !important;
-}
-
-.kwu-stat-box:hover {
-  transform: translateY(-3px) !important;
-  border-color: rgba(233, 30, 99, 0.45) !important;
-  box-shadow: 0 8px 24px rgba(233, 30, 99, 0.14) !important;
-}
-
-.kwu-stat-box strong {
-  display: block !important;
-  font-size: 30px !important;
-  font-weight: 900 !important;
-  color: #d81b60 !important;
-  letter-spacing: -0.5px !important;
-  margin-bottom: 6px !important;
-}
-
-.kwu-stat-box small {
-  display: block !important;
-  font-size: 13.5px !important;
-  color: #261f2c !important;
-  font-weight: 700 !important;
-  line-height: 1.4 !important;
-}
-/* 6. Seksi 4 (PUTIH): Pertanyaan yang Sering Diajukan / FAQ (Pola Kumo Terang c1w.jpeg) */
-.toko-faq-white-section {
-  position: relative !important;
-  z-index: 12 !important;
-  width: 100% !important;
-  background-color: #0e0b12 !important;
-  background: #0e0b12 !important;
-  color: #f5edf4 !important;
+  color: #18151b !important;
   padding: 85px 7vw 110px !important;
 }
 
 .toko-faq-white-section .heading {
-  color: #ffffff !important;
+  color: #18151b !important;
 }
 
 .toko-faq-white-section .heading span {
@@ -923,7 +824,7 @@ body.page-toko, .page-toko {
 }
 
 .toko-faq-white-section .section-desc {
-  color: #d5ccd3 !important;
+  color: #64748b !important;
 }
 
 .toko-faq-grid {
@@ -935,30 +836,30 @@ body.page-toko, .page-toko {
 }
 
 .toko-faq-item-white {
-  background: #19141f !important;
-  border: 1px solid #3d3040 !important;
+  background: #ffffff !important;
+  border: 1.5px solid var(--pink-border, #f4bfd3) !important;
   border-radius: 14px !important;
   padding: 20px 24px !important;
   position: relative !important;
   overflow: hidden !important;
   transition: border-color 0.25s ease, box-shadow 0.25s ease !important;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4) !important;
+  box-shadow: 0 8px 24px rgba(233, 30, 99, 0.06) !important;
 }
 
 .toko-faq-item-white::after {
   content: "" !important;
   position: absolute !important;
   inset: 0 !important;
-  background-image: url("../../images/mirai/background/c1b.jpeg") !important;
+  background-image: url("../../images/mirai/background/c1w.jpeg") !important;
   background-size: 200px auto !important;
-  opacity: var(--opacity-c1b)!important;
-  mix-blend-mode: screen !important;
+  opacity: var(--opacity-c1w)!important;
+  mix-blend-mode: multiply !important;
   pointer-events: none !important;
 }
 
 .toko-faq-item-white:hover {
   border-color: #ff4f91 !important;
-  box-shadow: 0 12px 28px rgba(255, 79, 145, 0.22) !important;
+  box-shadow: 0 12px 28px rgba(255, 79, 145, 0.14) !important;
 }
 
 .toko-faq-item-white[open] {
@@ -969,7 +870,7 @@ body.page-toko, .page-toko {
   position: relative !important;
   z-index: 2 !important;
   font-size: 15.5px !important;
-  color: #ffffff !important;
+  color: #18151b !important;
   cursor: pointer !important;
   outline: none !important;
   user-select: none !important;
@@ -1000,9 +901,9 @@ body.page-toko, .page-toko {
   z-index: 2 !important;
   font-size: 14px !important;
   line-height: 1.7 !important;
-  color: #d5ccd3 !important;
+  color: #475569 !important;
   margin: 14px 0 0 !important;
-  border-top: 1px solid #2e2535 !important;
+  border-top: 1px dashed #e2e8f0 !important;
   padding-top: 14px !important;
 }
 /* 7. Tombol Keranjang Melayang */
@@ -1364,10 +1265,6 @@ body.cart-open .menu-btn, body:has(.toko-cart-drawer:not([hidden])) .menu-btn, b
 
   .toko-card-thumb {
     height: 175px !important;
-  }
-
-  .toko-kwu-card {
-    padding: 30px 24px !important;
   }
 }
 

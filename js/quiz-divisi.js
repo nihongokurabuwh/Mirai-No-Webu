@@ -143,28 +143,28 @@
     bahasa: {
       title: "Divisi Bahasa & Budaya",
       kanji: "言語・文化部門",
-      icon: "📚",
+      icon: '<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>',
       link: "bahasa.html",
       explanation: "Kamu memiliki rasa ingin tahu yang mendalam terhadap percakapan, makna aksara Kanji, dan filosofi kebudayaan Jepang. Kamu adalah tipe pembelajar tekun yang senang berdiskusi dan memahami cara berpikir masyarakat Jepang dari akarnya."
     },
     cosplay: {
       title: "Divisi Cosplay & Seni Peran",
       kanji: "コスプレ部門",
-      icon: "🎭",
+      icon: '<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line></svg>',
       link: "cosplay.html",
       explanation: "Kamu memiliki jiwa ekspresif, percaya diri, dan menyukai dunia seni peran! Kamu antusias menghidupkan karakter 2D menjadi nyata lewat kostum, tata rias wajah, wig styling, dan aksi panggung yang memukau penonton."
     },
     desain: {
       title: "Divisi Desain & Kreatif",
       kanji: "デザイン部門",
-      icon: "🎨",
+      icon: '<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="13.5" cy="6.5" r=".5"></circle><circle cx="17.5" cy="10.5" r=".5"></circle><circle cx="8.5" cy="7.5" r=".5"></circle><circle cx="6.5" cy="12.5" r=".5"></circle><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"></path></svg>',
       link: "desain.html",
       explanation: "Kamu memiliki kepekaan visual yang tinggi dan imajinasi kreatif tanpa batas. Kamu senang menggoreskan karya ilustrasi, menyusun palet warna estetik, dan merancang identitas grafis yang memanjakan mata."
     },
     kewirausahaan: {
       title: "Divisi Kewirausahaan",
       kanji: "起業・物販部門",
-      icon: "🍱",
+      icon: '<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>',
       link: "kewirausahaan.html",
       explanation: "Kamu berjiwa strategis, komunikatif, dan senang berinovasi dalam dunia bisnis kreatif. Kamu cocok memimpin stan bazaar Mirai no Konbini, mengelola merchandise, dan mengembangkan kemandirian finansial klub."
     }
@@ -232,7 +232,7 @@
       // Kalkulasi match rate (skor tertinggi proporsional antara 78% s/d 96%)
       const matchRate = Math.min(96, Math.max(76, Math.round((sorted[0][1] / QUESTIONS.length) * 40 + 56)));
 
-      quizResultIcon.textContent = topDivInfo.icon;
+      quizResultIcon.innerHTML = topDivInfo.icon;
       quizResultTitle.textContent = topDivInfo.title;
       quizResultKanji.textContent = topDivInfo.kanji;
       quizScoreHighlight.textContent = `${matchRate}% Cocok!`;
@@ -240,7 +240,7 @@
       quizExplanation.textContent = topDivInfo.explanation;
 
       quizCtaLink.href = topDivInfo.link;
-      quizCtaLink.innerHTML = `<span>🚀 Jelajahi Profil ${topDivInfo.title} →</span>`;
+      quizCtaLink.innerHTML = `<span>Jelajahi Profil ${topDivInfo.title} →</span>`;
 
       // Breakdown bars
       quizBreakdownBars.innerHTML = sorted.map(([k, count]) => {
