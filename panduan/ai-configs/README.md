@@ -1,12 +1,25 @@
-# Konfigurasi AI Assistant (Cursor, Copilot, Claude, Codex)
+# Konfigurasi Resmi & Template AI Assistant (Antigravity, Cursor, Copilot, Claude)
 
-Folder ini menyimpan berkas aturan instruksi otomatis (*AI rules & system prompts*) untuk editor dan asisten cerdas yang digunakan oleh pengembang Mirai no Webu:
+Repositori **Mirai No Webu** mendukung integrasi penuh dengan berbagai *AI Coding Agent* dan asisten pemrograman modern. Untuk memastikan efisiensi token, kecepatan respons, dan kepatuhan terhadap standar desain, berkas konfigurasi telah diorganisir sesuai dokumentasi resmi masing-masing platform:
 
-## Berkas yang Tersedia:
-1. **`.cursorrules`**: Konfigurasi otomatis untuk editor **Cursor AI**. Jika Anda menggunakan Cursor, salin berkas ini ke *root* direktori proyek atau ke `.cursor/rules/`.
-2. **`copilot-instructions.md`**: Konfigurasi instruksi sistem untuk **GitHub Copilot**. Jika Anda menggunakan ekstensi Copilot di VS Code atau GitHub, salin berkas ini ke `.github/copilot-instructions.md`.
-3. **Claude Code / CLAUDE.md**: Jika menggunakan Claude Code CLI, Anda dapat merujuk atau menautkan aturan dari `panduan/agent.md` atau berkas ini.
-4. **Antigravity AI**: Pengguna Google Antigravity secara otomatis membaca `panduan/agent.md` dan `panduan/CONTEKAN-TAG.md` sebagai sumber kebenaran tunggal (*Single Source of Truth*).
+---
+
+## 📍 Penempatan Resmi Konfigurasi AI di Workspace
+
+| Platform AI | Berkas Konfigurasi Aktif | Lokasi Resmi di Repositori | Keterangan & Mekanisme Kerja |
+| :--- | :--- | :--- | :--- |
+| **Google Antigravity / Gemini** | `panduan/agent.md`<br>`panduan/CONTEKAN-TAG.md` | Workspace Context | Antigravity secara native membaca berkas panduan dan cheatsheet tag langsung dari workspace sebagai *Single Source of Truth*. |
+| **Cursor AI** | `.cursorrules` | Root (`/.cursorrules`) | Cursor membaca file `.cursorrules` di root direktori untuk memuat aturan otomatis setiap memulai obrolan/komposisi kode. File ini di-nest di bawah `.gitignore` di VS Code explorer. |
+| **GitHub Copilot** | `copilot-instructions.md` | Root (`.github/copilot-instructions.md`) | Sesuai dokumentasi resmi GitHub, Copilot di VS Code dan GitHub.com membaca instruksi workspace dari folder `.github/`. |
+| **Claude Code CLI** | `CLAUDE.md` / `agent.md` | `panduan/agent.md` | Claude Code CLI dapat diarahkan langsung membaca `panduan/agent.md` untuk konteks lengkap arsitektur. |
+
+---
+
+## 🗂️ Berkas Cadangan & Rujukan di Folder Ini (`panduan/ai-configs/`):
+
+1. **`panduan/ai-configs/.cursorrules`**: Salinan rujukan template aturan untuk Cursor AI.
+2. **`panduan/ai-configs/copilot-instructions.md`**: Salinan rujukan template aturan untuk GitHub Copilot.
+3. **`panduan/ai-configs/README.md`**: Dokumentasi panduan ini.
 
 > [!NOTE]
-> Berkas-berkas ini disimpan di folder `panduan/ai-configs/` agar *root* direktori proyek tetap bersih (*Clean Root Standard*) dan memudahkan pengurus klub dalam memelihara struktur repositori.
+> Berkas aktif di root (`.cursorrules` dan `.github/copilot-instructions.md`) disinkronkan secara berkala dengan isi `panduan/agent.md` agar seluruh asisten AI bekerja dengan instruksi arsitektur yang seragam dan mutakhir.

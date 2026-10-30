@@ -10,7 +10,7 @@
   "explorer.fileNesting.expand": false,
   "explorer.fileNesting.patterns": {
     "index.html": "404.html, offline.html, manifest.webmanifest, service-worker.js, robots.txt, sitemap.xml, favicon.ico, favicon.png",
-    ".gitignore": "cspell.json, .cursorignore"
+    ".gitignore": "cspell.json, .cursorignore, .cursorrules"
   },
   "search.exclude": {
     "**/.git": true,

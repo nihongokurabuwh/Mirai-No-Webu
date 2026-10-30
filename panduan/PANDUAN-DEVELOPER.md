@@ -3,27 +3,32 @@
 
 Selamat datang, Pengurus dan Pengembang Generasi Penerus Klub Bahasa & Kebudayaan Jepang **MIRAI NO HANA**! 🎌
 
-Dokumen ini disusun sebagai **Buku Saku Serah-Terima Jabatan (Sertijab)** untuk memandu Anda memahami, merawat, dan mengembangkan website **Mirai no Webu**. Website ini dirancang 100% mandiri oleh siswa anggota klub sebagai ruang berkarya, wadah belajar interaktif, dan etalase kebanggaan ekstrakurikuler kita.
+Dokumen ini disusun sebagai **Buku Saku Serah-Terima Jabatan (Sertijab)** untuk memandu Anda memahami, merawat, dan mengembangkan website **Mirai no Webu**. Website ini dirancang 100% mandiri oleh siswa anggota klub sebagai ruang berkarya, wadah belajar interaktif, etalase ekstrakurikuler kita, dan laboratorium kolaborasi coding modern bersama **AI Coding Agent**.
 
 ---
 
 ## 📑 Daftar Isi
-0. [Bab 0: Persiapan Awal & Instalasi Tools (Wajib untuk Pengurus/Developer Baru)](#-bab-0-persiapan-awal--instalasi-tools-wajib-untuk-pengurusdeveloper-baru)
-   - [Langkah 1: Instalasi Code Editor & Tools Dasar](#langkah-1-instalasi-code-editor--tools-dasar)
-   - [Langkah 2: Instalasi AI Coding Agent di VS Code](#langkah-2-instalasi-ai-coding-agent-di-vs-code)
-   - [Langkah 3: Daftar Ekstensi VS Code Wajib & Fungsinya](#langkah-3-daftar-ekstensi-vs-code-wajib--fungsinya)
-   - [Langkah 4: Cara Mengatur VS Code (Settings & Extensions)](#langkah-4-cara-mengatur-vs-code-settings--extensions)
-   - [Langkah 5: Cara Memakai Utility Class Universal (Anti-Rusak)](#langkah-5-cara-memakai-utility-class-universal-anti-rusak)
-1. [Pengenalan Arsitektur Web (Zero-Framework Architecture)](#1-pengenalan-arsitektur-web-zero-framework-architecture)
-2. [Peta Berkas & Folder Lengkap (File Map)](#2-peta-berkas--folder-lengkap-file-map)
+0. [Bab 0: Persiapan Lingkungan Kerja (VS Code, Git, GitHub & Ekstensi)](#-bab-0-persiapan-lingkungan-kerja-vs-code-git-github--ekstensi)
+   - [0.1 Instalasi Software Dasar](#01-instalasi-software-dasar)
+   - [0.2 Setup Git & Identitas Kontributor GitHub](#02-setup-git--identitas-kontributor-github)
+   - [0.3 Konfigurasi VS Code: File Nesting & Efisiensi Indexing](#03-konfigurasi-vs-code-file-nesting--efisiensi-indexing)
+   - [0.4 Ekstensi VS Code: Rekomendasi Workspace vs Ekstensi Terpasang](#04-ekstensi-vs-code-rekomendasi-workspace-vs-ekstensi-terpasang)
+   - [0.5 Menggunakan Utility Class Universal (.mirai-card-*)](#05-menggunakan-utility-class-universal-mirai-card-)
+1. [Pengenalan Arsitektur Web (Zero-Framework Web Standards)](#1-pengenalan-arsitektur-web-zero-framework-web-standards)
+2. [Peta Berkas & Folder Lengkap (File Map & Clean Root)](#2-peta-berkas--folder-lengkap-file-map--clean-root)
 3. [Tutorial Langkah-demi-Langkah Update Konten Rutin](#3-tutorial-langkah-demi-langkah-update-konten-rutin)
    - [3.1 Tambah Info Lomba & Acara Baru](#31-tambah-info-lomba--acara-baru)
    - [3.2 Update Skor & Leaderboard Peringkat](#32-update-skor--leaderboard-peringkat)
    - [3.3 Tambah Produk Toko / Konbini](#33-tambah-produk-toko--konbini)
    - [3.4 Tambah Foto Dokumentasi Program Kerja](#34-tambah-foto-dokumentasi-program-kerja)
    - [3.5 Update Kepengurusan Baru saat Sertijab](#35-update-kepengurusan-baru-saat-sertijab)
-4. [Standar Desain & Estetika Visual Wajib](#4-standar-desain--estetika-visual-wajib)
-5. [Cara Menggunakan AI Assistant (Pair Programming)](#5-cara-menggunakan-ai-assistant-pair-programming)
+4. [Standar Desain & Estetika Visual Wajib (7 Sistem Universal & Anti-AI Slop)](#4-standar-desain--estetika-visual-wajib-7-sistem-universal--anti-ai-slop)
+5. [Kolaborasi Modern AI Coding Agent (Workflow & Prompt Engineering)](#5-kolaborasi-modern-ai-coding-agent-workflow--prompt-engineering)
+   - [5.1 Metodologi Prompt F-A-K-T-A](#51-metodologi-prompt-f-a-k-t-a)
+   - [5.2 Dua Contoh Prompt F-A-K-T-A Realistis](#52-dua-contoh-prompt-f-a-k-t-a-realistis)
+   - [5.3 Matriks Role AI Agent & Kapan Menggunakannya](#53-matriks-role-ai-agent--kapan-menggunakannya)
+   - [5.4 Workflow Terstruktur 6 Langkah AI Agent](#54-workflow-terstruktur-6-langkah-ai-agent)
+   - [5.5 Penempatan Berkas Konfigurasi AI Resmi](#55-penempatan-berkas-konfigurasi-ai-resmi)
 6. [Panduan Alur Git & Deployment GitHub Pages](#6-panduan-alur-git--deployment-github-pages)
 7. [Checklist Serah-Terima Jabatan & Kontak](#7-checklist-serah-terima-jabatan--kontak)
 
@@ -68,73 +73,95 @@ Seluruh pengembang dan AI asisten **WAJIB mematuhi 7 Aturan Visual Universal** i
 
 ---
 
-## 🚀 Bab 0: Persiapan Awal & Instalasi Tools (Wajib untuk Pengurus/Developer Baru)
+## 🚀 Bab 0: Persiapan Lingkungan Kerja (VS Code, Git, GitHub & Ekstensi)
 
-Selamat datang di tim pengembang **Mirai no Webu**! Bagian ini disusun khusus secara ramah pemula agar siapa pun pengurus atau anggota klub yang baru ditunjuk dapat menyiapkan perangkat komputer/laptopnya dari nol hingga siap mengedit website dengan nyaman, rapi, dan bebas error.
+Selamat datang di tim pengembang **Mirai no Webu**! Bagian ini disusun secara ramah pemula agar siapa pun pengurus atau anggota klub yang baru ditunjuk dapat menyiapkan perangkat komputer/laptopnya dari nol hingga siap mengedit website dengan rapi, aman, dan efisien.
 
 ---
 
-### Langkah 1: Instalasi Code Editor & Tools Dasar
+### 0.1 Instalasi Software Dasar
 Sebelum membuka proyek, pastikan Anda telah memasang 3 perangkat lunak esensial berikut:
 1. **Visual Studio Code (VS Code)** *(Wajib)*:
    - Unduh gratis di situs resmi: [code.visualstudio.com](https://code.visualstudio.com/).
    - Editor kode standar industri yang sangat ringan, cepat, dan memiliki ekosistem ekstensi terlengkap.
 2. **Git Version Control** *(Wajib)*:
    - Unduh di: [git-scm.com](https://git-scm.com/).
-   - Digunakan untuk mencatat riwayat perubahan kode (commit) dan menyinkronkan website ke GitHub Pages.
+   - Digunakan untuk mencatat riwayat perubahan kode (commit) dan menyinkronkan website ke repositori GitHub.
 3. **Python 3 (v3.10+)** *(Sangat Dianjurkan)*:
    - Unduh di: [python.org](https://www.python.org/).
-   - **PENTING saat instalasi di Windows**: Centang opsi **"Add python.exe to PATH"** agar perintah `python` dapat dipanggil langsung dari terminal VS Code untuk menjalankan skrip automasi pengurus di folder `skrip/arsip/`.
+   - **PENTING saat instalasi di Windows**: Centang opsi **"Add python.exe to PATH"** agar perintah `python` dapat dipanggil langsung dari terminal VS Code untuk menjalankan skrip otomasi pengurus di folder `skrip/`.
 
 ---
 
-### Langkah 2: Instalasi AI Coding Agent di VS Code
-Website ini dirancang agar sangat mudah dikembangkan bersama asisten kecerdasan buatan (AI Pair Programming). Anda dapat memasang salah satu ekstensi AI berikut di VS Code:
-- **Google Antigravity / Gemini CLI**: Asisten AI resmi berkonteks besar.
-- **GitHub Copilot**: Ekstensi resmi dari GitHub (`GitHub.copilot`).
-- **Cline / Claude Code**: Asisten AI agentic untuk VS Code.
-- **Cursor IDE**: Editor fork VS Code dengan AI bawaan.
+### 0.2 Setup Git & Identitas Kontributor GitHub
+Agar kontribusi kode Anda dihitung dan foto profil Anda muncul di daftar **Contributors** di halaman utama GitHub repositori, Anda wajib mengonfigurasi nama dan email lokal yang cocok dengan akun GitHub Anda:
 
-#### Cara Menyuapi Konteks ke AI (Context Feeding Wajib):
-Setiap kali Anda memberikan instruksi baru kepada AI, **SELALU sertakan mention berkas konteks** berikut di awal percakapan:
-```text
-@panduan/agent.md @panduan/CONTEKAN-TAG.md
-Tolong bantu saya menambahkan [sebutkan tugas Anda di sini]...
+```bash
+# 1. Atur Nama Pengguna GitHub Anda
+git config user.name "nihongokurabuwh"
+
+# 2. Atur Alamat Email yang Terdaftar di Akun GitHub Anda
+git config user.email "email-anda@gmail.com"
 ```
-*Dengan menyuapi kedua file panduan ini, AI akan otomatis tahu letak CSS/JS yang tepat, mematuhi standar desain tanpa merusak layout, dan tidak akan mencoba membaca file CSS secara membabi-buta.*
+
+> [!TIP]
+> **Solusi Error "Failed to authenticate to git remote" saat Push**:
+> Jika VS Code memunculkan peringatan otentikasi gagal (`remote: Invalid username or token. fatal: Authentication failed`):
+> 1. Buka browser, masuk ke akun GitHub Anda -> **Settings** -> **Developer Settings** -> **Personal Access Tokens (Tokens classic)**.
+> 2. Buat token baru dengan izin centang `repo` dan `workflow`.
+> 3. Gunakan token tersebut sebagai *password* saat VS Code atau Git terminal meminta otentikasi kata sandi.
+> 4. Atau gunakan ekstensi **GitHub Pull Requests and Issues** untuk login 1 klik via browser.
 
 ---
 
-### Langkah 3: Daftar Ekstensi VS Code Wajib & Fungsinya
-Folder `.vscode/extensions.json` telah disiapkan di repositori ini. Berikut 9 ekstensi resmi yang wajib Anda pasang beserta fungsinya:
+### 0.3 Konfigurasi VS Code: File Nesting & Efisiensi Indexing
+Workspace ini telah dibekali berkas konfigurasi otomatis `.vscode/settings.json` yang mengunci standar kerapian:
+
+1. **File Nesting Otomatis (`explorer.fileNesting.enabled: true`)**:
+   - Di root direktori, file pelengkap web/PWA (`404.html`, `offline.html`, `manifest.webmanifest`, `service-worker.js`, `robots.txt`, `sitemap.xml`, `favicon.ico`, `favicon.png`) secara otomatis **dikelompokkan rapi di bawah `index.html`**.
+   - Berkas konfigurasi linter & AI (`cspell.json`, `.cursorignore`, `.cursorrules`) **dikelompokkan di bawah `.gitignore`**.
+   - Hasilnya, sidebar explorer terlihat sangat ringkas, bersih, dan profesional tanpa risiko merusak letak fisik file yang dibutuhkan browser dan hosting.
+2. **Format on Save Otomatis**:
+   - `editor.formatOnSave: true` dan `editor.tabSize: 2` memastikan baris kode selalu rapi setiap kali menekan `Ctrl + S`.
+3. **Pengecualian File Berat (Search & Watcher Exclude)**:
+   - Folder `.venv/`, `.cache/`, `data/*.json`, dan berkas dataset raksasa `js/stroke-data.js` serta `js/kamus-kanji-data.js` secara otomatis disembunyikan dari pencarian teks dan file watcher agar VS Code dan AI Agent tetap berjalan **sangat kencang dan hemat memori**.
+
+---
+
+### 0.4 Ekstensi VS Code: Rekomendasi Workspace vs Ekstensi Terpasang
+
+Repositori ini membedakan antara **Ekstensi Rekomendasi Standar** (paket minimum untuk pemula yang tercatat di `.vscode/extensions.json`) dengan **Ekstensi Terpasang di Lingkungan Pengembang** (ekstensi produktivitas lanjutan):
+
+#### A. Rekomendasi Workspace Resmi (`.vscode/extensions.json`)
+Cukup buka tab Ekstensi (`Ctrl + Shift + X`), ketik `@recommended`, dan klik **"Install Workspace Recommended Extensions"**:
 
 | Nama Ekstensi | Identifier | Fungsi Utama |
 | :--- | :--- | :--- |
-| **Prettier - Code formatter** | `esbenp.prettier-vscode` | Merapikan baris & indentasi HTML/CSS/JS secara otomatis setiap kali menekan `Ctrl + S`. |
-| **Live Server** | `ritwickdey.LiveServer` | Menjalankan preview website di browser lokal dengan 1 klik ("Go Live" di status bar kanan bawah). |
-| **Code Spell Checker** | `streetsidesoftware.code-spell-checker` | Mencegah salah ketik (typo) teks dan variabel kode, terhubung ke kamus proyek `cspell.json`. |
-| **Python** | `ms-python.python` | Menjalankan skrip automasi pemeliharaan web di folder `skrip/arsip/` langsung dari editor. |
+| **Prettier - Code formatter** | `esbenp.prettier-vscode` | Merapikan baris & indentasi HTML/CSS/JS otomatis saat menyimpan file (`Ctrl + S`). |
+| **Live Server** | `ritwickdey.LiveServer` | Menjalankan preview website di browser lokal dengan 1 klik ("Go Live" di status bar). |
+| **Code Spell Checker** | `streetsidesoftware.code-spell-checker` | Mencegah typo penulisan teks dan variabel kode, terhubung ke kamus `cspell.json`. |
+| **Python** | `ms-python.python` | Menjalankan skrip otomasi pemeliharaan web di folder `skrip/` langsung dari editor. |
 | **Auto Rename Tag** | `formulahendry.auto-rename-tag` | Otomatis mengubah tag penutup saat tag pembuka HTML diedit, mencegah bug tag tak seimbang. |
-| **HTML CSS Support** | `ecmel.vscode-html-css` | Menampilkan rekomendasi nama class CSS saat mengetik di berkas HTML secara otomatis. |
-| **Path Intellisense** | `christian-kohler.path-intellisense` | Membantu autocomplete path gambar atau file (misal `../../images/...`) tanpa takut salah ketik. |
+| **HTML CSS Support** | `ecmel.vscode-html-css` | Menampilkan rekomendasi autocomplete class CSS saat mengetik di file HTML. |
+| **Path Intellisense** | `christian-kohler.path-intellisense` | Membantu penulisan path relatif file/gambar (misal `../../images/...`) tanpa takut salah ketik. |
 | **Color Highlight** | `naumovs.color-highlight` | Menampilkan kotak warna visual langsung pada kode warna hex/RGBA di stylesheet CSS. |
-| **VS Code Pets** | `tonybaloney.vscode-pets` | Menghadirkan hewan peliharaan animasi kecil lucu di panel editor untuk menemani Anda ngoding! 🐱🐶 |
+| **VS Code Pets** | `tonybaloney.vscode-pets` | Menghadirkan hewan animasi kecil lucu di panel editor untuk menemani Anda ngoding! 🐱🐶 |
+
+#### B. Ekstensi Terpasang di Lingkungan Pengembang (Advanced DevOps & AI)
+Berikut ekstensi tambahan yang saat ini aktif di workstation pengembang untuk produktivitas tim:
+
+| Ekstensi Tambahan | Identifier | Manfaat Nyata |
+| :--- | :--- | :--- |
+| **Google Antigravity** | `google.google-antigravity` | Asisten AI Agent utama berkonteks besar untuk eksekusi tugas coding otomatis. |
+| **GitLens** | `eamodio.gitlens` | Melihat siapa yang terakhir mengubah baris kode (git blame) dan memantau riwayat commit. |
+| **GitHub Pull Requests** | `github.vscode-pull-request-github` | Mengelola PR, issue, dan otentikasi login GitHub langsung dari VS Code. |
+| **ErrorLens** | `usernamehw.errorlens` | Menampilkan pesan error linter dan typo langsung inline di ujung baris kode. |
+| **Material Icon Theme** | `pkief.material-icon-theme` | Ikon folder dan file yang sangat representatif untuk navigasi visual yang cepat. |
+| **CodeSnap** | `adpyke.codesnap` | Menghasilkan tangkapan layar cuplikan kode yang estetik untuk dokumentasi dan laporan. |
 
 ---
 
-### Langkah 4: Cara Mengatur VS Code (Settings & Extensions)
-Proyek ini telah dilengkapi pengaturan otomatis di dalam folder `.vscode/`:
-1. Buka folder proyek `Mirai-No-Webu` di VS Code (`File > Open Folder...`).
-2. Buka tab Ekstensi (`Ctrl + Shift + X`), ketik `@recommended` di kolom pencarian atas.
-3. Klik tombol **"Install Workspace Recommended Extensions"** untuk memasang seluruh paket ekstensi dalam 1 klik.
-4. Berkas `.vscode/settings.json` telah otomatis mengunci:
-   - `editor.formatOnSave: true` (merapikan kode otomatis saat simpan).
-   - `editor.tabSize: 2` (standar spasi 2 karakter yang rapi).
-   - Menyembunyikan folder besar seperti `.git`, `__pycache__`, dan berkas vektor besar `stroke-data.js` dari pencarian agar VS Code berjalan **sangat cepat dan ringan**.
-
----
-
-### Langkah 5: Cara Memakai Utility Class Universal (Anti-Rusak)
+### 0.5 Menggunakan Utility Class Universal (`.mirai-card-*`)
 Untuk memastikan siapa pun pengurus baru yang menambah konten tidak akan merusak layout atau membuat selector wildcard yang bentrok, gunakan **Utility Classes Resmi** yang sudah disediakan di `css/pages/global.css`:
 
 1. **Membuat Seksi Halaman Baru**:
@@ -155,18 +182,19 @@ Untuk memastikan siapa pun pengurus baru yang menambah konten tidak akan merusak
        <p>Deskripsi konten kartu...</p>
      </div>
      ```
-3. **Mengapa Wajib Menggunakan Class Ini?**
-   - Kartu otomatis memiliki sudut melengkung 18px, border beraksen pink lembut, dan watermark pattern halus (4.5% opacity).
+3. **Keuntungan Utility Class Ini**:
+   - Kartu otomatis memiliki radius melengkung 18px, border beraksen pink lembut, dan watermark pattern halus (4.5% opacity).
    - Sudah terpasang **guard anti-double pattern**: elemen di dalam kartu (judul, header, icon, badge) diproteksi secara otomatis agar tidak memiliki kotak border ganda atau latar bertumpuk.
 
 ---
 
-## 1. Pengenalan Arsitektur Web (Zero-Framework Architecture)
+## 1. Pengenalan Arsitektur Web (Zero-Framework Web Standards)
 
 Website Mirai no Webu sengaja dibangun menggunakan prinsip **Zero-Framework Web Standards**:
 - **HTML5 Semantik Murni**: Struktur halaman yang ramah mesin pencari, aksesibel, dan mudah dibaca tanpa sintaks JSX/template engine rumit.
-- **Modular CSS Berbasis Halaman (`css/pages/`)**: Tidak ada file CSS monolitik raksasa yang membingungkan. Setiap halaman web memiliki file CSS tersendiri.
+- **Modular CSS Berbasis Halaman (`css/pages/`)**: Tidak ada file CSS monolitik raksasa yang membingungkan. Setiap halaman web memiliki file CSS modular tersendiri.
 - **Vanilla JavaScript (ES6+)**: Logika interaktif berjalan murni tanpa dependensi Node.js, React, Vue, atau build tools seperti Webpack/Vite.
+- **PWA & Offline Capability**: Dilengkapi `service-worker.js`, `manifest.webmanifest`, dan `offline.html` agar website dapat dipasang (*installable*) di layar utama Android/iOS dan dapat diakses saat koneksi internet terputus.
 
 ### Mengapa Pendekatan Ini Dipilih?
 1. **Abadi & Bebas Kerusakan Dependensi**: Website tidak akan pernah rusak hanya karena ada versi `npm package` yang usang di masa depan.
@@ -184,7 +212,7 @@ css/
     ├── beranda.css             # Komponen Beranda (index.html)
     ├── kelas-materi.css        # Modul kelas, kurikulum, dan kuis latihan
     ├── kamus.css               # Kamus Kana, Joyo Kanji, dan kanvas goresan
-    ├── program-fasilitas-divisi.css     # Hub kegiatan, 5 proker, 4 divisi, fasilitas
+    ├── program-fasilitas-divisi.css # Hub kegiatan, 5 proker, 4 divisi, fasilitas
     ├── tentang.css             # Profil klub, bendera, timeline sejarah, pengurus
     ├── rekomendasi-motivasi.css# Motivasi anime & rekomendasi karya pop culture
     ├── peringkat.css           # Leaderboard keaktifan, presensi, dan podium
@@ -196,24 +224,24 @@ css/
 
 ---
 
-## 2. Peta Berkas & Folder Lengkap (File Map)
+## 2. Peta Berkas & Folder Lengkap (File Map & Clean Root)
 
 Gunakan tabel praktis ini untuk mengetahui berkas mana yang harus dibuka saat ingin melakukan perubahan:
 
-| Kebutuhan Pengurus | Berkas HTML | Berkas CSS | Berkas Data / JS |
+| Kebutuhan Pengurus | Berkas HTML | Berkas CSS (`css/pages/`) | Berkas Data / JS (`js/`) |
 |---|---|---|---|
-| **Beranda & Slogan Web** | `index.html` | `css/pages/beranda.css` | `js/main.js` |
-| **Profil Klub, Sejarah, Pengurus** | `tentang/index.html` | `css/pages/tentang.css` | `tentang/images/anggota/` |
-| **Info Lomba & Festival Matsuri** | `lomba/index.html` | `css/pages/lomba.css` | `lomba/images/` |
-| **Katalog Produk Toko & Konbini** | `toko/index.html` | `css/pages/toko.css` | `images/mirai/produk/` |
+| **Beranda & Slogan Web** | `index.html` | `css/pages/beranda.css` | `js/main.js`, `js/sora.js` |
+| **Profil Klub, Sejarah, Pengurus** | `tentang/index.html` | `css/pages/tentang.css` | `js/main.js`, `js/leaderboard-data.js` |
+| **Info Lomba & Festival Matsuri** | `lomba/index.html` | `css/pages/lomba.css` | `js/main.js`, `js/carousel.js` |
+| **Katalog Produk Toko & Konbini** | `toko/index.html` | `css/pages/toko.css` | `js/main.js`, `js/carousel.js` |
 | **Skor Keaktifan & Presensi Anggota** | `peringkat/index.html` | `css/pages/peringkat.css` | `js/leaderboard-data.js` |
-| **Modul Pembelajaran & Kuis** | `kelas/index.html`<br>`kelas/latihan.html` | `css/pages/kelas-materi.css` | `js/kelas-latihan.js`<br>`js/kamus-kana.js` |
-| **Kamus Kana, Kanji, & Goresan** | `kamus/index.html`<br>`kamus/kanji.html` | `css/pages/kamus.css` | `data/kanji-index.json`<br>`data/kanji/*.json`<br>`data/strokes/*.json` |
-| **Program Kerja (KTN, NJR, dll.)** | `kegiatan/*.html` | `css/pages/program-fasilitas-divisi.css` | `js/program-slider.js` |
-| **Struktur 4 Divisi Resmi** | `divisi/*.html` | `css/pages/program-fasilitas-divisi.css` | `js/main.js` |
+| **Modul Pembelajaran & Kuis** | `kelas/index.html`<br>`kelas/latihan.html` | `css/pages/kelas-materi.css` | `js/kelas-latihan.js`<br>`js/progress.js` |
+| **Kamus Kana, Kanji, & Goresan** | `kamus/index.html`<br>`kamus/kanji.html` | `css/pages/kamus.css` | `js/kamus-kana.js`, `js/kamus-kanji.js`, `js/kamus-kanji-data.js`, `js/kamus-translator.js`, `js/stroke.js` |
+| **Program Kerja (KTN, NJR, dll.)** | `kegiatan/*.html` | `css/pages/program-fasilitas-divisi.css` | `js/main.js`, `js/program-slider.js` |
+| **Struktur 4 Divisi Resmi** | `divisi/*.html` | `css/pages/program-fasilitas-divisi.css` | `js/main.js`, `js/quiz-divisi.js` |
 | **Rekomendasi Anime/Manga/Musik** | `rekomendasi/index.html` | `css/pages/rekomendasi-motivasi.css` | `js/main.js` |
-| **Kutipan Motivasi Karakter** | `kelas/motivasi.html` | `css/pages/rekomendasi-motivasi.css` | `images/mirai/karakter/` |
-| **Chatbot Maskot Sora** | `sora/index.html` | `css/pages/navbar-hero-footer.css` | `js/sora.js` |
+| **Kutipan Motivasi Karakter** | `kelas/motivasi.html` | `css/pages/rekomendasi-motivasi.css` | `js/main.js`, `js/sora.js` |
+| **Chatbot Maskot Sora** | `sora/index.html` | `css/pages/navbar-hero-footer.css` | `js/sora.js`, `js/api.js` |
 
 ---
 
@@ -289,7 +317,7 @@ Gunakan tabel praktis ini untuk mengetahui berkas mana yang harus dibuka saat in
   rank: 1,
   name: "Ahmad Fauzi",
   kelas: "XI-MIPA 2",
-  avatar: "Ka", // Kode avatar chibi di images/mirai/icon/ (contoh: Ka, Hu, Al, Ay, Fu, dll.)
+  avatar: "Ka", // Kode avatar chibi di images/mirai/ikon/ (contoh: Ka, Hu, Al, Ay, Fu, dll.)
   score: 980,
   broadcasts: 14,
   favoriteRole: "Penyiar Utama",
@@ -303,14 +331,13 @@ Gunakan tabel praktis ini untuk mengetahui berkas mana yang harus dibuka saat in
 
 ### 3.3 Tambah Produk Toko / Konbini
 1. Siapkan foto produk:
-   - Jika kuliner/minuman asli: Simpan di `images/mirai/produk/` (foto persegi, objek fokus).
-   - Jika atribut resmi (Haori, nametag): Siapkan foto tampak depan dan belakang berlatar putih bersih.
+   - Kuliner/minuman: Simpan di `images/mirai/produk/` (foto persegi, objek fokus).
+   - Atribut resmi (Haori, nametag): Siapkan foto tampak depan dan belakang berlatar putih bersih.
 2. Buka `toko/index.html`, cari kontainer `.toko-grid`.
 3. Tambahkan kartu produk baru:
 ```html
 <div class="toko-card" data-category="atribut">
   <div class="toko-card-thumb">
-    <!-- Jika memiliki 2 sisi foto, gunakan data-product-carousel -->
     <div class="toko-poster-carousel" data-product-carousel>
       <div class="toko-poster-slide is-active">
         <img src="../tentang/images/identitas/pin-depan.png" alt="Pin Lencana Klub" loading="lazy">
@@ -347,7 +374,7 @@ Gunakan tabel praktis ini untuk mengetahui berkas mana yang harus dibuka saat in
 ---
 
 ### 3.4 Tambah Foto Dokumentasi Program Kerja
-1. Kompresi foto agar ukuran berkas tidak terlalu berat (disarankan di bawah 400 KB per foto).
+1. Kompresi foto agar ukuran berkas tidak terlalu berat (disarankan di bawah 400 KB per foto, gunakan format `.webp` atau `.jpg`).
 2. Simpan foto ke dalam folder `kegiatan/images/dokumentasi/` (contoh: `kegiatan/images/dokumentasi/ktn-2026-1.jpg`).
 3. Buka file kegiatan terkait (misalnya `kegiatan/kimi-to-nippon.html`), cari slider galeri:
 ```html
@@ -371,7 +398,7 @@ Setiap pergantian periode pengurus (Sertijab tahunan):
 
 ---
 
-## 4. Standar Desain & Estetika Visual Wajib
+## 4. Standar Desain & Estetika Visual Wajib (7 Sistem Universal & Anti-AI Slop)
 
 Untuk menjaga marwah dan estetika website Mirai no Webu, seluruh developer wajib mematuhi standar desain berikut:
 
@@ -387,36 +414,149 @@ Untuk menjaga marwah dan estetika website Mirai no Webu, seluruh developer wajib
   - Di seksi putih: Gunakan warna teks abu-abu gelap slate (`#475569` / `#554857`). **Dilarang** memakai teks putih atau abu terang!
   - Di seksi gelap: Gunakan warna teks abu-abu terang (`#cbd5e1` / `#e2e8f0`). **Dilarang** memakai teks hitam pekat!
 
-### 3. Penggunaan Pola Tradisional Wagara (1 Kartu 1 Motif)
-- Kartu gelap: `images/mirai/background/c1b.jpeg` (Kumo/Awan) atau `w1b.jpeg` (Seigaiha/Ombak) dengan transparansi tipis (~4.5%).
-- Kartu terang: `images/mirai/background/c1w.jpeg` atau `w1w.jpeg` dengan transparansi ~10%.
-- **Dilarang menumpuk pattern ganda** dalam satu elemen kartu.
-
-### 4. Standar Sub-Judul Jepang Murni (`.jp-kanji`)
-- Sub-judul seksi dan hero wajib berupa **aksara Jepang murni (Kanji/Kana)** menggunakan Google Fonts **Noto Serif JP** berwarna pink sakura.
-- Dilarang menambahkan embel-embel atau terjemahan bahasa Indonesia di samping kanji tersebut.
-
-### 5. Penempatan Maskot Chibi (`.card-corner-chibi`)
-- Maskot chibi Genshin diletakkan di pojok kanan bawah kartu sebagai pemanis visual.
-- Maskot chibi tidak boleh mengorbankan keterbacaan teks dan fungsionalitas tombol.
+### 3. Standar Desain Anti-AI Slop (Japanese Editorial & Minimalist)
+- **Larang OS Emoji di Komponen UI**: Dilarang menggunakan emoji bawaan OS (`🌟`, `🚀`, `💡`, `📜`, `🎨`, `🗑️`, dll) sebagai ikon kartu atau tombol; wajib gunakan ikon SVG monokrom garis tipis (`stroke="currentColor" fill="none"`) atau teks bersih.
+- **Larang Cardception (Nested Cards Berlebihan)**: Hindari membuat nested card > 2 lapis. Berikan ruang bernapas (*whitespace*), pemisah garis tipis 1px, dan hierarki font yang jelas.
+- **Batasi Pill Badge**: Maksimal 1 pill badge per seksi (hanya untuk eyebrow judul utama). Gunakan teks uppercase kecil dengan letter-spacing renggang untuk metadata sekunder.
+- **Larang Callout Generik & Neon Glow Tebal**: Hindari `border-left: 4px solid` ala template AI generic dan bayangan glow berlebihan.
 
 ---
 
-## 5. Cara Menggunakan AI Assistant (Pair Programming)
+## 5. Kolaborasi Modern AI Coding Agent (Workflow & Prompt Engineering)
 
-Website ini sangat ramah dikembangkan bersama AI coding asisten modern (**Google Antigravity**, **Cursor**, **GitHub Copilot**, **Claude Code**, atau **ChatGPT**).
+Pengembangan website Mirai no Webu dioptimalkan untuk berkolaborasi dengan asisten kecerdasan buatan (**Google Antigravity**, **Cursor AI**, **GitHub Copilot**, **Claude Code**). Agar hasil coding AI akurat, tidak merusak struktur lain, dan hemat token, gunakan panduan berikut:
 
-### Di Mana Konfigurasi AI Disimpan?
-Seluruh konfigurasi AI disimpan rapi di folder **`panduan/ai-configs/`**:
-- **`.cursorrules`**: Aturan otomatis untuk Cursor AI.
-- **`copilot-instructions.md`**: Instruksi sistem untuk GitHub Copilot.
-- **`panduan/agent.md`**: Buku pedoman menyeluruh aturan desain dan arsitektur kode.
-- **`panduan/CONTEKAN-TAG.md`**: Peta cepat pemetaan satu pintu file HTML -> CSS -> JS.
+---
 
-### 3 Aturan Emas saat Memberi Instruksi ke AI:
-1. **Sebutkan File Spesifik**: Jangan biarkan AI membaca seluruh folder CSS. Katakan: *"Edit css/pages/lomba.css untuk memperbaiki kartu lomba"*.
-2. **Larang Menyalakan Live Server**: Instruksikan AI untuk langsung mengubah kode tanpa membuang waktu menyalakan server lokal atau mengambil screenshot browser.
-3. **Gunakan Python Script untuk Perubahan Berulang**: Jika ingin memperbarui elemen yang ada di 26+ file HTML sekaligus (seperti navbar atau footer), wajib minta AI membuat dan menjalankan script Python singkat di terminal.
+### 5.1 Metodologi Prompt F-A-K-T-A
+Saat berkomunikasi dengan AI Agent, selalu susun instruksi Anda menggunakan format **F-A-K-T-A**:
+
+| Huruf | Komponen | Penjelasan & Manfaat |
+| :---: | :--- | :--- |
+| **F** | **Foto / Konteks** | Gambaran masalah nyata, tangkapan layar (screenshot UI bug), atau situasi visual terkini yang dihadapi. Membantu AI memahami apa yang terlihat di mata pengguna. |
+| **A** | **Alamat File** | Jalur spesifik file target menggunakan tag `@path/to/file` (contoh: `@css/pages/tentang.css`, `@tentang/index.html`). **Krusial:** AI langsung membuka file yang dituju tanpa membuang token membaca ratusan file lain. |
+| **K** | **Karakter / Role** | Persona dan domain spesialisasi AI yang diinginkan (contoh: *Senior Frontend UI/UX Designer*, *Clean Architecture Specialist*). Mengarahkan gaya bahasa dan standar teknis AI. |
+| **T** | **Tugas** | Daftar langkah kerja (*action items*) yang konkret, terukur, dan terperinci poin per poin tentang apa yang harus diubah, dihapus, atau ditambahkan. |
+| **A** | **Aturan & Batasan** | Batasan teknis, penjaga kualitas (*guardrails*), hal yang dilarang diubah, serta standar kepatuhan klub (WCAG AAA, zero broken link, no external npm library). |
+
+---
+
+### 5.2 Dua Contoh Prompt F-A-K-T-A Realistis
+
+#### 🌟 Contoh 1: Styling Komponen Kartu Statistik Prestasi (Frontend UI/UX)
+```markdown
+# F — FOTO (KONTEKS)
+Terlampir tangkapan layar kartu statistik di seksi Prestasi (halaman Tentang).
+Kedua kartu terasa terlalu padat karena ikon piala, target, dan badge "PODIUM & JUARA"
+serta "TOTAL DELEGASI" membuat angka statistik utama (21 dan 27) kurang menonjol.
+
+# A — ALAMAT FILE
+- @tentang/index.html
+- @css/pages/tentang.css
+
+# K — KARAKTER
+Frontend Developer & UI/UX Designer spesialis responsive card & wagara design system.
+
+# T — TUGAS
+1. Hapus ikon SVG piala dan target dari kedua kartu statistik.
+2. Hapus pill badge "PODIUM & JUARA" dan "TOTAL DELEGASI".
+3. Sesuaikan kembali padding dan vertikal spacing kartu agar seimbang dan proporsional.
+4. Buat tipografi angka "21" dan "27" menjadi sorotan utama (ukuran lebih besar & tebal),
+   dengan label deskripsi tetap rapi di bawahnya.
+
+# A — ATURAN & BATASAN
+- Pertahankan background pattern ombak w1w/w1b, warna Sakura Pink, border, dan shadow.
+- Dilarang mengubah data nilai angka (21 dan 27) maupun teks deskripsinya.
+- Pastikan tampilan tetap responsif di desktop maupun layar HP (tanpa horizontal scrollbar).
+- Jangan memengaruhi seksi atau elemen lain di luar kartu statistik.
+```
+
+#### 🌟 Contoh 2: Modifikasi Logika & Update Data Leaderboard (JavaScript)
+```markdown
+# F — FOTO (KONTEKS)
+Siaran Nihon Go Rajio telah menyelesaikan bulan Oktober. Kami perlu memperbarui
+skor keaktifan anggota dan menambahkan peserta baru di papan peringkat.
+
+# A — ALAMAT FILE
+- @peringkat/index.html
+- @css/pages/peringkat.css
+- @js/leaderboard-data.js
+
+# K — KARAKTER
+Vanilla JavaScript Engineer & Web Standards Specialist.
+
+# T — TUGAS
+1. Buka @js/leaderboard-data.js pada array RAJIO_LEADERBOARD.
+2. Perbarui skor Ahmad Fauzi menjadi 980 poin dengan 14 siaran.
+3. Tambahkan 1 anggota baru bernama "Siti Aisyah" (Kelas X-7, avatar: "Hu", score: 450,
+   broadcasts: 5, favoriteRole: "Operator", badge: "Penyiar Muda", trend: "up").
+4. Urutkan kembali properti rank (1 s.d. 10) berdasarkan nilai score tertinggi secara otomatis.
+
+# A — ATURAN & BATASAN
+- Dilarang menambah library eksternal (No Lodash/jQuery/NPM). Gunakan Vanilla ES6+.
+- Jangan merusak struktur array ATTENDANCE_LEADERBOARD atau ACHIEVEMENT_DATA.
+- Pastikan DOM rendering di @peringkat/index.html tetap menampilkan podium juara 1–3
+  dan tabel peringkat 4–10 dengan mulus.
+```
+
+---
+
+### 5.3 Matriks Role AI Agent & Kapan Menggunakannya
+
+Memilih persona yang tepat membuat AI merespons dengan solusi terbaik:
+
+| Role AI Agent | Domain Keahlian Utama | Kapan Sebaiknya Digunakan? |
+| :--- | :--- | :--- |
+| **Frontend UI/UX & Responsive Specialist** | Modular CSS (`css/pages/`), flexbox, grid, estetika Wagara Jepang, WCAG AAA, dan media query responsif. | Saat memperbaiki tata letak kartu, navigasi navbar/drawer, tipografi judul, pewarnaan dark mode, atau bug visual di layar HP. |
+| **Clean Architecture & DevOps Specialist** | Kebersihan repositori, `.gitignore`, `.cursorignore`, File Nesting VS Code, token efficiency, dan audit git. | Saat membersihkan file sampah, merapikan struktur folder, mencegah memory leak context window, atau menyelesaikan konflik git. |
+| **AI Conversation Designer & Prompt Engineer** | Natural persona, anti-cringe prompting, dynamic user mirroring, dan logika respon offline. | Saat menyetel kepribadian maskot Sora di `js/sora.js` (mode standard, teman, sensei, atau husbu yang natural dan tidak kaku). |
+| **Fullstack Web Standards Specialist** | Arsitektur Zero-Framework, Vanilla JS (ES6+), PWA Service Worker, manifest, dan manipulasi DOM cepat. | Saat menambahkan fitur interaktif baru (filter kamus, kanvas goresan kanji, drawer keranjang toko, validasi input formulir). |
+| **Technical Writer & Documentation Specialist** | Penyusunan panduan pengguna, dokumentasi developer, changelog, dan buku saku serah-terima jabatan. | Saat memperbarui `PANDUAN-DEVELOPER.md`, `agent.md`, `CONTEKAN-TAG.md`, atau menyusun instruksi sertijab pengurus baru. |
+
+---
+
+### 5.4 Workflow Terstruktur 6 Langkah AI Agent
+
+Setiap kali AI Agent mengerjakan tugas dari pengembang, **WAJIB mengikuti alur kerja 6 tahap** berikut:
+
+```mermaid
+flowchart LR
+    A["1. Inspeksi<br>(Inspection)"] --> B["2. Perencanaan<br>(Planning)"]
+    B --> C["3. Implementasi<br>(Implementation)"]
+    C --> D["4. Validasi<br>(Validation)"]
+    D --> E["5. Review<br>(Review)"]
+    E --> C
+    E --> F["6. Commit & Sync<br>(Commit)"]
+```
+
+1. **Inspeksi (Inspection)**:
+   - AI membaca file target spesifik dan memeriksa kode yang sudah ada sebelum melakukan perubahan apa pun.
+   - **Prinsip**: Dilarang berasumsi atau menebak struktur file tanpa membacanya terlebih dahulu.
+2. **Perencanaan (Planning)**:
+   - AI merumuskan strategi pengeditan: apakah cukup menggunakan native file edit (1–3 file) atau membutuhkan skrip otomasi Python terminal (>5 file berulang).
+   - Memastikan batas dampak (*blast radius*) terkontrol agar tidak merusak halaman lain.
+3. **Implementasi (Implementation)**:
+   - Melakukan perubahan kode secara presisi dan bersih.
+   - Mempertahankan komentar/docstring yang sudah ada dan mematuhi aturan desain anti-AI slop.
+4. **Validasi (Validation)**:
+   - Menjalankan skrip pengujian lokal jika tersedia (contoh: `python3 skrip/arsip/test_mobile_responsiveness.py`).
+   - Memastikan tidak ada error sintaksis, tag HTML yang tidak seimbang, atau tautan rusak (*zero broken links*).
+5. **Review (Review)**:
+   - Memeriksa perintah `git status` dan `git diff` untuk memverifikasi bahwa hanya berkas yang diinstruksikan yang berubah dan tidak ada file sementara (*temporary files*) yang tertinggal.
+6. **Commit & Sync (Commit)**:
+   - Menyusun pesan komit standar konvensional (`feat:`, `fix:`, `docs:`, `style:`).
+   - **Wajib meminta izin/persetujuan pengembang** sebelum menjalankan `git commit` dan `git push` ke GitHub remote.
+
+---
+
+### 5.5 Penempatan Berkas Konfigurasi AI Resmi
+
+Agar tidak membingungkan pengembang dan asisten AI, aturan konfigurasi ditempatkan sesuai standar resmi masing-masing tool:
+
+- **GitHub Copilot**: Berada di **`.github/copilot-instructions.md`** (standar resmi GitHub Copilot di VS Code & GitHub).
+- **Cursor AI**: Berada di **`.cursorrules`** pada root direktori (di-nest otomatis di bawah `.gitignore` di VS Code explorer).
+- **Google Antigravity**: Membaca langsung berkas **`panduan/agent.md`** dan **`panduan/CONTEKAN-TAG.md`** di workspace.
+- **Folder `panduan/ai-configs/`**: Berfungsi sebagai repositori rujukan dan pencadangan (*backup central*).
 
 ---
 
@@ -426,7 +566,7 @@ Setiap kali Anda selesai melakukan perubahan atau update konten, publikasikan ke
 
 ### Langkah-demi-Langkah Komit:
 1. Buka terminal di folder proyek (`/Mirai-No-Webu`).
-2. Periksa file apa saja yang telah Anda modifikasi:
+2. Periksa status berkas:
    ```bash
    git status
    ```
@@ -438,7 +578,7 @@ Setiap kali Anda selesai melakukan perubahan atau update konten, publikasikan ke
    ```bash
    git commit -m "feat: tambah poster lomba bunkasai its 2026"
    ```
-   *Gunakan awalan: `feat:` (fitur baru), `fix:` (perbaikan bug), `docs:` (dokumentasi), `style:` (perubahan tampilan).*
+   *Gunakan awalan: `feat:` (fitur baru), `fix:` (perbaikan bug), `docs:` (dokumentasi), `style:` (perubahan tampilan/desain).*
 5. Dorong (*push*) perubahan ke GitHub:
    ```bash
    git push origin main

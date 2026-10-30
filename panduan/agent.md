@@ -101,6 +101,23 @@ Akses logika interaktif langsung ke berkas terkait tanpa membaca seluruh folder:
    - Setiap membuat file utilitas, skrip otomasi, komponen antarmuka, atau dokumentasi baru, **WAJIB langsung ditempatkan di dalam subfolder kategori yang sesuai** (`skrip/`, `js/`, `css/pages/`, atau `panduan/`).
    - **DILARANG KERAS** menaruh file baru tercecer sembarangan di direktori root `/`.
 
+### 6. Standar Interaksi Prompt: Metodologi F-A-K-T-A
+Saat berinteraksi dan memberi instruksi kepada AI Agent, gunakan format terstruktur **F-A-K-T-A**:
+- **F — Foto / Konteks**: Gambaran masalah visual, tangkapan layar bug, atau konteks perubahan yang diinginkan.
+- **A — Alamat File**: Jalur berkas spesifik menggunakan tag `@path/to/file` (misal `@css/pages/tentang.css`, `@tentang/index.html`) agar agent langsung menuju target tanpa membuang token memindai file lain.
+- **K — Karakter / Role**: Persona spesialisasi AI yang tepat (Frontend UI/UX Specialist, Clean Architecture & DevOps Specialist, AI Conversation Designer, Fullstack Web Standards Specialist, Technical Writer).
+- **T — Tugas**: Rincian action items yang terukur, konkret, dan jelas poin per poin.
+- **A — Aturan & Batasan**: Batasan teknis, perlindungan file, standar desain klub, dan checklist pengerjaan.
+
+### 7. Workflow AI Coding Agent: 6 Langkah Terstruktur
+Setiap eksekusi tugas oleh AI Agent WAJIB mengikuti siklus alur kerja 6 tahap berikut:
+1. **Inspeksi (Inspection)**: Memeriksa kode eksisting, struktur berkas terkait, dan dependensi sebelum melakukan perubahan apa pun. Dilarang keras berasumsi atau menebak.
+2. **Perencanaan (Planning)**: Menentukan strategi perubahan, meminimalkan blast radius, dan memilih metode yang tepat (native edit vs skrip batch terminal).
+3. **Implementasi (Implementation)**: Mengubah kode secara bersih, konsisten, mempertahankan komentar yang relevan, mematuhi standar desain anti-AI slop dan zero-framework.
+4. **Validasi (Validation)**: Menjalankan suite pengujian lokal (`python3 skrip/arsip/test_mobile_responsiveness.py`, dll.) untuk memastikan fungsionalitas dan tampilan responsif.
+5. **Review (Review)**: Memeriksa `git status` dan `git diff` untuk memastikan tidak ada perubahan file yang tidak sengaja dan tidak ada sampah temporer.
+6. **Commit & Sync (Commit)**: Membuat pesan komit konvensional (`feat:`, `fix:`, `docs:`) dan meminta persetujuan pengguna sebelum melakukan push remote.
+
 ---
 
 ## 2. Aturan Wajib: Pembaruan Mandiri Dokumentasi

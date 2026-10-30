@@ -2603,13 +2603,18 @@ MODEL JUMLAH PRESTASI MIRAI NO HANA & STATISTIK KOMPETISI
   position: relative;
   background: linear-gradient(165deg, #1d1626 0%, #120e18 100%) !important;
   border: 1.5px solid rgba(255, 79, 145, 0.32) !important;
-  border-radius: 22px;
-  padding: 30px 28px 28px;
+  border-radius: 20px;
+  padding: 38px 24px 34px;
+  min-height: 180px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
   transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1), border-color 0.28s ease, box-shadow 0.28s ease;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
 }
 
 .prestasi-stat-box::after {
@@ -2622,54 +2627,15 @@ MODEL JUMLAH PRESTASI MIRAI NO HANA & STATISTIK KOMPETISI
   box-shadow: 0 16px 38px rgba(255, 46, 126, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
 }
 
-.prestasi-stat-top {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 22px;
-}
-
-.prestasi-stat-icon-wrap {
-  width: 52px;
-  height: 52px;
-  border-radius: 14px;
-  background: rgba(255, 79, 145, 0.15) !important;
-  border: 1.5px solid rgba(255, 79, 145, 0.38) !important;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 26px;
-  box-shadow: 0 4px 14px rgba(255, 79, 145, 0.2);
-  transition: transform 0.25s ease;
-}
-
-.prestasi-stat-box:hover .prestasi-stat-icon-wrap {
-  transform: scale(1.08) rotate(4deg);
-}
-
-.prestasi-stat-pill {
-  font-size: 12px;
-  font-weight: 850;
-  color: #ff8db7 !important;
-  background: rgba(255, 79, 145, 0.18) !important;
-  border: 1px solid rgba(255, 79, 145, 0.4) !important;
-  padding: 6px 14px;
-  border-radius: 999px;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-}
-
 .prestasi-stat-num {
   position: relative;
   z-index: 2;
-  font-size: clamp(54px, 6.8vw, 78px);
+  font-size: clamp(62px, 7.8vw, 86px);
   font-weight: 950;
   line-height: 1;
   color: #ffffff !important;
-  margin-bottom: 10px;
-  letter-spacing: -1.5px;
+  margin-bottom: 12px;
+  letter-spacing: -2px;
   background: none !important;
   -webkit-background-clip: border-box !important;
   background-clip: border-box !important;
@@ -2677,21 +2643,23 @@ MODEL JUMLAH PRESTASI MIRAI NO HANA & STATISTIK KOMPETISI
   filter: none !important;
   text-shadow: none !important;
   transition: transform 0.25s ease;
+  text-align: center;
 }
 
 .prestasi-stat-box:hover .prestasi-stat-num {
-  transform: scale(1.02);
+  transform: scale(1.04);
 }
 
 .prestasi-stat-label {
   position: relative;
   z-index: 2;
-  font-size: clamp(17px, 1.9vw, 20px);
+  font-size: clamp(16px, 1.8vw, 19px);
   font-weight: 850;
   color: #ffffff !important;
   margin-bottom: 0;
   letter-spacing: 0.3px;
   line-height: 1.3;
+  text-align: center;
 }
 /* Trophy Breakdown Bar */
 .prestasi-breakdown-bar {
@@ -2933,6 +2901,20 @@ body:not(.theme-dark):not(.dark-mode) .prestasi-filter-btn.active {
   .prestasi-stats-grid {
     grid-template-columns: 1fr;
     gap: 14px;
+  }
+
+  .prestasi-stat-box {
+    padding: 28px 18px 26px;
+    min-height: auto;
+  }
+
+  .prestasi-stat-num {
+    font-size: clamp(52px, 14vw, 68px);
+    margin-bottom: 8px;
+  }
+
+  .prestasi-stat-label {
+    font-size: 15.5px;
   }
 
   .prestasi-to-lb-full-btn {
