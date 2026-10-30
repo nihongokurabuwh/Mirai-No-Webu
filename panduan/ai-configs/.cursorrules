@@ -8,7 +8,12 @@ Repositori ini adalah website resmi Klub Bahasa & Kebudayaan Jepang MIRAI NO HAN
 - **DILARANG KERAS** menyalakan/merestart HTTP server lokal (`python3 -m http.server`, live-server, dll.) atau mengambil screenshot otomatis via browser/tool kecuali diminta secara eksplisit oleh user.
 - Jika diminta mengubah elemen HTML yang berulang di banyak halaman (navbar, sidebar, hero, atau footer di 26+ file HTML), **WAJIB gunakan script terminal Python sekali-jalan**, dilarang mengedit file satu per satu secara manual.
 
-## 2. Peta Cepat Halaman -> CSS (`css/pages/`) -> JS (`js/`)
+## 2. Protokol Efisiensi Eksekusi Agent (Token-Saving & Clean Repo)
+1. **Proteksi Folder Berat & Data Raksasa**: Dilarang membaca/memindai folder `.venv/`, `.cache/`, `arsip/`, atau berkas JSON raksasa di `data/` secara keseluruhan (gunakan `head`, `grep`, atau baca sampel struktur saja jika diperlukan).
+2. **Native Tool vs Batch Python**: Gunakan native file editing tool untuk perubahan terarah pada 1–3 file; hanya gunakan script Python di folder `skrip/` jika melakukan modifikasi massal (batch) pada >5 file sekaligus.
+3. **Disiplin Penempatan File Baru**: Setiap membuat file utilitas, skrip, atau modul baru, wajib langsung ditempatkan di dalam folder kategori yang sesuai (`skrip/`, `js/`, `css/pages/`, atau `panduan/`). Dilarang keras menaruh file baru tercecer di root `/`.
+
+## 3. Peta Cepat Halaman -> CSS (`css/pages/`) -> JS (`js/`)
 Rujuk tabel berikut untuk langsung membuka file target yang benar tanpa perlu bertanya atau menebak:
 
 | Kebutuhan Edit Halaman | Buka File CSS (`css/pages/`) | Buka File JS (`js/`) |
@@ -26,7 +31,7 @@ Rujuk tabel berikut untuk langsung membuka file target yang benar tanpa perlu be
 | Toko Resmi Mirai no Konbini, Keranjang Belanja | `css/pages/toko.css` | `js/main.js`, `js/carousel.js` |
 | Chatbot Asora Aokita (Sora) | `css/pages/navbar-hero-footer.css` | `js/sora.js`, `js/api.js` |
 
-## 3. Aturan Konten, Tipografi & Desain Anti-AI Slop
+## 4. Aturan Konten, Tipografi & Desain Anti-AI Slop
 - **Sinkronisasi Konten Judul (Title-Content Sync)**:
   Setiap kali ada instruksi untuk mengubah atau me-rename Judul Utama (Heading) pada suatu halaman atau section, Agent WAJIB secara otomatis memeriksa dan menyesuaikan teks pada Subjudul (Subtitle), Deskripsi (Lead Paragraph), maupun label terkait di sekitarnya agar konteks dan penamaannya tetap konsisten tanpa perlu diperintah satu per satu.
 - **Standar Desain Anti-AI Slop (Japanese Editorial & Minimalist Standard)**:

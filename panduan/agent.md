@@ -57,7 +57,7 @@ Seluruh pengembang dan AI asisten **WAJIB mematuhi 7 Aturan Visual Universal** i
 
 ## 1. Protokol Eksekusi Cepat (Fast-Execution Protocol)
 
-Setiap AI asisten atau pengembang yang bekerja pada repositori ini **WAJIB mematuhi 4 aturan inti eksekusi cepat** berikut tanpa kecuali:
+Setiap AI asisten atau pengembang yang bekerja pada repositori ini **WAJIB mematuhi 5 aturan inti eksekusi cepat** berikut tanpa kecuali:
 
 ### 1. Peta CSS Halaman Intuitif (DILARANG Membaca style.css Utuh)
 - **DILARANG KERAS** membaca `css/style.css` secara keseluruhan atau memindai seluruh folder CSS sekaligus ke dalam konteks percakapan.
@@ -90,6 +90,17 @@ Akses logika interaktif langsung ke berkas terkait tanpa membaca seluruh folder:
 - Jika diminta mengubah elemen HTML yang berulang di banyak halaman (seperti navbar, sidebar, hero, atau footer di 26+ file HTML), **WAJIB menggunakan satu script Python singkat via terminal**.
 - **DILARANG KERAS** mengedit file HTML satu per satu secara manual dengan tool pengedit teks yang lambat dan membebani konteks percakapan.
 
+### 5. Protokol Efisiensi Eksekusi Agent (Token-Saving & Clean Architecture)
+1. **Proteksi Folder Berat & Data Raksasa**:
+   - **DILARANG KERAS** membaca/memindai isi folder `.venv/`, `.cache/`, `arsip/`, atau file JSON raksasa di `data/` secara keseluruhan ke dalam konteks AI.
+   - Jika membutuhkan referensi skema data atau baris tertentu, gunakan perintah parsial seperti `head`, `grep`, atau pembacaan cuplikan baris/rentang sampel saja.
+2. **Skalabilitas Perubahan Berkas (Native Editing vs Batch Script)**:
+   - Gunakan *native file editing tool* (`edit_file` / tool bawaan agent) untuk perubahan terarah pada 1–3 file.
+   - HANYA gunakan skrip Python di dalam folder `skrip/` jika melakukan modifikasi massal (*batch*) pada >5 file sekaligus (misal pembaruan struktur navbar/footer di puluhan file HTML).
+3. **Disiplin Penempatan Berkas Baru (Zero Clutter in Root)**:
+   - Setiap membuat file utilitas, skrip otomasi, komponen antarmuka, atau dokumentasi baru, **WAJIB langsung ditempatkan di dalam subfolder kategori yang sesuai** (`skrip/`, `js/`, `css/pages/`, atau `panduan/`).
+   - **DILARANG KERAS** menaruh file baru tercecer sembarangan di direktori root `/`.
+
 ---
 
 ## 2. Aturan Wajib: Pembaruan Mandiri Dokumentasi
@@ -98,7 +109,7 @@ Akses logika interaktif langsung ke berkas terkait tanpa membaca seluruh folder:
 
 ### A. Arsitektur Folder Modular (Clean Root Standard)
 Seluruh berkas website Mirai no Webu dikelompokkan secara terstruktur ke dalam folder tematik:
-- **Root (`/`)**: Berisi **index.html** (gerbang utama Beranda), **404.html** (halaman penanganan error ramah pengunjung bertema Mirai no Hana), **README.md** (etalase profil repositori GitHub dan dokumentasi kredit), **cspell.json** (konfigurasi spell checker bilingual), dan folder **`.vscode/`** (`settings.json` konfigurasi workspace, `extensions.json` rekomendasi ekstensi resmi).
+- **Root (`/`)**: Berisi berkas inti publik web & PWA (**index.html**, **404.html**, **offline.html**, **manifest.webmanifest**, **service-worker.js**, **robots.txt**, **sitemap.xml**, **favicon.ico**, **favicon.png**, **README.md**, **.gitignore**, **.cursorignore**, **cspell.json**, dan folder **`.vscode/`**). Seluruh file pelengkap di-nest secara elegan di bawah `index.html` dan `.gitignore` di sidebar VS Code.
 - **`css/`**: Berisi master stylesheet antarmuka (`css/style.css`) yang memanggil 11 berkas CSS berbasis halaman di sub-folder `css/pages/` (`global.css`, `navbar-hero-footer.css`, `beranda.css`, `kelas-materi.css`, `kamus.css`, `program-fasilitas-divisi.css`, `tentang.css`, `rekomendasi-motivasi.css`, `peringkat.css`, `lomba.css`, `toko.css`).
 - **`js/`**: Berisi seluruh logika JavaScript modular (`main.js`, `kelas-latihan.js`, `kamus-kanji.js`, `kamus-kana.js`, `stroke.js`, `stroke-data.js`, `sora.js`, dll.).
 - **`panduan/`**: Berisi dokumentasi arsitektur proyek (`panduan/tree.md`, `panduan/agent.md`, `panduan/CONTEKAN-TAG.md`, `panduan/PANDUAN-DEVELOPER.md`, dan folder konfigurasi AI `panduan/ai-configs/`).
@@ -149,10 +160,10 @@ Seluruh berkas website Mirai no Webu dikelompokkan secara terstruktur ke dalam f
 Aset visual dikelompokkan berdasarkan halaman yang menggunakannya:
 
 ### A. Aset Bersama / Global (Folder images/mirai/)
-- **background/**: Pola Wagara master CSS (`w1b.jpeg`, `w1w.jpeg`, `c1b.jpeg`, `c1w.jpeg`, `w2w.jpeg`, `chat.jpeg`, `Sora.png`).
-- **logo/**: Logo resmi klub (`MNH1.png`, `MNH1-nav.png`, `NK.png`, `comingsoon.jpg`).
-- **icon/**: Koleksi 20 stiker chibi resmi Genshin Impact untuk profil anggota, papan peringkat, dan dekorasi kartu modul (Al, Ay, Chi, Fa, Fli, Fu, Hu, Ka, Ki, Lo, Wa, ang, bal, bul, chi, cil, dil, nah, sar, zho).
-- **karakter/**: Foto potret karakter anime untuk kartu kutipan motivasi (`luf.jpeg`, `ere.jpeg`, `nar.jpeg`, `dek.jpeg`, `tan.jpeg`).
+- **background/**: Pola Wagara master CSS (`w1b.jpeg`, `w1w.jpeg`, `c1b.jpeg`, `c1w.jpeg`, `chat.jpeg`, `Sora.webp`, `Sora.png`).
+- **logo/**: Logo resmi klub (`MNH1-nav.png`, `NK.png`, `bendera.jpeg`, `comingsoon.jpg`, `icon-192.png`, `icon-512.png`).
+- **icon/**: Koleksi 11 avatar chibi Genshin Impact dan 10 foto profil pengurus untuk lencana anggota, papan peringkat, dan kartu modul (Al, Ay, Chi, Fa, Fli, Fu, Hu, Ka, Ki, Lo, Wa, ang, bal, bul, chat, chi, cil, dil, nah, sar, zho).
+- **karakter/**: Foto potret karakter anime untuk kartu kutipan motivasi (`luf.jpeg`, `ere.jpeg`, `nar.jpeg`, `dek.jpeg`, `tan.jpeg`) serta pas foto KTA digital (`sora-ktp.png`).
 - **produk/**: Foto produk kuliner & minuman asli Mirai no Konbini (`oni.jpeg`, `tak.jpeg`, `dan.jpeg`, `mat.jpeg`, `teh.jpeg`).
 - **stiker/**: Berisi 28 stiker komunitas ekspresi anime untuk asisten Sora dan materi pendukung.
 

@@ -1725,8 +1725,9 @@ function setupUniversalFeedbackAndQuote() {
   // 4. Setup Kutipan Motivasi Slider (Kecuali halaman arsip motivasi itu sendiri)
   if (!document.body.classList.contains("page-motivasi")) {
     let quoteSection = document.getElementById("footerQuoteSliderSection");
+    const targetQuoteTheme = isPrecedingDark ? "quote-theme-dark" : "quote-theme-white";
     if (!quoteSection) {
-      quoteSection = initFooterQuoteSlider(footer, basePath);
+      quoteSection = initFooterQuoteSlider(footer, basePath, targetQuoteTheme);
     }
     quoteSection.dataset.patternFamily = patternFamily;
 
@@ -1744,6 +1745,12 @@ function setupUniversalFeedbackAndQuote() {
       quoteSection.dataset.patternColor = "white";
       quoteSection.setAttribute("data-theme", "light");
     }
+
+    const currentCard = quoteSection.querySelector(".quote-card");
+    if (currentCard) {
+      currentCard.classList.toggle("quote-theme-white", !isPrecedingDark);
+      currentCard.classList.toggle("quote-theme-dark", isPrecedingDark);
+    }
   }
 
 // 5. Inisialisasi kartu expandable jika belum terpasang
@@ -1754,7 +1761,7 @@ function setupFooterQuoteSlider() {
 setupUniversalFeedbackAndQuote();
 }
 
-function initFooterQuoteSlider(footer, basePath) {
+function initFooterQuoteSlider(footer, basePath, initialTheme = "quote-theme-white") {
 const quotes = [
   {
     id: 1,
@@ -1872,7 +1879,7 @@ let currentIndex = 0;
 let autoTimer = null;
 
 const section = document.createElement("section");
-section.className = "section-quote-slider";
+section.className = `section-quote-slider ${initialTheme}`;
 section.id = "footerQuoteSliderSection";
 section.setAttribute("aria-label", "Kata-Kata Motivasi Karakter Anime");
 section.innerHTML = `
@@ -1907,8 +1914,11 @@ function renderSlide(index) {
   currentIndex = (index + quotes.length) % quotes.length;
   const q = quotes[currentIndex];
 
+  const isQuoteWhite = section.classList.contains("quote-theme-white");
+  const quoteThemeClass = isQuoteWhite ? "quote-theme-white" : "quote-theme-dark";
+
   cardContainer.innerHTML = `
-            <article class="quote-card quote-slide-enter" data-anime="${q.animeId}" style="--quote-accent: #ff4f91; --quote-line: #ff4f91; --quote-border: rgba(255, 79, 145, 0.3);">
+            <article class="quote-card quote-slide-enter ${quoteThemeClass}" data-anime="${q.animeId}" style="--quote-accent: #ff4f91; --quote-line: #ff4f91; --quote-border: rgba(255, 79, 145, 0.3);">
                 <div class="quote-card-body">
                     <div class="quote-top-row">
                         <div class="quote-author-profile">
@@ -2593,7 +2603,7 @@ COMING SOON (SEGERA HADIR) & ACCESS CONTROL SYSTEM
 - Kunci akses & efek blur untuk halaman/seksi berstatus "Segera Hadir"
 - Tombol gembok di sebelah kata "MENU" pada sidebar (Merah: Terkunci, Hijau: Terbuka)
 - Keamanan tingkat tinggi: Sandi di-hash dengan Salted SHA-256 (Anti-Bocor/Hack)
-- Seksi terkunci: #kurikulum (kelas) & #studio-terjemahan (kamus)
+- Seksi terkunci: #kurikulum (kelas), #pembuat-nama-kta (kamus) & #prestasi (tentang)
 - Halaman terkunci: Selain Beranda, Kelas, Kamus (Saran & Kritik BEBAS dari kunci)
 ========================================================================== */
 
@@ -3093,7 +3103,40 @@ if (kurikulumEl) {
   }
 }
 
-// 2. Seksi Studio Ketik & Terjemahan di kamus/index.html
+// 2. Seksi Kartu Tanda Pengenal Mirai no Hana di kamus/index.html
+const ktpEl = document.getElementById("pembuat-nama-kta") || document.querySelector(".name-generator-section");
+if (ktpEl) {
+  if (!isUnlocked) {
+    ktpEl.classList.add("is-section-locked");
+    let overlay = ktpEl.querySelector(".coming-soon-section-overlay");
+    if (!overlay) {
+      overlay = document.createElement("div");
+      overlay.className = "coming-soon-section-overlay";
+      overlay.innerHTML = `
+        <div class="coming-soon-card">
+          <div class="coming-soon-pill">SEGERA HADIR</div>
+          <div class="coming-soon-icon"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><line x1="15" y1="8" x2="17" y2="8"/><line x1="15" y1="12" x2="17" y2="12"/><line x1="7" y1="16" x2="17" y2="16"/></svg></div>
+          <h3 class="coming-soon-title">Kartu Tanda Pengenal Mirai no Hana</h3>
+          <div class="coming-soon-actions">
+            <button type="button" class="coming-soon-btn-unlock cs-section-unlock-btn">
+              <span>Masukkan Sandi Pengurus</span>
+            </button>
+          </div>
+        </div>
+      `;
+      ktpEl.appendChild(overlay);
+      overlay.querySelector(".cs-section-unlock-btn")?.addEventListener("click", () => {
+        window.MiraiSound?.playClickIfIdle();
+        openPasswordModal();
+      });
+    }
+  } else {
+    ktpEl.classList.remove("is-section-locked");
+    ktpEl.querySelector(".coming-soon-section-overlay")?.remove();
+  }
+}
+
+// 3. Seksi Studio Ketik & Terjemahan di kamus/index.html (jika ada)
 const studioEl = document.getElementById("studio-terjemahan");
 if (studioEl) {
   if (!isUnlocked) {
@@ -3126,7 +3169,7 @@ if (studioEl) {
   }
 }
 
-// 3. Seksi Prestasi & Penghargaan di tentang/index.html
+// 4. Seksi Prestasi & Penghargaan di tentang/index.html
 const prestasiEl = document.getElementById("prestasi");
 if (prestasiEl) {
   if (!isUnlocked) {
@@ -3191,6 +3234,8 @@ const isLockedHref = (href) => {
   const h = href.toLowerCase();
   if (lockedWords.some((w) => h.includes(w))) return true;
   if (h.includes("kurikulum") || h.includes("#kurikulum")) return true;
+  if (h.includes("pembuat-nama-kta") || h.includes("#pembuat-nama-kta") || h.includes("kartu-tanda-pengenal")) return true;
+  if (h.includes("prestasi") || h.includes("#prestasi")) return true;
   return false;
 };
 

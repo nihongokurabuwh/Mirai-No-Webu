@@ -3044,13 +3044,13 @@ section.feedback-preview.feedback-theme-dark .card-toggle::after {
 
 /* Proteksi & Tampilan Pattern Quote Card Seksi Gelap (Beranda & Universal) */
 .section-quote-slider.quote-theme-dark .quote-card,
-.quote-card:not(.quote-theme-white) {
+.quote-card.quote-theme-dark {
   position: relative !important;
   overflow: hidden !important;
 }
 
 .section-quote-slider.quote-theme-dark .quote-card::after,
-.quote-card:not(.quote-theme-white)::after {
+.quote-card.quote-theme-dark::after {
   content: "" !important;
   position: absolute !important;
   inset: 0 !important;
@@ -3068,13 +3068,13 @@ section.feedback-preview.feedback-theme-dark .card-toggle::after {
 }
 
 .section-quote-slider.quote-theme-dark .quote-card:hover::after,
-.quote-card:not(.quote-theme-white):hover::after {
+.quote-card.quote-theme-dark:hover::after {
   opacity: var(--page-pattern-opacity-dark-hover, var(--opacity-c1b-hover)) !important;
   transform: scale(1.02) !important;
 }
 
 .section-quote-slider.quote-theme-dark .quote-card > *,
-.quote-card:not(.quote-theme-white) > * {
+.quote-card.quote-theme-dark > * {
   position: relative !important;
   z-index: 2 !important;
 }
@@ -3194,7 +3194,7 @@ SISTEM SEGERA HADIR (COMING SOON) & SISTEM KATA SANDI PENGURUS
 - Efek blur & tidak dapat diakses pada halaman/seksi yang berstatus Segera Hadir
 - Tombol gembok (🔒 / 🔓) di menu samping kata "MENU"
 - Modal interaktif input sandi pengurus (Terverifikasi secara Kriptografi SHA-256)
-- Seksi terkunci: #kurikulum (di kelas) & #studio-terjemahan (di kamus)
+- Seksi terkunci: #kurikulum (di kelas), #pembuat-nama-kta (di kamus) & #prestasi (di tentang)
 - Halaman terkunci: Selain Beranda, Kelas, Kamus (Toko, Peringkat, Rekomendasi, Lomba, Tentang, Kegiatan, Divisi)
 ========================================================================== */
 /* 1. Tombol Gembok di Samping "MENU" pada Sidebar */
@@ -3807,9 +3807,7 @@ html.is-page-locked-early main, body.is-page-locked main {
   z-index: 2 !important;
 }
 
-.section-quote-slider.quote-theme-white .quote-author-profile,
-.section-quote-slider.quote-theme-white .quote-box,
-.section-quote-slider.quote-theme-white .quote-meaning-card {
+.section-quote-slider.quote-theme-white .quote-author-profile {
   background: transparent !important;
   background-image: none !important;
   position: relative !important;
@@ -3818,8 +3816,30 @@ html.is-page-locked-early main, body.is-page-locked main {
   border: none !important;
 }
 
+.section-quote-slider.quote-theme-white .quote-box {
+  background: rgba(253, 250, 253, 0.92) !important;
+  border: 1px solid rgba(255, 79, 145, 0.22) !important;
+  border-left: 3.5px solid var(--pink, #ff659b) !important;
+  border-radius: 14px !important;
+  padding: 18px 22px !important;
+  box-shadow: 0 4px 16px rgba(255, 79, 145, 0.04) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  position: relative !important;
+  z-index: 2 !important;
+}
+
 .section-quote-slider.quote-theme-white .quote-meaning-card {
-  border-top: 1px solid rgba(0, 0, 0, 0.08) !important;
+  background: rgba(255, 255, 255, 0.92) !important;
+  border: 1px solid rgba(255, 79, 145, 0.22) !important;
+  border-radius: 14px !important;
+  padding: 18px 22px !important;
+  margin-top: 18px !important;
+  box-shadow: 0 4px 16px rgba(255, 79, 145, 0.04) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  position: relative !important;
+  z-index: 2 !important;
 }
 
 .quote-author-profile::before, .quote-author-profile::after,
@@ -3836,46 +3856,46 @@ html.is-page-locked-early main, body.is-page-locked main {
    - Halaman C1: Kartu Putih -> c1w.jpeg (multiply), Kartu Hitam -> c1b.jpeg (screen)
    ========================================================================== */
 /* 1. Halaman W1: Kartu Putih & Hover */
-:is(body[data-pattern-family="w1"], body.page-kelas, body.page-latihan, body.page-materi, body.page-kegiatan, body.page-divisi, body.page-divisi-hub, body.page-ktn, body.page-konbini, body.page-njr, body.page-ramadhan, body.page-tomodachi, body.page-peringkat, body.page-tentang) :is(.feedback-theme-white .feedback-feature-card, .section-quote-slider.quote-theme-white .quote-card)::after {
+:is(body[data-pattern-family="w1"], body.page-kelas, body.page-latihan, body.page-materi, body.page-kegiatan, body.page-divisi, body.page-divisi-hub, body.page-ktn, body.page-konbini, body.page-njr, body.page-ramadhan, body.page-tomodachi, body.page-peringkat, body.page-tentang) :is(.feedback-theme-white .feedback-feature-card, .section-quote-slider.quote-theme-white .quote-card, .quote-card.quote-theme-white)::after {
   background-image: url("../../images/mirai/background/w1w.jpeg") !important;
   opacity: var(--opacity-w1w) !important;
   mix-blend-mode: multiply !important;
 }
 
-:is(body[data-pattern-family="w1"], body.page-kelas, body.page-latihan, body.page-materi, body.page-kegiatan, body.page-divisi, body.page-divisi-hub, body.page-ktn, body.page-konbini, body.page-njr, body.page-ramadhan, body.page-tomodachi, body.page-peringkat, body.page-tentang) :is(.feedback-theme-white .feedback-feature-card:hover, .section-quote-slider.quote-theme-white .quote-card:hover)::after {
+:is(body[data-pattern-family="w1"], body.page-kelas, body.page-latihan, body.page-materi, body.page-kegiatan, body.page-divisi, body.page-divisi-hub, body.page-ktn, body.page-konbini, body.page-njr, body.page-ramadhan, body.page-tomodachi, body.page-peringkat, body.page-tentang) :is(.feedback-theme-white .feedback-feature-card:hover, .section-quote-slider.quote-theme-white .quote-card:hover, .quote-card.quote-theme-white:hover)::after {
   opacity: var(--opacity-w1w-hover) !important;
 }
 
 /* 2. Halaman W1: Kartu Hitam & Hover */
-:is(body[data-pattern-family="w1"], body.page-kelas, body.page-latihan, body.page-materi, body.page-kegiatan, body.page-divisi, body.page-divisi-hub, body.page-ktn, body.page-konbini, body.page-njr, body.page-ramadhan, body.page-tomodachi, body.page-peringkat, body.page-tentang) :is(.feedback-theme-dark .feedback-feature-card, .section-quote-slider.quote-theme-dark .quote-card, .quote-card:not(.quote-theme-white))::after {
+:is(body[data-pattern-family="w1"], body.page-kelas, body.page-latihan, body.page-materi, body.page-kegiatan, body.page-divisi, body.page-divisi-hub, body.page-ktn, body.page-konbini, body.page-njr, body.page-ramadhan, body.page-tomodachi, body.page-peringkat, body.page-tentang) :is(.feedback-theme-dark .feedback-feature-card, .section-quote-slider.quote-theme-dark .quote-card, .quote-card.quote-theme-dark)::after {
   background-image: url("../../images/mirai/background/w1b.jpeg") !important;
   opacity: var(--opacity-w1b) !important;
   mix-blend-mode: screen !important;
 }
 
-:is(body[data-pattern-family="w1"], body.page-kelas, body.page-latihan, body.page-materi, body.page-kegiatan, body.page-divisi, body.page-divisi-hub, body.page-ktn, body.page-konbini, body.page-njr, body.page-ramadhan, body.page-tomodachi, body.page-peringkat, body.page-tentang) :is(.feedback-theme-dark .feedback-feature-card:hover, .section-quote-slider.quote-theme-dark .quote-card:hover, .quote-card:not(.quote-theme-white):hover)::after {
+:is(body[data-pattern-family="w1"], body.page-kelas, body.page-latihan, body.page-materi, body.page-kegiatan, body.page-divisi, body.page-divisi-hub, body.page-ktn, body.page-konbini, body.page-njr, body.page-ramadhan, body.page-tomodachi, body.page-peringkat, body.page-tentang) :is(.feedback-theme-dark .feedback-feature-card:hover, .section-quote-slider.quote-theme-dark .quote-card:hover, .quote-card.quote-theme-dark:hover)::after {
   opacity: var(--opacity-w1b-hover) !important;
 }
 
 /* 3. Halaman C1: Kartu Putih & Hover */
-:is(body[data-pattern-family="c1"], body.page-beranda, body.page-kamus, body.page-kanji, body.page-toko, body.page-motivasi, body.page-lomba, body.page-404, body.page-sora, body.offline-page) :is(.feedback-theme-white .feedback-feature-card, .section-quote-slider.quote-theme-white .quote-card)::after {
+:is(body[data-pattern-family="c1"], body.page-beranda, body.page-kamus, body.page-kanji, body.page-toko, body.page-motivasi, body.page-lomba, body.page-404, body.page-sora, body.offline-page) :is(.feedback-theme-white .feedback-feature-card, .section-quote-slider.quote-theme-white .quote-card, .quote-card.quote-theme-white)::after {
   background-image: url("../../images/mirai/background/c1w.jpeg") !important;
   opacity: var(--opacity-c1w) !important;
   mix-blend-mode: multiply !important;
 }
 
-:is(body[data-pattern-family="c1"], body.page-beranda, body.page-kamus, body.page-kanji, body.page-toko, body.page-motivasi, body.page-lomba, body.page-404, body.page-sora, body.offline-page) :is(.feedback-theme-white .feedback-feature-card:hover, .section-quote-slider.quote-theme-white .quote-card:hover)::after {
+:is(body[data-pattern-family="c1"], body.page-beranda, body.page-kamus, body.page-kanji, body.page-toko, body.page-motivasi, body.page-lomba, body.page-404, body.page-sora, body.offline-page) :is(.feedback-theme-white .feedback-feature-card:hover, .section-quote-slider.quote-theme-white .quote-card:hover, .quote-card.quote-theme-white:hover)::after {
   opacity: var(--opacity-c1w-hover) !important;
 }
 
 /* 4. Halaman C1: Kartu Hitam & Hover */
-:is(body[data-pattern-family="c1"], body.page-beranda, body.page-kamus, body.page-kanji, body.page-toko, body.page-motivasi, body.page-lomba, body.page-404, body.page-sora, body.offline-page) :is(.feedback-theme-dark .feedback-feature-card, .section-quote-slider.quote-theme-dark .quote-card, .quote-card:not(.quote-theme-white))::after {
+:is(body[data-pattern-family="c1"], body.page-beranda, body.page-kamus, body.page-kanji, body.page-toko, body.page-motivasi, body.page-lomba, body.page-404, body.page-sora, body.offline-page) :is(.feedback-theme-dark .feedback-feature-card, .section-quote-slider.quote-theme-dark .quote-card, .quote-card.quote-theme-dark)::after {
   background-image: url("../../images/mirai/background/c1b.jpeg") !important;
   opacity: var(--opacity-c1b) !important;
   mix-blend-mode: screen !important;
 }
 
-:is(body[data-pattern-family="c1"], body.page-beranda, body.page-kamus, body.page-kanji, body.page-toko, body.page-motivasi, body.page-lomba, body.page-404, body.page-sora, body.offline-page) :is(.feedback-theme-dark .feedback-feature-card:hover, .section-quote-slider.quote-theme-dark .quote-card:hover, .quote-card:not(.quote-theme-white):hover)::after {
+:is(body[data-pattern-family="c1"], body.page-beranda, body.page-kamus, body.page-kanji, body.page-toko, body.page-motivasi, body.page-lomba, body.page-404, body.page-sora, body.offline-page) :is(.feedback-theme-dark .feedback-feature-card:hover, .section-quote-slider.quote-theme-dark .quote-card:hover, .quote-card.quote-theme-dark:hover)::after {
   opacity: var(--opacity-c1b-hover) !important;
 }
 

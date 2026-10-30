@@ -6,21 +6,37 @@
   "cSpell.ignorePaths": [
     "**/*"
   ],
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.expand": false,
+  "explorer.fileNesting.patterns": {
+    "index.html": "404.html, offline.html, manifest.webmanifest, service-worker.js, robots.txt, sitemap.xml, favicon.ico, favicon.png",
+    ".gitignore": "cspell.json, .cursorignore"
+  },
   "search.exclude": {
     "**/.git": true,
+    "**/.venv": true,
+    "**/.venv/**": true,
+    "**/.cache": true,
+    "**/.cache/**": true,
     "**/__pycache__": true,
     "**/data/*.json": true,
     "**/js/stroke-data.js": true,
     "**/skrip/arsip/**": true,
+    "**/arsip/**": true,
     "**/*.bak": true,
     "**/js/kamus-kanji-data.js": true
   },
   "files.watcherExclude": {
     "**/.git": true,
+    "**/.venv": true,
+    "**/.venv/**": true,
+    "**/.cache": true,
+    "**/.cache/**": true,
     "**/__pycache__": true,
     "**/data/*.json": true,
     "**/js/stroke-data.js": true,
     "**/skrip/arsip/**": true,
+    "**/arsip/**": true,
     "**/*.bak": true,
     "**/js/kamus-kanji-data.js": true
   }

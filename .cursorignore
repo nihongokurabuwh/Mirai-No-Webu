@@ -1,0 +1,30 @@
+# ==============================================================================
+# MIRAI NO WEBU — Cursor & AI Agent Ignore Rules (.cursorignore)
+# Mencegah pemborosan context token & mempercepat indexing codebase AI Agent
+# ==============================================================================
+
+# Virtual Environment & Local Cache
+.venv/
+venv/
+.cache/
+
+# Large Raw Data Files (JSON)
+data/*.json
+data/**/*.json
+
+# Large Embedded JS Datasets
+js/kamus-kanji-data.js
+js/stroke-data.js
+
+# Project Archives & Legacy Scripts
+arsip/
+skrip/arsip/
+
+# Generated Heavy Reports
+skrip/laporan/stroke-review.html
+
+# Dependencies & OS Metadata
+node_modules/
+.DS_Store
+Thumbs.db
+

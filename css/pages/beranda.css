@@ -2346,25 +2346,27 @@ RESPONSIF MODE HP (<= 768px):
 }
 
 .page-beranda .section-quote-slider.quote-theme-dark .quote-card::after,
-.page-beranda .quote-card:not(.quote-theme-white)::after {
+.page-beranda .quote-card.quote-theme-dark::after {
   background-image: url("../../images/mirai/background/c1b.jpeg") !important;
   opacity: var(--opacity-c1b) !important;
   mix-blend-mode: screen !important;
 }
 
 .page-beranda .section-quote-slider.quote-theme-dark .quote-card:hover::after,
-.page-beranda .quote-card:not(.quote-theme-white):hover::after {
+.page-beranda .quote-card.quote-theme-dark:hover::after {
   opacity: var(--opacity-c1b-hover) !important;
   transform: scale(1.02) !important;
 }
 
-.page-beranda .section-quote-slider.quote-theme-white .quote-card::after {
+.page-beranda .section-quote-slider.quote-theme-white .quote-card::after,
+.page-beranda .quote-card.quote-theme-white::after {
   background-image: url("../../images/mirai/background/c1w.jpeg") !important;
   opacity: var(--opacity-c1w) !important;
   mix-blend-mode: multiply !important;
 }
 
-.page-beranda .section-quote-slider.quote-theme-white .quote-card:hover::after {
+.page-beranda .section-quote-slider.quote-theme-white .quote-card:hover::after,
+.page-beranda .quote-card.quote-theme-white:hover::after {
   opacity: var(--opacity-c1w-hover) !important;
   transform: scale(1.02) !important;
 }

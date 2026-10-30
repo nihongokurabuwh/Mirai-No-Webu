@@ -3361,7 +3361,7 @@ RESPACING MINIMAL UNTUK HALAMAN TENTANG (.page-tentang)
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease !important;
 }
 
-.about-intro-card::after, .about-name-card::after, .history-origin-card::after, .slogan-hero-card::after, .slogan-card::after, .achievement-card::after, .accessory-card::after, .accessory-banner-card::after, .timeline-content::after, .prestasi-stat-box::after, .podium-card::after, .lb-table-card::after {
+.about-intro-card::after, .about-name-card::after, .history-origin-card::after, .slogan-hero-card::after, .slogan-card::after, .achievement-card::after, .accessory-card::after, .accessory-banner-card::after, .timeline-content::after, .prestasi-stat-box::after, .podium-card::after, .lb-table-card::after, body.page-tentang .quote-card.quote-theme-white::after {
   content: "" !important;
   position: absolute !important;
   inset: 0 !important;
@@ -3377,7 +3377,7 @@ RESPACING MINIMAL UNTUK HALAMAN TENTANG (.page-tentang)
   transition: opacity 0.3s ease, transform 0.3s ease !important;
 }
 
-.about-intro-card:hover::after, .about-name-card:hover::after, .history-origin-card:hover::after, .slogan-hero-card:hover::after, .slogan-card:hover::after, .achievement-card:hover::after, .accessory-card:hover::after, .accessory-banner-card:hover::after, .timeline-node:hover .timeline-content::after, .prestasi-stat-box:hover::after, .podium-card:hover::after, .lb-table-card:hover::after {
+.about-intro-card:hover::after, .about-name-card:hover::after, .history-origin-card:hover::after, .slogan-hero-card:hover::after, .slogan-card:hover::after, .achievement-card:hover::after, .accessory-card:hover::after, .accessory-banner-card:hover::after, .timeline-node:hover .timeline-content::after, .prestasi-stat-box:hover::after, .podium-card:hover::after, .lb-table-card:hover::after, body.page-tentang .quote-card.quote-theme-white:hover::after {
   opacity: var(--opacity-w1w-hover) !important;
   transform: scale(1.02) !important;
 }
@@ -3398,7 +3398,7 @@ RESPACING MINIMAL UNTUK HALAMAN TENTANG (.page-tentang)
 }
 
 /* (B) KARTU SEKSI HITAM (DARK THEME): PATTERN w1b.jpeg (mix-blend-mode: screen) */
-.flag-feature-card, .logo-meaning-badge-col, .logo-meaning-card, .haori-card, .haori-photo-card, .pembina-card, .management-card, .vision-card, .mission-box, .sora-rpg-card, .lb-category-desc-card, .lb-system-info-card, body.page-tentang .quote-card:not(.quote-theme-white) {
+.flag-feature-card, .logo-meaning-badge-col, .logo-meaning-card, .haori-card, .haori-photo-card, .pembina-card, .management-card, .vision-card, .mission-box, .sora-rpg-card, .lb-category-desc-card, .lb-system-info-card, body.page-tentang .quote-card.quote-theme-dark {
   position: relative !important;
   overflow: hidden !important;
   box-sizing: border-box !important;
@@ -3410,7 +3410,7 @@ RESPACING MINIMAL UNTUK HALAMAN TENTANG (.page-tentang)
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease !important;
 }
 
-.flag-feature-card::after, .logo-meaning-badge-col::after, .logo-meaning-card::after, .haori-card::after, .haori-photo-card::after, .pembina-card::after, .management-card::after, .vision-card::after, .mission-box::after, .sora-rpg-card::after, .lb-category-desc-card::after, .lb-system-info-card::after, body.page-tentang .quote-card:not(.quote-theme-white)::after {
+.flag-feature-card::after, .logo-meaning-badge-col::after, .logo-meaning-card::after, .haori-card::after, .haori-photo-card::after, .pembina-card::after, .management-card::after, .vision-card::after, .mission-box::after, .sora-rpg-card::after, .lb-category-desc-card::after, .lb-system-info-card::after, body.page-tentang .quote-card.quote-theme-dark::after {
   content: "" !important;
   position: absolute !important;
   inset: 0 !important;
@@ -3426,7 +3426,7 @@ RESPACING MINIMAL UNTUK HALAMAN TENTANG (.page-tentang)
   transition: opacity 0.3s ease, transform 0.3s ease !important;
 }
 
-.flag-feature-card:hover::after, .logo-meaning-badge-col:hover::after, .logo-meaning-card:hover::after, .haori-card:hover::after, .haori-photo-card:hover::after, .pembina-card:hover::after, .management-card:hover::after, .vision-card:hover::after, .mission-box:hover::after, .sora-rpg-card:hover::after, .lb-category-desc-card:hover::after, .lb-system-info-card:hover::after, body.page-tentang .quote-card:not(.quote-theme-white):hover::after {
+.flag-feature-card:hover::after, .logo-meaning-badge-col:hover::after, .logo-meaning-card:hover::after, .haori-card:hover::after, .haori-photo-card:hover::after, .pembina-card:hover::after, .management-card:hover::after, .vision-card:hover::after, .mission-box:hover::after, .sora-rpg-card:hover::after, .lb-category-desc-card:hover::after, .lb-system-info-card:hover::after, body.page-tentang .quote-card.quote-theme-dark:hover::after {
   opacity: var(--opacity-w1b-hover) !important;
   transform: scale(1.02) !important;
 }

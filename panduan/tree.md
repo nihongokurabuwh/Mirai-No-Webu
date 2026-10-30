@@ -6,18 +6,20 @@ Struktur direktori menerapkan standar **Feature-Based Asset Colocation**, **Modu
 ```text
 Mirai-No-Webu/
 ├── index.html                      # Gerbang utama website (Beranda)
-├── 404.html                        # Halaman penanganan tautan salah / tidak ditemukan bertema Sora
-├── offline.html                    # Halaman fallback ramah pengunjung saat perangkat offline (PWA)
-├── favicon.ico                     # Ikon favicon tab peramban web resmi klub (Logo lingkaran NK)
-├── favicon.png                     # Favicon PNG resolusi tinggi logo lingkaran NK
-├── manifest.webmanifest            # Konfigurasi PWA Web App Manifest (standalone, theme_color #e91e63, icons)
-├── service-worker.js               # Service Worker PWA (precache app shell, cache-first data, stale-while-revalidate)
-├── robots.txt                      # Konfigurasi perayapan mesin pencari (SEO)
-├── sitemap.xml                     # Peta situs XML 32 halaman resmi website
+│   ├── [Nested] 404.html           # Halaman penanganan tautan salah / tidak ditemukan bertema Sora
+│   ├── [Nested] offline.html       # Halaman fallback ramah pengunjung saat perangkat offline (PWA)
+│   ├── [Nested] manifest.webmanifest # Konfigurasi PWA Web App Manifest (standalone, theme_color #e91e63, icons)
+│   ├── [Nested] service-worker.js  # Service Worker PWA (precache app shell, cache-first data, stale-while-revalidate)
+│   ├── [Nested] robots.txt         # Konfigurasi perayapan mesin pencari (SEO)
+│   ├── [Nested] sitemap.xml        # Peta situs XML 32 halaman resmi website
+│   ├── [Nested] favicon.ico        # Ikon favicon tab peramban web resmi klub (Logo lingkaran NK)
+│   └── [Nested] favicon.png        # Favicon PNG resolusi tinggi logo lingkaran NK
+├── .gitignore                      # Konfigurasi pengabaian Git (Python venv, cache, OS metadata)
+│   ├── [Nested] .cursorignore      # Konfigurasi efisiensi context window & indexing AI Agent (Cursor/AI)
+│   └── [Nested] cspell.json        # Konfigurasi Code Spell Checker (kamus & ignorasi kata bilingual)
 ├── README.md                       # Profil utama repositori & dokumentasi Sources & Credits
-├── cspell.json                     # Konfigurasi Code Spell Checker (kamus & ignorasi kata bilingual)
 ├── .vscode/                        # Konfigurasi workspace editor VS Code / Antigravity
-│   ├── settings.json               # Pengaturan workspace, formatOnSave, search.exclude, & watcherExclude
+│   ├── settings.json               # Pengaturan workspace, file nesting, search.exclude, & watcherExclude
 │   └── extensions.json             # Rekomendasi 9 ekstensi resmi VS Code untuk developer proyek
 │
 ├── css/                            # Master & Arsitektur Stylesheet Berbasis Halaman
@@ -189,11 +191,18 @@ Mirai-No-Webu/
 │       └── format_project.py       # Pemformat dan pembersih kode proyek
 │
 └── images/mirai/                   # Aset Bersama (Shared Global Assets)
-    ├── background/                 # Pola Wagara master CSS (w1b, w1w, c1b, c1w, w2w, chat, Sora)
-    ├── logo/                       # Logo resmi klub (MNH1.png, MNH1-nav.png, icon-192.png, icon-512.png)
-    ├── icon/                       # Ikon chibi Genshin Impact (Al, Ay, Chi, Fa, Fu, Hu, Ka, Ki, Lo, dll.)
-    ├── karakter/                   # Foto karakter anime kutipan (luf, ere, nar, dek, tan)
+    ├── background/                 # Pola Wagara master CSS (w1b, w1w, c1b, c1w, chat, Sora.webp/png)
+    ├── logo/                       # Logo resmi klub (MNH1-nav.png, NK.png, bendera.jpeg, comingsoon.jpg, icon-192/512.png)
+    ├── icon/                       # Ikon chibi Genshin Impact (Al, Ay, Chi, Fa, dll.) & avatar pengurus (10 foto profil)
+    ├── karakter/                   # Foto potret karakter anime kutipan (dek, ere, luf, nar, tan) & pas foto KTA Sora
     ├── produk/                     # Foto produk konbini (oni, tak, dan, mat, teh)
     ├── stiker/                     # 28 stiker komunitas ekspresi karakter anime
-    └── goresan-acuan/              # Direktori gambar acuan resmi bentuk goresan (<hex>.png)
+    ├── goresan-acuan/              # Direktori gambar acuan resmi bentuk goresan (<hex>.png)
+    └── _unused/                    # Arsip aset cadangan/non-aktif sementara (logo proker, varian transparan)
 ```
+
+---
+
+> [!NOTE]
+> **Efisiensi Workspace & AI Context Safeguard**:
+> Direktori `.venv/` (Python virtual environment), `.cache/` (cache lokal), `arsip/` (arsip proyek), `data/*.json` (basis data mentah), dan laporan render `skrip/laporan/stroke-review.html` dipelihara secara lokal namun sepenuhnya dikecualikan dari Git (`.gitignore`), indeks pencarian/watcher VS Code (`.vscode/settings.json`), serta token context window AI (`.cursorignore`). File-file konfigurasi dan berkas publik root dirapikan menggunakan fitur *File Nesting* VS Code demi menjaga arsitektur *Clean Root Standard*.

@@ -1,10 +1,42 @@
-# Cache & Temporary Files
-.cache/
+# ==============================================================================
+# MIRAI NO WEBU — Git Ignore Rules
+# Menjaga kebersihan repositori Git & efisiensi sinkronisasi
+# ==============================================================================
+
+# Python Virtual Environments
+.venv/
+venv/
+env/
+ENV/
+
+# Environment Variables & Secrets
+.env
+.env.*
+!.env.example
+
+# Python Bytecode & Cache
 __pycache__/
 *.py[cod]
 *$py.class
-*.tmp
-*.tmp.js
+*.pyc
+
+# Dependencies & Local Cache
+node_modules/
+.cache/
+
+# Operating System Files
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
 Thumbs.db
 
+# Editor & Temporary Files
+*.tmp
+*.tmp.js
+*.bak
+*.swp
+*.swo
+*~

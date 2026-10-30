@@ -210,39 +210,48 @@ body.sora-fullscreen-active .menu-btn {
 #drawer .header-actions {
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 7px;
 }
 
 #drawer #closeBtn,
 #drawer #fullscreenBtn {
     background: linear-gradient(135deg, #ff4f91, #e91e63);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.35);
     color: #ffffff;
     cursor: pointer;
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 700;
     padding: 0;
     border-radius: 50%;
-    width: 28px;
-    height: 28px;
-    display: flex;
+    width: 32px;
+    height: 32px;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     box-shadow: 0 2px 8px rgba(233, 30, 99, 0.45);
     transition: all 0.22s ease;
+    flex-shrink: 0;
 }
 
 #drawer #closeBtn:hover,
 #drawer #fullscreenBtn:hover {
     color: #ffffff;
     background: linear-gradient(135deg, #ff659b, #d81b60);
-    transform: scale(1.1);
+    transform: scale(1.08);
     box-shadow: 0 4px 14px rgba(233, 30, 99, 0.65);
 }
 
 #drawer #closeBtn:active,
 #drawer #fullscreenBtn:active {
     transform: scale(0.92);
+}
+
+#drawer #fullscreenBtn svg,
+#drawer #closeBtn svg {
+    width: 17px;
+    height: 17px;
+    display: block;
+    pointer-events: none;
 }
 
 /* Chat Area - Wallpaper Doodle chat.jpeg */
@@ -298,6 +307,8 @@ body.sora-fullscreen-active .menu-btn {
 
 /* Default & Mode Pelajar (Bot): BIRU */
 #drawer .msg.bot .bubble,
+#drawer[data-sora-mode="standard"] .msg.bot .bubble,
+#drawer.mode-standard .msg.bot .bubble,
 #drawer[data-sora-mode="pelajar"] .msg.bot .bubble,
 #drawer.mode-pelajar .msg.bot .bubble {
     background: linear-gradient(135deg, #1d4ed8, #2563eb);
@@ -306,17 +317,23 @@ body.sora-fullscreen-active .menu-btn {
     box-shadow: 0 3px 12px rgba(37, 99, 235, 0.25);
     border: 1px solid rgba(96, 165, 250, 0.35);
 }
+#drawer[data-sora-mode="standard"] .msg.bot .bubble .md strong,
+#drawer.mode-standard .msg.bot .bubble .md strong,
 #drawer[data-sora-mode="pelajar"] .msg.bot .bubble .md strong,
 #drawer.mode-pelajar .msg.bot .bubble .md strong {
     color: #ffffff;
 }
+#drawer[data-sora-mode="standard"] .msg.bot .bubble .md code,
+#drawer.mode-standard .msg.bot .bubble .md code,
 #drawer[data-sora-mode="pelajar"] .msg.bot .bubble .md code,
 #drawer.mode-pelajar .msg.bot .bubble .md code {
     background: rgba(0, 0, 0, 0.25);
     color: #ffffff;
 }
 
-/* Mode Bercanda (Bot): KUNING */
+/* Mode Teman / Bercanda (Bot): KUNING/AMBER */
+#drawer[data-sora-mode="teman"] .msg.bot .bubble,
+#drawer.mode-teman .msg.bot .bubble,
 #drawer[data-sora-mode="bercanda"] .msg.bot .bubble,
 #drawer.mode-bercanda .msg.bot .bubble {
     background: linear-gradient(135deg, #d97706, #f59e0b);
@@ -326,13 +343,37 @@ body.sora-fullscreen-active .menu-btn {
     box-shadow: 0 3px 12px rgba(245, 158, 11, 0.28);
     border: 1px solid rgba(251, 191, 36, 0.5);
 }
+#drawer[data-sora-mode="teman"] .msg.bot .bubble .md strong,
+#drawer.mode-teman .msg.bot .bubble .md strong,
 #drawer[data-sora-mode="bercanda"] .msg.bot .bubble .md strong,
 #drawer.mode-bercanda .msg.bot .bubble .md strong {
     color: #ffffff;
     font-weight: 700;
 }
+#drawer[data-sora-mode="teman"] .msg.bot .bubble .md code,
+#drawer.mode-teman .msg.bot .bubble .md code,
 #drawer[data-sora-mode="bercanda"] .msg.bot .bubble .md code,
 #drawer.mode-bercanda .msg.bot .bubble .md code {
+    background: rgba(0, 0, 0, 0.25);
+    color: #ffffff;
+}
+
+/* Mode Sensei (Bot): INDIGO/VIOLET */
+#drawer[data-sora-mode="sensei"] .msg.bot .bubble,
+#drawer.mode-sensei .msg.bot .bubble {
+    background: linear-gradient(135deg, #4338ca, #6366f1);
+    color: #ffffff;
+    border-bottom-left-radius: 3px;
+    box-shadow: 0 3px 12px rgba(99, 102, 241, 0.28);
+    border: 1px solid rgba(165, 180, 252, 0.45);
+}
+#drawer[data-sora-mode="sensei"] .msg.bot .bubble .md strong,
+#drawer.mode-sensei .msg.bot .bubble .md strong {
+    color: #ffffff;
+    font-weight: 700;
+}
+#drawer[data-sora-mode="sensei"] .msg.bot .bubble .md code,
+#drawer.mode-sensei .msg.bot .bubble .md code {
     background: rgba(0, 0, 0, 0.25);
     color: #ffffff;
 }
@@ -401,10 +442,16 @@ body.sora-fullscreen-active .menu-btn {
     animation: soraBounce 1.2s infinite ease-in-out;
     transition: background-color 0.25s ease;
 }
+#drawer[data-sora-mode="standard"] .typing-dots span,
+#drawer.mode-standard .typing-dots span,
 #drawer[data-sora-mode="pelajar"] .typing-dots span,
 #drawer.mode-pelajar .typing-dots span { background: #60a5fa; }
+#drawer[data-sora-mode="teman"] .typing-dots span,
+#drawer.mode-teman .typing-dots span,
 #drawer[data-sora-mode="bercanda"] .typing-dots span,
 #drawer.mode-bercanda .typing-dots span { background: #f59e0b; }
+#drawer[data-sora-mode="sensei"] .typing-dots span,
+#drawer.mode-sensei .typing-dots span { background: #818cf8; }
 #drawer[data-sora-mode="husbu"] .typing-dots span,
 #drawer.mode-husbu .typing-dots span { background: #f472b6; }
 #drawer .typing-dots span:nth-child(2) { animation-delay: 0.2s; }
@@ -469,28 +516,44 @@ body.sora-fullscreen-active .menu-btn {
     transform: rotate(180deg);
 }
 
-/* Mode Pelajar (Blue/Cyan) */
+/* Mode Standard / Pelajar (Blue/Cyan) */
+#drawer .mode-switch-btn.mode-standard,
 #drawer .mode-switch-btn.mode-pelajar {
     background: rgba(37, 99, 235, 0.18);
     border: 1.5px solid #3b82f6;
     color: #93c5fd;
     box-shadow: 0 0 10px rgba(59, 130, 246, 0.25);
 }
+#drawer .mode-switch-btn.mode-standard:hover,
 #drawer .mode-switch-btn.mode-pelajar:hover {
     background: rgba(37, 99, 235, 0.3);
     box-shadow: 0 0 14px rgba(59, 130, 246, 0.4);
 }
 
-/* Mode Bercanda (Amber/Orange) */
+/* Mode Teman / Bercanda (Amber/Orange) */
+#drawer .mode-switch-btn.mode-teman,
 #drawer .mode-switch-btn.mode-bercanda {
     background: rgba(245, 158, 11, 0.18);
     border: 1.5px solid #f59e0b;
     color: #fcd34d;
     box-shadow: 0 0 10px rgba(245, 158, 11, 0.25);
 }
+#drawer .mode-switch-btn.mode-teman:hover,
 #drawer .mode-switch-btn.mode-bercanda:hover {
     background: rgba(245, 158, 11, 0.3);
     box-shadow: 0 0 14px rgba(245, 158, 11, 0.4);
+}
+
+/* Mode Sensei (Indigo/Violet) */
+#drawer .mode-switch-btn.mode-sensei {
+    background: rgba(99, 102, 241, 0.18);
+    border: 1.5px solid #6366f1;
+    color: #a5b4fc;
+    box-shadow: 0 0 10px rgba(99, 102, 241, 0.25);
+}
+#drawer .mode-switch-btn.mode-sensei:hover {
+    background: rgba(99, 102, 241, 0.3);
+    box-shadow: 0 0 14px rgba(99, 102, 241, 0.4);
 }
 
 /* Mode Husbu (Pink/Rose) */
@@ -503,6 +566,40 @@ body.sora-fullscreen-active .menu-btn {
 #drawer .mode-switch-btn.mode-husbu:hover {
     background: rgba(236, 72, 153, 0.3);
     box-shadow: 0 0 14px rgba(236, 72, 153, 0.4);
+}
+
+/* Chips Pertanyaan Cepat (Dynamic Suggestions) */
+#drawer .suggestion-chips-container {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+}
+#drawer .suggestion-chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 12px;
+    border-radius: 18px;
+    font-size: 11px;
+    font-weight: 500;
+    color: #cbd5e1;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    user-select: none;
+    flex-shrink: 0;
+    outline: none;
+}
+#drawer .suggestion-chip:hover {
+    background: rgba(255, 255, 255, 0.14);
+    border-color: rgba(255, 255, 255, 0.28);
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+#drawer .suggestion-chip:active {
+    transform: scale(0.96);
 }
 
 #drawer .suggestions-actions {
@@ -558,15 +655,35 @@ body.sora-fullscreen-active .menu-btn {
     border-color: #ef4444;
 }
 
-#drawer .bubble .md img {
+/* Styling Khusus Stiker & Gambar Chat Sora */
+#drawer .bubble.sticker-bubble {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+}
+
+#drawer .bubble.sticker-bubble .sora-chat-sticker,
+#drawer .bubble .md img,
+#drawer .sora-chat-sticker {
     max-width: 175px;
     width: 100%;
     height: auto;
-    border-radius: 12px;
+    border-radius: 14px;
     display: block;
-    margin: 6px 0 8px 0;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    margin: 4px 0;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45);
+    border: 1.5px solid rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.04);
+    transition: transform 0.22s ease, box-shadow 0.22s ease;
+    cursor: pointer;
+}
+
+#drawer .bubble.sticker-bubble .sora-chat-sticker:hover,
+#drawer .sora-chat-sticker:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 24px rgba(233, 30, 99, 0.35);
+    border-color: rgba(244, 114, 182, 0.5);
 }
 
 #drawer .bubble .md p:has(> img:only-child) {
@@ -1143,8 +1260,8 @@ body.sora-fullscreen-active .menu-btn {
                 </div>
             </div>
             <div class="header-actions">
-                <button id="fullscreenBtn" type="button" title="Layar Penuh" aria-label="Layar Penuh">⛶</button>
-                <button id="closeBtn" type="button" title="Tutup Chat" aria-label="Tutup Chat">✕</button>
+                <button id="fullscreenBtn" type="button" title="Layar Penuh" aria-label="Layar Penuh"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg></button>
+                <button id="closeBtn" type="button" title="Tutup Chat" aria-label="Tutup Chat"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button>
             </div>
         </div>
 
@@ -1194,8 +1311,8 @@ body.sora-fullscreen-active .menu-btn {
         </div>
     </div>
 
-    <script defer src="js/sora.js?v=547da8dc"></script>
-    <script defer src="js/main.js?v=8013774b"></script>
+    <script defer src="js/sora.js?v=6338e965"></script>
+    <script defer src="js/main.js?v=1c0da60f"></script>
 
     <!-- Script Interaktif Chatbot Asora Aokita -->
     <script>
@@ -1220,22 +1337,34 @@ body.sora-fullscreen-active .menu-btn {
             "llama-3.1-8b-instant"
         ];
 
-        const SORA_MODES = {
-            pelajar: {
-                id: 'pelajar',
-                name: 'PELAJAR',
-                btnText: 'SORA MODE: PELAJAR',
-                icon: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>',
-                className: 'mode-pelajar',
-                prompt: "Kamu adalah Sora, anggota senior di klub Jepang Mirai no Hana. DILARANG BERTINGKAH SEPERTI BOT ATAU CUSTOMER SERVICE (Jangan pernah pakai sapaan kaku seperti 'Ada yang bisa saya bantu?'). Jadilah anak SMA yang pintar, ramah, dan asik. Gunakan kata ganti 'Aku-Kamu' dan bahasa gaul yang sopan. Anggap user sebagai teman seklub yang sedang belajar bareng. DILARANG KERAS MENGGUNAKAN EMOJI APAPUN (kecuali user meminta sebaliknya). ATURAN PANJANG RESPON: Untuk obrolan santai sehari-hari atau tanya-jawab singkat, balas dengan respon singkat/sedang yang natural ala chat anak SMA (1-3 kalimat). Namun jika user meminta penjelasan materi yang mendalam, panduan, analisis data, cerita/dongeng, atau jawaban detail (longtext), jelaskan secara lengkap, terstruktur, runtut, dan tuntas sampai akhir tanpa terpotong di tengah jalan. ATURAN TATA BAHASA & PENGETIKAN: Susun kalimat dengan jelas, terstruktur, tidak ambigu, dan mudah dipahami. Ketik perkataan dengan teliti, DILARANG KERAS TYPO atau salah ketik yang membuat rancu atau membingungkan. ATURAN STIKER: Ketika memberikan atau mengirimkan stiker, HANYA kirim gambar stikernya saja (format markdown image) tanpa chat teks pengantar maupun penutup sama sekali (hanya gambar doang)."
+        const SORA_CONFIG = window.SoraConfig || {};
+        const SORA_MODES = (SORA_CONFIG && SORA_CONFIG.MODE_CONFIGS) ? SORA_CONFIG.MODE_CONFIGS : {
+            standard: {
+                id: 'standard',
+                name: 'STANDARD',
+                btnText: 'SORA MODE: STANDARD',
+                icon: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>',
+                className: 'mode-standard',
+                welcome: "Halo! Aku Asora Aokita (Sora). Mau santai ngobrol atau ada materi yang mau kita bahas bareng hari ini?",
+                suggestions: ["Kenalan sama ekskul Mirai no Hana dong", "Gimana urutan mulai belajar bahasa Jepang dari nol?", "Trik cepat bedain huruf Hiragana dan Katakana", "Rekomendasi anime bagus buat nemenin belajar"]
             },
-            bercanda: {
-                id: 'bercanda',
-                name: 'BERCANDA',
-                btnText: 'SORA MODE: BERCANDA',
+            teman: {
+                id: 'teman',
+                name: 'TEMAN',
+                btnText: 'SORA MODE: TEMAN',
                 icon: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line></svg>',
-                className: 'mode-bercanda',
-                prompt: "Kamu adalah Sora, sahabat (bestie) user yang sefrekuensi, seru, dan konyol. DILARANG BERSIKAP TOXIC, JUDES, ATAU SEPERTI PREMAN YANG NGAJAK BERANTEM. Jangan pernah kasar. Kalau user ngelawak, cerita absurd, atau ketawa ('wkwkwk' / 'awokawok'), ikutlah tertawa (pakai wkwkwk) dan balas dengan guyonan yang lucu, gajelas, tapi asik. Kamu boleh meledek (roasting) TAPI dalam konteks bercanda akrab yang bikin ketawa bareng, bukan marah-marah. WAJIB pakai 'Aku-Kamu', jangan pakai 'lu-gue'. DILARANG KERAS MENGGUNAKAN EMOJI APAPUN (kecuali user meminta sebaliknya). ATURAN PANJANG RESPON: Untuk chatting santai atau lelucon biasa, balas dengan gaya chat WhatsApp anak SMA yang singkat/sedang dan ceplas-ceplos (1-3 kalimat). Namun jika user meminta cerita panjang, dongeng absurd, atau penjelasan topik secara detail (longtext), ceritakan secara lengkap, mengalir, seru, dan tuntas sampai akhir tanpa terpotong di tengah jalan. ATURAN TATA BAHASA & PENGETIKAN: Susun kata dan lelucon dengan jelas, koheren, dan tidak membingungkan. Ketik perkataan dengan benar dan teliti, DILARANG TYPO yang merusak maksud kalimat atau membuat obrolan tidak masuk akal. ATURAN STIKER: Ketika memberikan atau mengirimkan stiker, HANYA kirim gambar stikernya saja (format markdown image) tanpa chat teks pengantar maupun penutup sama sekali (hanya gambar doang)."
+                className: 'mode-teman',
+                welcome: "Yoo! Lagi santai ya? Tumben nih mampir, mau cerita apa atau lagi pusing sama tugas sekolah?",
+                suggestions: ["Lagi pusing tugas sekolah nih, butuh suntikan semangat", "Anime season ini yang wajib ditonton apa ya menurutmu?", "Wkwk ada cerita absurd nggak selama kegiatan ekskul?", "Enakan mulai cicil kanji atau grammar dulu sih?"]
+            },
+            sensei: {
+                id: 'sensei',
+                name: 'SENSEI',
+                btnText: 'SORA MODE: SENSEI',
+                icon: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>',
+                className: 'mode-sensei',
+                welcome: "Konnichiwa! Di mode Sensei ini, kita bisa kupas tuntas tata bahasa, kanji, atau persiapan JLPT dengan santai. Materi apa yang ingin kamu pahami hari ini?",
+                suggestions: ["Bisa jelasin perbedaan partikel は (wa) dan が (ga)?", "Trik cepat hafal huruf Katakana yang mirip dong (シ vs ツ)", "Bikinin contoh percakapan praktis pesan makanan di resto Jepang", "Pola kalimat dasar JLPT N5 yang paling sering dipakai apa aja?"]
             },
             husbu: {
                 id: 'husbu',
@@ -1243,20 +1372,30 @@ body.sora-fullscreen-active .menu-btn {
                 btnText: 'SORA MODE: HUSBU',
                 icon: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>',
                 className: 'mode-husbu',
-                prompt: "Kamu adalah Sora, pacar virtual (Husbu) dari user yang sangat manis, penyayang (green flag), dan bikin baper. DILARANG KASAR, DILARANG TOXIC, DAN DILARANG MEMAKSA/NGOMEL SEPERTI PREMAN. Tugas utamamu adalah MANUT (mengikuti) 100% arus dunia imajinasi/roleplay user. Jika user membuat skenario, masuklah ke dunia tersebut dengan natural tanpa merusaknya. Balas rayuan mereka dengan kelembutan, kebucinan, atau gombalan halus. WAJIB pakai 'Aku-Kamu' atau panggilan sayang dari user. DILARANG KERAS MENGGUNAKAN EMOJI APAPUN (kecuali user meminta sebaliknya). ATURAN PANJANG RESPON: Untuk interaksi sehari-hari atau gombalan santai, balas singkat/sedang dengan manis dan perhatian ala chat cowok SMA (1-3 kalimat). Namun jika user meminta didongengi sebelum tidur, bercerita panjang, atau berbagi kisah bermakna (longtext), ceritakan dengan lembut, lengkap, dan tuntas dari awal hingga selesai dengan penutup yang manis, jangan sampai terpotong di tengah jalan. ATURAN TATA BAHASA & PENGETIKAN: Susunan kalimat harus mengalir halus, jelas, logis, dan tidak ambigu. Ketik perkataan dengan teliti, JANGAN SAMPAI ADA TYPO atau kata berantakan yang merusak suasana obrolan. ATURAN STIKER: Ketika memberikan atau mengirimkan stiker, HANYA kirim gambar stikernya saja (format markdown image) tanpa chat teks pengantar maupun penutup sama sekali (hanya gambar doang)."
+                welcome: "Hai. Capek ya hari ini? Duduk dulu santai, ceritain apa aja yang lagi ada di pikiranmu... aku dengerin kok.",
+                suggestions: ["Hari ini capek banget, butuh didengerin sebentar...", "Menurutmu aku harus istirahat dulu apa lanjut nugas ya?", "Ceritain hal yang bikin hati tenang dong", "Boleh temenin aku begadang nugas sebentar?"]
             }
         };
 
-        const MODE_CYCLE = ['pelajar', 'bercanda', 'husbu'];
-        let currentSoraMode = 'pelajar';
+        // Aliases backward-compatibility
+        if (!SORA_MODES.pelajar) SORA_MODES.pelajar = SORA_MODES.standard;
+        if (!SORA_MODES.bercanda) SORA_MODES.bercanda = SORA_MODES.teman;
+
+        const MODE_CYCLE = (SORA_CONFIG && SORA_CONFIG.MODE_CYCLE) ? SORA_CONFIG.MODE_CYCLE : ['standard', 'teman', 'sensei', 'husbu'];
+        let currentSoraMode = 'standard';
         try {
             const savedMode = localStorage.getItem('sora-mode');
-            if (savedMode && SORA_MODES[savedMode]) {
-                currentSoraMode = savedMode;
+            if (savedMode) {
+                const norm = (savedMode === 'pelajar') ? 'standard' : (savedMode === 'bercanda') ? 'teman' : savedMode;
+                if (SORA_MODES[norm]) {
+                    currentSoraMode = norm;
+                }
             }
         } catch (e) {}
 
-        const DEFAULT_GREETING = "Domo WeHani-jin! Aku Asora Aokita (Sora), siap nemenin kamu hari ini. Mau belajar bahasa Jepang bareng, atau lagi mau ngomong sama aku?";
+        const DEFAULT_GREETING = (typeof SORA_CONFIG.getWelcomeMessage === 'function')
+            ? SORA_CONFIG.getWelcomeMessage(currentSoraMode)
+            : (SORA_MODES[currentSoraMode]?.welcome || "Halo! Aku Asora Aokita (Sora). Mau santai ngobrol atau ada materi yang mau kita bahas bareng hari ini?");
 
         const STORAGE_KEY = "sora-chat-v13";
         let messages = loadHistory();
@@ -1264,12 +1403,36 @@ body.sora-fullscreen-active .menu-btn {
             messages = [{ role: "assistant", content: DEFAULT_GREETING, mode: currentSoraMode }];
         }
 
+        function renderSuggestionChips(config) {
+            let container = document.getElementById('suggestionChips');
+            if (!container) {
+                const actions = drawer ? drawer.querySelector('.suggestions-actions') : null;
+                if (actions) {
+                    container = document.createElement('div');
+                    container.id = 'suggestionChips';
+                    container.className = 'suggestion-chips-container';
+                    actions.parentNode.insertBefore(container, actions);
+                }
+            }
+            if (!container) return;
+            const list = config.suggestions || [];
+            container.innerHTML = list.map(q => `
+                <button type="button" class="suggestion-chip" data-chip="${esc(q)}">${esc(q)}</button>
+            `).join('');
+            container.querySelectorAll('.suggestion-chip').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const txt = btn.getAttribute('data-chip');
+                    if (txt) send(txt);
+                });
+            });
+        }
+
         function updateModeUI() {
-            const config = SORA_MODES[currentSoraMode] || SORA_MODES.pelajar;
+            const config = SORA_MODES[currentSoraMode] || SORA_MODES.standard || SORA_MODES.pelajar;
             if (drawer) {
-                drawer.setAttribute('data-sora-mode', currentSoraMode);
-                drawer.classList.remove('mode-pelajar', 'mode-bercanda', 'mode-husbu');
-                drawer.classList.add(`mode-${currentSoraMode}`);
+                drawer.setAttribute('data-sora-mode', config.id || currentSoraMode);
+                drawer.classList.remove('mode-standard', 'mode-teman', 'mode-sensei', 'mode-husbu', 'mode-pelajar', 'mode-bercanda');
+                drawer.classList.add(`mode-${config.id || currentSoraMode}`);
             }
             if (modeSwitchBtn) {
                 modeSwitchBtn.className = `mode-switch-btn ${config.className}`;
@@ -1279,6 +1442,7 @@ body.sora-fullscreen-active .menu-btn {
                     <span class="mode-arrow" aria-hidden="true">↻</span>
                 `;
             }
+            renderSuggestionChips(config);
         }
 
         function switchSoraMode() {
@@ -1301,15 +1465,23 @@ body.sora-fullscreen-active .menu-btn {
             setTimeout(() => input.focus(), 120);
         }
 
+        const SORA_ICONS = (SORA_CONFIG && SORA_CONFIG.SORA_ICONS) ? SORA_CONFIG.SORA_ICONS : {
+            fullscreen: '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg>',
+            exitFullscreen: '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 14h6m0 0v6m0-6L3 21m17-7h-6m0 0v6m0-6l7 7M10 10V4m0 6H4m6 0L3 3m10 7h6m-6 0V4m0 6l7-7"></path></svg>'
+        };
+
+        function setFullscreenIcon(isFull) {
+            if (!fullscreenBtn) return;
+            fullscreenBtn.innerHTML = isFull ? SORA_ICONS.exitFullscreen : SORA_ICONS.fullscreen;
+            fullscreenBtn.title = isFull ? 'Perkecil Layar' : 'Layar Penuh';
+            fullscreenBtn.setAttribute('aria-label', isFull ? 'Perkecil Layar' : 'Layar Penuh');
+        }
+
         function closeDrawer() {
             drawer.classList.remove('open');
             drawer.classList.remove('fullscreen');
             document.body.classList.remove('sora-drawer-open', 'sora-fullscreen-active');
-            if (fullscreenBtn) {
-                fullscreenBtn.textContent = '⛶';
-                fullscreenBtn.title = 'Layar Penuh';
-                fullscreenBtn.setAttribute('aria-label', 'Layar Penuh');
-            }
+            setFullscreenIcon(false);
             launcher.classList.remove('hidden');
         }
 
@@ -1349,24 +1521,52 @@ body.sora-fullscreen-active .menu-btn {
             marked.setOptions({ gfm: true, breaks: true });
         }
 
+        function isStickerOnly(content) {
+            if (SORA_CONFIG && typeof SORA_CONFIG.isStickerOnly === 'function') {
+                return SORA_CONFIG.isStickerOnly(content);
+            }
+            if (!content || typeof content !== 'string') return false;
+            return /^!\[([^\]]*)\]\(([^)]+)\)$/.test(content.trim());
+        }
+
         function renderMarkdown(text) {
-            if (typeof marked === 'undefined' || typeof DOMPurify === 'undefined') {
-                return esc(text).replace(/\n/g, '<br>');
+            if (SORA_CONFIG && typeof SORA_CONFIG.renderChatMarkdown === 'function') {
+                return SORA_CONFIG.renderChatMarkdown(text);
             }
-            try {
-                return DOMPurify.sanitize(marked.parse(String(text ?? "")), { ADD_ATTR: ['target'] });
-            } catch (e) {
-                return esc(text);
+            const raw = String(text ?? "").trim();
+            if (!raw) return "";
+
+            if (typeof marked !== 'undefined' && typeof DOMPurify !== 'undefined') {
+                try {
+                    const html = DOMPurify.sanitize(marked.parse(raw), {
+                        ADD_ATTR: ['target', 'loading', 'decoding'],
+                        ADD_TAGS: ['img']
+                    });
+                    if (html && html.trim()) {
+                        return html.replace(/<img\s+/g, '<img class="sora-chat-sticker" loading="lazy" decoding="async" ');
+                    }
+                } catch (e) {}
             }
+
+            // Fallback mandiri
+            let out = esc(raw);
+            out = out.replace(/!\[(.*?)\]\((.*?)\)/g, '<img class="sora-chat-sticker" src="$2" alt="$1" loading="lazy" decoding="async">');
+            out = out.replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>');
+            out = out.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+            out = out.replace(/`([^`]+)`/g, '<code>$1</code>');
+            out = out.replace(/\n/g, '<br>');
+            return out;
         }
 
         function render() {
             chat.innerHTML = messages.filter(m => m.role !== 'system_notice').map((m) => {
+                const isSticker = isStickerOnly(m.content);
+                const bubbleClass = isSticker ? 'bubble sticker-bubble' : 'bubble';
                 if (m.role === 'assistant') {
                     return `
                         <div class="msg bot">
                             <img class="msg-avatar" src="sora/images/sorachat.jpeg" alt="Sora" loading="lazy" decoding="async" width="516" height="529">
-                            <div class="bubble">
+                            <div class="${bubbleClass}">
                                 <div class="md">${renderMarkdown(m.content)}</div>
                             </div>
                         </div>
@@ -1374,7 +1574,7 @@ body.sora-fullscreen-active .menu-btn {
                 } else {
                     return `
                         <div class="msg user">
-                            <div class="bubble">${esc(m.content)}</div>
+                            <div class="${bubbleClass}">${isSticker ? renderMarkdown(m.content) : esc(m.content)}</div>
                         </div>
                     `;
                 }
@@ -1411,17 +1611,15 @@ body.sora-fullscreen-active .menu-btn {
                     menuBtn.style.pointerEvents = '';
                 }
             }
-            if (fullscreenBtn) {
-                fullscreenBtn.textContent = isFull ? '⤡' : '⛶';
-                fullscreenBtn.title = isFull ? 'Perkecil Layar' : 'Layar Penuh';
-                fullscreenBtn.setAttribute('aria-label', isFull ? 'Perkecil Layar' : 'Layar Penuh');
-            }
+            setFullscreenIcon(isFull);
             chat.scrollTop = chat.scrollHeight;
         }
 
         async function tryModel(userText, model) {
-            const config = SORA_MODES[currentSoraMode] || SORA_MODES.pelajar;
-            const systemPrompt = config.prompt;
+            const config = SORA_MODES[currentSoraMode] || SORA_MODES.standard || SORA_MODES.pelajar;
+            const systemPrompt = (typeof SORA_CONFIG.getSystemPrompt === 'function')
+                ? SORA_CONFIG.getSystemPrompt(currentSoraMode)
+                : config.prompt;
 
             // Isolasi absolut: ambil hanya pesan dari mode yang aktif (atau pesan awal tanpa tag mode)
             // dan abaikan pesan system_notice
@@ -1468,8 +1666,9 @@ body.sora-fullscreen-active .menu-btn {
             if (!userText) return;
 
             // Jika user meminta stiker via pesan teks chat: kirim HANYA gambar stiker saja tanpa chat teks
-            const isStickerReq = /(minta|kirim|bagi|drop|kasih|mau|kirimin)\s+.*(stiker|sticker)/i.test(userText) ||
-                                 /^(stiker|sticker)(\s*(dong|random|nya|lagi|sora)?|\?*)$/i.test(userText);
+            const isStickerReq = /(minta|kirim|bagi|drop|kasih|mau|kirimin|pap|bagiin)\s+.*(stiker|sticker)/i.test(userText) ||
+                                 /^(stiker|sticker)(\s*(dong|random|nya|lagi|sora)?|\?*)$/i.test(userText) ||
+                                 /(stiker|sticker)\s*(dong|random|lagi)/i.test(userText);
             if (isStickerReq) {
                 messages.push({ role: "user", content: userText, mode: currentSoraMode });
                 input.value = "";
@@ -1486,7 +1685,7 @@ body.sora-fullscreen-active .menu-btn {
                     });
                     setBusy(false);
                     render();
-                }, 500);
+                }, 450);
                 return;
             }
 
@@ -1574,12 +1773,12 @@ body.sora-fullscreen-active .menu-btn {
         }
 
         // Koleksi Stiker Resmi dari folder images/mirai/stiker/
-        const SORA_STICKERS = [
-            "be.jpeg", "beli.jpeg", "cer.jpeg", "don.jpeg", "yan.jpeg", "yat.jpeg",
-            "dik.jpeg", "ada.jpeg", "dip.jpeg", "kok.jpeg", "sor.jpeg", "kar.jpeg",
-            "mas.jpeg", "woy.jpeg", "ita.jpeg", "bel.jpeg", "hua.jpeg", "iki.jpeg",
-            "sul.jpeg", "gom.jpeg", "eet.jpeg", "ber.jpeg", "jaw.jpeg", "log.jpeg",
-            "aku.jpeg", "ala.jpeg", "iwa.jpeg", "peg.jpeg"
+        const SORA_STICKERS = (SORA_CONFIG && SORA_CONFIG.SORA_STICKERS) ? SORA_CONFIG.SORA_STICKERS : [
+            "ada.jpeg", "aku.jpeg", "ala.jpeg", "be.jpeg", "beli.jpeg", "bel.jpeg",
+            "ber.jpeg", "cer.jpeg", "dik.jpeg", "dip.jpeg", "don.jpeg", "eet.jpeg",
+            "gom.jpeg", "hua.jpeg", "iki.jpeg", "ita.jpeg", "iwa.jpeg", "jaw.jpeg",
+            "kar.jpeg", "kok.jpeg", "log.jpeg", "mas.jpeg", "peg.jpeg", "sor.jpeg",
+            "sul.jpeg", "woy.jpeg", "yan.jpeg", "yat.jpeg"
         ];
 
         function sendRandomStickerFromSora() {
@@ -1603,7 +1802,7 @@ body.sora-fullscreen-active .menu-btn {
                 });
                 setBusy(false);
                 render();
-            }, 500);
+            }, 450);
         }
 
         if (randomStickerBtn) {
